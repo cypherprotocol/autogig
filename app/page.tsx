@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Construction, FileText } from "lucide-react";
+import { Construction, FileText, Mailbox } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -97,6 +97,11 @@ export default function Home() {
             case 2:
               return (
                 <Construction className="absolute -bottom-16 left-1/2 h-96 w-96 -translate-x-1/2 stroke-white stroke-1 opacity-10" />
+              );
+
+            case 3:
+              return (
+                <Mailbox className="absolute -bottom-16 -right-16 h-96 w-96 -translate-x-1/2 stroke-white stroke-1 opacity-10" />
               );
           }
         })()}
