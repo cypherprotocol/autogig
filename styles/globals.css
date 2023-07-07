@@ -1,6 +1,6 @@
 html,
 body {
-  background-color: #000000;
+  background-color: #00b1e9;
   padding: 0;
   margin: 0;
   font-family: Gilroy, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
@@ -14,4 +14,8 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.clickable {
+  background: radial-gradient(circle at 50% 30%, #73ddff, #00b1e9);
 }
