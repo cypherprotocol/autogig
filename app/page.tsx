@@ -112,7 +112,7 @@ export default function Home() {
               .map((_, i) => (
                 <div
                   key={i}
-                  className="clickable flex h-4 w-4 items-center justify-center rounded-full shadow-zen"
+                  className="clickable flex h-6 w-6 items-center justify-center rounded-full shadow-zen"
                 >
                   <p className="text-xs text-white">{i + 1}</p>
                 </div>
@@ -122,7 +122,7 @@ export default function Home() {
               .map((_, i) => (
                 <div
                   key={i}
-                  className="flex h-4 w-4 items-center justify-center rounded-full bg-white/10"
+                  className="flex h-6 w-6 items-center justify-center rounded-full bg-black/10"
                 >
                   <p className="text-xs text-white">{i + stage + 1}</p>
                 </div>
