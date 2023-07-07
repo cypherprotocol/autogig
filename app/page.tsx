@@ -101,7 +101,7 @@ export default function Home() {
 
             case 3:
               return (
-                <Mailbox className="absolute -bottom-16 -right-16 h-96 w-96 -translate-x-1/2 stroke-white stroke-1 opacity-10" />
+                <Mailbox className="absolute -bottom-32 -right-16 h-96 w-96 -translate-x-1/2 stroke-white stroke-1 opacity-10" />
               );
           }
         })()}
