@@ -2,10 +2,13 @@
 
 import { motion } from "framer-motion";
 import { Construction, FileText, Mailbox } from "lucide-react";
+import { signIn, useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 
 export default function Home() {
   const [dots, setDots] = useState(".");
+  const { data: session, status } = useSession();
+  const loading = status === "loading";
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -21,11 +24,26 @@ export default function Home() {
 
   useEffect(() => {
     if (stage === 3) {
-      setTimeout(() => {
-        setStage(4);
-      }, 2000);
+      console.log(session);
+      (async function findGig() {
+        const res = await fetch(
+          "/api/gig?" +
+            new URLSearchParams({
+              twitter: session?.user?.name ?? "",
+            })
+        ).then(() => {
+          setStage(4);
+          console.log("done");
+        });
+      })();
     }
-  }, [stage]);
+  }, [stage, session]);
+
+  useEffect(() => {
+    if (session) {
+      setStage(3);
+    }
+  }, [session]);
 
   return (
     <div>
@@ -51,6 +69,26 @@ export default function Home() {
               return (
                 <>
                   <p className="mb-8 text-6xl font-medium text-white">
+                    Link your twitter
+                  </p>
+                  <motion.div
+                    whileHover={{
+                      scale: 1.05, // increased scale for a more pronounced effect
+                    }}
+                    whileTap={{
+                      scale: 1, // increased scale for a more pronounced effect
+                    }}
+                    onClick={() => signIn("twitter")}
+                    className="clickable flex h-[24rem] w-[24rem] cursor-pointer flex-col items-center justify-center rounded-full p-4 shadow-zen transition hover:shadow-zenny"
+                  >
+                    <p className="text-4xl font-medium text-white">Link</p>
+                  </motion.div>
+                </>
+              );
+            case 2:
+              return (
+                <>
+                  <p className="mb-8 text-6xl font-medium text-white">
                     Upload your resume
                   </p>
                   <motion.div
@@ -67,26 +105,7 @@ export default function Home() {
                   </motion.div>
                 </>
               );
-            case 2:
-              return (
-                <>
-                  <p className="mb-8 text-6xl font-medium text-white">
-                    Link your twitter
-                  </p>
-                  <motion.div
-                    whileHover={{
-                      scale: 1.05, // increased scale for a more pronounced effect
-                    }}
-                    whileTap={{
-                      scale: 1, // increased scale for a more pronounced effect
-                    }}
-                    onClick={() => setStage(3)}
-                    className="clickable flex h-[24rem] w-[24rem] cursor-pointer flex-col items-center justify-center rounded-full p-4 shadow-zen transition hover:shadow-zenny"
-                  >
-                    <p className="text-4xl font-medium text-white">Link</p>
-                  </motion.div>
-                </>
-              );
+
             case 3:
               return (
                 <p className="mb-8 text-6xl font-medium text-white">
@@ -110,7 +129,7 @@ export default function Home() {
         })()}
         {(() => {
           switch (stage) {
-            case 1:
+            case 2:
               return (
                 <FileText className="absolute -bottom-16 -left-16 h-96 w-96 -rotate-12 stroke-white stroke-1 opacity-10" />
               );
