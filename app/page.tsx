@@ -20,9 +20,9 @@ export default function Home() {
   const [stage, setStage] = useState(0);
 
   useEffect(() => {
-    if (stage === 2) {
+    if (stage === 3) {
       setTimeout(() => {
-        setStage(3);
+        setStage(4);
       }, 2000);
     }
   }, [stage]);
@@ -69,11 +69,31 @@ export default function Home() {
               );
             case 2:
               return (
+                <>
+                  <p className="mb-8 text-6xl font-medium text-white">
+                    Link your twitter
+                  </p>
+                  <motion.div
+                    whileHover={{
+                      scale: 1.05, // increased scale for a more pronounced effect
+                    }}
+                    whileTap={{
+                      scale: 1, // increased scale for a more pronounced effect
+                    }}
+                    onClick={() => setStage(3)}
+                    className="clickable flex h-[24rem] w-[24rem] cursor-pointer flex-col items-center justify-center rounded-full p-4 shadow-zen transition hover:shadow-zenny"
+                  >
+                    <p className="text-4xl font-medium text-white">Link</p>
+                  </motion.div>
+                </>
+              );
+            case 3:
+              return (
                 <p className="mb-8 text-6xl font-medium text-white">
                   Finding your job{dots}
                 </p>
               );
-            case 3:
+            case 4:
               return (
                 <>
                   <p className="mb-8 text-6xl font-medium text-white">
@@ -94,12 +114,12 @@ export default function Home() {
               return (
                 <FileText className="absolute -bottom-16 -left-16 h-96 w-96 -rotate-12 stroke-white stroke-1 opacity-10" />
               );
-            case 2:
+            case 3:
               return (
                 <Construction className="absolute -bottom-16 left-1/2 h-96 w-96 -translate-x-1/2 stroke-white stroke-1 opacity-10" />
               );
 
-            case 3:
+            case 4:
               return (
                 <Mailbox className="absolute -bottom-32 -right-16 h-96 w-96 -translate-x-1/2 stroke-white stroke-1 opacity-10" />
               );
@@ -117,7 +137,7 @@ export default function Home() {
                   <p className="text-xs text-white">{i + 1}</p>
                 </div>
               ))}
-            {Array(3 - stage)
+            {Array(4 - stage)
               .fill(0)
               .map((_, i) => (
                 <div
