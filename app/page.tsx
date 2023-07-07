@@ -112,13 +112,20 @@ export default function Home() {
               .map((_, i) => (
                 <div
                   key={i}
-                  className="clickable h-4 w-4 rounded-full shadow-zen"
-                />
+                  className="clickable flex h-4 w-4 items-center justify-center rounded-full shadow-zen"
+                >
+                  <p className="text-xs text-white">{i + 1}</p>
+                </div>
               ))}
             {Array(3 - stage)
               .fill(0)
               .map((_, i) => (
-                <div key={i} className="h-4 w-4 rounded-full bg-white/10" />
+                <div
+                  key={i}
+                  className="flex h-4 w-4 items-center justify-center rounded-full bg-white/10"
+                >
+                  <p className="text-xs text-white">{i + stage + 1}</p>
+                </div>
               ))}
           </div>
         )}
