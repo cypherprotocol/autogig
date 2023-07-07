@@ -5,13 +5,17 @@ import { Construction, FileText } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const hoverAnimation = {
-    scale: 1.1, // increased scale for a more pronounced effect
-    transition: {
-      type: "spring",
-      stiffness: 240, // Lower stiffness
-    },
-  };
+  const [dots, setDots] = useState(".");
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setDots((prevDots) => {
+        return prevDots.length >= 3 ? "." : prevDots + ".";
+      });
+    }, 500); // 500ms delay
+
+    return () => clearInterval(intervalId); // cleanup on unmount
+  }, []);
 
   const [stage, setStage] = useState(0);
 
@@ -66,7 +70,7 @@ export default function Home() {
             case 2:
               return (
                 <p className="mb-8 text-6xl font-medium text-white">
-                  Finding your job...
+                  Finding your job{dots}
                 </p>
               );
             case 3:

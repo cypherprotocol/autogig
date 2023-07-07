@@ -19,3 +19,27 @@ a {
 .clickable {
   background: radial-gradient(circle at 50% 30%, #73ddff, #00b1e9);
 }
+
+@keyframes dots {
+  0%,
+  20% {
+    color: rgba(255, 255, 255, 0);
+    text-shadow: 0.25em 0 0 rgba(255, 255, 255, 0),
+      0.5em 0 0 rgba(255, 255, 255, 0);
+  }
+  40% {
+    color: white;
+    text-shadow: 0.25em 0 0 white, 0.5em 0 0 rgba(255, 255, 255, 0);
+  }
+  60% {
+    text-shadow: 0.25em 0 0 white, 0.5em 0 0 white;
+  }
+  80%,
+  100% {
+    text-shadow: 0.25em 0 0 white, 0.5em 0 0 white;
+  }
+}
+
+.dots {
+  animation: dots 1s steps(5, end) infinite;
+}
