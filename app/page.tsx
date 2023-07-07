@@ -100,21 +100,23 @@ export default function Home() {
               );
           }
         })()}
-        <div className="mt-8 flex space-x-8">
-          {Array(stage)
-            .fill(0)
-            .map((_, i) => (
-              <div
-                key={i}
-                className="clickable h-4 w-4 rounded-full shadow-zen"
-              />
-            ))}
-          {Array(3 - stage)
-            .fill(0)
-            .map((_, i) => (
-              <div key={i} className="h-4 w-4 rounded-full bg-white/10" />
-            ))}
-        </div>
+        {stage !== 0 && (
+          <div className="absolute bottom-16 flex space-x-8">
+            {Array(stage)
+              .fill(0)
+              .map((_, i) => (
+                <div
+                  key={i}
+                  className="clickable h-4 w-4 rounded-full shadow-zen"
+                />
+              ))}
+            {Array(3 - stage)
+              .fill(0)
+              .map((_, i) => (
+                <div key={i} className="h-4 w-4 rounded-full bg-white/10" />
+              ))}
+          </div>
+        )}
       </div>
     </div>
   );
