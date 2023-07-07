@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FileText } from "lucide-react";
-import { useState } from "react";
+import { Construction, FileText } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const hoverAnimation = {
@@ -14,6 +14,14 @@ export default function Home() {
   };
 
   const [stage, setStage] = useState(0);
+
+  useEffect(() => {
+    if (stage === 2) {
+      setTimeout(() => {
+        setStage(3);
+      }, 2000);
+    }
+  }, [stage]);
 
   return (
     <div>
@@ -55,9 +63,39 @@ export default function Home() {
                   </motion.div>
                 </>
               );
+            case 2:
+              return (
+                <p className="mb-8 text-6xl font-medium text-white">
+                  Finding your job...
+                </p>
+              );
+            case 3:
+              return (
+                <>
+                  <p className="mb-8 text-6xl font-medium text-white">
+                    Message crafted!
+                  </p>
+                  <div className="rounded-lg bg-white p-4 shadow-zen">
+                    <p className="text-2xl font-medium text-black">
+                      Your message has been crafted and sent to the company.
+                    </p>
+                  </div>
+                </>
+              );
           }
         })()}
-        <FileText className="absolute -bottom-16 -left-16 h-96 w-96 -rotate-12 stroke-white stroke-1 opacity-10" />
+        {(() => {
+          switch (stage) {
+            case 1:
+              return (
+                <FileText className="absolute -bottom-16 -left-16 h-96 w-96 -rotate-12 stroke-white stroke-1 opacity-10" />
+              );
+            case 2:
+              return (
+                <Construction className="absolute -bottom-16 left-1/2 h-96 w-96 -translate-x-1/2 stroke-white stroke-1 opacity-10" />
+              );
+          }
+        })()}
         <div className="mt-8 flex space-x-8">
           {Array(stage)
             .fill(0)
