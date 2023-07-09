@@ -22,17 +22,21 @@ export default function Home() {
 
   const [stage, setStage] = useState(0);
 
+  const maxStage = 5;
+
   useEffect(() => {
-    if (stage === 3) {
+    if (stage === maxStage - 1 && session) {
       console.log(session);
       (async function findGig() {
         const res = await fetch(
           "/api/gig?" +
             new URLSearchParams({
               twitter: session?.user?.name ?? "",
+              github: "zksoju",
+              linkedin: "zksoju",
             })
         ).then(() => {
-          setStage(4);
+          setStage(maxStage);
           console.log("done");
         });
       })();
@@ -41,7 +45,8 @@ export default function Home() {
 
   useEffect(() => {
     if (session) {
-      setStage(3);
+      console.log(session);
+      setStage(4);
     }
   }, [session]);
 
@@ -89,6 +94,26 @@ export default function Home() {
               return (
                 <>
                   <p className="mb-8 text-6xl font-medium text-white">
+                    Link your Github
+                  </p>
+                  <motion.div
+                    whileHover={{
+                      scale: 1.05, // increased scale for a more pronounced effect
+                    }}
+                    whileTap={{
+                      scale: 1, // increased scale for a more pronounced effect
+                    }}
+                    onClick={() => signIn("github")}
+                    className="clickable flex h-[24rem] w-[24rem] cursor-pointer flex-col items-center justify-center rounded-full p-4 shadow-zen transition hover:shadow-zenny"
+                  >
+                    <p className="text-4xl font-medium text-white">Link</p>
+                  </motion.div>
+                </>
+              );
+            case 3:
+              return (
+                <>
+                  <p className="mb-8 text-6xl font-medium text-white">
                     Upload your resume
                   </p>
                   <motion.div
@@ -106,13 +131,13 @@ export default function Home() {
                 </>
               );
 
-            case 3:
+            case 4:
               return (
                 <p className="mb-8 text-6xl font-medium text-white">
                   Finding your job{dots}
                 </p>
               );
-            case 4:
+            case 5:
               return (
                 <>
                   <p className="mb-8 text-6xl font-medium text-white">
@@ -129,16 +154,16 @@ export default function Home() {
         })()}
         {(() => {
           switch (stage) {
-            case 2:
+            case 3:
               return (
                 <FileText className="absolute -bottom-16 -left-16 h-96 w-96 -rotate-12 stroke-white stroke-1 opacity-10" />
               );
-            case 3:
+            case 4:
               return (
                 <Construction className="absolute -bottom-16 left-1/2 h-96 w-96 -translate-x-1/2 stroke-white stroke-1 opacity-10" />
               );
 
-            case 4:
+            case 5:
               return (
                 <Mailbox className="absolute -bottom-32 -right-16 h-96 w-96 -translate-x-1/2 stroke-white stroke-1 opacity-10" />
               );
@@ -156,7 +181,7 @@ export default function Home() {
                   <p className="text-xs text-white">{i + 1}</p>
                 </div>
               ))}
-            {Array(4 - stage)
+            {Array(maxStage - stage)
               .fill(0)
               .map((_, i) => (
                 <div
