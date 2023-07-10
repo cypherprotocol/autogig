@@ -85,7 +85,7 @@ export default function Home() {
             case 0:
               return (
                 <button onClick={() => setStage(1)}>
-                  <p className="rounded-md bg-sky-400 px-3 py-1 text-sm text-white">
+                  <p className="rounded-md bg-sky-400 px-3 py-1 text-white">
                     Find a job
                   </p>
                 </button>
@@ -95,7 +95,7 @@ export default function Home() {
                 <>
                   <p className="mb-8 text-lg">Link your twitter</p>
                   <button
-                    className="rounded-md bg-sky-400 px-3 py-1 text-sm text-white"
+                    className="rounded-md bg-sky-400 px-3 py-1 text-white"
                     onClick={() => signIn("twitter")}
                   >
                     Link

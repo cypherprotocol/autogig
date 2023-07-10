@@ -114,9 +114,7 @@ export default function Home() {
                 </>
               );
             case 3:
-              return (
-                <Upload/>
-              );
+              return <Upload />;
 
             case 4:
               return (

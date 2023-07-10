@@ -68,9 +68,7 @@ export function UploadUnstyled() {
         onSubmit={handleSubmit}
         className="flex flex-col items-center justify-center"
       >
-        <p className="mb-8 text-6xl font-medium text-white">
-          Upload your resume
-        </p>
+        <p className="mb-8 text-lg text-black">Upload your resume</p>
         <input
           type="file"
           style={{ display: "none" }}
@@ -80,7 +78,7 @@ export function UploadUnstyled() {
         />
         <motion.button
           onClick={handleFileClick}
-          className="mb-4 rounded-md bg-sky-400 px-3 py-1 text-sm text-white"
+          className="mb-4 rounded-md bg-sky-400 px-3 py-1 text-white"
         >
           Upload
         </motion.button>
