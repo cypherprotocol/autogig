@@ -1,0 +1,1600 @@
+[{
+  "url": "https://wellfound.com/company/shortwave-com/jobs/2317518-senior-software-engineer",
+  "title": "Senior Software Engineer at Shortwave",
+  "location": "San Francisco",
+  "compensation": "$150k – $225k • 0.35% – 0.75%",
+  "published": "4 days ago",
+  "description": "About Shortwave We're a venture-backed startup building an AI-powered email client. We're bringing the power of LLMs &amp; a modern messaging UX to 4.5 billion email users. Imagine an AI virtual assistant with perfect knowledge of every message, attachment, receipt, newsletter, etc you've ever sent or received, and with the ability to act on your behalf (\"Draft email responses to the job candidates in my inbox asking them to schedule a time with me\" \"delete all recruiter spam\" \"snooze emails that don't seem urgent\"). You can see some recent press coverage of us here. We have an experienced team of 11. Our CEO Andrew formerly cofounded Firebase (later acquired by Google), and our early team met Andrew while working there building the infrastructure behind millions of today's mobile and web apps. We're well-funded by top-tier investors including Union Square Ventures &amp; Lightspeed Venture Partners. About the role We're looking for smart, motivated generalists who can contribute across our stack and who like to ship things quickly. We have some complex backend infrastructure, a web app, and mobile apps. We have a lot to build in every part of our stack. You will: Write and ship new application features on all our platforms Design and build the APIs and backend infrastructure behind our apps Work closely with other engineers, product managers, designers, and growth folks -- we're a highly collaborative team Ship quickly — we deploy multiple times per day and value rapid iteration with users Wear whatever hats needed to make the business succeed — we're a small team About you: We're looking for a smart, experienced software engineer with strong CS fundamentals who can contribute across our stack, and who loves to write and ship things quickly. Experience building complex applications for the web or mobile, including both frontend and backend development. Demonstrated ability to design new data structures, algorithms, and protocols A high attention to detail - email is so heavily used that the quality &amp; polish of our apps is critical to our business Good technical communications skills, both verbal and written A willingness to work hard as part of a team and learn new things quickly An owner mentality - there's a lot to do, and we need folks who are excited to take the lead on projects Bonus points Experience with Typescript, React &amp; React Native Experience building high-scale, high performance distributed systems. Experience with ML -- both building your own models and using off-the-shelf APIs and tools. Experience with JVM languages, PostgreSQL, and Kubernetes What we offer We're looking to hire the best and brightest, so we strive to provide the best work environment—tailored to you. Highly competitive compensation, including generous equity grants. We want the best and will pay for it. Medical and dental benefits 401(k) Free lunch Commuter benefit Flexible work hours and vacation Flexible work environment — you can work from home or travel while working Regular (every ~2.5 months) offsites where we get the whole team together, often in fun locations like Hawaii 🏝 A mission-focused team with fun coworkers (ok, we're biased... but we really are nice people!) We're looking for team members who have passion, grit, and integrity. Even if your experience doesn't precisely match the criteria above, please consider applying!",
+  "jobType": "Full Time",
+  "visaSponsorship": "Not Available",
+  "preferredTimezones": "Hawaii, Alaska, Pacific Time, Mountain Time, Central Time, Eastern Time",
+  "remoteWorkPolicy": "In office",
+  "experience": "5+ years",
+  "skills": [
+    "Machine Learning",
+    "Android",
+    "iOS Development",
+    "Distributed Systems",
+    "PostgreSQL",
+    "System Design",
+    "TypeScript",
+    "React.js",
+    "Kotlin",
+    "React Native"
+  ],
+  "hiringContact": {
+    "name": "Andrew Lee",
+    "position": "CEO"
+  },
+  "company": {
+    "name": "Shortwave",
+    "description": "Intelligent email powered by AI",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/7849871-5afe3194037d215f848cd35481e21c3f-medium_jpg.jpg",
+    "size": "11-50 employees",
+    "url": "https://wellfound.com/company/shortwave-com",
+    "badges": [
+      {
+        "text": "Actively Hiring"
+      },
+      {
+        "text": "Same investor as Twitter"
+      }
+    ],
+    "website": "https://www.shortwave.com",
+    "twitter": "https://twitter.com/shortwave",
+    "linkedin": "https://www.linkedin.com/company/getshortwave/",
+    "markets": [
+      "SaaS",
+      "Messaging",
+      "Artificial Intelligence",
+      "Productivity Software",
+      "Email"
+    ],
+    "totalRaised": "$9M"
+  }
+},
+{
+  "url": "https://wellfound.com/company/useascend/jobs/1304789-senior-software-engineer",
+  "title": "Senior Software Engineer at Ascend",
+  "location": "San Francisco • San Francisco Bay Area",
+  "compensation": "$170k – $200k • 0.088% – 0.2%",
+  "published": "2 weeks ago",
+  "description": "Your role Ascend is seeking a Senior Software Engineer to join our team on-site in San Francisco to help us expand our core product. As an Engineer at Ascend, you will be part of a small, but growing team focused on solving complex technical challenges using Ruby. In addition, you will interface directly with our customers and work cross-functionally to continue developing new product features, dashboards, and checkout processes - without any layers! Responsibilities will include Build applications and services using Rails/Javascript Work closely with cross-functional teams and customers to define and build products Help design &amp; implement our technical architecture &amp; processes You might be a good fit if you have/are 3+ years of experience as a Full Stack or Backend Web Developer Experience with relational databases Experience building and scaling consumer products A strong desire to learn new skills and solve business problems Bonus Familiarity or interest in learning Ruby on Rails and Next.js Familiarity with building external APIs &amp; integrations with platforms such as Salesforce Experience in building payment, checkout, or insurance products Tech stack &amp; processes Ruby on Rails API hosted on Heroku Next.js w/Typescript hosted on Vercel Tailwind CSS across all the FE Postgres + Redis for Storage Continuous integration &amp; delivery What we do Ascend is a fintech company building the financing and payments infrastructure for the $1T insurance market (did you know insurance premiums make up 7.2% of global GDP?). More than 40% of payments are still made with paper checks resulting in poor customer experience and expensive and operationally intensive commercial workflow. Today's solutions were built 40 years ago for pen and paper insurance sales. Ascend is the first modern payments platform for insurance helping to enable the industry's rapid digitalization. How we do it Ascend automates insurance payments end-to-end — from online customer payments and financing to the distribution of commissions and carrier payables — so that insurance distributors can eliminate laborious, expensive processes while giving their customers the great online checkout and financing experience they've come to expect. Think Stripe + Affirm + Modern Treasury for insurance. Why we do it We exist to make it easier for people to protect the things they care about by simplifying and modernizing the insurance industry’s financial infrastructure. Benefits Competitive base salary and meaningful equity in a fast-growing company 100% health premiums covered for you and your dependents 401k with employer ​​matching options Flexible time-off policy Monthly company-paid commuter benefit options Parental and family leave Lunch provided when in office Company outings and offsites In accordance with Ascend policies and our commitment to prioritizing the health and safety We encourage you to connect with us, even if you think you may not have the exact experience for this opportunity. We know that imposter syndrome is real – and that being outside of your comfort zone often prevents us from meeting candidates we would love to connect with and learn from as we grow. Equal Opportunity We're an equal opportunity employer and value diversity at our company. We don't discriminate on the basis of race, religion, color, national origin, gender, sexual orientation, age, marital status, veteran status, or disability status.",
+  "jobType": "Full Time",
+  "visaSponsorship": "Available",
+  "remoteWorkPolicy": "In office",
+  "experience": "3+ years",
+  "skills": [
+    "Ruby",
+    "Ruby on Rails",
+    "Engineering",
+    "Next.Js"
+  ],
+  "hiringContact": {
+    "name": "Praveen Chekuri",
+    "position": "Co-CEO • 3 years"
+  },
+  "company": {
+    "name": "Ascend",
+    "description": "Financial Operations Automation Software for the $1T+ Insurance Industry",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/8285365-276385f2c5d3a0c22a6f17279351a8f6-medium_jpg.jpg",
+    "size": "11-50 employees",
+    "url": "https://wellfound.com/company/useascend",
+    "badges": [
+      {
+        "text": "Actively Hiring"
+      },
+      {
+        "text": "Same investor as Meta"
+      }
+    ],
+    "website": "https://useascend.com",
+    "twitter": "https://twitter.com/useascend",
+    "linkedin": "http://linkedin.com/company/useascend/",
+    "markets": [
+      "Payments",
+      "Insurance",
+      "Finance Technology",
+      "Fin Tech",
+      "Insurtech"
+    ],
+    "locations": [
+      "Columbus",
+      "San Francisco"
+    ],
+    "totalRaised": "$35.5M"
+  }
+},
+{
+  "url": "https://wellfound.com/company/vontive/jobs/2216860-software-engineer",
+  "title": "Software Engineer at Vontive",
+  "location": "Remote • San Francisco",
+  "compensation": "$110k – $145k • 0.1% – 0.25%",
+  "published": "2 months ago",
+  "description": "Vontive builds technology that is transforming real-estate investment finance, a $2 trillion market. We provide liquidity to homebuilders, investors buying and renovation properties, and landlords. Our mortgages close 80% faster than bank loans and offer the same competitive pricing. The company was founded in 2017 by Freddie Mac and Palantir Technologies alumni and is backed by prominent venture capital firms. Our engineering team builds technology that is a completely unique embedded financing solution, empowering any company to offer investment mortgages and B2B2C connectivity between lenders, their customers, and the capital markets. If you join our team, you will work on industry-transforming products, including: Product pricing engine to provide users with terms, rates, and offers Automated underwriting to qualify loan applications and streamline loan closing Automated document generation, packaging, and partner SFTP management systems Integrations with 3rd-party systems to gather property, credit, and background check information End-user interfaces for real estate investors, financial institutions, and underwriters Capital-market APIs and financial-institution integrations for loan sales and securitizations We are looking for engineers with a full-stack, frontend, or backend focus. Our stack is based around Vue.js/Vuetify, Typescript, Node.js/Express, PostgreSQL, AWS Lambda. You can check out the full set of the tools we use: https://stackshare.io/vontive/core Please note: While we are open to candidates being permanently remote, we strongly prefer candidates in Seattle, WA, or San Francisco, CA. Requirements What We Look For: 2+ years of prior experience in software development, and have shipped production systems as part of a team 4-year degree in computer science or similar fields Expertise in Javascript (ES6+) and a web application framework like Express, Django, or Flask or frontend framework such Vue, Angular, or React. History of personal coding projects, or past experience on production web applications Motivation, ability to learn, and technical competence We provide this list in order to give you an idea of what we’re looking for. We’d still like to hear from you even if you’re missing a few of the criteria. Benefits Our benefits are designed for your total wellbeing and include: Competitive salary and compensation package Comprehensive medical, dental and vision coverage Monthly fitness and wellness reimbursement Healthy snacks, beverages and meals at the office Remote-friendly work environment during COVID-19 Your choice of equipment, ergonomic setup Company-sponsored events and volunteering opportunities Flexible hours, unlimited vacation 16 weeks of parental leave Meaningful equity and 401(k) plan Short- and long-term disability coverage Life insurance policy At Vontive, you will find a team committed to diversity, inclusion, and values of: Take Initiative: We should feel empowered to experiment, build and solve problems proactively Assume Best Intent: We believe that our peers are working to the best of their ability with the resources and information they have at their disposal Feedback: Whether it’s coming from our customers or our colleagues, we listen, empathize, and act quickly. When delivering feedback we do it with compassion and recognize that there are different ways to approach a problem. Strive for Simplicity: When taking on problems, we always ask ourselves if they can be broken down further. By tackling one thing at a time, we’re able to produce a cleaner product, avoid distractions and deliver desired outcomes.. Build Two Way Doors: We solve our problems by committing to easily reversible solutions allowing for quick experimentation and iteration if need be. Drive Clarity: We don’t assume everybody has the necessary context or knowledge to act. We strive to proactively push information and encourage others to ask questions. Vontive is an equal opportunity employer that promotes diversity, inclusion, and belonging. We do not discriminate on the basis of race, religion, color, national origin, gender, gender identity or expression, sexual orientation, age, marital status, veteran status, disability status, or any other characteristic protected by law. We will ensure that individuals with differing abilities are provided reasonable accommodation to participate in the job application or interview process, to perform essential job functions, and to receive other benefits and privileges of employment. Please contact us to request accommodation. Due to the threat of more infectious and deadly COVID-19 variant strains emerging, and to prevent the spread of COVID-19, we require that newly-hired employees for this position be fully vaccinated against COVID-19 as a condition of employment. We will make reasonable accommodations for valid exemptions based on disability, medical, or religious reasons and/or as otherwise required by applicable law.",
+  "jobType": "Full Time",
+  "visaSponsorship": "Not Available",
+  "hiresRemotelyIn": "United States",
+  "preferredTimezones": "Pacific Time",
+  "remoteWorkPolicy": "Onsite or remote",
+  "experience": "2+ years",
+  "skills": [
+    "Javascript",
+    "Node.js",
+    "PostgreSQL",
+    "TypeScript",
+    "Vue.Js",
+    "AWS"
+  ],
+  "hiringContact": {
+    "name": "Karan Bhatia",
+    "position": "Senior Software Engineer • 4 years"
+  },
+  "company": {
+    "name": "Vontive",
+    "description": "Vontive is the first embedded mortgage platform for investment real estate",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/4850209-ba4c1c2d7f7d9309ab250571868bfe87-medium_jpg.jpg",
+    "size": "51-200 employees",
+    "url": "https://wellfound.com/company/vontive",
+    "badges": [
+      {
+        "text": "Actively Hiring"
+      },
+      {
+        "text": "Same investor as Airbnb"
+      }
+    ],
+    "website": "http://www.vontive.com",
+    "linkedin": "linkedin.com/https://linked.com/company/vontive",
+    "markets": [
+      "Commercial Real Estate",
+      "Mortgage",
+      "Fin Tech"
+    ],
+    "totalRaised": "$33M"
+  }
+},
+{
+  "url": "https://wellfound.com/company/vontive/jobs/2216857-senior-software-engineer",
+  "title": "Senior Software Engineer at Vontive",
+  "location": "Remote • San Francisco",
+  "compensation": "$145k – $180k • 0.01% – 0.5%",
+  "published": "2 months ago",
+  "description": "Vontive builds technology that is transforming real-estate investment finance, a $2 trillion market. We provide liquidity to homebuilders, investors buying and renovation properties, and landlords. Our mortgages close 80% faster than bank loans and offer the same competitive pricing. The company was founded in 2017 by Freddie Mac and Palantir Technologies alumni and is backed by prominent venture capital firms. Our engineering team builds technology that is a completely unique embedded financing solution, empowering any company to offer investment mortgages and B2B2C connectivity between lenders, their customers, and the capital markets. If you join our team, you will work on industry-transforming products, including: Product pricing engine to provide users with terms, rates and offers Automated underwriting to qualify loan applications and streamline loan closing Automated document generation, packaging, and partner SFTP management systems Integrations with 3rd-party systems to gather property, credit, and background check information End-user interfaces for real estate investors, financial institutions, and underwriters Capital-market APIs and financial-institution integrations for loan sales and securitizations We are looking for engineers with a full-stack, frontend, or backend focus. Our stack is based around Vue.js/Vuetify, Typescript, Node.js/Express, PostgreSQL, AWS Lambda. You can check out the full set of the tools we use: https://stackshare.io/vontive/core Please note: While we are open to candidates being permanently remote, we strongly prefer candidates in Seattle, WA, or San Francisco, CA. Requirements What We Look For: 5+ years of prior experience in software development, and have shipped production systems as part of a team Past experience architecting or leading development on production web applications Expertise in Javascript (ES6+) and a web application framework like Express, Django, or Flask or frontend framework such Vue, Angular, or React Motivation, ability to learn and teach, technical competence 4-year degree in computer science or similar fields We provide this list in order to give you an idea of what we’re looking for. We’d still like to hear from you even if you’re missing a few of the criteria. Benefits Our benefits are designed for your total wellbeing and include: Competitive salary and compensation package Comprehensive medical, dental and vision coverage Monthly fitness and wellness reimbursement Healthy snacks, beverages and meals at the office Remote-friendly work environment during COVID-19 Your choice of equipment, ergonomic setup Company-sponsored events and volunteering opportunities Flexible hours, unlimited vacation 16 weeks of parental leave Meaningful equity and 401(k) plan Short- and long-term disability coverage Life insurance policy At Vontive, you will find a team committed to diversity, inclusion, and values of: Take Initiative: We should feel empowered to experiment, build and solve problems proactively Assume Best Intent: We believe that our peers are working to the best of their ability with the resources and information they have at their disposal Feedback: Whether it’s coming from our customers or our colleagues, we listen, empathize, and act quickly. When delivering feedback we do it with compassion and recognize that there are different ways to approach a problem. Strive for Simplicity: When taking on problems, we always ask ourselves if they can be broken down further. By tackling one thing at a time, we’re able to produce a cleaner product, avoid distractions and deliver desired outcomes.. Build Two Way Doors: We solve our problems by committing to easily reversible solutions allowing for quick experimentation and iteration if need be. Drive Clarity: We don’t assume everybody has the necessary context or knowledge to act. We strive to proactively push information and encourage others to ask questions. Vontive is an equal opportunity employer that promotes diversity, inclusion, and belonging. We do not discriminate on the basis of race, religion, color, national origin, gender, gender identity or expression, sexual orientation, age, marital status, veteran status, disability status, or any other characteristic protected by law. We will ensure that individuals with differing abilities are provided reasonable accommodation to participate in the job application or interview process, to perform essential job functions, and to receive other benefits and privileges of employment. Please contact us to request accommodation. Due to the threat of more infectious and deadly COVID-19 variant strains emerging, and to prevent the spread of COVID-19, we require that newly-hired employees for this position be fully vaccinated against COVID-19 as a condition of employment. We will make reasonable accommodations for valid exemptions based on disability, medical, or religious reasons and/or as otherwise required by applicable law.",
+  "jobType": "Full Time",
+  "visaSponsorship": "Not Available",
+  "hiresRemotelyIn": "United States",
+  "preferredTimezones": "Pacific Time",
+  "remoteWorkPolicy": "Onsite or remote",
+  "experience": "5+ years",
+  "skills": [
+    "Javascript",
+    "Node.js",
+    "PostgreSQL",
+    "TypeScript",
+    "Vue.Js",
+    "AWS"
+  ],
+  "hiringContact": {
+    "name": "Karan Bhatia",
+    "position": "Senior Software Engineer • 4 years"
+  },
+  "company": {
+    "name": "Vontive",
+    "description": "Vontive is the first embedded mortgage platform for investment real estate",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/4850209-ba4c1c2d7f7d9309ab250571868bfe87-medium_jpg.jpg",
+    "size": "51-200 employees",
+    "url": "https://wellfound.com/company/vontive",
+    "badges": [
+      {
+        "text": "Actively Hiring"
+      },
+      {
+        "text": "Same investor as Airbnb"
+      }
+    ],
+    "website": "http://www.vontive.com",
+    "linkedin": "linkedin.com/https://linked.com/company/vontive",
+    "markets": [
+      "Commercial Real Estate",
+      "Mortgage",
+      "Fin Tech"
+    ],
+    "totalRaised": "$33M"
+  }
+},
+{
+  "url": "https://wellfound.com/company/getcensus/jobs/2453804-software-engineer",
+  "title": "Software Engineer at Census",
+  "location": "Remote • San Francisco",
+  "compensation": "$150k – $210k • 0.06% – 0.12%",
+  "published": "3 weeks ago",
+  "description": "About Census 🔁 Census is the first Data Activation platform built on your warehouse. Sync 360° customer data to 150+ business tools today with Reverse ETL. Empower marketing teams to build dynamic audiences with a no-code segment builder. Census is how data teams at companies like Canva, Figma, Rippling, Carta, and Notion build better business operations. Backed by a16z and Sequoia, we're a hybrid team headquartered in San Francisco that loves taking annoying problems most people avoid and building elegant solutions for them. We believe that data should be used for more than just making charts. This is why we invented integrations that work directly from cloud data warehouses. Your Mission ⚡ As a Software Engineer at Census, you'll be working closely with the founders and the engineering team to create and scale a data platform to billions of records. We have a small and senior team of engineers with years of industry experience from places like Amazon, Google and Dropbox as well tons of startup experience (we have 6 former YC founders on staff). If you are looking for a role where you can influence both the company culture and product experience, read on. Your responsibilities 🗓 You will make contributions to all parts of our tech stack, which is comprised of Rails, Typescript, Vue, Heroku, and AWS. You will work closely with our product team to help design and develop new features. You will inform much of our early culture and be part of creating a truly special team. You will be a collaborative member of our sprint process - we do short sprint plans once every two weeks and 20 minute daily virtual standups. You won't burn out – we are building a great product while creating a fun, family-friendly culture. You will learn some of our lingo, like \"do nothing\", \"done done\", \"ponies\" and \"ur-*\" Our ideal candidate 🏅 Can build things end-to-end. Our engineers build, deploy and maintain their code. Is adept with data &amp; backend systems and unafraid to work with UI components. Has a Bachelor's degree in CS, Engineering, Math or equivalent experience. Thrives in ambiguous environments where you get to work directly with customers and make decisions that build trust and have a huge impact on the business. Compensation 💰 Salary $150,000 - $210,000 #LI-Remote Our benefits 🏆 Meaningful equity (we mean it!). We’re going to ask you to work hard and build an amazing company, so we are going to pay you well while we build, and set our sights on your equity having real value. We want you to take care of yourself so your medical, dental, and vision plans are heavily subsidized. 99% employer-paid medical coverage for you AND your dependents 🤯 The only plan we offer is a Platinum PPO. 401k with 4% match for Canadian and US employees — investing in your future can be expensive so we want to help. Flexible work schedule &amp; unlimited PTO. Two weeks per year — minimum. Yes, minimum. We don’t want you to get burnt out, so take the time you need to recharge. 12 weeks of fully paid parental leave. Growing family? Amazing! Congratulations. You and our founders have something in common. Take the time you need and don’t feel guilty doing it. All the tools you need to do your best work. We provide the laptop and you get a one-time stipend to purchase the peripherals you need. Modern Health - Mental wellness, therapy, and professional &amp; personal coaching sessions. We believe the best companies bring together diversity in race, age, physical and mental ability, sexuality, gender identity, ethnicity, perspectives, and ideas. People do their best work when they feel like they are included, valued, and equal — when they feel like they belong. The Census we are building is a place where everyone brings their full selves to work knowing that they’ll be heard, championed, and supported to succeed. Join the Census flock. What are you waiting for? Apply ⬇️",
+  "jobType": "Full Time",
+  "visaSponsorship": "Available",
+  "hiresRemotelyIn": "United States",
+  "preferredTimezones": "Pacific Time, Mountain Time, Central Time, Eastern Time",
+  "remoteWorkPolicy": "Onsite or remote",
+  "experience": "4+ years",
+  "skills": [
+    "Ruby on Rails"
+  ],
+  "hiringContact": {
+    "name": "Veronica Parado",
+    "position": "Employee"
+  },
+  "company": {
+    "name": "Census",
+    "description": "Census is the operational analytics platform for data warehouses",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/6804952-bdd299c14f1ae04782d5272b89bad0e5-medium_jpg.jpg",
+    "size": "51-200 employees",
+    "url": "https://wellfound.com/company/getcensus",
+    "badges": [
+      {
+        "text": "Actively Hiring"
+      },
+      {
+        "text": "Same investor as Airbnb"
+      }
+    ],
+    "website": "http://getcensus.com",
+    "twitter": "https://twitter.com/census",
+    "linkedin": "https://www.linkedin.com/company/getcensus",
+    "markets": [
+      "B2B",
+      "Analytics",
+      "Big Data",
+      "Sales Automation",
+      "Big Data Analytics",
+      "Operations"
+    ],
+    "totalRaised": "$80.3M"
+  }
+},
+{
+  "url": "https://wellfound.com/company/vontive/jobs/2672572-new-grad-software-engineer-2023",
+  "title": "New Grad Software Engineer (2023) at Vontive",
+  "location": "Remote • San Francisco",
+  "compensation": "$110k – $145k • 0.01% – 0.25%",
+  "published": "2 months ago",
+  "description": "Vontive builds technology that is transforming real-estate investment finance, a $2 trillion market. We provide liquidity to homebuilders, investors buying and renovation properties, and landlords. Our mortgages close 80% faster than bank loans and offer the same competitive pricing. The company was founded in 2017 by Freddie Mac and Palantir Technologies alumni and is backed by prominent venture capital firms. Our engineering team builds technology that is a completely unique embedded financing solution, empowering any company to offer investment mortgages and B2B2C connectivity between lenders, their customers, and the capital markets. If you join our team, you will work on industry-transforming products, including: Product pricing engine to provide users with terms, rates, and offers Automated underwriting to qualify loan applications and streamline loan closing Automated document generation, packaging, and partner SFTP management systems Integrations with 3rd-party systems to gather property, credit, and background check information End-user interfaces for real estate investors, financial institutions, and underwriters Capital-market APIs and financial-institution integrations for loan sales and securitizations Our stack is based around Vue.js/Vuetify, Typescript, Node.js/Express, PostgreSQL, AWS Lambda. You can check out the full set of the tools we use: https://stackshare.io/vontive/core Please note: While we are open to candidates being permanently remote, we strongly prefer candidates in Seattle, WA, or San Francisco, CA. Requirements What We Look For: Pursuing a degree in computer science or similar fields with an expected graduation date of Spring/Summer 2023 Prior internship experience in software development, and having shipped production systems as part of a team Expertise in Javascript (ES6+) and a web application framework like Express, Django, or Flask or frontend framework such Vue, Angular, or React. History of personal coding projects, or past experience on production web applications Motivation, ability to learn, and technical competence We provide this list in order to give you an idea of what we’re looking for. We’d still like to hear from you even if you’re missing a few of the criteria. Benefits Our benefits are designed for your total wellbeing and include: Competitive salary and compensation package Comprehensive medical, dental and vision coverage Monthly fitness and wellness reimbursement Healthy snacks, beverages and meals at the office Remote-friendly work environment during COVID-19 Your choice of equipment, ergonomic setup Company-sponsored events and volunteering opportunities Flexible hours, unlimited vacation 16 weeks of parental leave Meaningful equity and 401(k) plan Short- and long-term disability coverage Life insurance policy At Vontive, you will find a team committed to diversity, inclusion, and values of: Take Initiative: We should feel empowered to experiment, build and solve problems proactively Assume Best Intent: We believe that our peers are working to the best of their ability with the resources and information they have at their disposal Feedback: Whether it’s coming from our customers or our colleagues, we listen, empathize, and act quickly. When delivering feedback we do it with compassion and recognize that there are different ways to approach a problem. Strive for Simplicity: When taking on problems, we always ask ourselves if they can be broken down further. By tackling one thing at a time, we’re able to produce a cleaner product, avoid distractions and deliver desired outcomes.. Build Two Way Doors: We solve our problems by committing to easily reversible solutions allowing for quick experimentation and iteration if need be. Drive Clarity: We don’t assume everybody has the necessary context or knowledge to act. We strive to proactively push information and encourage others to ask questions. Vontive is an equal opportunity employer that promotes diversity, inclusion, and belonging. We do not discriminate on the basis of race, religion, color, national origin, gender, gender identity or expression, sexual orientation, age, marital status, veteran status, disability status, or any other characteristic protected by law. We will ensure that individuals with differing abilities are provided reasonable accommodation to participate in the job application or interview process, to perform essential job functions, and to receive other benefits and privileges of employment. Please contact us to request accommodation. Due to the threat of more infectious and deadly COVID-19 variant strains emerging, and to prevent the spread of COVID-19, we require that newly-hired employees for this position be fully vaccinated against COVID-19 as a condition of employment. We will make reasonable accommodations for valid exemptions based on disability, medical, or religious reasons and/or as otherwise required by applicable law.",
+  "jobType": "Full Time",
+  "visaSponsorship": "Not Available",
+  "hiresRemotelyIn": "United States",
+  "preferredTimezones": "Pacific Time",
+  "remoteWorkPolicy": "Onsite or remote",
+  "experience": "1+ years",
+  "skills": [
+    "Javascript",
+    "Node.js",
+    "PostgreSQL",
+    "TypeScript",
+    "Vue.Js",
+    "AWS"
+  ],
+  "hiringContact": {
+    "name": "Karan Bhatia",
+    "position": "Senior Software Engineer • 4 years"
+  },
+  "company": {
+    "name": "Vontive",
+    "description": "Vontive is the first embedded mortgage platform for investment real estate",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/4850209-ba4c1c2d7f7d9309ab250571868bfe87-medium_jpg.jpg",
+    "size": "51-200 employees",
+    "url": "https://wellfound.com/company/vontive",
+    "badges": [
+      {
+        "text": "Actively Hiring"
+      },
+      {
+        "text": "Same investor as Airbnb"
+      }
+    ],
+    "website": "http://www.vontive.com",
+    "linkedin": "linkedin.com/https://linked.com/company/vontive",
+    "markets": [
+      "Commercial Real Estate",
+      "Mortgage",
+      "Fin Tech"
+    ],
+    "totalRaised": "$33M"
+  }
+},
+{
+  "url": "https://wellfound.com/company/triumph-4/jobs/2676963-senior-software-engineer",
+  "title": "Senior Software Engineer at Triumph",
+  "location": "San Francisco • San Francisco Bay Area",
+  "compensation": "$180k – $210k • 0.25% – 0.75%",
+  "published": "1 month ago",
+  "description": "Triumph is calling for creators, builders, and problem solvers. If you're someone who is always building, thrives on fast iteration, and is eager to navigate across diverse tech landscapes without red tape, this role is for you. Your IC work should be evident and prolific - your GitHub contributions in the last year should be a mosaic of green. At Triumph, you will join an engineering driven culture that thrives on deep technical expertise, is output oriented, and is deeply non-bureaucratic. We have a radically high bar, but for the right individual, this is an opportunity like no other. Expect to learn more here within a year than at any company you've worked at before. If the idea of working with a team of intimidatingly brilliant, yet supportive co-workers sparks your interest, you're in the right place. *What You Bring * Versatility with any tech stack and a readiness to delve into uncharted territories. Strong opinions on matters technical that will help drive the direction of the company. An unwavering bias for action, building, and refining A passion for IC work - you should have been a builder at most/all previous roles, and love the idea of being an IC at a company that is built around supporting 10xers. A strong signal on this is being a vim wizard, having comfort with Linux, and having strong CS principles. Capability to self direct Tech stack we use (nice to have experience): Unity, Swift, Google Cloud (Firestore/Cloud Run), Python *What You Get * The chance to collaborate with like-minded, high-performing co-workers. Inspiring and thought-provoking challenges to solve with substantial upside Avoiding bureaucratic culture and red tape The opportunity to work on a product line at the intersection of gaming and fintech A learning environment unlike any other Compensation and rewards based on your output/value to the team",
+  "jobType": "Full Time",
+  "visaSponsorship": "Available",
+  "remoteWorkPolicy": "In office",
+  "experience": "5+ years",
+  "skills": [
+    "TypeScript",
+    "Unity",
+    "Swift/Objective C/iOS/Xcode"
+  ],
+  "hiringContact": {
+    "name": "Jared Geller",
+    "position": "CEO"
+  },
+  "company": {
+    "name": "Triumph",
+    "description": "Powering Infrastructure for Real Money Tournaments in Games",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/8104114-d7e1494c6953f46ee6a852f7c6fe891f-medium_jpg.jpg",
+    "size": "11-50 employees",
+    "url": "https://wellfound.com/company/triumph-4",
+    "badges": [
+      {
+        "text": "Actively Hiring"
+      },
+      {
+        "text": "Same investor as Snapchat"
+      }
+    ],
+    "website": "https://triumpharcade.com",
+    "linkedin": "https://www.linkedin.com/company/74900938/",
+    "markets": [
+      "Mobile",
+      "SaaS",
+      "Enterprise Software",
+      "Payments",
+      "Mobile Payments",
+      "Skill Gaming",
+      "Online Gaming",
+      "Console Gaming",
+      "PC Gaming",
+      "Software Engineering",
+      "Payment Systems"
+    ],
+    "locations": [
+      "San Francisco",
+      "San Francisco Bay Area"
+    ],
+    "totalRaised": "$14.3M"
+  }
+},
+{
+  "url": "https://wellfound.com/company/figma-com/jobs/691657-software-engineer",
+  "title": "Software Engineer at Figma",
+  "location": "San Francisco",
+  "compensation": "$125k – $200k",
+  "published": "2 years ago",
+  "description": "At Figma, we tackle a wide range of technical challenges: from designing powerful but accessible features in a complex stateful application, to scaling a realtime web service to hundreds of thousands of users. We work across many stacks and technologies, but we don’t expect anyone to know them all! Most of our engineers specialize in one area of our stack, while still being flexible enough to pick up new languages and make changes across systems when needed. As a member of our team, you’ll have plenty of opportunities to both leverage your existing strengths and learn new skills. More than anything, we seek engineers with strong coding fundamentals and a track record of high quality engineering. We work in a highly collaborative environment, where most projects are owned by small groups of 2-3 people. We strive to foster a positive, inclusive culture - you can read more about our engineering values on our blog. If you’d like to join us on our mission to make design accessible to all, let’s talk! What You'll Do Collaborate with designers, PMs, and other engineers to design features and break down high level goals into tasks and timelines Build, document and maintain tests, features and infrastructure Communicate and document architectural designs and requirements Provide thoughtful feedback to others on the team Help interview and recruit more talented engineers to Figma Minimum Qualifications Demonstrated fluency with one or more general purpose programming languages, including but not limited to: C/C++, Objective C, JavaScript, Java, Python, or Ruby Working proficiency and interpersonal skills in verbal and written English Experience in at least one of our areas of focus: Areas of Focus Web application development C++ application development Large software systems development Mobile application development (iOS or Android) Graphics (2D or 3D)Design (either visual design or UX design) Building professional design tools Benefits Competitive salary and equity package Health, dental, vision 401k plan with employer contribution Flexible vacation time and generous holiday breaks Culture of learning and development with a training allowance Daily lunches and snacks Pre-tax commuter benefits Cellphone reimbursement Dog-friendly office environment About Figma Figma is the open design company founded in 2012 by Dylan Field and Evan Wallace. With our cloud-based screen design tool, teams achieve a shared understanding around design without worrying about syncing, exporting or installing software. Anyone involved in the product development process can share always up-to-date files with a link. That makes it easy to collaborate on the latest designs and prototypes and see their code attributes. Figma has simplified collaboration across the entire design process for thousands of companies like Microsoft, Slack and Uber and users, including designers, developers, product managers, marketers and others. To learn more and sign up for a free account visit www.figma.com. At Figma we celebrate and support our differences. We know employing a team rich in diverse thoughts, experiences, and opinions allows our employees, our product and our community to flourish. Figma is an equal opportunity workplace. We are dedicated to equal employment opportunities regardless of race, color, ancestry, religion, sex, national orientation, sexual orientation, age, citizenship, marital status, disability, gender identity or Veteran status.",
+  "jobType": "Full Time",
+  "visaSponsorship": "Not Available",
+  "experience": "2+ years",
+  "skills": [
+    "Web Development",
+    "Computer Graphics",
+    "Full Stack Development",
+    "Backend Development",
+    "Frontend Development"
+  ],
+  "hiringContact": {
+    "name": "Greg Schultz",
+    "position": "Technical Recruiter"
+  },
+  "company": {
+    "name": "Figma",
+    "description": "A better way to design. Design, prototype, and gather feedback all in one place",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/199514-a2cbbd08a5adaaae5f18b1703c4ea168-medium_jpg.jpg",
+    "size": "51-200 employees",
+    "url": "https://wellfound.com/company/figma-com",
+    "badges": [
+      {
+        "text": "Same investor as Meta"
+      }
+    ],
+    "website": "http://figma.com",
+    "twitter": "http://twitter.com/@figmadesign",
+    "linkedin": "https://www.linkedin.com/company/figma",
+    "markets": [
+      "Internet",
+      "Information Technology",
+      "Real Time",
+      "Collaboration",
+      "Productivity Software",
+      "Software",
+      "Innovation Management"
+    ],
+    "totalRaised": "$133M"
+  }
+},
+{
+  "url": "https://wellfound.com/company/figma-com/jobs/691670-software-engineer-infrastructure",
+  "title": "Software Engineer - Infrastructure at Figma",
+  "location": "San Francisco",
+  "compensation": "$125k – $200k",
+  "published": "3 years ago",
+  "description": "Figma is adding to our team of passionate people who are revolutionizing the world of design. We are building a browser-based design tool that looks and feels as good as a native application and has all the additional power and advantages that come from being built upon the web platform. If you’re looking to work at a disruptive company who is building the future of design tools, welcome to Figma. We’re looking for a generalist with a strong grasp of Computer Science fundamentals to make Figma’s Infrastructure platform secure, powerful and fast. You’ll be combining industry best-practices and first-principles approach to design and build scalable Infrastructure systems and services that power Figma’s design and collaboration tool. You will work with a world-class team of engineers on deploying and operating existing systems, and building new ones for problems that are unique to our problem space. Check out this recent blog post for a deeper dive into Infra @ Figma! Responsibilities Design, build and operate scalable backend systems and services that powerFigma’s innovative tool for design and collaboration. Improve engineering standards, tooling, and processes. Work with engineers across the company to build innovative new features that operate at scale. Help debug production issues across services and multiple levels of the stack. What We Value 2+ years of experience building infrastructure components / services at scale. You have a solid grasp of Computer Science fundamentals and have a strong interest in distributed systems. You are driven by impact. You are willing to work on grungy problems if they have a high impact on the business or the health of the infrastructure. You care deeply about the quality of the software / systems you build. You have an artisan mindset and are always looking to improve your craft. At the same time you are able to strike the right balance between idealism and pragmatism. You have excellent problem solving skills. You use a systematic and thorough approach. You think from first principles. You have a bias for action. You have excellent technical communication skills. Finally, Figma is a close-knit company with a strong culture that promotes inclusivity and collaboration, taking ambitious goals and having fun doing so. You deeply value these traits and see yourself actively contributing to it. Benefits Competitive salary and equity package Health, dental, vision 401k plan with employer contribution Flexible vacation time and generous holiday breaks Culture of learning and development with a training allowance Daily lunches and snacks Pre-tax commuter benefits Cellphone reimbursement Dog-friendly office environment About Figma Figma is the open design company founded in 2012 by Dylan Field and Evan Wallace. With our cloud-based screen design tool, teams achieve a shared understanding around design without worrying about syncing, exporting or installing software. Anyone involved in the product development process can share always up-to-date files with a link. That makes it easy to collaborate on the latest designs and prototypes and see their code attributes. Figma has simplified collaboration across the entire design process for thousands of companies like Microsoft, Slack and Uber and users, including designers, developers, product managers, marketers and others. To learn more and sign up for a free account visit www.figma.com. At Figma we celebrate and support our differences. We know employing a team rich in diverse thoughts, experiences, and opinions allows our employees, our product and our community to flourish. Figma is an equal opportunity workplace. We are dedicated to equal employment opportunities regardless of race, color, ancestry, religion, sex, national orientation, sexual orientation, age, citizenship, marital status, disability, gender identity or Veteran status.",
+  "jobType": "Full Time",
+  "visaSponsorship": "Not Available",
+  "experience": "2+ years",
+  "skills": [],
+  "hiringContact": {
+    "name": "Greg Schultz",
+    "position": "Technical Recruiter"
+  },
+  "company": {
+    "name": "Figma",
+    "description": "A better way to design. Design, prototype, and gather feedback all in one place",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/199514-a2cbbd08a5adaaae5f18b1703c4ea168-medium_jpg.jpg",
+    "size": "51-200 employees",
+    "url": "https://wellfound.com/company/figma-com",
+    "badges": [
+      {
+        "text": "Same investor as Meta"
+      }
+    ],
+    "website": "http://figma.com",
+    "twitter": "http://twitter.com/@figmadesign",
+    "linkedin": "https://www.linkedin.com/company/figma",
+    "markets": [
+      "Internet",
+      "Information Technology",
+      "Real Time",
+      "Collaboration",
+      "Productivity Software",
+      "Software",
+      "Innovation Management"
+    ],
+    "totalRaised": "$133M"
+  }
+},
+{
+  "url": "https://wellfound.com/company/magic-ai-2/jobs/2725597-senior-software-engineer",
+  "title": "Senior Software Engineer at Magic AI",
+  "location": "San Francisco",
+  "compensation": "140k – 190k Wellfound Est.",
+  "published": "4 days ago",
+  "description": "Join us to build and safely deploy aligned, superhuman AI. For decades, technology was “just a tool.” Soon, it will be a partner. We are building an AI pair programmer that feels like a full colleague inside your computer - capable, conversational, and reliable across domains. If this isn't AGI, then what is? Join us if you want to build and safely deploy aligned AGI in products that matter. As a Senior Software Engineer, you'll work on frontend, backend, or infrastructure to make our models accessible and useful to developers around the world. We're looking for 5y+ experience as a software developer High-energy: you love what you do Ambition: you want to make something great Magic's culture Integrity. Words and actions should be aligned. Hands-on. Most of us have previously led engineering teams. At Magic, there are no managers. We all spend the vast majority of our time on engineering. If you want to solve hard problems, Magic is the right place for you. Teamwork. We move as one team, not N individuals. Focus. Ethically deploy AGI. Everything else is noise. Quality. We have high standards for ourselves and our products. Magic should feel like magic. Benefits and perks Benchmark-based compensation in the 75th or 90th percentile, including base salary, equity, and benefits Flexible working hours In-person (London, SF, NYC, or Vienna) or remote A small, fast-paced, highly focused team About Magic Magic is a public benefit corporation dedicated to building and safely deploying aligned, superhuman AGI. FAQ: What's your motivation? Automation has led humanity from subsistence farming to becoming a globally connected society. AGI is the ultimate chapter of the story of human tool-building, presenting the potential to decouple productivity and ingenuity from human labor. What if the last 50 years of technological progress happened in 2 days? We want to make this a possibility. Funding? We've raised $28M from tier 1 investors. How do we balance deploying the technology today with ambitions for AGI? We think deploying AI within the right interfaces is just as important as the technology itself. Building an AI pair programmer helps us do both at the same time. We aim to launch gradually improving AI assistants while pursuing work on what will ultimately become AGI. Do you train your own models? Yes Do you care about the product? It's funny that this is an FAQ, but many AI companies neglect UX and focus only on their model. Yes, we care. Can I work from anywhere? We welcome applications from anyone around the world. We'll look at visa requirements case by case. I don't meet all the criteria, should I still apply? If you feel you have something to contribute to the mission and you're a high-energy person, absolutely. We make exceptions for exceptional people.",
+  "jobType": "Full Time",
+  "visaSponsorship": "Not Available",
+  "skills": [],
+  "hiringContact": {
+    "name": "Rob Mallery",
+    "position": "Employee"
+  },
+  "company": {
+    "name": "Magic AI",
+    "description": "Magic is a public benefit corp dedicated to building and safely deploying aligned, superhuman AGI",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/9614338-cc486d0381c148bec632a58e883899dc-medium_jpg.jpg",
+    "size": "11-50 employees",
+    "url": "https://wellfound.com/company/magic-ai-2",
+    "badges": [
+      {
+        "text": "Actively Hiring"
+      },
+      {
+        "text": "Growing fast"
+      }
+    ],
+    "website": "https://magic.dev/",
+    "markets": [
+      "Artificial Intelligence",
+      "Developer Tools",
+      "Software Engineering"
+    ],
+    "totalRaised": "$28M"
+  }
+},
+{
+  "url": "https://wellfound.com/company/benchling/jobs/2722538-software-engineer-mobile",
+  "title": "Software Engineer, Mobile at Benchling",
+  "location": "San Francisco",
+  "compensation": "130k – 185k Wellfound Est.",
+  "published": "1 week ago",
+  "description": "ROLE OVERVIEW Benchling strives to be an end-to-end solution for our customers. To do that, Benchling needs to be accessible to a scientist regardless of where they are or what they’re doing. The work scientists do is not constrained to a desk. They’re physically walking to freezers or buildings to pick up biological material or walking through a lab, a greenhouse, or a field recording observations. Work like this isn’t well suited to desktops or laptops on a cart. We want to give scientists the ability to leverage Benchling in the palm of their hands, and to do that we need your help to build a native mobile application that helps scientists perform their work efficiently and comfortably. As a Mobile Software Engineer, you'll be responsible for building best in class mobile platform &amp; infrastructure from the ground up at Benchling. You will be working on designing and developing mobile apps while integrating with the rest of the Benchling platform &amp; back-end services solving important enterprise customer R&amp;D needs in various life sciences verticals. We are looking for strong mobile engineers with experience working on iOS &amp; Android platforms using React Native as part of building a new team. RESPONSIBILITIES Design a new mobile platform architecture from the ground up that is modular, scalable and extensible Collaborate with enterprise customers on mobile-first use cases while integrating with the rest of Benchling platform and back-end services Define and build a test framework to validate the mobile functionality Define and build the mobile application release framework Define, measure, analyze and build the framework for mobile KPIs Collaborate with technical peers, product, design, and other cross-functional teams QUALIFICATIONS Have 3+ years of experience as a software engineer building mobile applications published to the app store (iOS or Android) Have experience working with React Native in production environment Have experience with Java, Kotlin, Swift, Objective-C, React Native, or other mobile frameworks Have experience delivering mobile apps through the full software development lifecycle from working with product/design, evaluating technical requirements to delivery and testing Familiarity with Detox as a testing framework is a plus. Feels comfortable in working across the stack with from Mobile to Backend (preferably python) Have cloud-based development experience with AWS or equivalent SALARY RANGE Benchling takes a market-based approach to pay. The candidate's starting pay will be determined based on job-related skills, experience, qualifications, interview performance, and work location. For this role the base salary range is: ZONE 1: $157,250 - $212,750 ZONE 2: $146,285 - $197,915 To help you determine which zone applies to your location, please see this resource. If you have questions regarding a specific location's zone designation, please contact a recruiter for additional information. Total Compensation includes the following: Competitive salary and equity 100% premiums covered for health, dental, and vision for employees Fertility healthcare and family-forming benefits Four months of fully paid parental leave 401(k) + Employer Match Commuter benefits Home office stipend Mental health benefits + Wellness stipend Learning and development stipend Generous and flexible vacation Company-wide Summer &amp; Winter holiday shutdown Sabbaticals for 5-year and 10-year anniversaries #LI-Hybrid #LI-Remote #BI-Hybrid #BI-Remote #LI-GP",
+  "jobType": "Full Time",
+  "visaSponsorship": "Not Available",
+  "skills": [],
+  "hiringContact": {
+    "name": "Deborah Riedesel",
+    "position": "Employee"
+  },
+  "company": {
+    "name": "Benchling",
+    "description": "Informatics platform to accelerate, measure, and forecast R&D from discovery through bioprocessing",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/112872-1510bdf3d085dbf0a71382613beacd74-medium_jpg.jpg",
+    "size": "201-500 employees",
+    "url": "https://wellfound.com/company/benchling",
+    "badges": [
+      {
+        "text": "Actively Hiring"
+      },
+      {
+        "text": "Highly rated"
+      },
+      {
+        "text": "Same investor as Airbnb"
+      },
+      {
+        "text": "Work / Life Balance"
+      },
+      {
+        "text": "Strong Leadership"
+      }
+    ],
+    "website": "http://www.benchling.com",
+    "twitter": "http://twitter.com/benchling",
+    "linkedin": "http://www.linkedin.com/company/3769390",
+    "markets": [
+      "Biotechnology",
+      "Life Sciences",
+      "Enterprise Software",
+      "Healthcare",
+      "Synthetic Biology",
+      "Bioinformatics",
+      "Software",
+      "Cloud Data Services",
+      "Renewable Energies"
+    ],
+    "locations": [
+      "Boston",
+      "San Francisco"
+    ],
+    "totalRaised": "$112.8M"
+  }
+},
+{
+  "url": "https://wellfound.com/company/benchling/jobs/2619084-software-engineer-backend-platform",
+  "title": "Software Engineer, Backend (Platform) at Benchling",
+  "location": "San Francisco",
+  "compensation": "115k – 170k Wellfound Est.",
+  "published": "2 weeks ago",
+  "description": "ROLE OVERVIEW Our engineering team is comprised of the Applications Team, the Platform Team, and the Customer Engineering Team. The Applications Team is responsible for the product modules used directly by scientists to work with their data inside Benchling. This includes DNA editing tools, an electronic lab notebook, sample tracking, workflow design, and more. RESPONSIBILITIES Own projects end-to-end, from initial design, to prototype, to large-scale rollout. Design and implement backend models and API endpoints for complex scientific workflows. Design and implement rich frontend components and architecture. We build and operate one of the largest, richest React applications out there and power complex scientific analyses. Work closely with product managers, designers, marketing, and sales to ensure the right context is being shared. Help rapidly scale our product and team. As a member of the engineering team, you'll be an integral part of how we mature our tooling, best practices, engineering processes, and hiring. Check out our engineering blog for some examples of past work. Here are some other examples of recent and future projects: Tools to simulate DNA assembly - computers can assist scientists by informing scientific decisions with complex calculations. Our bulk assembly tool allows scientists to simulate constructing hundreds of DNA constructs in parallel, visualizing the end result and highlighting potential issues. Chemistry tools - we have focused primarily on biology and biotech for the last 5 years, but are just starting new initiatives to expand our tools to support chemists as well. This will involve modeling complex chemical reactions within Benchling, and is a opportunity to see a new product grow from the ground up. Robot and machine integration - scientists are increasingly using automated hardware in the lab to perform measurements. By integrating Benchling with machines like liquid handlers, we are working towards a world where a scientist can perform a physical experiment entirely using software. QUALIFICATIONS Have 3-5 years of experience in software engineering. Build software with a product-first approach. You ship code quickly and care about the real world impact of your code. Have strong abilities in problem solving and iterating on feedback. Enjoy ownership and building key pieces of product. Are interested in learning more about life science (prior knowledge is not required; desire to learn is a must). SALARY RANGE Benchling takes a market-based approach to pay. The candidate's starting pay will be determined based on job-related skills, experience, qualifications, interview performance, and work location. For this role the base salary range is: ZONE 1: 157,250 - 212,750 To help you determine which zone applies to your location, please see this resource. If you have questions regarding a specific location's zone designation, please contact a recruiter for additional information. Total Compensation includes the following: Competitive salary and equity 100% premiums covered for health, dental, and vision for employees Fertility healthcare and family-forming benefits Four months of fully paid parental leave 401(k) + Employer Match Commuter benefits Home office stipend Mental health benefits + Wellness stipend Learning and development stipend Generous PTO Company-wide Summer &amp; Winter holiday shutdown Sabbaticals for 5-year and 10-year anniversaries #LI-MD1 #LI-Hybrid #BI-Hybrid",
+  "jobType": "Full Time",
+  "visaSponsorship": "Not Available",
+  "skills": [],
+  "hiringContact": {
+    "name": "Muhammad Djata",
+    "position": "Employee"
+  },
+  "company": {
+    "name": "Benchling",
+    "description": "Informatics platform to accelerate, measure, and forecast R&D from discovery through bioprocessing",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/112872-1510bdf3d085dbf0a71382613beacd74-medium_jpg.jpg",
+    "size": "201-500 employees",
+    "url": "https://wellfound.com/company/benchling",
+    "badges": [
+      {
+        "text": "Actively Hiring"
+      },
+      {
+        "text": "Highly rated"
+      },
+      {
+        "text": "Same investor as Airbnb"
+      },
+      {
+        "text": "Work / Life Balance"
+      },
+      {
+        "text": "Strong Leadership"
+      }
+    ],
+    "website": "http://www.benchling.com",
+    "twitter": "http://twitter.com/benchling",
+    "linkedin": "http://www.linkedin.com/company/3769390",
+    "markets": [
+      "Biotechnology",
+      "Life Sciences",
+      "Enterprise Software",
+      "Healthcare",
+      "Synthetic Biology",
+      "Bioinformatics",
+      "Software",
+      "Cloud Data Services",
+      "Renewable Energies"
+    ],
+    "locations": [
+      "Boston",
+      "San Francisco"
+    ],
+    "totalRaised": "$112.8M"
+  }
+},
+{
+  "url": "https://wellfound.com/company/tiptopxyz/jobs/2216005-sr-software-engineer-data",
+  "title": "Sr. Software Engineer, Data at TipTop",
+  "location": "Remote • Austin • Los Angeles • New York City • Portland • Seattle • United States • San Francisco",
+  "compensation": "$150k – $200k • 0.25% – 0.5%",
+  "published": "3 weeks ago",
+  "description": "*We’re inviting individuals with a deep knowledge in data engineering to join the TipTop core team. Are you a curious thinker who likes to solve complex challenges in a rewarding environment where your contributions are valued and have a direct impact? Your work will sit at the core of the product and have a direct impact on customers, partners, and the platform. * About us We’re building consumer and enterprise systems at the intersection of e-commerce, fintech, and logistics that will change our relationship with the things we purchase. We’re pre-market, envisioning an entirely new consumer finance paradigm and developing its first version. Note that we’re a distributed team collaborating remotely and meet up in person quarterly. Postmates founder banks $23 million for his new crypto startup TipTop | TechCrunch (we're not necessarily a crypto startup 😉) TipTop Funding Information | AngelList Talent You Will Build reliable data services and robust ingestion pipelines for both structured and unstructured data sources Design and ship ETL pipelines that transform, aggregate, normalize, and master messy data Develop and automate large scale, high-performance data processing systems (batch and/or streaming) Define data models for optimal storage with a keen eye for model development, analysis, and optimization over time Have the opportunity to build and lead a team You Have 5+ years of experience as a software engineer architecting, building, launching and maintaining end-to-end data systems from whiteboard to production Demonstrated ability turning business and product ideas into engineering solutions. You can go from zero to one A highly analytical mindset and eagerness to solve technical problems with data structures, storage systems, cloud infrastructure, front-end frameworks, and other technical tools. Strong programming experience in Python | SQL Familiarity with modern data stores, pipeline and orchestration tools Even Better Experience working closely with Machine Learning and Data Scientists An advanced degree (M.S., PhD.) in Mathematics, Statistics, Computer Science, Quantitative Finance, Physics, or a related technical field Passion for building, bias for action, and are excited by uncertainty You are autonomous &amp; adaptable – own the work, move fast, react quickly Curiosity in evolving ML platforms and technologies like ChatGPT Tech You'll Use Python Go SQL/Postgres Dataflow / Airflow DBT TensorFlow/PyTorch/Spark GCP How To Apply Please share a copy of your resume or LinkedIn, your GitHub (if you’ve got one), and any projects you think we should see.",
+  "jobType": "Full Time",
+  "visaSponsorship": "Not Available",
+  "hiresRemotelyIn": "United States",
+  "preferredTimezones": "Hawaii, Alaska, Pacific Time, Mountain Time, Central Time, Eastern Time, Atlantic Time",
+  "remoteWorkPolicy": "Onsite or remote",
+  "experience": "5+ years",
+  "skills": [
+    "Python",
+    "Machine Learning",
+    "Databases",
+    "ETL",
+    "Engineering",
+    "Go (Golang)"
+  ],
+  "hiringContact": {
+    "name": "Pasha Petukhov",
+    "position": "Founding Engineer • 1 year"
+  },
+  "company": {
+    "name": "TipTop",
+    "description": "Stealth",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/8889400-27042869faf5be6ac965cf1de99d8926-medium_jpg.jpg",
+    "size": "11-50 employees",
+    "url": "https://wellfound.com/company/tiptopxyz",
+    "badges": [
+      {
+        "text": "Actively Hiring"
+      }
+    ],
+    "website": "https://www.tiptop.xyz",
+    "twitter": "https://twitter.com/tiptopxyz",
+    "linkedin": "https://www.linkedin.com/company/tiptopxyz",
+    "markets": [
+      "Financial Services",
+      "E-Commerce",
+      "Logistics",
+      "Finance Technology"
+    ],
+    "locations": [
+      "Los Angeles",
+      "New York City",
+      "Seattle"
+    ],
+    "totalRaised": "$23.2M"
+  }
+},
+{
+  "url": "https://wellfound.com/company/pointcardhq/jobs/2374853-principal-software-engineer",
+  "title": "Principal Software Engineer at PointCard",
+  "location": "San Francisco",
+  "compensation": "",
+  "published": "10 months ago",
+  "description": "Principal Software Engineer JD We are creating the spending platform of the future — starting by building a modern charge card for young professionals that unlocks access to unique experiences. With our sleek design, cutting-edge tech, and world-class support, we’re changing how the new generation of professionals spend. We are backed by Peter Thiel’s Valar Ventures and Y Combinator — with over $50mm in funding. We’re a small team of experienced engineers from a number of high-performance teams at startups, Facebook, Shopify, and Apple. We run a low-process high output team with few barriers between your work and our customers' delight. If you are passionate about design, fintech, and building - we'd love to hear from you! We’re looking for a Principal Software Engineer to join us working on our Charge Card platform. If this sounds interesting, please reach out! Who we're looking for Here at Point, we are making a high performance, high availability, fault tolerant stack for modern finance applications. Principal Software Engineers are expected to provide technical leadership-by-example and implementation guidance that sets the tone for the entire engineering team. In this role, you will Design, architect and implement large chunks of our stack’s technology Guide your team members in navigating technical issues Provide technical guidance to business, design, and other nontechnical teams Set standards, levels and best practices for Point Engineering as a whole Advocate for technologies, systems, and ways of working to better empower our whole engineering organization Requirements 8+ years experience developing client/server software in a dynamically-typed languages (Node, Ruby, Python), statically-typed languages (Java, C, C++), or other modern environments (Go, Rust, Elixir, etc). 5+ years experience developing cloud-based software on AWS, GCP, Azure, etc. Strong knowledge of SQL and production-facing relational databases Strong experience optimizing &amp; performance profiling server-side applications Good collaboration skills &amp; the ability to work well with product, design, or other cross-functional teams Bonus Points Fintech or cryptocurrency experience, especially at a venture-backed startup Experience using Java Spring Boot Framework Experience with data privacy &amp; implementing application security best practices Point Perks Join a fast-growing brand that is building thoughtful spending products. Competitive salary, stock options, and 401K. Full health benefits (medical, dental, and vision insurance). Unlimited vacation policy, paid company holidays, and WFH flexible. We shut down the office at the end of the year for a winter holiday.",
+  "jobType": "Full Time",
+  "visaSponsorship": "Not Available",
+  "skills": [],
+  "hiringContact": {
+    "name": "Kenan Pulak",
+    "position": "CTO • 5 years"
+  },
+  "company": {
+    "name": "PointCard",
+    "description": "Rewards. Spending. Access",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/6551786-9437f11547a1e8e5c68e25306f0ff7d8-medium_jpg.jpg",
+    "size": "51-200 employees",
+    "url": "https://wellfound.com/company/pointcardhq",
+    "badges": [
+      {
+        "text": "Same investor as Airbnb"
+      }
+    ],
+    "website": "https://point.app/",
+    "twitter": "https://twitter.com/pointcardhq",
+    "linkedin": "https://www.linkedin.com/company/getpoint/",
+    "markets": [
+      "Personal Finance",
+      "Finance Technology",
+      "Credit Cards",
+      "Fin Tech"
+    ],
+    "locations": [
+      "New York City",
+      "San Francisco"
+    ],
+    "totalRaised": "$57M"
+  }
+},
+{
+  "url": "https://wellfound.com/company/searchlight-tech/jobs/2494465-senior-software-engineer",
+  "title": "Senior Software Engineer at Searchlight.ai",
+  "location": "San Francisco",
+  "compensation": "$170k – $190k",
+  "published": "7 months ago",
+  "description": "Why Searchlight? Searchlight is revolutionizing a new category of data-driven hiring, focused on data infrastructure that closes the loop between recruiting and post-hire outcomes. Fresh funding from top-tier investors like YC, Accel, and Founders Fund Fast-growing team tackling an initial $140B market opportunity with a category-defining product 50 NPS with customers like Zapier, Udemy, and Coda Women-led and mission-driven company, founders are Forbes 30U30 with backgrounds from Stanford, Uber, Google, and McKinsey Opportunity for meaningful ownership, leadership, and autonomy Recommended Reading: Using Data for Hiring at Zapier We are looking for a teammate we can count on to: Given an initial design and technical plan, consistently deliver an end-to-end new product feature Collaborate with other engineers to scope product requirements and write technical specifications Be shockingly efficient and results-driven to deliver software improvements to our users Produce high-quality, production-ready, readable, maintainable code Lend your technical expertise to unblock and invest in other engineers on your team Relevant Experience: 4+ years of experience software engineering, preferably at least 2 years at a seed, Series A, or Series B company Expert in at least one modern engineering framework, and has showed aptitude to pick up new frameworks quickly Success Profile: Self-starter and fast learner Sharp at problem solving, critical thinking, and systems thinking Proactive communicator, both verbal and written, around technical decisions and project deadlines Primarily motivated to deliver high impact solutions to users rather than by using the latest coolest technologies Biased towards action and speed of delivery Within 1 week you’ll... Onboard with our team Ship your first commit on day one Take on 1-2 small tickets to address bugs or make minor improvements. These will have both front-end and back-end components to help you gain familiarity with our codebase Have 1:1s with everyone on the team Go through a product orientation to get familiar with the different pieces of our platform Within 1 month you'll... Ship your first major project, which will involve scoping, writing the technical plan (ERD) with your onboarding buddy, submitting your ERD for team review, creating Jira tickets + estimates, writing unit tests, creating incremental pull requests, requesting code review, and finally - deploy! Participate in code reviews for other members of the team Shadow a few customer and partner meetings every week Within 6 months you'll... Work with the engineering team to scope and ship products Help us grow our team by mentoring new engineers, writing internal tooling and documentation, and interviewing new hires More about Searchlight Companies with the best talent win. But the way that companies hire hasn’t changed in decades, and recruiting as a core business function has been largely left behind by technology innovations in other functions like sales, customer success, marketing, etc. Job descriptions are still written in silo-ed documents, recruiting metrics end at time-to-fill instead of quality-of-hire, and we have a devastating diversity problem. While these are big challenges, we see a huge opportunity for Searchlight to own a ton of whitespace in the recruiting tech landscape. Searchlight's full-cycle talent platform gives companies the right data and infrastructure to assess candidates and scale winning cultures. Logistics: Our hybrid team in SF enjoys the Jackson Square office 3x/week with catered lunches, game nights, team dinners, and community events. $170,000-190,000 Annual base salary with significant equity options 401(k), Unlimited PTO, Health &amp; Wellness stipend, Remote Office stipend, 15 paid holidays Health Insurance (100% paid premiums), Spring Health sessions, Origin financial planning Diverse and Inclusive Employer We’re committed to providing equal treatment and opportunity to all applicants at every stage of the hiring cycle and throughout their life at the company. We don’t discriminate on the basis of race, color, religion, sex (including pregnancy, gender identity, and sexual orientation), national origin, age, disability, veteran or military status, or any other legally protected status. Note: Research says men tend to apply even if they only meet ~60% of the job qualifications, whereas women and other marginalized groups are hesitant to do so. If you don’t match 100% of the job qualifications but think you’d be a great fit, we encourage you to apply!",
+  "jobType": "Full Time",
+  "visaSponsorship": "Not Available",
+  "remoteWorkPolicy": "In office - WFH flexibility",
+  "skills": [],
+  "hiringContact": {
+    "name": "Nathan Chan",
+    "position": "Employee"
+  },
+  "company": {
+    "name": "Searchlight.ai",
+    "description": "Talent Intelligence to hire and retain winning teams",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/6871372-6302c7b7fc023cad03dd6b99d058cc31-medium_jpg.jpg",
+    "size": "11-50 employees",
+    "url": "https://wellfound.com/company/searchlight-tech",
+    "badges": [
+      {
+        "text": "Same investor as Meta"
+      }
+    ],
+    "website": "https://www.searchlight.ai/",
+    "twitter": "https://twitter.com/searchlight_ai",
+    "linkedin": "https://www.linkedin.com/company/searchlight-technologies/",
+    "markets": [
+      "SaaS",
+      "Enterprise Software",
+      "Information Services",
+      "Employment",
+      "Portals",
+      "HR / Recruiting",
+      "B2B · SaaS · Mobile · Artificial Intelligence / Machine Learning"
+    ],
+    "locations": [
+      "Portland",
+      "San Francisco",
+      "Remote"
+    ],
+    "totalRaised": "$36.5M"
+  }
+},
+{
+  "url": "https://wellfound.com/company/anyscale/jobs/1196329-software-engineer-machine-learning",
+  "title": "Software Engineer (Machine Learning) at Anyscale",
+  "location": "San Francisco",
+  "compensation": "$135k – $190k Wellfound Est.",
+  "published": "10 months ago",
+  "description": "About Anyscale: At Anyscale, we're on a mission to democratize distributed computing and make it accessible to software developers of all skill levels. We’re commercializing Ray, a popular open-source project that's creating an ecosystem of libraries for scalable machine learning. Companies like OpenAI, Uber, Spotify, Instacart, Cruise, and many more, have Ray in their tech stacks to accelerate the progress of AI applications out into the real world. With Anyscale, we’re building the best place to run Ray, so that any developer or data scientist can scale an ML application from their laptop to the cluster without needing to be a distributed systems expert. Proud to be backed by $250+ million from top-tier investors like Andreessen Horowitz, NEA, and Addition. Anyscale is based in San Francisco, CA. Employees are required to come in office 3x a week. About the role: We're looking for passionate, motivated people who are excited to build infrastructure and tooling for next generation machine learning applications. We're hiring exceptional Software Engineers for the distributed training team at Anyscale, which is responsible for building and maintaining open source machine learning libraries widely adopted across the industry. We are particularly looking for Senior or staff and above candidates who can help cast and execute on a vision for the future of machine learning training infrastructure. We are open to both Individual Contributors and people who are primarily technical but have prior experience managing a small team. About the Distributed Training team: The team's mission is to make it really easy to do distributed machine learning on Ray and Anyscale. Specifically, our team maintains and develops features for a broad number of libraries — including Ray Train (distributed deep learning), Ray Tune (distributed hyperparameter tuning), and XGBoost-on-Ray. Our team is the most user-facing engineering team on the open source side, collaborating with ML engineering teams at organizations like Shopify, Uber, and Bytedance. As part of this role, you will: Build performant, scalable, fault-tolerant distributed machine learning libraries that power the next generation of machine learning platforms around the world Work on difficult architectural problems and turn them into reality Work with a team of leading experts in the areas of distributed systems and machine learning Work with engineering managers and product managers to lead and grow an extremely talented team of software engineers Work closely with open source community (with ML researchers, ML engineers, data scientists) to scope and build new abstractions for scalable machine learning You like to work closely with end users and iterate on the product with them Help us build and shape a world-class company We'd love to hear from you if you have: 5+ years of building, scaling and maintaining software systems in production environments Solid fundamentals in algorithms, data structures, system design Experience with machine learning frameworks and libraries (PyTorch, Tensorflow) Experience designing fault-tolerant distributed systems Strong architectural skills Bonus points! Experience working with a cloud technology stack (AWS, GCP, Kubernetes) Experience building machine learning training pipelines or inference services in a production setting Experience with managing and maintaining open source machine learning libraries Experience managing small teams in pursuit of an ambitious technical goal Experience using Ray Compensation At Anyscale, we take a market-based approach to compensation. We are data-driven, transparent, and consistent. The target salary for this role is $170,112 ~ $237,000. As the market data changes over time, the target salary for this role may be adjusted. This role is also eligible to participate in Anyscale's Equity and Benefits offerings, including the following:- Stock Options Healthcare plans, with premiums covered by Anyscale at 99% 401k Retirement Plan Wellness stipend Education stipend Paid Parental Leave Flexible Time Off Commute reimbursement 100% of in office meals covered Anyscale Inc. is an Equal Opportunity Employer. Candidates are evaluated without regard to age, race, color, religion, sex, disability, national origin, sexual orientation, veteran status, or any other characteristic protected by federal or state law. Anyscale Inc. is an E-Verify company and you may review the Notice of E-Verify Participation and the Right to Work posters in English and Spanish",
+  "jobType": "Full Time",
+  "visaSponsorship": "Available",
+  "skills": [],
+  "hiringContact": {
+    "name": "Lucy Xu",
+    "position": "Employee"
+  },
+  "company": {
+    "name": "Anyscale",
+    "description": "Program your cluster as easily as your laptop",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/7534983-15f817f86fce51b455e9d68adc2b907b-medium_jpg.jpg",
+    "size": "51-200 employees",
+    "url": "https://wellfound.com/company/anyscale",
+    "badges": [
+      {
+        "text": "Actively Hiring"
+      }
+    ],
+    "website": "https://anyscale.com",
+    "twitter": "https://twitter.com/anyscalecompute",
+    "linkedin": "https://www.linkedin.com/company/joinanyscale/about/",
+    "markets": [
+      "Enterprise Software",
+      "Open Source",
+      "Machine Learning",
+      "Software",
+      "Developer Tools",
+      "Distributed Systems"
+    ]
+  }
+},
+{
+  "url": "https://wellfound.com/company/anyscale/jobs/1409739-software-engineer-experience",
+  "title": "Software Engineer (Experience) at Anyscale",
+  "location": "San Francisco",
+  "compensation": "$135k – $190k Wellfound Est.",
+  "published": "10 months ago",
+  "description": "About Anyscale: At Anyscale, we're on a mission to democratize distributed computing and make it accessible to software developers of all skill levels. We’re commercializing Ray, a popular open-source project that's creating an ecosystem of libraries for scalable machine learning. Companies like OpenAI, Uber, Spotify, Instacart, Cruise, and many more, have Ray in their tech stacks to accelerate the progress of AI applications out into the real world. With Anyscale, we’re building the best place to run Ray, so that any developer or data scientist can scale an ML application from their laptop to the cluster without needing to be a distributed systems expert. Proud to be backed by $250+ million from top-tier investors like Andreessen Horowitz, NEA, and Addition. Anyscale is based in San Francisco, CA. Employees are required to come in office 3x a week. About the role: The Experience team is responsible for creating the suite of tools and services that help create production quality applications using Ray. The product is the user’s primary interface into the world of Anyscale and by building a polished, stable, and well-designed product, we are able to enable a magical developer experience for our users. Applications engineers help design and implement the features that can simplify or automate many of the processes and components of creating a production-grade application, including development, debugging, deployment, operations, and monitoring. Beyond the user-facing features, applications engineers help build out critical pieces of infrastructure and architecture needed to power our platform at scale. With a taste for good products, a willingness to work with and understand the user base, and technical talent to build high quality software, the applications engineer can help build a delightful experience for our users from new developers learning to use Ray to businesses powering their products on Anyscale. A snapshot of projects you can work on: Creating UIs for monitoring the activity of your application or its resource usage A jobs platform to reliably schedule tasks and view the results of those jobs in the UI Building tools to administer and manage the users and clusters within your organization As part of your role you will: Develop high quality backend business logic or delightful UIs that empower software developers and simplify programming Work with a team of leading distributed systems and machine learning experts Communicate your work to a broader audience through talks, tutorials, and blog posts Help us to build and shape a world class company What we're looking for: At least 2 years of full stack, backend, or frontend Familiarity with technologies such as Python, React, Typescript, FastAPI, or SQLAlchemy Motivated people who are excited to build tools to power the next generation of cloud applications! Compensation At Anyscale, we take a market-based approach to compensation. We are data-driven, transparent, and consistent. The target salary for this role is $170,112 ~ $237,000. As the market data changes over time, the target salary for this role may be adjusted. This role is also eligible to participate in Anyscale's Equity and Benefits offerings, including the following: Stock Options Healthcare plans, with premiums covered by Anyscale at 99% 401k Retirement Plan Wellness stipend Education stipend Paid Parental Leave Flexible Time Off Commute reimbursement 100% of in office meals covered Anyscale Inc. is an Equal Opportunity Employer. Candidates are evaluated without regard to age, race, color, religion, sex, disability, national origin, sexual orientation, veteran status, or any other characteristic protected by federal or state law. Anyscale Inc. is an E-Verify company and you may review the Notice of E-Verify Participation and the Right to Work posters in English and Spanish",
+  "jobType": "Full Time",
+  "visaSponsorship": "Available",
+  "skills": [],
+  "hiringContact": {
+    "name": "Lucy Xu",
+    "position": "Employee"
+  },
+  "company": {
+    "name": "Anyscale",
+    "description": "Program your cluster as easily as your laptop",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/7534983-15f817f86fce51b455e9d68adc2b907b-medium_jpg.jpg",
+    "size": "51-200 employees",
+    "url": "https://wellfound.com/company/anyscale",
+    "badges": [
+      {
+        "text": "Actively Hiring"
+      }
+    ],
+    "website": "https://anyscale.com",
+    "twitter": "https://twitter.com/anyscalecompute",
+    "linkedin": "https://www.linkedin.com/company/joinanyscale/about/",
+    "markets": [
+      "Enterprise Software",
+      "Open Source",
+      "Machine Learning",
+      "Software",
+      "Developer Tools",
+      "Distributed Systems"
+    ]
+  }
+},
+{
+  "url": "https://wellfound.com/company/anyscale/jobs/749479-software-engineer",
+  "title": "Software Engineer at Anyscale",
+  "location": "San Francisco",
+  "compensation": "$135k – $190k Wellfound Est.",
+  "published": "10 months ago",
+  "description": "About Anyscale: At Anyscale, we're on a mission to democratize distributed computing and make it accessible to software developers of all skill levels. We’re commercializing Ray, a popular open-source project that's creating an ecosystem of libraries for scalable machine learning. Companies like OpenAI, Uber, Spotify, Instacart, Cruise, and many more, have Ray in their tech stacks to accelerate the progress of AI applications out into the real world. With Anyscale, we’re building the best place to run Ray, so that any developer or data scientist can scale an ML application from their laptop to the cluster without needing to be a distributed systems expert. Proud to be backed by $250+ million from top-tier investors like Andreessen Horowitz, NEA, and Addition. Anyscale is based in San Francisco, CA. Employees are required to come in office 3x a week. About the role: We're looking for passionate, motivated individuals who are excited to build tools that will power the next generation of cloud applications. If the idea of an infinite laptop appeals to you, let's build the future of software development together. We're hiring exceptional software engineers for a variety of open roles, including: Distributed systems Machine learning Frontend Observability Production serving Ecosystem C++ Reinforcement learning As part of this role, you will: Develop high-quality software to empower software developers and simplify programming. Collaborate with a diverse team of experts in distributed systems and machine learning. Communicate your work to a broader audience through talks, tutorials, and blog posts. Help us build and shape an inclusive and diverse company. We'd love to hear from you if you have: Have at least 2 years of relevant work experience. Possess a solid background in algorithms, data structures, and system design. Have experience in building scalable and fault-tolerant distributed systems. Bonus points! Experience working with a cloud technology stack (e.g., AWS, GCP, Kubernetes). Experience building machine learning training pipelines or inference services in a production setting. Experience with big data tools (e.g., Spark, Flink, Hadoop). Compensation At Anyscale, we take a market-based approach to compensation. We are data-driven, transparent, and consistent. The target salary for this role is $142,000 - $285,000. As the market data changes over time, the target salary for this role may be adjusted. This role is also eligible to participate in Anyscale's Equity and Benefits offerings, including the following:- Stock Options Healthcare plans, with premiums covered by Anyscale at 99% for both employees and dependents 401k Retirement Plan Wellness stipend Education stipend Paid Parental Leave Flexible Time Off Commute reimbursement 100% of in-office meals covered Anyscale Inc. is an Equal Opportunity Employer. Candidates are evaluated without regard to age, race, color, religion, sex, disability, national origin, sexual orientation, veteran status, or any other characteristic protected by federal or state law. Anyscale Inc. is an E-Verify company and you may review the Notice of E-Verify Participation and the Right to Work posters in English and Spanish",
+  "jobType": "Full Time",
+  "visaSponsorship": "Available",
+  "experience": "1+ years",
+  "skills": [
+    "Python"
+  ],
+  "hiringContact": {
+    "name": "Lucy Xu",
+    "position": "Employee"
+  },
+  "company": {
+    "name": "Anyscale",
+    "description": "Program your cluster as easily as your laptop",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/7534983-15f817f86fce51b455e9d68adc2b907b-medium_jpg.jpg",
+    "size": "51-200 employees",
+    "url": "https://wellfound.com/company/anyscale",
+    "badges": [
+      {
+        "text": "Actively Hiring"
+      }
+    ],
+    "website": "https://anyscale.com",
+    "twitter": "https://twitter.com/anyscalecompute",
+    "linkedin": "https://www.linkedin.com/company/joinanyscale/about/",
+    "markets": [
+      "Enterprise Software",
+      "Open Source",
+      "Machine Learning",
+      "Software",
+      "Developer Tools",
+      "Distributed Systems"
+    ]
+  }
+},
+{
+  "url": "https://wellfound.com/company/instacart/jobs/7865-senior-software-engineer",
+  "title": "Senior Software Engineer at Instacart",
+  "location": "San Francisco",
+  "compensation": "$130k – $170k • 0.003% – 0.027%",
+  "published": "5 years ago",
+  "description": "",
+  "jobType": "Full Time",
+  "visaSponsorship": "Not Available",
+  "experience": "4+ years",
+  "skills": [
+    "Javascript",
+    "HTML",
+    "CSS",
+    "SQL",
+    "Ruby",
+    "Redis",
+    "PostgreSQL",
+    "Heroku",
+    "Ruby on Rails",
+    "Bootstrap"
+  ],
+  "hiringContact": {
+    "name": "Apoorva Mehta",
+    "position": "CEO • 11 years"
+  },
+  "company": {
+    "name": "Instacart",
+    "description": "Our mission is to create a world where everyone has access to the food they love and more ",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/131716-ec50ba6b52bf0edc889bc3a6dae17493-medium_jpg.jpg",
+    "size": "1001-5000 employees",
+    "url": "https://wellfound.com/company/instacart",
+    "badges": [
+      {
+        "text": "Actively Hiring"
+      },
+      {
+        "text": "Same investor as Stripe"
+      }
+    ],
+    "website": "https://instacart.careers/",
+    "twitter": "https://twitter.com/instacart",
+    "linkedin": "https://www.linkedin.com/company/instacart/",
+    "markets": [
+      "Mobile",
+      "E-Commerce",
+      "Local",
+      "Groceries",
+      "Content Delivery",
+      "Same Day Delivery"
+    ],
+    "locations": [
+      "San Francisco",
+      "Toronto"
+    ],
+    "totalRaised": "$2.4B"
+  }
+},
+{
+  "url": "https://wellfound.com/company/highnoteplatform/jobs/1898177-senior-software-engineer",
+  "title": "Senior Software Engineer at Highnote",
+  "location": "San Francisco",
+  "compensation": "$140k – $190k Wellfound Est.",
+  "published": "3 months ago",
+  "description": "About Highnote Founded in 2020 by a team of leaders from Braintree, PayPal, and Lending Club, Highnote is an all in one card issuer processor and program management platform. We give digital-first organizations the flexibility to easily issue and process payment cards that accelerate business growth and profitability. We’ve raised $104M+ and grown our team to 100+ employees. Headquartered in San Francisco, we’ve managed to build one of the most advanced payments teams in the industry, with team members in 22+ US states. Operating through our core values of customer obsession, executional excellence, intentional inclusion, we’re helping businesses grow for the future by creating the payment products demanded by tomorrow, with the ability to solve for use cases that don’t exist yet.We are fast-moving, hands-on, and strongly believe everyone deserves a seat at the table. We believe we’re unlocking incredible opportunities that can change the future of payments, as long as we have the right people to make it happen. What you’ll be doing Building secure and compliant platform products that solve customer needs Writing high quality and robustly tested code, mostly in Java Understanding customer problems to build the right solutions Documenting your work to support our rapidly-scaling company Interfacing with a variety of the company’s domains to strengthen our platform What we are looking for 5+ years experience building production software systems A history of writing scalable, performant and maintainable code. We strongly believe languages can be learned and care more about your engineering skill over frameworks Excitement about shipping customer centric software Experience with Java &gt;= 11, JPA ORM mapping, Crafting SQLs, unit and integration testing Bonus skills Experience with cloud platforms such as GCP or AWS SpringBoot, Docker, and Kubernetes Experience with big data technologies such as BigQuery and RedShift A background in the fin-tech space Why Highnote? We’re a startup that allows for our employees to truly build from the ground up and impact every layer of our organization. We’re a team of payments obsessed individuals. While some of us come from the fintech world, some of us don’t. We value the varied backgrounds and the diverse perspectives of our employees. We’re small on hierarchy and big on growth. We’re a flat organization that allows everyone to have direct exposure to our leadership team. We are looking for builders who thrive in ambiguity. We’re backed by Oak HC/FT, Costanoa Ventures, and XYZ Ventures. Angel Investors include Bill Ready (CEO at Pinterest) and Renaud Laplanche (Co-Founder &amp; CEO of Upgrade). Highnote benefits Flexible Paid Time Off 100% healthcare coverage + 75% coverage for dependents 401k program Up to 16 weeks off for Maternity leave + up to 6 weeks of Paternity leave Equity in Highnote Stipend to build out your home office; internet reimbursement At Highnote we have built a total rewards philosophy that includes fair, equitable, geo-based compensation that is performance and potential based. Our compensation packages are competitive based on robust market research and are a combination of a cash salary, equity, and benefits. In compliance with the Equal Pay for Equal Work Act, the annual salary range for applicants is $170,000-$235,000. Please note that positions located in San Francisco are hybrid and include core working days of Tuesday, Wednesday, Thursday in office. We provide flexible work options based on distance from our downtown SF office. Highnote is a diverse and inclusive company committed to growing a diverse and inclusive team. We invite people from all backgrounds and identities to apply. We do not discriminate based on gender identity or expression, sexual orientation, race, religion, age, national origin, citizenship, disability, pregnancy status, veteran status, or any other characteristics protected by US federal state or local laws, or the laws of the country or jurisdiction where you work. Additionally, we encourage everyone to share which pronouns you wish for us to use when addressing you (i.e.: she/her, he/him, they/them, etc).",
+  "jobType": "Full Time",
+  "visaSponsorship": "Available",
+  "remoteWorkPolicy": "In office - WFH flexibility",
+  "skills": [],
+  "hiringContact": {
+    "name": "Katie Hamm",
+    "position": "Employee"
+  },
+  "company": {
+    "name": "Highnote",
+    "description": "Highnote is the world's most modern card issuance platform",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/8532712-3f5efa3c0f7dee4d3b1011f60648fcc2-medium_jpg.jpg",
+    "size": "51-200 employees",
+    "url": "https://wellfound.com/company/highnoteplatform",
+    "badges": [
+      {
+        "text": "Actively Hiring"
+      }
+    ],
+    "website": "https://highnoteplatform.com/",
+    "twitter": "https://twitter.com/highnotesocial",
+    "linkedin": "https://www.linkedin.com/company/highnoteplatform/",
+    "markets": [
+      "Finance Technology"
+    ],
+    "totalRaised": "$54.5M"
+  }
+},
+{
+  "url": "https://wellfound.com/company/highnoteplatform/jobs/2716779-senior-software-engineer-ui",
+  "title": "Senior Software Engineer, UI  at Highnote",
+  "location": "San Francisco",
+  "compensation": "135k – 195k Wellfound Est.",
+  "published": "2 weeks ago",
+  "description": "About Highnote Founded in 2020 by a team of leaders from Braintree, PayPal, and Lending Club, Highnote is an all in one card issuer processor and program management platform. We give digital-first organizations the flexibility to easily issue and process payment cards that accelerate business growth and profitability. We’ve raised $104M+ and grown our team to 100+ employees. Headquartered in San Francisco, we’ve managed to build one of the most advanced payments teams in the industry, with team members in 22+ US states. Operating through our core values of customer obsession, executional excellence, intentional inclusion, we’re helping businesses grow for the future by creating the payment products demanded by tomorrow, with the ability to solve for use cases that don’t exist yet. We are fast-moving, hands-on, and strongly believe everyone deserves a seat at the table. We believe we’re unlocking incredible opportunities that can change the future of payments, as long as we have the right people to make it happen. Job Description We are looking for a senior frontend engineer to join our Web Platform team. In this role, you will help design and scale our web properties powered by our GraphQL API. The Web Platform team owns our customer/internal dashboards and tooling, developer documentation, and more! While this position is primarily frontend, you will also be contributing to API design decisions, helping to develop API features with UI/UX in mind. Our stack is primarily GraphQL, TypeScript, React, Next.js, and Tailwind. We deploy serverless functions and believe in leveraging edge compute to deliver modern experiences. We work closely with product and design teams to craft the experiences of our platform using our API. You: Know the JavaScript and TypeScript ecosystems and tooling Know how to build a React application and understand how the browser works Know and love GraphQL Understand data-fetching and caching patterns in frontend applications Know how forms work Have an opinion on CSS and how it should be done in modern applications (it doesn’t matter what the opinion is, just that you have one!) Have experience with frontend observability and monitoring Believe in owning the entire application lifecycle – design, development, and deployment Are a full contributor – you not only want to build but want to have a say in how things are built Are customer-centric – whether the experience is for developers or non-technical users, their experience drives you You see the future powered by a “connected” ecosystem of integrations and have ideas on how you want to be part of that We: Operate collaboratively but autonomously Invest in tooling and automation – we do CI/CD, we codegen as much as we can, and that lets us focus on the task at hand Believe in experience-driven decisions – we work closely with Product and Design. We talk to customers and engage our teammates in feedback sessions. Discuss API design…a lot Love prototyping and exploring Don’t shy away from new things – we have a lot of fun ideas Are ambitious Bonus points if you: Have built serverless applications (Lambda, Cloudflare Workers, Google Cloud Functions) Have published/maintained JS libraries Know how iframes work Why Highnote? We’re a startup that allows for our employees to truly build from the ground up and impact every layer of our organization. We’re a team of payments obsessed individuals. While some of us come from the fintech world, some of us don’t. We value the varied backgrounds and the diverse perspectives of our employees. We’re small on hierarchy and big on growth. We’re a flat organization that allows everyone to have direct exposure to our leadership team. We are looking for builders who thrive in ambiguity. We’re backed by Oak HC/FT, Costanoa Ventures, and XYZ Ventures. Angel Investors include Bill Ready (CEO at Pinterest) and Renaud Laplanche (Co-Founder &amp; CEO of Upgrade). Highnote benefits Flexible Paid Time Off 100% healthcare coverage + 75% coverage for dependents 401k program Up to 16 weeks off for Maternity leave + up to 6 weeks of Paternity leave Equity in Highnote Stipend to build out your home office; internet and phone reimbursement At Highnote we have built a total rewards philosophy that includes fair, equitable, geo-based compensation that is performance and potential based. Our compensation packages are competitive based on robust market research and are a combination of a cash salary, equity, and benefits. In compliance with the Equal Pay for Equal Work Act, the annual salary range for applicants is $150,000-$210,000. Please note that positions located in San Francisco are hybrid and include core working days of Tuesday, Wednesday, Thursday in office. Highnote is a diverse and inclusive company committed to growing a diverse and inclusive team. We invite people from all backgrounds and identities to apply. We do not discriminate based on gender identity or expression, sexual orientation, race, religion, age, national origin, citizenship, disability, pregnancy status, veteran status, or any other characteristics protected by US federal state or local laws, or the laws of the country or jurisdiction where you work. Additionally, we encourage everyone to share which pronouns you wish for us to use when addressing you (i.e.: she/her, he/him, they/them, etc).",
+  "jobType": "Full Time",
+  "visaSponsorship": "Not Available",
+  "skills": [],
+  "hiringContact": {
+    "name": "Katie Hamm",
+    "position": "Employee"
+  },
+  "company": {
+    "name": "Highnote",
+    "description": "Highnote is the world's most modern card issuance platform",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/8532712-3f5efa3c0f7dee4d3b1011f60648fcc2-medium_jpg.jpg",
+    "size": "51-200 employees",
+    "url": "https://wellfound.com/company/highnoteplatform",
+    "badges": [
+      {
+        "text": "Actively Hiring"
+      }
+    ],
+    "website": "https://highnoteplatform.com/",
+    "twitter": "https://twitter.com/highnotesocial",
+    "linkedin": "https://www.linkedin.com/company/highnoteplatform/",
+    "markets": [
+      "Finance Technology"
+    ],
+    "totalRaised": "$54.5M"
+  }
+},
+{
+  "url": "https://wellfound.com/company/angellist/jobs/852111-senior-software-engineer",
+  "title": "Senior Software Engineer at AngelList",
+  "location": "San Francisco",
+  "compensation": "$150k – $230k • 0.02% – 0.05%",
+  "published": "3 weeks ago",
+  "description": "About AngelList: We exist to accelerate innovation by increasing the number of successful startups in the world. We want to give more people the opportunity to participate in the venture economy by building the financial infrastructure that makes it possible for more people to invest in world changing startups, and build tools for startups that help them run their operations so they can focus on building. AngelList is the nexus of venture capital and the startup community. We support over $14B+ in assets under management. We’ve driven capital to over 12,000 startups, almost 282 of which are unicorns. 57% of top-tier U.S. VC deals involve investors on AngelList. While our scale is large, our ambitions are even larger – we’re innovating on the financial infrastructure for venture investors and the startups they invest in. Come build with us. About the Role: AngelList Venture is seeking a Senior Software Engineer to join our core engineering team. At AngelList, we pride ourselves on having an outsized impact on the industry. Teams are explicitly small and built on mutual respect, high trust, and low management. It's not a fit for everyone, but when there's a fit, it’s one of the most rewarding places to work. This role is available for full-time remote work in the US or Internationally. You will: Help build the world's easiest-to-use financial platform (see https://t.co/7AmuxYWHe3 – and we've made it easier since then). Connect startups and investors around the world who would never have had a chance to meet without AngelList. Know the venture financing business inside and out - from the ground up. Take responsibility for the code you own and improve our codebase with your presence. Ship every day. You are: A full-stack generalist with 3+ years experience building web applications. Experienced at writing clean, scalable code with significant experience in one or more scripting languages. Excited to move fast, prioritize, and constantly make critical product decisions. Comfortable with and curious about working outside of a traditional narrow engineering role. A self-starter: you have started something on your own before - a startup, an open-source project, something else. A deep love of startups (https://venturehacks.com/save-the-world). If you don’t tick every box above, we’d still encourage you to apply. We’re building a diverse team whose skills balance and complement one another. Remote-friendly culture: AngelList has offices in three hub cities: San Francisco, Seattle, and New York City that you can choose to work from. We have an incredibly remote-friendly culture with the vast majority of the team choosing to work remotely 3+ days of the week. You can choose how often you’d like to come into the office! Benefits: We support our employees in their lives both inside and outside of work. See additional detail on our benefits here: https://angell.ist/venture-benefits Learn about our Funders &amp; Founders Program here: https://join.angellist.com/ Learn more about what AngelList has accomplished by checking out some recent things we’ve published over the last six months: AngelList Year in Review 2022 (https://www.angellist.com/2022) and AngelList Confidential 2022 (https://angell.ist/ALC2022). AngelList is an equal opportunity employer and we value diversity at our company. We do not discriminate on the basis of race, religion, color, national origin, gender, sexual orientation, age, marital status, veteran status, or disability status.",
+  "jobType": "Full Time",
+  "visaSponsorship": "Available",
+  "remoteWorkPolicy": "In office - WFH flexibility",
+  "experience": "3+ years",
+  "skills": [
+    "Full Stack Development",
+    "Ruby on Rails",
+    "React.js"
+  ],
+  "hiringContact": {
+    "name": "Xinran Xiao",
+    "position": "Head of Product & Engineering, Venture • 8 years"
+  },
+  "company": {
+    "name": "AngelList",
+    "description": "We're the world’s largest startup community. We help startups change the world",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/6702-766d1ce00c99ce9a5cbc19d0c87a436e-medium_jpg.jpg",
+    "size": "51-200 employees",
+    "url": "https://wellfound.com/company/angellist",
+    "badges": [
+      {
+        "text": "Actively Hiring"
+      },
+      {
+        "text": "Highly rated"
+      },
+      {
+        "text": "Same investor as Twitter"
+      },
+      {
+        "text": "Work / Life Balance"
+      },
+      {
+        "text": "Strong Leadership"
+      }
+    ],
+    "website": "https://www.angellist.com/",
+    "twitter": "https://twitter.com/angellist",
+    "linkedin": "https://www.linkedin.com/company/angellist",
+    "markets": [
+      "Startups",
+      "Venture Capital"
+    ],
+    "locations": [
+      "New York City",
+      "Seattle",
+      "San Francisco"
+    ],
+    "totalRaised": "$24M"
+  }
+},
+{
+  "url": "https://wellfound.com/company/brightflow-ai/jobs/1472129-staff-software-engineer",
+  "title": "Staff Software Engineer at Brightflow AI",
+  "location": "Remote • San Francisco",
+  "compensation": "$135k – $190k Wellfound Est.",
+  "published": "5 months ago",
+  "description": "Brightflow AI ( https://brightflow.ai/) is making cash management and forecasting accessible to the everyday business owner. Founded in Fall 2019, with the goal of democratizing finance, our rapidly growing and well-funded startup is in need of exceptional engineers to join us as we climb to the next level. Currently we are at Pre-A stage, there is still plenty of room to grow both for you and the company. About the Role You’ll be the go-to person on tough technical problems in the team. On a daily basis you can expect to: Architect, design and implement data platform to enable and empower financial intelligence Solve performance, scalability problems as we grow our customer base Build MLOps into the platform for on-demand and incremental prediction model update Tackle the integration problems to piping in data from a growing number of e-commerce platforms and financial apps, services Work with product managers, financial experts to offer intuitive user experience, making financial insights more accessible, actionable to everyday business owner Help building the team, mentoring other members of the engineering team, extend your technical influence inside and outside of the engineering team. Why you’ll love working here First, a place for growth: given the volatility of the market, our tool is addressing the pain point of small business owners. We are positioned to grow. The team is currently small and expanding, you can be influential. Secondly, great culture and great people: trust and psychological safety are high - you can expect to be challenged and given a place to do great work. Our culture fosters transparent, appreciative feedback, respect, and empathy. The team is experienced and knowledgeable, strong finance experience (including Capital One, VC firms) and engineering backgrounds at multiple early-stage startups, and previous experience as founder and CEO of a YC startup. What We’re Looking For Full stack tech lead with tracking record on building and delivering successful SaaS products. 7+ years of industry experience with 2-3+ years in a tech lead roles. Proficient in JavaScript, Node.js, and single-page applications (SPAs). Past experience of working on data pipeline is required. Proficient in software development on AWS or Heroku. Excellent verbal/written communication and interpersonal skills High motivation and ability to tolerate ambiguity An especially strong candidate may also have one or more of the following: Experience on MLOps Experience building analytics tools Experience working in startups Experience in fintech Benefits Medical, dental, and vision insurance. Equity stake in the company. Flexible working hours and vacation policy. Remote team events and retreats at socially responsible distances (in the Bay Area, California, USA). About Our Team We’ve learned from firsthand experience that the most effective teams are composed of highly diverse individuals from all walks of life. It’s in those pivotal moments in challenging situations that we’ve been consistently surprised by the ingenuity and unexpected skills our teammates bring to the table. At Brightflow AI, we all play a key role and encourage crossover into all areas of the business that interest you. This is a set of values that lies at our very core as individuals. If you share the same desire for a warm, welcoming environment surrounded by awesome, talented people, we encourage you to apply! We’re constantly learning and doing what we can to support and assist each other in growing both personally and professionally. We do not discriminate on the basis of race, color, religion, age, sex (including pregnancy, childbirth, or related medical conditions), sexual orientation, gender identity or expression, national origin/ethnicity, citizenship status, veteran status, disability status, marital status, medical condition, or any other legally protected status. About Brightflow AI Brightflow AI is honored to be featured on the inaugural 2022 SMBTech 50 List recognizing \"the growth and potential of startups that serve small and medium-sized businesses,\" as announced by GGV Capital, Crunchbase, and Nasdaq. Even companies that are growing revenue, surpassing sales goals, and expanding rapidly may be at risk of their cash running out. That’s where we come in. Brightflow AI gives companies the data they need to make timely and data-driven decisions about cash flow, growth opportunities, inventory, and more. We serve as their finance team to enable their continued growth and allow them to remain focused on delighting their customers. We’ve experienced firsthand the pain and difficulty in accessing good financial data–it’s this need that drove the creation of Brightflow AI. To date, we’ve raised capital, built the software, served our initial customer base, and begun iterating on every step of the process, from forecasting to financing. We’re proud to create solutions that help level the financial playing field for businesses of all sizes and financial situations. Our team members have backgrounds that include previous VC-backed startups (as founders, managers, and first engineers), established tech companies, private-equity and venture finance, banking, and running our own software companies. We live and work in a mix of countries and speak numerous languages; yet, we have a common interest in understanding our customers’ needs and delivering solutions that solve real problems. We provide a high degree of ownership and autonomy in an inclusive, supportive culture. We encourage a growth mindset and foster transparent, appreciative feedback, respect, and empathy. Read more about our values at https://bit.ly/brightflow-values. Salary: $152,000-$179,000 DOE. Range provided is for San Francisco, CA candidates. Salary ranges are geo-location dependent and may shift for candidates residing in other states and cities.",
+  "jobType": "Full Time",
+  "visaSponsorship": "Available",
+  "hiresRemotelyIn": "United States",
+  "skills": [],
+  "hiringContact": {
+    "name": "Susan Sutton",
+    "position": "Employee"
+  },
+  "company": {
+    "name": "Brightflow AI",
+    "description": "Simply automating companies' financial reports",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/7375200-6dd66a8baa52237f6b5db85dee69e48f-medium_jpg.jpg",
+    "size": "11-50 employees",
+    "url": "https://wellfound.com/company/brightflow-ai",
+    "badges": [
+      {
+        "text": "Actively Hiring"
+      }
+    ],
+    "website": "https://brightflow.ai",
+    "twitter": "https://twitter.com/brightflow_ai",
+    "linkedin": "https://www.linkedin.com/company/brightflow-ai",
+    "markets": [
+      "SaaS",
+      "Machine Learning",
+      "Finance Technology",
+      "Ecommerce"
+    ],
+    "totalRaised": "$115M"
+  }
+},
+{
+  "url": "https://wellfound.com/company/brightflow-ai/jobs/2438983-software-engineer",
+  "title": "Software Engineer at Brightflow AI",
+  "location": "Remote • San Francisco",
+  "compensation": "$135k – $190k Wellfound Est.",
+  "published": "5 months ago",
+  "description": "Brightflow AI is making cash management and forecasting accessible to the everyday business owner. Founded in Fall 2019, with the goal of democratizing finance, our rapidly growing and well-funded startup is in need of exceptional engineers to join us as we climb to the next level. About the Role You’ll be instrumental in a small and fast pace engineering team and take ownership of your work at every stage of the development lifecycle from concept through delivery. On a daily basis you can expect to: Work with product manager and financial experts closely on designing features for customers Take ownership to tackle the implementation and continue optimization it over iterations Solve performance and scalability issues to rightsize our platform for the growing stage we are in Tackle our need for fast integrations to e-commerce platform, apps with creative problem-solving skills Contribute to enhance our CI/CD and test automation capabilities Why you’ll love working here First, working on interesting problems in a place for growth: Given the volatility of the market, our tool is addressing the pain point of small business owners. We are positioned to grow. The team is currently small and expanding, you can be influential. Secondly, be with a great culture and great people: trust and psychological safety are high - you can expect to be challenged and given a place to do great work. Our culture fosters transparent, appreciative feedback, respect, and empathy. The team is experienced and knowledgeable, strong finance experience (including Capital One, VC firms) and engineering backgrounds at multiple early-stage startups, and previous experience as founder and CEO of a YC startup.. What We’re Looking For A self-starter with strong analytical and problem solving skills 3+ years of experience in JavaScript, Java or Python, experience with node.js, react, TypeScript is preferred Good understanding in SQL, relational databases, and data modeling Knowledge of basic ML concepts are preferred, but not required Desire to constantly learn and grow both personally and professionally. Benefits Medical, dental, and vision insurance. Equity stake in the company. Flexible working hours and vacation policy. Remote team events and retreats at socially responsible distances (in the Bay Area, California, USA). About Our Team We’ve learned from firsthand experience that the most effective teams are composed of highly diverse individuals from all walks of life. It’s in those pivotal moments in challenging situations that we’ve been consistently surprised by the ingenuity and unexpected skills our teammates bring to the table. At Brightflow AI, we all play a key role and encourage crossover into all areas of the business that interest you. This is a set of values that lies at our very core as individuals. If you share the same desire for a warm, welcoming environment surrounded by awesome, talented people, we encourage you to apply! We’re constantly learning and doing what we can to support and assist each other in growing both personally and professionally. We do not discriminate on the basis of race, color, religion, age, sex (including pregnancy, childbirth, or related medical conditions), sexual orientation, gender identity or expression, national origin/ethnicity, citizenship status, veteran status, disability status, marital status, medical condition, or any other legally protected status. About Brightflow AI Even companies that are growing revenue, surpassing sales goals, and expanding rapidly may be at risk of their cash running out. That’s where we come in. Brightflow AI gives companies the data they need to make timely and data-driven decisions about cash flow, growth opportunities, inventory, and more. We serve as their finance team to enable their continued growth and allow them to remain focused on delighting their customers. We’ve experienced firsthand the pain and difficulty in accessing good financial data–it’s this need that drove the creation of Brightflow AI. To date, we’ve raised capital, built the software, served our initial customer base, and begun iterating on every step of the process, from forecasting to financing. We’re proud to create solutions that help level the financial playing field for businesses of all sizes and financial situations. Our team members have backgrounds that include previous VC-backed startups (as founders, managers, and first engineers), established tech companies, private-equity and venture finance, banking, and running our own software companies. We live and work in a mix of countries and speak numerous languages; yet, we have a common interest in understanding our customers’ needs and delivering solutions that solve real problems. We provide a high degree of ownership and autonomy in an inclusive, supportive culture. We encourage a growth mindset and foster transparent, appreciative feedback, respect, and empathy. Read more about our values at https://bit.ly/brightflow-values, then join us in our mission to simplify our customers’ finances and help them succeed. Apply now. Salary: $117,000-$138,000 DOE. Range provided is for San Francisco, CA candidates. Salary ranges are geo-location dependent and may shift for candidates residing in other states and cities.",
+  "jobType": "Full Time",
+  "visaSponsorship": "Available",
+  "hiresRemotelyIn": "United States",
+  "skills": [],
+  "hiringContact": {
+    "name": "Susan Sutton",
+    "position": "Employee"
+  },
+  "company": {
+    "name": "Brightflow AI",
+    "description": "Simply automating companies' financial reports",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/7375200-6dd66a8baa52237f6b5db85dee69e48f-medium_jpg.jpg",
+    "size": "11-50 employees",
+    "url": "https://wellfound.com/company/brightflow-ai",
+    "badges": [
+      {
+        "text": "Actively Hiring"
+      }
+    ],
+    "website": "https://brightflow.ai",
+    "twitter": "https://twitter.com/brightflow_ai",
+    "linkedin": "https://www.linkedin.com/company/brightflow-ai",
+    "markets": [
+      "SaaS",
+      "Machine Learning",
+      "Finance Technology",
+      "Ecommerce"
+    ],
+    "totalRaised": "$115M"
+  }
+},
+{
+  "url": "https://wellfound.com/company/benchling/jobs/2461235-software-engineer-infrastructure-high-seniority",
+  "title": "Software Engineer, Infrastructure (High Seniority) at Benchling",
+  "location": "San Francisco",
+  "compensation": "$130k – $200k Wellfound Est.",
+  "published": "8 months ago",
+  "description": "ROLE OVERVIEW Benchling's data infrastructure and computation platform powers high-scale work at the world's leading biotech companies. Our infrastructure team works with application teams in a DevOps model to help them run and operate their services. We build service tooling so that engineers can build, release, maintain and monitor their code with minimal attention to the scaffolding. We maintain the overall architecture of Benchling and build new cross-service capabilities to support new teams and needs. We ensure the system is secure, performant, and reliable by default, and advise and assist application teams in doing the same for their areas of responsibility. In this role, you'll use your tried experience to design and build the systems underlying Benchling's services and applications. We are looking to you to lead and guide the development of core capabilities so that we won't need to rebuild them again years later. Your work will ensure the agility, performance, reliability, and security of Benchling. You will work alongside other infrastructure-focused peers and teams. You'll collaborate with former Stripe, Google, and Facebook engineers to build our platform's highly reliable yet constantly evolving backbone. RESPONSIBILITIES As a Senior Staff or Architect-level Engineer, you will work closely with our senior engineering and technical leaders to lead the most significant infrastructure projects at Benchling. This role will be hands-on; we expect you to design and implement systems and write code. Core areas of impact will include: Improving the reliability of Benchling systems at scale Shepherding Benchling into a multi-services world Defining and leading processes for site reliability that will be used across Engineering and Customer Experience Defining and leading processes for disaster recovery Defining and implementing our infrastructural security posture Designing release procedures for regulatory environments Mentoring other engineers and being a significant multiplier across the team QUALIFICATIONS 12+ years of experience as a DevOps engineer, Site Reliability Engineer, or Software Engineer building platform infrastructure. Have 5+ years of experience with building and operating SaaS products hosted in a public cloud Have shipped and maintained a horizontally scaled stateful service in a public cloud for a large set of customers Have led a large migration (e.g., from monolith to multi-services) or led the refactoring or replacement of a large hosted service Are deeply familiar with micro-services architecture and can design distributed systems using managed Kubernetes (e.g., AWS's EKS), a service mesh (e.g., istio), and a distributed secrets store (e.g., Hashicorp Vault) Have experience with deployment and configuration management frameworks such as Terraform, Ansible, or Chef; CI/CD systems such as BuildKite or Jenkins; and containers and container management systems such as Kubernetes or Amazon ECS. Write clear, well-tested code in Python, Java, Go, or Ruby. Have a bachelor's degree or equivalent in Computer Science, Computer Engineering, or a related field. PAST AND NEAR-FUTURE PROJECTS These are examples of projects we've worked on in the past or may work on in the near future - our projects are often changing, but this will hopefully give you an idea of the work to be done. Iterating on our tenancy model and architecture to build out resource isolation, data segmentation, and deployment models as we scale our customer base. Improving network performance for global users: this is an open-ended problem that needs to be solved as our user base becomes increasingly international. Observability: mature our monitoring, tracing, and alerting systems, so we have the right dashboards, notifications, and tools to quickly identify and resolve operational issues. Automating remediation of fault conditions to improve overall reliability and eliminate repetitive operational tasks. SALARY RANGE Benchling takes a market-based approach to pay. The candidate's starting pay will be determined based on job-related skills, experience, qualifications, interview performance, and work location. For this role the base salary range is $204,415 to $276,562. To help you determine which zone applies to your location, please see this resource. If you have questions regarding a specific location's zone designation, please contact a recruiter for additional information. Total Compensation includes the following: Competitive salary and equity 100% premiums covered for health, dental, and vision for employees Fertility healthcare and family-forming benefits Four months of fully paid parental leave 401(k) + Employer Match Commuter benefits Home office stipend Mental health benefits + Wellness stipend Learning and development stipend Generous and flexible vacation Company-wide Summer and Winter holiday shutdown Sabbaticals for 5-year and 10-year anniversaries #LI-MD1 #LI-Hybrid #BI-Hybrid",
+  "jobType": "Full Time",
+  "visaSponsorship": "Not Available",
+  "skills": [],
+  "hiringContact": {
+    "name": "Muhammad Djata",
+    "position": "Employee"
+  },
+  "company": {
+    "name": "Benchling",
+    "description": "Informatics platform to accelerate, measure, and forecast R&D from discovery through bioprocessing",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/112872-1510bdf3d085dbf0a71382613beacd74-medium_jpg.jpg",
+    "size": "201-500 employees",
+    "url": "https://wellfound.com/company/benchling",
+    "badges": [
+      {
+        "text": "Actively Hiring"
+      },
+      {
+        "text": "Highly rated"
+      },
+      {
+        "text": "Same investor as Airbnb"
+      },
+      {
+        "text": "Work / Life Balance"
+      },
+      {
+        "text": "Strong Leadership"
+      }
+    ],
+    "website": "http://www.benchling.com",
+    "twitter": "http://twitter.com/benchling",
+    "linkedin": "http://www.linkedin.com/company/3769390",
+    "markets": [
+      "Biotechnology",
+      "Life Sciences",
+      "Enterprise Software",
+      "Healthcare",
+      "Synthetic Biology",
+      "Bioinformatics",
+      "Software",
+      "Cloud Data Services",
+      "Renewable Energies"
+    ],
+    "locations": [
+      "Boston",
+      "San Francisco"
+    ],
+    "totalRaised": "$112.8M"
+  }
+},
+{
+  "url": "https://wellfound.com/company/pointcardhq/jobs/2374851-software-engineer",
+  "title": "Software Engineer at PointCard",
+  "location": "San Francisco",
+  "compensation": "$135k – $190k Wellfound Est.",
+  "published": "10 months ago",
+  "description": "We are creating the spending platform of the future — starting by building a modern charge card for young professionals that unlocks access to unique experiences. With our sleek design, cutting-edge tech, and world-class support, we’re changing how the new generation of professionals spend. We are backed by Peter Thiel’s Valar Ventures and Y Combinator — with over $50mm in funding. We’re a small team of experienced engineers from a number of high-performance teams at startups, Facebook, Shopify, and Apple. We run a low-process high output team with few barriers between your work and our customers' delight. If you are passionate about design, fintech, and building - we'd love to hear from you! We’re looking for a Software Engineer to join us working on our Charge Card platform. If this sounds interesting, please reach out! About the Role Point is looking for passionate software engineers to create the spending platform of the future. We seek engineers that are problem solvers, understand &amp; empathize with customer problems, and are mission driven. Every engineer at Point gets to work on mission critical systems that will move millions of dollars and directly impact lives of thousands of people, in a positive &amp; meaningful way. Who we're looking for Software Engineers at Point build the logic and systems that power the evolution of our financial platform, including new consumer-facing features, iteration and refinement of the core card product, and revolutionary new ways for consumers to pay. You'll work with us to build reliable systems to issue physical cards, process online and offline payments, guard against fraudulent transactions, categorize customers into high and low risk — all at Internet scale under demanding latency constraints. You will work closely with frontend counterparts to design and build supporting application logic that will power our core products and consumer experience. Our stack, front to back: React, REST, Java/Spring, ECS, PostgresSQL, AWS Requirements 5+ years experience developing client/server software in a dynamically-typed languages (Node, Ruby, Python), statically-typed languages (Java, C, C++), or other modern environments (Go, Rust, Elixir, etc). 3+ years experience developing cloud-based software on AWS, GCP, Azure, etc. Knowledge of data modeling in SQL and relational databases Good unit testing habits and a belief in code coverage Good collaboration skills &amp; the ability to work well with product, design, or other cross-functional teams Understanding of optimization &amp; performance profiling Bonus Points Fintech or cryptocurrency experience, especially at a venture-backed startup Experience using Java Spring Boot Framework Experience building out REST APIs Point Perks: Join a lean high-performance team in the early days to build a massive company. Competitive cash and equity comp (we believe in ownership). Full health benefits (medical, dental, and vision insurance). Unlimited vacation policy and paid company holidays. We shut down the office at the end of the year for a winter holiday.",
+  "jobType": "Full Time",
+  "visaSponsorship": "Not Available",
+  "skills": [],
+  "hiringContact": {
+    "name": "Kenan Pulak",
+    "position": "CTO • 5 years"
+  },
+  "company": {
+    "name": "PointCard",
+    "description": "Rewards. Spending. Access",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/6551786-9437f11547a1e8e5c68e25306f0ff7d8-medium_jpg.jpg",
+    "size": "51-200 employees",
+    "url": "https://wellfound.com/company/pointcardhq",
+    "badges": [
+      {
+        "text": "Same investor as Airbnb"
+      }
+    ],
+    "website": "https://point.app/",
+    "twitter": "https://twitter.com/pointcardhq",
+    "linkedin": "https://www.linkedin.com/company/getpoint/",
+    "markets": [
+      "Personal Finance",
+      "Finance Technology",
+      "Credit Cards",
+      "Fin Tech"
+    ],
+    "locations": [
+      "New York City",
+      "San Francisco"
+    ],
+    "totalRaised": "$57M"
+  }
+},
+{
+  "url": "https://wellfound.com/company/tiptopxyz/jobs/2498794-sr-backend-engineer",
+  "title": "Sr. Backend Engineer at TipTop",
+  "location": "Remote • Los Angeles • New York City • San Francisco",
+  "compensation": "$150k – $200k • 0.25% – 0.5%",
+  "published": "4 months ago",
+  "description": "We’re inviting experienced, generalist senior backend engineers to join the core TipTop team. We are looking for a self-starter who is a highly motivated and autonomous operator. Are you a seasoned engineer with previous experience in a fast paced, blue sky, startup environment who can solve problems from a blank slate? About us We’re building consumer and enterprise systems at the intersection of e-commerce, fintech, and logistics that will change our relationship with the things we purchase. We’re pre-market, envisioning an entirely new consumer finance paradigm and developing its first version. Note that we’re a distributed team collaborating remotely and meet up in person quarterly. Postmates founder banks $23 million for his new crypto startup TipTop | TechCrunch TipTop Funding Information | AngelList Talent You Will Solve complex challenges building software systems for products and verticals that don’t yet exist Develop scalable services that manage sensitive financial data and critical business logic Partner and collaborate closely with product designers, blockchain, infrastructure, and machine learning teams Contribute to the development of consumer facing experimentation and risk platforms Have the opportunity to build and lead a team You Have 5+ years of experience as a software engineer architecting, building, launching, and maintaining end-to-end services from whiteboard to production Proven experience leading and implementing complex payment systems and integrations in a scalable way Demonstrated ability turning business and product ideas into engineering solutions – you can go from zero to one Strong CS fundamentals and programming experience in Go and Python A desire to experiment, test assumptions, and challenge hypotheses rapidly The ability to see complex problems as solvable challenges Even Better Deep experience of backend services that are needed to run e-commerce platforms and move money on the web Passion for building, bias for action, and are excited by uncertainty You are autonomous and adaptable – own the work, move fast, react quickly Interest and ability to pick up new technologies quickly Curiosity in evolving ML platforms and technologies like ChatGPT Tech You'll Use Go Python SQL/Postgres GCP Docker Kubernetes How To Apply Send us an email with a copy of your resume or LinkedIn, your GitHub, and any projects you think we should see to [email protected]",
+  "jobType": "Full Time",
+  "visaSponsorship": "Not Available",
+  "hiresRemotelyIn": "United States",
+  "remoteWorkPolicy": "Onsite or remote",
+  "experience": "5+ years",
+  "skills": [
+    "Python",
+    "Go (Golang)"
+  ],
+  "hiringContact": {
+    "name": "Gregory B Carlson",
+    "position": "Product"
+  },
+  "company": {
+    "name": "TipTop",
+    "description": "Stealth",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/8889400-27042869faf5be6ac965cf1de99d8926-medium_jpg.jpg",
+    "size": "11-50 employees",
+    "url": "https://wellfound.com/company/tiptopxyz",
+    "badges": [
+      {
+        "text": "Actively Hiring"
+      }
+    ],
+    "website": "https://www.tiptop.xyz",
+    "twitter": "https://twitter.com/tiptopxyz",
+    "linkedin": "https://www.linkedin.com/company/tiptopxyz",
+    "markets": [
+      "Financial Services",
+      "E-Commerce",
+      "Logistics",
+      "Finance Technology"
+    ],
+    "locations": [
+      "Los Angeles",
+      "New York City",
+      "Seattle"
+    ],
+    "totalRaised": "$23.2M"
+  }
+},
+{
+  "url": "https://wellfound.com/company/highnoteplatform/jobs/2659078-senior-software-engineer-service-infrastructure",
+  "title": "Senior Software Engineer, Service Infrastructure  at Highnote",
+  "location": "San Francisco",
+  "compensation": "",
+  "published": "2 months ago",
+  "description": "About Highnote Founded in 2020 by a team of leaders from Braintree, PayPal, and Lending Club, Highnote is an all in one card issuer processor and program management platform. We give digital-first organizations the flexibility to easily issue and process payment cards that accelerate business growth and profitability. We’ve raised $104M+ and grown our team to 100+ employees. Headquartered in San Francisco, we’ve managed to build one of the most advanced payments teams in the industry, with team members in 22+ US states. Operating through our core values of customer obsession, executional excellence, intentional inclusion, we’re helping businesses grow for the future by creating the payment products demanded by tomorrow, with the ability to solve for use cases that don’t exist yet. We are fast-moving, hands-on, and strongly believe everyone deserves a seat at the table. We believe we’re unlocking incredible opportunities that can change the future of payments, as long as we have the right people to make it happen. The Opportunity Our Service Infrastructure Team is responsible for building common application services and libraries, supporting service tooling needs and helping ensure the reliability, scalability and quality of the services. What you’ll be doing Building secure, scalable, and cost effective platform that enables product engineering teams at Highnote to iterate fast Providing libraries, services and knowledge for other product engineering teams to leverage when building services Writing high quality and robustly tested code, mostly in Java Working closely with product engineering teams to evolve the platform What we are looking for 6+ years experience building high volume microservices A history of writing scalable, performant and maintainable code. We strongly believe languages can be learned and care more about your engineering skill over frameworks Experience building out common platform libraries such as logging, configuration, encryption, async etc. Experience with Java &gt;= 11, Spring Framework, and gRPC Bonus skills Experience with cloud platforms such as GCP or AWS Experience with Docker, Kubernetes, and Istio Experience with distributed and event-based systems Experience with security engineering A background in the fintech space Why Highnote? We’re a startup that allows for our employees to truly build from the ground up and impact every layer of our organization. We’re a team of payments obsessed individuals. While some of us come from the fintech world, some of us don’t. We value the varied backgrounds and the diverse perspectives of our employees. We’re small on hierarchy and big on growth. We’re a flat organization that allows everyone to have direct exposure to our leadership team. We are looking for builders who thrive in ambiguity. We’re backed by Oak HC/FT, Costanoa Ventures, and XYZ Ventures. Angel Investors include Bill Ready (CEO at Pinterest) and Renaud Laplanche (Co-Founder &amp; CEO of Upgrade). Highnote benefits Flexible Paid Time Off 100% healthcare coverage + 75% coverage for dependents 401k program Up to 16 weeks off for Maternity leave + up to 6 weeks of Paternity leave Equity in Highnote Stipend to build out your home office; internet and phone reimbursement At Highnote we have built a total rewards philosophy that includes fair, equitable, geo-based compensation that is performance and potential based. Our compensation packages are competitive based on robust market research and are a combination of a cash salary, equity, and benefits. In compliance with the Equal Pay for Equal Work Act, the annual salary range for applicants is $170,000-$235,000. Please note that positions located in San Francisco are hybrid and include core working days of Tuesday, Wednesday, Thursday in office. Highnote is a diverse and inclusive company committed to growing a diverse and inclusive team. We invite people from all backgrounds and identities to apply. We do not discriminate based on gender identity or expression, sexual orientation, race, religion, age, national origin, citizenship, disability, pregnancy status, veteran status, or any other characteristics protected by US federal state or local laws, or the laws of the country or jurisdiction where you work. Additionally, we encourage everyone to share which pronouns you wish for us to use when addressing you (i.e.: she/her, he/him, they/them, etc).",
+  "jobType": "Full Time",
+  "visaSponsorship": "Not Available",
+  "skills": [],
+  "hiringContact": {
+    "name": "Katie Hamm",
+    "position": "Employee"
+  },
+  "company": {
+    "name": "Highnote",
+    "description": "Highnote is the world's most modern card issuance platform",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/8532712-3f5efa3c0f7dee4d3b1011f60648fcc2-medium_jpg.jpg",
+    "size": "51-200 employees",
+    "url": "https://wellfound.com/company/highnoteplatform",
+    "badges": [
+      {
+        "text": "Actively Hiring"
+      }
+    ],
+    "website": "https://highnoteplatform.com/",
+    "twitter": "https://twitter.com/highnotesocial",
+    "linkedin": "https://www.linkedin.com/company/highnoteplatform/",
+    "markets": [
+      "Finance Technology"
+    ],
+    "totalRaised": "$54.5M"
+  }
+},
+{
+  "url": "https://wellfound.com/company/farmwise/jobs/653287-senior-software-engineer",
+  "title": "Senior Software Engineer at FarmWise",
+  "location": "San Francisco",
+  "compensation": "$120k – $165k • 0.1% – 0.13%",
+  "published": "3 years ago",
+  "description": "At FarmWise, we harness the power of AI to find solutions to combat food production challenges, and help growers thrive in this new farming era. We work hand in hand with growers to understand their constraints, address their priorities, and build products that are changing their lives for good. Join us!ABOUT THE ROLEAt FarmWise we value solid Software Engineering experience because having a big impact on our product doesn't require a background in Robotics. You will design and build our robotic software infrastructure in addition to novel robotic capabilities. You will work on a distributed architecture with firm real-time constraints that enable our devices to reliably act on each plant with precision and speed.ABOUT THE WORK- Build and deploy features for monitoring autonomous performance, localization, and mapping, robotic controls, and actuation.- Contribute to our best practices' software engineering organization: expand our test infrastructure, validation methods and improve real-time performance.- Take part in and sometimes lead the feature development and deployment.ABOUT YOU- 5+ yrs. writing robust, production-ready, well-written code.- Strong communicator with a desire to work in a collaborative, people-first company culture.- Ability to identify and correct shortcomings in software design.- Experience in production software environments, preferably in C/C++.- Proficient in software development best practices: code reviews, version control, and testing (unit/smoke/regression).- Experience with a POSIX based operating system such as Linux, OS-X or ROS.- Willingness to learn and expand your skills.- Willingness to work in a codebase that leverages Linear Algebra, 3D Geometry, and Machine Learning.COMPANY PERKS- Competitive salary and equity- Employer-sponsored health, dental and vision insurance — for you, your spouse and children- 401(k) with employer matching- Paid holidays and flexible PTO- Free catered lunch and plenty of snacksCome work on technology that will change food production forever!",
+  "jobType": "Full Time",
+  "visaSponsorship": "Not Available",
+  "experience": "6+ years",
+  "skills": [
+    "Python",
+    "C++",
+    "Distributed Systems",
+    "Object Oriented Programming"
+  ],
+  "hiringContact": {
+    "name": "Justine Ramos",
+    "position": "Head, HR & Recruiting • 4 years"
+  },
+  "company": {
+    "name": "FarmWise",
+    "description": "Providing farmers with sustainable solutions to feed a growing world",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/1899868-0aa131f7e78850d1be2e198926ba5da9-medium_jpg.jpg",
+    "size": "11-50 employees",
+    "url": "https://wellfound.com/company/farmwise",
+    "badges": [
+      {
+        "text": "Actively Hiring"
+      },
+      {
+        "text": "Highly rated"
+      },
+      {
+        "text": "Work / Life Balance"
+      },
+      {
+        "text": "Strong Leadership"
+      }
+    ],
+    "website": "http://farmwise.io/",
+    "twitter": "https://twitter.com/farmwiselabs",
+    "linkedin": "https://www.linkedin.com/company/farmwise/",
+    "markets": [
+      "Robotics",
+      "Artificial Intelligence",
+      "Agriculture",
+      "Software",
+      "Farming",
+      "Food Tech"
+    ],
+    "totalRaised": "$65.2M"
+  }
+},
+{
+  "url": "https://wellfound.com/company/voxel-8/jobs/1859895-senior-software-engineer-full-stack",
+  "title": "Senior Software Engineer - Full Stack at Voxel",
+  "location": "San Francisco",
+  "compensation": "$150k – $220k • 0.1% – 0.3%",
+  "published": "1 month ago",
+  "description": "Who Are We Voxel is building the future of Computer Vision and Machine Learning for operations, risk, and safety. We use computer vision and AI to enable existing security cameras to automatically detect hazards and high-risk activities, keep people safe and drive operational efficiencies. Our technology addresses the key cost drivers for workers’ compensation, general liability, and property damage, which cost employers over $500 billion annually. We’re looking for a senior software engineer to help us build out and scale our product to thousands of facilities. This role will collaborate with many teams across the company to design and deliver high quality, high impact features to our users. Successful full stack engineers typically have broad experience across our technology stack. They may also be an expert in one or more areas, but this isn't a requirement. What You'll Do Collaborate with engineering and non-engineering teams across the company to better understand our users and how our technology can meet their evolving needs Lead engineering projects from scoping to implementation to maintenance Research, propose, and design features and infrastructure for our user-facing products Implement backend APIs (Python, Django, GraphQL/REST, AWS) Implement frontend components (TypeScript, React) Perform data modeling and data management (PostgreSQL, MongoDB) Monitor, measure, and improve product quality using a data-driven approach Utilize and contribute to software engineering best practices (Git, CI/CD, observability, test automation, etc.) Author and contribute to technical documents, such as design documents or system documentation Minimum Qualifications Bachelor's degree in Computer Science or a related field 4+ years of experience developing full stack solutions at scale Proven track record of leading technical projects and delivering solutions Solid engineering and coding skills Solid understanding of web technology fundamentals (HTML, CSS, JavaScript, TypeScript, web browsers, web servers, HTTP, etc.) Familiar with popular frontend frameworks (React, React Native, etc.) Familiar with popular backend frameworks (Django, Flask, Express, etc.) Familiar with software testing strategies Preferred Qualifications Familiar with cloud platforms (GCP, AWS) and cloud native architecture Familiar with container technologies (Docker, Kubernetes, etc.) Familiar with video streaming technologies (webRTC, RTSP, MJPEG, etc.) Familiar with GraphQL (clients, schema design, etc.) Familiar with distributed systems, data stores, data modeling, indexing and associated trade-offs Demonstrated design and UX sensibilities",
+  "jobType": "Full Time",
+  "visaSponsorship": "Available",
+  "remoteWorkPolicy": "In office - WFH flexibility",
+  "experience": "2+ years",
+  "skills": [
+    "Python",
+    "React.js"
+  ],
+  "hiringContact": {
+    "name": "Troy Carlson",
+    "position": "Founder"
+  },
+  "company": {
+    "name": "Voxel",
+    "description": "Power your existing security cameras with A.I. to transform workplace safety & operations",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/8246969-1e8b42d4318f376c68c9f8b776c1d568-medium_jpg.jpg",
+    "size": "11-50 employees",
+    "url": "https://wellfound.com/company/voxel-8",
+    "badges": [
+      {
+        "text": "Actively Hiring"
+      },
+      {
+        "text": "Growing fast"
+      }
+    ],
+    "website": "https://voxelai.com",
+    "linkedin": "https://www.linkedin.com/company/69541771",
+    "markets": [
+      "Industrial",
+      "Computer Vision",
+      "Risk Management",
+      "Insurtech"
+    ],
+    "totalRaised": "$18M"
+  }
+},
+{
+  "url": "https://wellfound.com/company/voxel-8/jobs/2259207-senior-software-engineer-backend",
+  "title": "Senior Software Engineer - Backend at Voxel",
+  "location": "San Francisco",
+  "compensation": "$150k – $220k • 0.1% – 0.5%",
+  "published": "1 month ago",
+  "description": "Who Are We Voxel is building the future of Computer Vision and Machine Learning for operations, risk, and safety. We use computer vision and AI to enable existing security cameras to automatically detect hazards and high-risk activities, keep people safe and drive operational efficiencies. Our technology addresses the key cost drivers for workers’ compensation, general liability, and property damage, which cost employers over $500 billion annually. We’re looking for senior backend engineers to help us build out and scale our product to thousands of facilities. This role will collaborate with many teams across the company to design and deliver robust, high performance, and scalable backend services and APIs. Successful candidates have experience designing, implementing, and deploying production quality services in data-intensive environments. They also have a proven track record of leading customer-centric technical projects and delivering customer value. Minimum Qualifications Bachelor's degree in Computer Science or a related field 5+ years of experience developing data-intensive backend systems at scale Proven track record of customer-centric technical leadership and delivering customer value Solid engineering and coding skills (preferably one of Node/TypeScript, Python, Go) Production experience with cloud platforms (GCP, AWS) and cloud native architecture Production experience with container technologies (Docker, Kubernetes, etc.) Production experience with distributed systems, data stores, data modeling, indexing and associated trade-offs Production experience with software testing strategies Bonus Qualifications 8+ years of experience developing data-intensive backend systems at scale Experience with time series data Experience with video streaming technologies (RTSP, ffmpeg, etc.) Experience with GraphQL (clients, schema design, etc.) Experience with popular backend web frameworks (Django, Flask, Express, etc.) Responsibilities Collaborate with engineering and non-engineering teams across the company to better understand our users and how our technology can meet their evolving needs Lead engineering projects from scoping to implementation to maintenance Research, propose, and design backend services and APIs based on the needs of customers and internal systems Implement backend services and APIs (Node, Python, GraphQL/REST, AWS) Perform data modeling and data management (PostgreSQL, MongoDB, TimescaleDB) Monitor, measure, and improve system quality using a data-driven approach Utilize and contribute to software engineering best practices (Git, CI/CD, observability, test automation, etc.) Author and contribute to technical documents, such as design documents or system documentation",
+  "jobType": "Full Time",
+  "visaSponsorship": "Not Available",
+  "remoteWorkPolicy": "In office - WFH flexibility",
+  "experience": "4+ years",
+  "skills": [
+    "Python",
+    "Django",
+    "React.js"
+  ],
+  "hiringContact": {
+    "name": "Troy Carlson",
+    "position": "Founder"
+  },
+  "company": {
+    "name": "Voxel",
+    "description": "Power your existing security cameras with A.I. to transform workplace safety & operations",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/8246969-1e8b42d4318f376c68c9f8b776c1d568-medium_jpg.jpg",
+    "size": "11-50 employees",
+    "url": "https://wellfound.com/company/voxel-8",
+    "badges": [
+      {
+        "text": "Actively Hiring"
+      },
+      {
+        "text": "Growing fast"
+      }
+    ],
+    "website": "https://voxelai.com",
+    "linkedin": "https://www.linkedin.com/company/69541771",
+    "markets": [
+      "Industrial",
+      "Computer Vision",
+      "Risk Management",
+      "Insurtech"
+    ],
+    "totalRaised": "$18M"
+  }
+},
+{
+  "url": "https://wellfound.com/company/nudgetext/jobs/2424663-senior-software-engineer",
+  "title": "Senior Software Engineer at The Nudge",
+  "location": "San Francisco",
+  "compensation": "$150k – $200k • 0.2% – 0.5%",
+  "published": "5 months ago",
+  "description": "The Nudge The Nudge is building the social platform that empowers people to get off their 🍑s and have fun in the real world. Nearly half of female Millennials + Gen Z use The Nudge in our main cities, and we’re the #1 influence on how they spend their free time. We're a Series A startup, well-funded by top-tier consumer VCs, including Lightspeed Venture Partners &amp; Goodwater Capital. We’re kicking off an exciting new chapter for the company: An aggressive product roadmap to become more socially-driven, and plans to scale across the globe. Our mission is to become the one-stop-shop for planning your free time, because it’s too damn easy to be lazy now and life is short! The Nudge team lives the mission, and we come from world class tech (Apple, Google) and consumer (Glossier, The Infatuation) backgrounds. Our values are things like “make shit happen” and “treat Nudgers like royalty.” Sound like something worth dedicating your precious time to? Then we can’t wait to meet. The role We're looking for smart, motivated generalists who can contribute across our stack and who like to ship things quickly. We have a website, an iOS app, an Android app, and some complex backend infrastructure. We have a lot to build in every part of our stack. What you’ll own Write and ship new application features on all our platforms Design and build the APIs and backend infrastructure behind our apps Work closely with other engineers, designers, and company leadership Ship quickly — we deploy multiple times per day and value rapid iteration with users Wear whatever hats needed to make the business succeed — we're a small team Who you are 5+ years of experience building complex applications for the web or mobile, including both frontend and backend development Demonstrated ability to design new data structures, algorithms, and protocols A high attention to detail Good technical communications skills, both verbal and written A willingness to work hard as part of a team and learn new things quickly An owner mentality - there's a lot to do, and we need folks who are excited to take the lead on projects Bonus: Experience with Javascript, React, and React Native Bonus: Experience with JVM languages, PostgreSQL, and AWS We’re looking for people who want to work their 🍑off with an inspired team, move incredibly fast, and put their name on this company. Nudge HQ and our Nudgers are a diverse family. We encourage applications regardless of color, religion, gender, sexual orientation, gender identity or expression, age, nationality, marital status, disability, and veteran status. What we offer • Highly competitive salary • Generous equity grants • 401k • Medical and dental • Company-sponsored budget for having fun 💳 • Subsidized fitness memberships 🧘‍♀️ • Minimum 20 days vacation ⛱ • Annual team offsites 🎉 • A shiny new 💻 • A paid co-working space (if role not in SF) 🏠",
+  "jobType": "Full Time",
+  "visaSponsorship": "Not Available",
+  "remoteWorkPolicy": "In office",
+  "experience": "5+ years",
+  "skills": [
+    "Java",
+    "Javascript",
+    "Android",
+    "iOS Development",
+    "Scala",
+    "TypeScript",
+    "React.js",
+    "React Native"
+  ],
+  "hiringContact": {
+    "name": "Kevin Avery",
+    "position": "CTO"
+  },
+  "company": {
+    "name": "The Nudge",
+    "description": "The locals-only social network that empowers people to get off their butts and have fun IRL",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/635727-0e238c23dace53dd81f215e800c0305c-medium_jpg.jpg",
+    "size": "11-50 employees",
+    "url": "https://wellfound.com/company/nudgetext",
+    "badges": [],
+    "website": "https://www.notion.so/nudgetext/what-is-the-nudge-f71373d164ab4fc2b10ca59b66296742",
+    "linkedin": "https://www.linkedin.com/company/nudgetext/",
+    "markets": [
+      "Social Media Platforms",
+      "Subscription Businesses",
+      "Lifestyle",
+      "Female Living And Lifestyle"
+    ],
+    "totalRaised": "$13.5M"
+  }
+},
+{
+  "url": "https://wellfound.com/company/ceevra/jobs/2432140-mlops-software-engineer",
+  "title": "MLOps Software Engineer at Ceevra",
+  "location": "San Francisco",
+  "compensation": "$110k – $160k • 0.3% – 0.5%",
+  "published": "1 month ago",
+  "description": "Company Summary: Ceevra is a San Francisco-based, medical software company that helps surgeons (mainly cancer surgeons) plan and operate better through advanced imaging. We take standard CT scans and MRIs and transform them into brilliant, interactive 3D digital models which are viewed by surgeons from their mobile phones, tablets, or through robotic surgery platforms. We help surgeons determine the best type of operation to perform and the best way to perform it – resulting in faster operations, reduced hospital stay, saved organs, and reduced cancer recurrence. A quick explainer video: vimeo.com/441446067 Ceevra’s product is FDA-cleared and has been the centerpiece of two successful, multi-center, randomized clinical trials. Our customers include two of the ten largest health systems in the country, and several leading academic medical centers. We are privately held, and our team is highly cohesive and collaborative. Ceevra is rapidly expanding our engineering team. We offer candidates the unique opportunity to work on cutting edge technology and a product that helps improve and prolong the lives of cancer patients, while doing so at a small and growing startup that serves some of the country’s most innovative medical centers. Position Summary and Responsibilities: This position is a software engineering position that is focused on applying MLOps techniques to bring ML models into production and manage pipelines of data from training to verification to production inference. It includes aspects of data engineering, ML engineering, and DevOps (including continuous integration and test automation) to translate ML development and training efforts to real-world production use. It also includes responsibilities related to test automation for Ceevra’s back-end, and applications development, both internal and user-facing. This position reports to Ceevra’s VP of Engineering. Local candidates are preferred, although we’ll consider highly qualified remote candidates with at least two years of on-the-job experience. If local, we envision 3 days per week in our SF offices (or more if preferred by the candidate). Responsibilities Develop systems for managing ML models and data flow from development to production, including training, verification, and deployment Work with the engineering team on strategies for the automated verification of ML models Design and implement data engineering strategies for Ceevra’s applications Design and implement internal analysis tools for data verification and ML model monitoring Develop strategies for and frameworks to implement test automation (unit-level, component-level, and system/end-to-end) and test metrics for some non-ML software. Develop build and deployment automation systems Requirements Strong ability to code in Python Experience and aptitude working with ML and and ML frameworks such as PyTorch or TensorFlow is a plus Experience deploying and managing ML models in a production environment Experience with DevOps tools and configuration management systems Experience in data engineering is a plus Experience with django is a plus Experience automating tests at multiple levels (unit, integration/component, system) is a plus Experience with medical device development (ISO 13485, FDA QSR, IEC 62304) or medical imaging is a plus BS in Computer Science, Mathematics, engineering, or relevant scientific field is required",
+  "jobType": "Full Time",
+  "visaSponsorship": "Not Available",
+  "remoteWorkPolicy": "In office - WFH flexibility",
+  "experience": "2+ years",
+  "skills": [
+    "Python",
+    "Django"
+  ],
+  "hiringContact": {
+    "name": "Ken Koster",
+    "position": "CTO"
+  },
+  "company": {
+    "name": "Ceevra",
+    "description": "Advanced visualization for surgeons",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/3069817-af2864906d7056b53556da7d36f502dc-medium_jpg.jpg",
+    "size": "11-50 employees",
+    "url": "https://wellfound.com/company/ceevra",
+    "badges": [],
+    "website": "http://ceevra.com",
+    "twitter": "http://twitter.com/@ceevrahealth",
+    "linkedin": "https://www.linkedin.com/company/ceevra",
+    "markets": [
+      "SaaS",
+      "Medical Devices",
+      "Medical Technologies",
+      "Artificial Intelligence / Machine Learning",
+      "B2B · SaaS · Mobile · Artificial Intelligence / Machine Learning"
+    ],
+    "totalRaised": "$12.4M"
+  }
+},
+{
+  "url": "https://wellfound.com/company/magic-ai-2/jobs/2725592-software-engineer-llm-dataset",
+  "title": "",
+  "location": "San Francisco",
+  "compensation": "",
+  "published": "4 days ago",
+  "description": "",
+  "skills": [],
+  "hiringContact": {
+    "name": "",
+    "position": ""
+  },
+  "company": {
+    "name": "Magic AI",
+    "description": "Magic is a public benefit corp dedicated to building and safely deploying aligned, superhuman AGI",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/9614338-cc486d0381c148bec632a58e883899dc-medium_jpg.jpg",
+    "size": "11-50 employees",
+    "url": "https://wellfound.com/company/magic-ai-2",
+    "badges": [
+      {
+        "text": "Actively Hiring"
+      },
+      {
+        "text": "Growing fast"
+      }
+    ],
+    "markets": []
+  }
+},
+{
+  "url": "https://wellfound.com/company/tiptopxyz/jobs/2443744-sr-backend-engineer-payments",
+  "title": "Sr. Backend Engineer (Payments) at TipTop",
+  "location": "Remote • Los Angeles • New York City • San Francisco",
+  "compensation": "$150k – $200k • 0.25% – 0.5%",
+  "published": "4 weeks ago",
+  "description": "We’re inviting experienced, generalist senior backend engineers to join the core TipTop team. We are looking for a self-starter who is a highly motivated and autonomous operator. Are you a seasoned engineer with previous experience in a fast paced, blue sky, startup environment who can solve problems from a blank slate? About us We’re building consumer and enterprise systems at the intersection of e-commerce, fintech, and logistics that will change our relationship with the things we purchase. We’re pre-market, envisioning an entirely new consumer finance paradigm and developing its first version. Note that we’re a distributed team collaborating remotely and meet up in person quarterly. Postmates founder banks $23 million for his new crypto startup TipTop | TechCrunch (we're not necessarily a crypto startup 😉) TipTop Funding Information | AngelList Talent You Will Solve complex challenges building software systems for products and verticals that don’t yet exist Develop scalable services that manage sensitive financial data and critical business logic Scope and build new payment and e-commerce integrations with autonomy Partner and collaborate closely with product designers, blockchain, infrastructure, and machine learning teams Contribute to the development of consumer facing experimentation &amp; risk platforms Have the opportunity to build and lead a team You Have 5+ years of experience as a software engineer architecting, building, launching, and maintaining end-to-end services from whiteboard to production Proven experience leading and implementing complex payment systems and integrations in a scalable way Deep understanding of charges, payouts, chargebacks, declines, refunds, and checkout integrations Demonstrated ability turning business and product ideas into engineering solutions – you can go from zero to one Strong CS fundamentals and programming experience in Go and Python A desire to experiment, test assumptions, and challenge hypotheses rapidly The ability to see complex problems as solvable challenges Even Better Lead contributor to previous implementations of Stripe, Square, Plaid, Affirm, or similar Passion for building, bias for action, and are excited by uncertainty You are autonomous &amp; adaptable – own the work, move fast, react quickly Interest and ability to pick up new technologies quickly Curiosity in evolving ML platforms and technologies like ChatGPT Tech You'll Use Go Python SQL/Postgres GCP Docker Kubernetes How To Apply Send us an email with a copy of your resume or LinkedIn, your GitHub, and any projects you think we should see to [email protected]",
+  "jobType": "Full Time",
+  "visaSponsorship": "Not Available",
+  "hiresRemotelyIn": "United States",
+  "remoteWorkPolicy": "Onsite or remote",
+  "experience": "5+ years",
+  "skills": [
+    "Python",
+    "Go (Golang)"
+  ],
+  "hiringContact": {
+    "name": "Gregory B Carlson",
+    "position": "Product"
+  },
+  "company": {
+    "name": "TipTop",
+    "description": "Stealth",
+    "logoUrl": "https://wellfound.com/cdn-cgi/image/width=92,height=92,fit=scale-down,gravity=0.5x0.5,quality=90,format=auto/https://photos.wellfound.com/startups/i/8889400-27042869faf5be6ac965cf1de99d8926-medium_jpg.jpg",
+    "size": "11-50 employees",
+    "url": "https://wellfound.com/company/tiptopxyz",
+    "badges": [
+      {
+        "text": "Actively Hiring"
+      }
+    ],
+    "website": "https://www.tiptop.xyz",
+    "twitter": "https://twitter.com/tiptopxyz",
+    "linkedin": "https://www.linkedin.com/company/tiptopxyz",
+    "markets": [
+      "Financial Services",
+      "E-Commerce",
+      "Logistics",
+      "Finance Technology"
+    ],
+    "locations": [
+      "Los Angeles",
+      "New York City",
+      "Seattle"
+    ],
+    "totalRaised": "$23.2M"
+  }
+}]

@@ -30,6 +30,24 @@ export interface Database {
         }
         Relationships: []
       }
+      jobs: {
+        Row: {
+          created_at: string | null
+          data: Json
+          id: number
+        }
+        Insert: {
+          created_at?: string | null
+          data: Json
+          id?: number
+        }
+        Update: {
+          created_at?: string | null
+          data?: Json
+          id?: number
+        }
+        Relationships: []
+      }
       repository: {
         Row: {
           created_at: string | null
