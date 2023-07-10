@@ -1,18 +1,24 @@
 import { create } from "zustand";
-import produce from "immer";
-import { devtools } from "zustand/middleware";
 
 interface StoreState {
-  address: string;
-  setAddress: (address: string) => void;
+  socials: {
+    github: string;
+    linkedin: string;
+  };
+  setSocials: (github: string, linkedin: string) => void;
 }
 
 const useUserStore = create<StoreState>((set) => ({
-  address: "",
-  setAddress: (address) =>
+  socials: {
+    github: "",
+    linkedin: "",
+  },
+  setSocials: (github, linkedin) =>
     set((state) => ({
-      ...state,
-      address,
+      socials: {
+        github,
+        linkedin,
+      },
     })),
 }));
 

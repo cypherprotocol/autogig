@@ -1,5 +1,7 @@
 "use client";
 
+import { Upload } from "@/components/upload";
+import useUserStore from "@/state/user/useUserStore";
 import { motion } from "framer-motion";
 import { Construction, FileText, Mailbox } from "lucide-react";
 import { signIn, useSession } from "next-auth/react";
@@ -9,6 +11,7 @@ export default function Home() {
   const [dots, setDots] = useState(".");
   const { data: session, status } = useSession();
   const loading = status === "loading";
+  const socials = useUserStore((state) => state.socials);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -20,7 +23,7 @@ export default function Home() {
     return () => clearInterval(intervalId); // cleanup on unmount
   }, []);
 
-  const [stage, setStage] = useState(0);
+  const [stage, setStage] = useState(2);
 
   const maxStage = 5;
 
@@ -32,8 +35,8 @@ export default function Home() {
           "/api/gig?" +
             new URLSearchParams({
               twitter: session?.user?.name ?? "",
-              github: "zksoju",
-              linkedin: "zksoju",
+              github: socials.github,
+              linkedin: socials.linkedin,
             })
         ).then(() => {
           setStage(maxStage);
@@ -52,7 +55,7 @@ export default function Home() {
 
   return (
     <div>
-      <div className="relative z-10 flex h-screen w-full flex-col items-center justify-center overflow-hidden">
+      <div className="relative z-10 flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-[#00b1e9]">
         {(() => {
           switch (stage) {
             case 0:
@@ -112,23 +115,7 @@ export default function Home() {
               );
             case 3:
               return (
-                <>
-                  <p className="mb-8 text-6xl font-medium text-white">
-                    Upload your resume
-                  </p>
-                  <motion.div
-                    whileHover={{
-                      scale: 1.05, // increased scale for a more pronounced effect
-                    }}
-                    whileTap={{
-                      scale: 1, // increased scale for a more pronounced effect
-                    }}
-                    onClick={() => setStage(2)}
-                    className="clickable flex h-[24rem] w-[24rem] cursor-pointer flex-col items-center justify-center rounded-full p-4 shadow-zen transition hover:shadow-zenny"
-                  >
-                    <p className="text-4xl font-medium text-white">Upload</p>
-                  </motion.div>
-                </>
+                <Upload/>
               );
 
             case 4:
