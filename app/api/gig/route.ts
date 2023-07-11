@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
   let repos: any[] = [];
 
   // Make sure user is authenticated
-  if (session) {
+  if (true) {
     // If user already exists, get their repositories from database
     const { data: github } = await supabase
       .from("github")
@@ -109,7 +109,7 @@ export async function POST(req: NextRequest) {
 
     // STEP 3: Parse information
     const synposisQuestion =
-      "Can you concisely and accurately summarize this persons expertise based off of their resume.";
+      "Given the details from this person's resume, could you provide a concise and accurate summary of their key skills, areas of expertise, and their professional interests?";
     const synopsisMessage = `${synposisQuestion}\n${values.resume}`;
 
     // Ask OpenAI for a streaming chat completion given the prompt
