@@ -9,14 +9,15 @@ const gigSchema = z.object({
   twitter: z.string().optional(),
   github: z.string().optional(),
   linkedin: z.string().optional(),
+  resume: z.string().optional(),
 });
 
-export async function GET(req: NextRequest) {
-  const url = new URL(req.url);
-  const values = gigSchema.parse(Object.fromEntries(url.searchParams));
+export async function POST(req: NextRequest) {
+  const json = await req.json();
+  const values = gigSchema.parse(json);
 
   const session = await getServerSession();
-  console.log(session);
+  console.log(values);
   const token = await getToken({ req, secret: process.env.SECRET });
 
   // Make sure user is authenticated

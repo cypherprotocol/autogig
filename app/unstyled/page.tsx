@@ -15,6 +15,7 @@ export default function Home() {
   const socials = useUserStore((state) => state.socials);
   const stage = useUserStore((state) => state.stage);
   const setStage = useUserStore((state) => state.setStage);
+  const resume = useUserStore((state) => state.resume);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -30,14 +31,15 @@ export default function Home() {
     if (stage === GigStages.FindJob) {
       console.log(session);
       (async function findGig() {
-        const res = await fetch(
-          "/api/gig?" +
-            new URLSearchParams({
-              twitter: session?.user?.name ?? "",
-              github: socials.github,
-              linkedin: socials.linkedin,
-            })
-        ).then(() => {
+        const res = await fetch("/api/gig?", {
+          method: "POST",
+          body: JSON.stringify({
+            twitter: session?.user?.name ?? "",
+            github: socials.github,
+            linkedin: socials.linkedin,
+            resume: resume,
+          }),
+        }).then(() => {
           setStage(GigStages.Message);
           console.log("done");
         });

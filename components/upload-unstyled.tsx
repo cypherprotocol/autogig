@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
-import useUserStore from "@/state/user/useUserStore";
-import { useChat } from "ai/react";
+import useUserStore, { GigStages } from "@/state/user/useUserStore";
 import React, { useRef } from "react";
 
 export function UploadUnstyled() {
-  const { messages, input, setInput, handleSubmit } = useChat();
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const setSocials = useUserStore((state) => state.setSocials);
+  const setResume = useUserStore((state) => state.setResume);
+  const setStage = useUserStore((state) => state.setStage);
 
   const handleFileClick = () => {
     fileInputRef.current?.click();
@@ -44,12 +44,10 @@ export function UploadUnstyled() {
           if (githubUsername && linkedinUsername) {
             setSocials(githubUsername, linkedinUsername);
           }
-        }
 
-        const question =
-          "Can you concisely and accurately summarize this persons expertise based off of their resume.";
-        const message = `${question}\n${content}`;
-        setInput(message);
+          setResume(content);
+          setStage(GigStages.FindJob);
+        }
       };
 
       reader.readAsText(file);
@@ -58,32 +56,19 @@ export function UploadUnstyled() {
 
   return (
     <>
-      <form
-        onSubmit={handleSubmit}
-        className="flex flex-col items-center justify-center"
-      >
-        <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
-          Upload your resume
-        </h3>
-        <input
-          type="file"
-          style={{ display: "none" }}
-          onChange={handleFileUpload}
-          ref={fileInputRef}
-          accept=".txt, .csv"
-        />
-        <Button onClick={handleFileClick} className="mb-2">
-          Upload
-        </Button>
-        <Button type="submit" variant={"secondary"}>
-          Submit
-        </Button>
-      </form>
-      <blockquote className="mt-6 border-l-2 pl-6 italic">
-        {messages.map(
-          (m) => m.role !== "user" && <div key={m.id}>{m.content}</div>
-        )}
-      </blockquote>
+      <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
+        Upload your resume
+      </h3>
+      <input
+        type="file"
+        style={{ display: "none" }}
+        onChange={handleFileUpload}
+        ref={fileInputRef}
+        accept=".txt, .csv"
+      />
+      <Button onClick={handleFileClick} className="mb-2">
+        Upload
+      </Button>
     </>
   );
 }

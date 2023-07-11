@@ -17,6 +17,8 @@ interface StoreState {
   setSocials: (github: string, linkedin: string) => void;
   stage: GigStages;
   setStage: (stage: GigStages) => void;
+  resume: string;
+  setResume: (resume: string) => void;
 }
 
 const useUserStore = create<StoreState>((set) => ({
@@ -35,6 +37,11 @@ const useUserStore = create<StoreState>((set) => ({
   setStage: (stage) =>
     set((state) => ({
       stage,
+    })),
+  resume: "",
+  setResume: (resume) =>
+    set((state) => ({
+      resume,
     })),
 }));
 
