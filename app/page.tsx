@@ -1,6 +1,6 @@
 "use client";
 
-import { Upload } from "@/components/upload";
+import { Upload } from "@/components/uploads";
 import useUserStore from "@/state/user/useUserStore";
 import { motion } from "framer-motion";
 import { Construction, FileText, Mailbox } from "lucide-react";
