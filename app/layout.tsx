@@ -7,7 +7,7 @@ import "../styles/tailwind.css";
 
 export const metadata = {
   title: "Autogig",
-  description: "Find a job",
+  description: "Find a job without doing shit 💩",
 };
 
 export default function RootLayout({
