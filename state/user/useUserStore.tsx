@@ -1,11 +1,22 @@
 import { create } from "zustand";
 
+export enum GigStages {
+  Start,
+  LinkTwitter,
+  LinkGithub,
+  UploadResume,
+  FindJob,
+  Message,
+}
+
 interface StoreState {
   socials: {
     github: string;
     linkedin: string;
   };
   setSocials: (github: string, linkedin: string) => void;
+  stage: GigStages;
+  setStage: (stage: GigStages) => void;
 }
 
 const useUserStore = create<StoreState>((set) => ({
@@ -19,6 +30,11 @@ const useUserStore = create<StoreState>((set) => ({
         github,
         linkedin,
       },
+    })),
+  stage: 0,
+  setStage: (stage) =>
+    set((state) => ({
+      stage,
     })),
 }));
 

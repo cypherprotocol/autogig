@@ -58,12 +58,6 @@ export function UploadUnstyled() {
 
   return (
     <>
-      <div className="flex w-full max-w-md flex-col text-white">
-        {messages.map(
-          (m) => m.role !== "user" && <div key={m.id}>{m.content}</div>
-        )}
-      </div>
-
       <form
         onSubmit={handleSubmit}
         className="flex flex-col items-center justify-center"
@@ -85,6 +79,11 @@ export function UploadUnstyled() {
           Submit
         </Button>
       </form>
+      <blockquote className="mt-6 border-l-2 pl-6 italic">
+        {messages.map(
+          (m) => m.role !== "user" && <div key={m.id}>{m.content}</div>
+        )}
+      </blockquote>
     </>
   );
 }

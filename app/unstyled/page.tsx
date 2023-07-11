@@ -2,10 +2,10 @@
 
 import { Button } from "@/components/ui/button";
 import { UploadUnstyled } from "@/components/upload-unstyled";
-import useUserStore from "@/state/user/useUserStore";
+import useUserStore, { GigStages } from "@/state/user/useUserStore";
 import { useChat } from "ai/react";
 import { signIn, useSession } from "next-auth/react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const [dots, setDots] = useState(".");
@@ -13,6 +13,8 @@ export default function Home() {
   const loading = status === "loading";
   const { messages, input, setInput, handleSubmit } = useChat();
   const socials = useUserStore((state) => state.socials);
+  const stage = useUserStore((state) => state.stage);
+  const setStage = useUserStore((state) => state.setStage);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -24,10 +26,8 @@ export default function Home() {
     return () => clearInterval(intervalId); // cleanup on unmount
   }, []);
 
-  const [stage, setStage] = useState(0);
-
   useEffect(() => {
-    if (stage === 3) {
+    if (stage === GigStages.FindJob) {
       console.log(session);
       (async function findGig() {
         const res = await fetch(
@@ -38,7 +38,7 @@ export default function Home() {
               linkedin: socials.linkedin,
             })
         ).then(() => {
-          setStage(4);
+          setStage(GigStages.Message);
           console.log("done");
         });
       })();
@@ -47,45 +47,24 @@ export default function Home() {
 
   useEffect(() => {
     if (session) {
-      setStage(3);
+      setStage(GigStages.UploadResume);
     }
+
+    // Add contain github/twitter
   }, [session]);
-
-  const fileInputRef = useRef<HTMLInputElement | null>(null);
-
-  const handleFileClick = () => {
-    fileInputRef.current?.click();
-  };
-
-  const handleFileUpload = async (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    const file: File | undefined = event.target.files?.[0];
-    const reader = new FileReader();
-
-    if (file) {
-      reader.onload = (e) => {
-        const content = e.target?.result;
-        const question =
-          "Can you concisely and accurately summarize this persons expertise based off of their resume.";
-        const message = `${question}\n${content}`;
-        setInput(message);
-      };
-
-      reader.readAsText(file);
-    }
-  };
-
-  console.log(messages);
 
   return (
     <div>
       <div className="relative z-10 flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-white">
         {(() => {
           switch (stage) {
-            case 0:
-              return <Button onClick={() => setStage(1)}>Find a job</Button>;
-            case 1:
+            case GigStages.Start:
+              return (
+                <Button onClick={() => setStage(GigStages.LinkTwitter)}>
+                  Find a job
+                </Button>
+              );
+            case GigStages.LinkTwitter:
               return (
                 <>
                   <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
@@ -94,15 +73,24 @@ export default function Home() {
                   <Button onClick={() => signIn("twitter")}>Link</Button>
                 </>
               );
-            case 2:
+            case GigStages.LinkTwitter:
+              return (
+                <>
+                  <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
+                    Link your github
+                  </h3>
+                  <Button onClick={() => signIn("github")}>Link</Button>
+                </>
+              );
+            case GigStages.UploadResume:
               return <UploadUnstyled />;
-            case 3:
+            case GigStages.FindJob:
               return (
                 <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
                   Finding your job{dots}
                 </h3>
               );
-            case 4:
+            case GigStages.Message:
               return (
                 <>
                   <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
