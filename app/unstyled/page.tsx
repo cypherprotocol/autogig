@@ -62,7 +62,7 @@ export default function Home() {
           switch (stage) {
             case GigStages.Start:
               return (
-                <Button onClick={() => setStage(GigStages.LinkTwitter)}>
+                <Button onClick={() => setStage(GigStages.UploadResume)}>
                   Find a job
                 </Button>
               );
@@ -75,7 +75,7 @@ export default function Home() {
                   <Button onClick={() => signIn("twitter")}>Link</Button>
                 </>
               );
-            case GigStages.LinkTwitter:
+            case GigStages.LinkGithub:
               return (
                 <>
                   <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
