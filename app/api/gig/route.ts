@@ -133,7 +133,7 @@ export async function POST(req: NextRequest) {
 
     console.log(getGigMessage);
 
-    const messageResponse = await openai.createChatCompletion({
+    const gigResponse = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
       messages: [
         {
@@ -148,10 +148,24 @@ export async function POST(req: NextRequest) {
       ],
     });
 
-    console.log(messageResponse.data.choices[0].message?.content);
+    const introResponse = await openai.createChatCompletion({
+      model: "gpt-3.5-turbo",
+      messages: [
+        {
+          role: "system",
+          content:
+            "Using the information from the person's resume, their areas of expertise, key skills, and professional interests, generate a persuasive and professional introduction message. This message should express the candidate's enthusiasm for the potential job role, align their experience with the job requirements, and initiate further discussions or negotiations.",
+        },
+        {
+          role: "user",
+          // content: `Please prepare an introduction for the candidate named ${candidate.name}, who has expertise in ${candidate.expertise}, experience in ${candidate.experience}, and a demonstrated interest in ${candidate.interests}. They are being considered for the role of ${jobRole}, which requires skills in ${jobSkills}.`,
+          content: `Given the candidate synopsis: '${synposisResponse.data.choices[0].message?.content}', and the potential job description: '${gigResponse.data.choices[0].message?.content}', please generate a persuasive and professional introduction message. The message should express the candidate's enthusiasm for the potential job role, align their experience with the job requirements, and initiate further discussions or negotiations.`,
+        },
+      ],
+    });
 
     return new Response(
-      JSON.stringify(messageResponse.data.choices[0].message?.content)
+      JSON.stringify(introResponse.data.choices[0].message?.content)
     );
   } else {
     return new Response("Unauthorized", { status: 401 });
