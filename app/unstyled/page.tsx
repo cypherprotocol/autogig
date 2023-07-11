@@ -98,7 +98,7 @@ export default function Home() {
                   <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
                     Message crafted!
                   </h3>
-                  <blockquote className="mt-6 border-l-2 pl-6 italic">
+                  <blockquote className="mt-6 w-1/2 border-l-2 pl-6 italic">
                     {response}
                   </blockquote>
                 </>
