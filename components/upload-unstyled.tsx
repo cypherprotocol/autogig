@@ -1,6 +1,6 @@
+import { Button } from "@/components/ui/button";
 import useUserStore from "@/state/user/useUserStore";
 import { useChat } from "ai/react";
-import { motion } from "framer-motion";
 import React, { useRef } from "react";
 
 export function UploadUnstyled() {
@@ -68,7 +68,9 @@ export function UploadUnstyled() {
         onSubmit={handleSubmit}
         className="flex flex-col items-center justify-center"
       >
-        <p className="mb-8 text-lg text-black">Upload your resume</p>
+        <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
+          Upload your resume
+        </h3>
         <input
           type="file"
           style={{ display: "none" }}
@@ -76,15 +78,12 @@ export function UploadUnstyled() {
           ref={fileInputRef}
           accept=".txt, .csv"
         />
-        <motion.button
-          onClick={handleFileClick}
-          className="mb-4 rounded-md bg-sky-400 px-3 py-1 text-white"
-        >
+        <Button onClick={handleFileClick} className="mb-2">
           Upload
-        </motion.button>
-        <button type="submit" className="text-black">
+        </Button>
+        <Button type="submit" variant={"secondary"}>
           Submit
-        </button>
+        </Button>
       </form>
     </>
   );

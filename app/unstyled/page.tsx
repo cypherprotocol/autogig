@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { UploadUnstyled } from "@/components/upload-unstyled";
 import useUserStore from "@/state/user/useUserStore";
 import { useChat } from "ai/react";
@@ -23,7 +24,7 @@ export default function Home() {
     return () => clearInterval(intervalId); // cleanup on unmount
   }, []);
 
-  const [stage, setStage] = useState(2);
+  const [stage, setStage] = useState(0);
 
   useEffect(() => {
     if (stage === 3) {
@@ -83,49 +84,41 @@ export default function Home() {
         {(() => {
           switch (stage) {
             case 0:
-              return (
-                <button onClick={() => setStage(1)}>
-                  <p className="rounded-md bg-sky-400 px-3 py-1 text-white">
-                    Find a job
-                  </p>
-                </button>
-              );
+              return <Button onClick={() => setStage(1)}>Find a job</Button>;
             case 1:
               return (
                 <>
-                  <p className="mb-8 text-lg">Link your twitter</p>
-                  <button
-                    className="rounded-md bg-sky-400 px-3 py-1 text-white"
-                    onClick={() => signIn("twitter")}
-                  >
-                    Link
-                  </button>
+                  <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
+                    Link your twitter
+                  </h3>
+                  <Button onClick={() => signIn("twitter")}>Link</Button>
                 </>
               );
             case 2:
               return <UploadUnstyled />;
             case 3:
               return (
-                <p className="mb-8 text-lg text-black">
+                <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
                   Finding your job{dots}
-                </p>
+                </h3>
               );
             case 4:
               return (
                 <>
-                  <p className="mb-8 text-lg text-black">Message crafted!</p>
-                  <div className="rounded-lg border border-black bg-white p-4">
-                    <p className="text-lg text-black">
-                      Your message has been crafted and sent to the company.
-                    </p>
-                  </div>
+                  <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
+                    Message crafted!
+                  </h3>
+                  <blockquote className="mt-6 border-l-2 pl-6 italic">
+                    Your message has been crafted and sent to the company. You
+                    will be notified when they respond.
+                  </blockquote>
                 </>
               );
           }
         })()}
 
         <div className="absolute bottom-16 flex space-x-8">
-          <p>Step {stage} of 5</p>
+          <p className="text-sm text-muted-foreground">Step {stage} of 5</p>
         </div>
       </div>
     </div>
