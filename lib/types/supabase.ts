@@ -82,6 +82,34 @@ export interface Database {
           }
         ]
       }
+      synopsis: {
+        Row: {
+          created_at: string | null
+          data: string | null
+          id: number
+          user_id: number
+        }
+        Insert: {
+          created_at?: string | null
+          data?: string | null
+          id?: number
+          user_id: number
+        }
+        Update: {
+          created_at?: string | null
+          data?: string | null
+          id?: number
+          user_id?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "synopsis_user_id_fkey"
+            columns: ["user_id"]
+            referencedRelation: "github"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
     }
     Views: {
       [_ in never]: never

@@ -1,8 +1,9 @@
 import supabase from "@/lib/supabase";
 import { getServerSession } from "next-auth";
 import { getToken } from "next-auth/jwt";
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest } from "next/server";
 import { Octokit } from "octokit";
+import { Configuration, OpenAIApi } from "openai";
 import * as z from "zod";
 
 const gigSchema = z.object({
@@ -12,13 +13,20 @@ const gigSchema = z.object({
   resume: z.string().optional(),
 });
 
+const config = new Configuration({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+const openai = new OpenAIApi(config);
+
 export async function POST(req: NextRequest) {
   const json = await req.json();
   const values = gigSchema.parse(json);
 
   const session = await getServerSession();
-  console.log(values);
   const token = await getToken({ req, secret: process.env.SECRET });
+
+  let githubId = 0;
+  let repos: any[] = [];
 
   // Make sure user is authenticated
   if (session) {
@@ -29,13 +37,16 @@ export async function POST(req: NextRequest) {
       .eq("name", values.github);
 
     if (github && github.length > 0) {
+      githubId = github[0].id;
+
       const { data: repositories } = await supabase
         .from("repository")
         .select("*")
-        .eq("user_id", github[0].id);
+        .eq("user_id", githubId);
 
-      console.log(repositories);
-      console.log("token", token);
+      if (repositories && repositories.length > 0) {
+        repos = repositories;
+      }
     } else {
       // If user does not exist, create them and their repositories
       console.log("github does not exist");
@@ -47,6 +58,10 @@ export async function POST(req: NextRequest) {
           },
         ])
         .select();
+
+      if (githubUser.data) {
+        githubId = githubUser.data[0].id;
+      }
 
       // STEP 1: Setup twitter API for authenticated user
       // const client = new TwitterApi(token?.twitter?.accessToken as string);
@@ -92,9 +107,52 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    // STEP 3: Parse information and generate embeddings
+    // STEP 3: Parse information
+    const synposisQuestion =
+      "Can you concisely and accurately summarize this persons expertise based off of their resume.";
+    const synopsisMessage = `${synposisQuestion}\n${values.resume}`;
 
-    return NextResponse.json({ message: "Hello World" });
+    // Ask OpenAI for a streaming chat completion given the prompt
+    const synposisResponse = await openai.createChatCompletion({
+      model: "gpt-3.5-turbo",
+      messages: [
+        {
+          role: "user",
+          content: synopsisMessage,
+        },
+      ],
+    });
+
+    const { data: jobs } = await supabase.from("jobs").select("*");
+
+    const getGigQuestion =
+      "We have a potential candidate with expertise in several areas. They have worked on these repositories, showcasing their skills and contributions. I will also provide a list of potential job openings. Given all this information, could you please recommend the most suitable job for this candidate?";
+    const getGigMessage = `${getGigQuestion}\n${repos.toString()}\n${
+      synposisResponse.data.choices[0].message?.content
+    }\n${JSON.stringify(jobs?.splice(0, 3))}`;
+
+    console.log(getGigMessage);
+
+    const messageResponse = await openai.createChatCompletion({
+      model: "gpt-3.5-turbo",
+      messages: [
+        {
+          role: "system",
+          content:
+            "Hello, you are an AI job matchmaker. Your task is to analyze the data provided about a person's professional experience and expertise, and then recommend a job that would be a good fit for them.",
+        },
+        {
+          role: "user",
+          content: getGigMessage,
+        },
+      ],
+    });
+
+    console.log(messageResponse.data.choices[0].message?.content);
+
+    return new Response(
+      JSON.stringify(messageResponse.data.choices[0].message?.content)
+    );
   } else {
     return new Response("Unauthorized", { status: 401 });
   }
