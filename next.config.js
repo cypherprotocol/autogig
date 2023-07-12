@@ -7,6 +7,10 @@ module.exports = {
       tls: false,
       module: false,
     };
+    config.module.rules.push({
+      test: /\.node/,
+      use: "raw-loader",
+    });
     return config;
   },
 };

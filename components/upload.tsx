@@ -1,13 +1,16 @@
 import { Button } from "@/components/ui/button";
-import supabase from "@/lib/supabase";
 import useUserStore, { GigStages } from "@/state/user/useUserStore";
-import React, { useRef } from "react";
+import { PDFDocumentProxy } from "pdfjs-dist";
+import { TextItem } from "pdfjs-dist/types/src/display/api";
+import React, { useRef, useState } from "react";
 
 export function Upload() {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const setSocials = useUserStore((state) => state.setSocials);
   const setResume = useUserStore((state) => state.setResume);
   const setStage = useUserStore((state) => state.setStage);
+  const [file, setFile] = useState<File | null>(null);
+  const [numPages, setNumPages] = useState(null);
 
   const handleFileClick = () => {
     fileInputRef.current?.click();
@@ -16,26 +19,15 @@ export function Upload() {
   const uploadPhoto = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]!;
 
+    setFile(file);
+
     if (file.type === "application/pdf") {
-      // Generate a random string to be used as the file name.
-      const randomString =
-        Math.random().toString(36).substring(2, 15) +
-        Math.random().toString(36).substring(2, 15);
-
-      const fileExtension = file.type.split("/")[1];
-      const newFileName = `${randomString}.${fileExtension}`;
-
-      const { data, error } = await supabase.storage
-        .from("autogig")
-        .upload(`resumes/${newFileName}`, file, {
-          cacheControl: "3600",
-          upsert: false,
-        });
-
-      if (error) {
-        console.log(error);
-        return;
-      }
+      let reader = new FileReader();
+      reader.readAsArrayBuffer(file);
+      reader.onload = async () => {
+        const data = reader.result;
+        loadPDF(data as ArrayBuffer);
+      };
     } else {
       const reader = new FileReader();
 
@@ -76,6 +68,41 @@ export function Upload() {
     }
   };
 
+  async function loadPDF(data: ArrayBuffer) {
+    const now = Date.now();
+
+    // const { getDocument } = await import('pdfjs-dist');
+    // await import('pdfjs-dist/build/pdf.worker.entry');
+    const [{ getDocument }] = await Promise.all([
+      import("pdfjs-dist"),
+      import("pdfjs-dist/build/pdf.worker.entry"),
+    ]);
+
+    console.log("mm-time", Date.now() - now);
+
+    // const pdf = await pdfjsLib.getDocument(data).promise;
+    const pdf = await getDocument(data).promise;
+
+    let result = "";
+    for (let i = 1; i <= pdf.numPages; i++) {
+      result += await getPageText(pdf, i);
+    }
+
+    setResume(result);
+
+    console.log(result);
+  }
+
+  async function getPageText(pdf: PDFDocumentProxy, pageNum = 1) {
+    const page = await pdf.getPage(pageNum);
+    const textContent = await page.getTextContent();
+    const items = (textContent.items as TextItem[]).filter((item) =>
+      item.str.trim()
+    );
+
+    return items.map(({ str }) => str).join("\n\n");
+  }
+
   return (
     <>
       <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
@@ -91,6 +118,7 @@ export function Upload() {
       <Button onClick={handleFileClick} className="mb-2">
         Upload
       </Button>
+
       <p className="text-sm text-muted-foreground">
         Accept .txt and .pdf files
       </p>
