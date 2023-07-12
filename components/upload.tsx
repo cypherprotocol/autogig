@@ -2,15 +2,13 @@ import { Button } from "@/components/ui/button";
 import useUserStore, { GigStages } from "@/state/user/useUserStore";
 import { PDFDocumentProxy } from "pdfjs-dist";
 import { TextItem } from "pdfjs-dist/types/src/display/api";
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 
 export function Upload() {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const setSocials = useUserStore((state) => state.setSocials);
   const setResume = useUserStore((state) => state.setResume);
   const setStage = useUserStore((state) => state.setStage);
-  const [file, setFile] = useState<File | null>(null);
-  const [numPages, setNumPages] = useState(null);
 
   const handleFileClick = () => {
     fileInputRef.current?.click();
@@ -18,57 +16,59 @@ export function Upload() {
 
   const uploadPhoto = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]!;
-
-    setFile(file);
+    if (!file) return;
 
     if (file.type === "application/pdf") {
       let reader = new FileReader();
       reader.readAsArrayBuffer(file);
       reader.onload = async () => {
         const data = reader.result;
-        loadPDF(data as ArrayBuffer);
+        const content = await loadPDF(data as ArrayBuffer);
+
+        extractSocials(content);
+        setResume(content);
       };
     } else {
       const reader = new FileReader();
+      reader.readAsText(file);
+      reader.onload = (e) => {
+        const content = e.target?.result;
 
-      if (file) {
-        reader.onload = (e) => {
-          const content = e.target?.result;
+        if (typeof content !== "string") return;
 
-          const githubRegex = /github\.com\/([a-zA-Z0-9]+)/g;
-          const linkedinRegex = /linkedin\.com\/in\/([a-zA-Z0-9-]+)/g;
+        extractSocials(content);
+        setResume(content);
+      };
+    }
 
-          if (typeof content === "string") {
-            const githubUsernames = Array.from(
-              content.matchAll(githubRegex),
-              (match) => match[1]
-            );
-            const linkedinUsernames = Array.from(
-              content.matchAll(linkedinRegex),
-              (match) => match[1]
-            );
+    setStage(GigStages.FindJob);
+  };
 
-            const githubUsername = githubUsernames[0] || null;
-            const linkedinUsername = linkedinUsernames[0] || null;
+  const extractSocials = (content: string) => {
+    const githubRegex = /github\.com\/([a-zA-Z0-9]+)/g;
+    const linkedinRegex = /linkedin\.com\/in\/([a-zA-Z0-9-]+)/g;
 
-            console.log("GitHub Username:", githubUsername);
-            console.log("LinkedIn Username:", linkedinUsername);
+    const githubUsernames = Array.from(
+      content.matchAll(githubRegex),
+      (match) => match[1]
+    );
+    const linkedinUsernames = Array.from(
+      content.matchAll(linkedinRegex),
+      (match) => match[1]
+    );
 
-            if (githubUsername && linkedinUsername) {
-              setSocials(githubUsername, linkedinUsername);
-            }
+    const githubUsername = githubUsernames[0] || null;
+    const linkedinUsername = linkedinUsernames[0] || null;
 
-            setResume(content);
-            setStage(GigStages.FindJob);
-          }
-        };
+    console.log("GitHub Username:", githubUsername);
+    console.log("LinkedIn Username:", linkedinUsername);
 
-        reader.readAsText(file);
-      }
+    if (githubUsername && linkedinUsername) {
+      setSocials(githubUsername, linkedinUsername);
     }
   };
 
-  async function loadPDF(data: ArrayBuffer) {
+  async function loadPDF(data: ArrayBuffer): Promise<string> {
     const now = Date.now();
 
     // const { getDocument } = await import('pdfjs-dist');
@@ -88,9 +88,7 @@ export function Upload() {
       result += await getPageText(pdf, i);
     }
 
-    setResume(result);
-
-    console.log(result);
+    return result;
   }
 
   async function getPageText(pdf: PDFDocumentProxy, pageNum = 1) {
@@ -120,7 +118,7 @@ export function Upload() {
       </Button>
 
       <p className="text-sm text-muted-foreground">
-        Accept .txt and .pdf files
+        We support .txt and .pdf files
       </p>
     </>
   );
