@@ -121,17 +121,16 @@ export async function POST(req: NextRequest) {
           content: synopsisMessage,
         },
       ],
+      max_tokens: 500,
     });
 
     const { data: jobs } = await supabase.from("jobs").select("*");
 
     const getGigQuestion =
-      "We have a potential candidate with expertise in several areas. They have worked on these repositories, showcasing their skills and contributions. I will also provide a list of potential job openings. Given all this information, could you please recommend the most suitable job for this candidate?";
+      'We have a potential candidate with expertise in several areas. They have worked on these repositories, showcasing their skills and contributions. I will also provide a list of potential job openings. Given all this information, could you please recommend the most suitable job for this candidate? The job recommendation should be provided as a JSON object in the format: {"jobName": "<job name>", "jobLink": "<job link>", "jobDescription": "<job description>:}.';
     const getGigMessage = `${getGigQuestion}\n${repos.toString()}\n${
       synposisResponse.data.choices[0].message?.content
-    }\n${JSON.stringify(jobs?.splice(0, 3))}`;
-
-    console.log(getGigMessage);
+    }\n${JSON.stringify(jobs?.splice(0, 1))}`;
 
     const gigResponse = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
@@ -139,14 +138,40 @@ export async function POST(req: NextRequest) {
         {
           role: "system",
           content:
-            "Hello, you are an AI job matchmaker. Your task is to analyze the data provided about a person's professional experience and expertise, and then recommend a job that would be a good fit for them.",
+            'Hello, you are an AI job matchmaker. Your task is to analyze the data provided about a person\'s professional experience and expertise, and then recommend a job that would be a good fit for them. The job recommendation should be provided as a JSON object in the format: {"jobName": "<job name>", "jobLink": "<job link>", "jobDescription": "<job description>"}.',
         },
         {
           role: "user",
           content: getGigMessage,
         },
       ],
+      max_tokens: 500,
     });
+
+    const response = gigResponse.data.choices[0].message?.content as string;
+
+    console.log("Response:", response);
+    const jsonStart = response.indexOf("{");
+    const jsonEnd = response.lastIndexOf("}") + 1;
+    const jsonString = response.slice(jsonStart, jsonEnd);
+
+    let jobData: {
+      jobName: string;
+      jobLink: string;
+      jobDescription: string;
+    } = {
+      jobName: "",
+      jobLink: "",
+      jobDescription: "",
+    };
+
+    try {
+      console.log("JSON data:", jsonString);
+      jobData = JSON.parse(jsonString);
+      console.log("Parsed JSON data:", jobData);
+    } catch (e) {
+      console.log("Error parsing JSON data:", e);
+    }
 
     const introResponse = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
@@ -162,10 +187,16 @@ export async function POST(req: NextRequest) {
           content: `Given the candidate synopsis: '${synposisResponse.data.choices[0].message?.content}', and the potential job description: '${gigResponse.data.choices[0].message?.content}', please generate a persuasive and professional introduction message. The message should express the candidate's enthusiasm for the potential job role, align their experience with the job requirements, and initiate further discussions or negotiations.`,
         },
       ],
+      max_tokens: 500,
     });
 
     return new Response(
-      JSON.stringify(introResponse.data.choices[0].message?.content)
+      JSON.stringify({
+        response: introResponse.data.choices[0].message?.content,
+        jobName: jobData.jobName,
+        jobLink: jobData.jobLink,
+        jobDescription: jobData.jobDescription,
+      })
     );
   } else {
     return new Response("Unauthorized", { status: 401 });

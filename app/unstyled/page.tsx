@@ -1,10 +1,24 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { UploadUnstyled } from "@/components/upload-unstyled";
 import useUserStore, { GigStages } from "@/state/user/useUserStore";
 import { signIn, useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+
+interface GigResponse {
+  response: string;
+  jobName: string;
+  jobLink: string;
+  jobDescription: string;
+}
 
 export default function Home() {
   const [dots, setDots] = useState(".");
@@ -14,7 +28,9 @@ export default function Home() {
   const stage = useUserStore((state) => state.stage);
   const setStage = useUserStore((state) => state.setStage);
   const resume = useUserStore((state) => state.resume);
-
+  const job = useUserStore((state) => state.job);
+  const setJob = useUserStore((state) => state.setJob);
+  const [copied, setCopied] = useState(false);
   const [response, setResponse] = useState("");
 
   useEffect(() => {
@@ -39,21 +55,28 @@ export default function Home() {
             linkedin: socials.linkedin,
             resume: resume,
           }),
-        }).then(async (res) => {
-          setStage(GigStages.Message);
-          setResponse(await res.json());
-        });
+        })
+          .then((res) => res.json())
+          .then((res: GigResponse) => {
+            console.log(res);
+            setResponse(res.response);
+            setJob(res.jobName, res.jobLink, res.jobDescription);
+            setStage(GigStages.Message);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       })();
     }
   }, [stage, session]);
 
-  useEffect(() => {
-    if (session) {
-      setStage(GigStages.UploadResume);
-    }
+  // useEffect(() => {
+  //   if (session) {
+  //     setStage(GigStages.UploadResume);
+  //   }
 
-    // Add contain github/twitter
-  }, [session]);
+  //   // Add contain github/twitter
+  // }, [session]);
 
   return (
     <div>
@@ -98,9 +121,23 @@ export default function Home() {
                   <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
                     Message crafted!
                   </h3>
-                  <blockquote className="mt-6 w-1/2 border-l-2 pl-6 italic">
+                  <a href={job.link} target="_blank" rel="noreferrer">
+                    <Card>
+                      <CardHeader>
+                        <CardTitle>{job.name}</CardTitle>
+                        <CardDescription>{job.link}</CardDescription>
+                      </CardHeader>
+                    </Card>
+                  </a>
+                  <blockquote className="my-8 h-80 w-1/2 overflow-y-scroll border-l-2 pl-6 italic">
                     {response}
                   </blockquote>
+                  <CopyToClipboard
+                    text={response}
+                    onCopy={() => setCopied(true)}
+                  >
+                    <Button>{copied ? "Copied!" : "Copy to clipboard"}</Button>
+                  </CopyToClipboard>
                 </>
               );
           }
