@@ -20,7 +20,7 @@ export function middleware(req: NextRequest) {
 
   // if it's the old variant, rewrite to the old templates marketplace
   if (variant === "old") {
-    url.pathname = "/unstyled";
+    url.pathname = "/styled";
   }
 
   const res = NextResponse.rewrite(url);

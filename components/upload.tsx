@@ -1,100 +1,99 @@
-import useUserStore from "@/state/user/useUserStore";
-import { useChat } from "ai/react";
-import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import supabase from "@/lib/supabase";
+import useUserStore, { GigStages } from "@/state/user/useUserStore";
 import React, { useRef } from "react";
 
 export function Upload() {
-  const { messages, input, setInput, handleSubmit } = useChat();
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const setSocials = useUserStore((state) => state.setSocials);
+  const setResume = useUserStore((state) => state.setResume);
+  const setStage = useUserStore((state) => state.setStage);
 
   const handleFileClick = () => {
     fileInputRef.current?.click();
   };
 
-  const handleFileUpload = async (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    const file: File | undefined = event.target.files?.[0];
-    const reader = new FileReader();
+  const uploadPhoto = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]!;
 
-    if (file) {
-      reader.onload = (e) => {
-        const content = e.target?.result;
+    if (file.type === "application/pdf") {
+      // Generate a random string to be used as the file name.
+      const randomString =
+        Math.random().toString(36).substring(2, 15) +
+        Math.random().toString(36).substring(2, 15);
 
-        const githubRegex = /github\.com\/([a-zA-Z0-9]+)/g;
-        const linkedinRegex = /linkedin\.com\/in\/([a-zA-Z0-9-]+)/g;
+      const fileExtension = file.type.split("/")[1];
+      const newFileName = `${randomString}.${fileExtension}`;
 
-        if (typeof content === "string") {
-          const githubUsernames = Array.from(
-            content.matchAll(githubRegex),
-            (match) => match[1]
-          );
-          const linkedinUsernames = Array.from(
-            content.matchAll(linkedinRegex),
-            (match) => match[1]
-          );
+      const { data, error } = await supabase.storage
+        .from("autogig")
+        .upload(`resumes/${newFileName}`, file, {
+          cacheControl: "3600",
+          upsert: false,
+        });
 
-          const githubUsername = githubUsernames[0] || null;
-          const linkedinUsername = linkedinUsernames[0] || null;
+      if (error) {
+        console.log(error);
+        return;
+      }
+    } else {
+      const reader = new FileReader();
 
-          console.log("GitHub Username:", githubUsername);
-          console.log("LinkedIn Username:", linkedinUsername);
+      if (file) {
+        reader.onload = (e) => {
+          const content = e.target?.result;
 
-          if (githubUsername && linkedinUsername) {
-            setSocials(githubUsername, linkedinUsername);
+          const githubRegex = /github\.com\/([a-zA-Z0-9]+)/g;
+          const linkedinRegex = /linkedin\.com\/in\/([a-zA-Z0-9-]+)/g;
+
+          if (typeof content === "string") {
+            const githubUsernames = Array.from(
+              content.matchAll(githubRegex),
+              (match) => match[1]
+            );
+            const linkedinUsernames = Array.from(
+              content.matchAll(linkedinRegex),
+              (match) => match[1]
+            );
+
+            const githubUsername = githubUsernames[0] || null;
+            const linkedinUsername = linkedinUsernames[0] || null;
+
+            console.log("GitHub Username:", githubUsername);
+            console.log("LinkedIn Username:", linkedinUsername);
+
+            if (githubUsername && linkedinUsername) {
+              setSocials(githubUsername, linkedinUsername);
+            }
+
+            setResume(content);
+            setStage(GigStages.FindJob);
           }
-        }
+        };
 
-        const question =
-          "Can you concisely and accurately summarize this persons expertise based off of their resume.";
-        const message = `${question}\n${content}`;
-        setInput(message);
-      };
-
-      reader.readAsText(file);
+        reader.readAsText(file);
+      }
     }
   };
 
   return (
     <>
-      <div className="flex w-full max-w-md flex-col text-white">
-        {messages.map(
-          (m) => m.role !== "user" && <div key={m.id}>{m.content}</div>
-        )}
-      </div>
-
-      <form
-        onSubmit={handleSubmit}
-        className="flex flex-col items-center justify-center"
-      >
-        <p className="mb-8 text-6xl font-medium text-white">
-          Upload your resume
-        </p>
-        <input
-          type="file"
-          style={{ display: "none" }}
-          onChange={handleFileUpload}
-          ref={fileInputRef}
-          accept=".txt, .csv"
-        />
-        <motion.button
-          whileHover={{
-            scale: 1.05, // increased scale for a more pronounced effect
-          }}
-          whileTap={{
-            scale: 1, // increased scale for a more pronounced effect
-          }}
-          // onClick={() => setStage(2)}
-          onClick={handleFileClick}
-          className="clickable mb-8 flex h-[24rem] w-[24rem] cursor-pointer flex-col items-center justify-center rounded-full p-4 shadow-zen transition hover:shadow-zenny"
-        >
-          <p className="text-4xl font-medium text-white">Upload</p>
-        </motion.button>
-        <button type="submit" className="text-xl font-medium text-white">
-          Submit
-        </button>
-      </form>
+      <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
+        Upload your resume
+      </h3>
+      <input
+        type="file"
+        style={{ display: "none" }}
+        onChange={uploadPhoto}
+        ref={fileInputRef}
+        accept=".txt, .pdf"
+      />
+      <Button onClick={handleFileClick} className="mb-2">
+        Upload
+      </Button>
+      <p className="text-sm text-muted-foreground">
+        Accept .txt and .pdf files
+      </p>
     </>
   );
 }
