@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-p {
-  @apply font-wagmi text-xs tracking-wide lg:text-sm;
-}
-
 @font-face {
   src: url(/Gilroy-Thin.ttf);
   font-weight: 100;

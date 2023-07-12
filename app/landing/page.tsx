@@ -39,16 +39,20 @@ export default function Home() {
     }
 
     setIsLoading(false);
+    setEmail("");
   };
 
   return (
     <div className="relative z-10 flex h-screen w-full items-center justify-center overflow-hidden bg-white">
       <div className="flex w-full max-w-6xl">
-        <div className="flex w-full flex-col items-start justify-center">
+        <div className="mr-16 flex w-full flex-col items-start justify-center">
           <h1 className="mb-6 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-            Autogig
+            Get a job without doing shit 💩
           </h1>
-          <p className="mb-6 leading-7">Get a job without doing shit 💩</p>
+          <p className="mb-6 leading-7">
+            Upload your resume, land your dream gig. Job hunting has never been
+            this effortless.
+          </p>
           <form onSubmit={subscribe} className="flex">
             <Input
               type="email"
