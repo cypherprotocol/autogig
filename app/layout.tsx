@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-head-element */
 
 import { Provider } from "@/components/provider";
+import { Toaster } from "@/components/ui/toaster";
 import "@rainbow-me/rainbowkit/styles.css";
 import "../styles/globals.css";
 import "../styles/tailwind.css";
@@ -25,6 +26,7 @@ export default function RootLayout({
             {children}
           </div>
         </Provider>
+        <Toaster />
       </body>
     </html>
   );

@@ -79,73 +79,68 @@ export default function Home() {
   // }, [session]);
 
   return (
-    <div>
-      <div className="relative z-10 flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-white">
-        {(() => {
-          switch (stage) {
-            case GigStages.Start:
-              return (
-                <Button onClick={() => setStage(GigStages.UploadResume)}>
-                  Find a job
-                </Button>
-              );
-            case GigStages.LinkTwitter:
-              return (
-                <>
-                  <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
-                    Link your twitter
-                  </h3>
-                  <Button onClick={() => signIn("twitter")}>Link</Button>
-                </>
-              );
-            case GigStages.LinkGithub:
-              return (
-                <>
-                  <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
-                    Link your github
-                  </h3>
-                  <Button onClick={() => signIn("github")}>Link</Button>
-                </>
-              );
-            case GigStages.UploadResume:
-              return <Upload />;
-            case GigStages.FindJob:
-              return (
+    <div className="relative z-10 flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-white">
+      {(() => {
+        switch (stage) {
+          case GigStages.Start:
+            return (
+              <Button onClick={() => setStage(GigStages.UploadResume)}>
+                Find a job
+              </Button>
+            );
+          case GigStages.LinkTwitter:
+            return (
+              <>
                 <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
-                  Finding your job{dots}
+                  Link your twitter
                 </h3>
-              );
-            case GigStages.Message:
-              return (
-                <>
-                  <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
-                    Message crafted!
-                  </h3>
-                  <a href={job.link} target="_blank" rel="noreferrer">
-                    <Card>
-                      <CardHeader>
-                        <CardTitle>{job.name}</CardTitle>
-                        <CardDescription>{job.link}</CardDescription>
-                      </CardHeader>
-                    </Card>
-                  </a>
-                  <blockquote className="my-8 h-80 w-1/2 overflow-y-scroll border-l-2 pl-6 italic">
-                    {response}
-                  </blockquote>
-                  <CopyToClipboard
-                    text={response}
-                    onCopy={() => setCopied(true)}
-                  >
-                    <Button>{copied ? "Copied!" : "Copy to clipboard"}</Button>
-                  </CopyToClipboard>
-                </>
-              );
-          }
-        })()}
+                <Button onClick={() => signIn("twitter")}>Link</Button>
+              </>
+            );
+          case GigStages.LinkGithub:
+            return (
+              <>
+                <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
+                  Link your github
+                </h3>
+                <Button onClick={() => signIn("github")}>Link</Button>
+              </>
+            );
+          case GigStages.UploadResume:
+            return <Upload />;
+          case GigStages.FindJob:
+            return (
+              <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
+                Finding your job{dots}
+              </h3>
+            );
+          case GigStages.Message:
+            return (
+              <>
+                <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
+                  Message crafted!
+                </h3>
+                <a href={job.link} target="_blank" rel="noreferrer">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>{job.name}</CardTitle>
+                      <CardDescription>{job.link}</CardDescription>
+                    </CardHeader>
+                  </Card>
+                </a>
+                <blockquote className="my-8 h-80 w-1/2 overflow-y-scroll border-l-2 pl-6 italic">
+                  {response}
+                </blockquote>
+                <CopyToClipboard text={response} onCopy={() => setCopied(true)}>
+                  <Button>{copied ? "Copied!" : "Copy to clipboard"}</Button>
+                </CopyToClipboard>
+              </>
+            );
+        }
+      })()}
 
-        <div className="absolute bottom-16 flex space-x-8">
-          <p className="text-sm text-muted-foreground">Step {stage} of 5</p>
-        </div>
+      <div className="absolute bottom-16 flex space-x-8">
+        <p className="text-sm text-muted-foreground">Step {stage} of 5</p>
       </div>
     </div>
   );
