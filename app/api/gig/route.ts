@@ -111,18 +111,20 @@ export async function POST(req: NextRequest) {
 
     const resumeEmbedding = await openai.createEmbedding({
       model: "text-embedding-ada-002",
-      input: values.resume!,
+      input: values.resume?.replace(/\n/g, " ")!,
     });
 
     const [{ embedding }] = resumeEmbedding.data.data;
 
+    console.log(embedding);
+
     const { data: chunks, error } = await supabase.rpc("jobs_search", {
-      query_embedding: "[" + embedding.toString() + "]",
+      query_embedding: embedding,
       similarity_threshold: 0.5,
-      match_count: 5,
+      match_count: 1,
     });
 
-    console.log(error);
+    console.log(chunks);
 
     // const { data: jobs } = await supabase.from("jobs").select("*");
 
@@ -184,27 +186,22 @@ export async function POST(req: NextRequest) {
         {
           role: "user",
           // content: `Please prepare an introduction for the candidate named ${candidate.name}, who has expertise in ${candidate.expertise}, experience in ${candidate.experience}, and a demonstrated interest in ${candidate.interests}. They are being considered for the role of ${jobRole}, which requires skills in ${jobSkills}.`,
-          content: `Given the candidates resume: '${values.resume}', and the potential job description: '${chunks}', please generate a persuasive and professional introduction message. The message should express the candidate's enthusiasm for the potential job role, align their experience with the job requirements, and initiate further discussions or negotiations.`,
+          content: `Given the candidates resume: '${
+            values.resume
+          }', and the potential job description: '${chunks?.map((c) =>
+            JSON.stringify(c.data)
+          )}', please generate a persuasive and professional introduction message. The message should express the candidate's enthusiasm for the potential job role, align their experience with the job requirements, and initiate further discussions or negotiations.`,
         },
       ],
     });
 
-    // console.log(
-    //   `Given the candidates resume: '${
-    //     values.resume
-    //   }', and the potential job description: '${chunks
-    //     ?.map((d: any) => d.content)
-    //     .join(
-    //       "\n\n"
-    //     )}', please generate a persuasive and professional introduction message. The message should express the candidate's enthusiasm for the potential job role, align their experience with the job requirements, and initiate further discussions or negotiations.`
-    // );
-
     return new Response(
       JSON.stringify({
         response: introResponse.data.choices[0].message?.content,
-        jobName: "jobData.jobName",
-        jobLink: "jobData.jobLink",
-        jobDescription: "jobData.jobDescription",
+        companyName: (chunks?.[0]?.data as any).company.name,
+        companyLogo: (chunks?.[0]?.data as any).company.logoUrl,
+        jobLink: (chunks?.[0]?.data as any).url,
+        jobTitle: (chunks?.[0]?.data as any).title,
       })
     );
   } else {

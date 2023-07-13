@@ -30,7 +30,7 @@ const generateEmbeddings = async (jobs: any[]) => {
       .from("jobs")
       .insert({
         data: job,
-        embedding,
+        embedding: embedding,
       })
       .select("*");
 

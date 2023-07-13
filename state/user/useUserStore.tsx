@@ -21,10 +21,11 @@ interface StoreState {
   setResume: (resume: string) => void;
   job: {
     name: string;
+    logo: string;
     link: string;
-    description: string;
+    title: string;
   };
-  setJob: (name: string, link: string, description: string) => void;
+  setJob: (name: string, logo: string, link: string, title: string) => void;
 }
 
 const useUserStore = create<StoreState>((set) => ({
@@ -51,15 +52,17 @@ const useUserStore = create<StoreState>((set) => ({
     })),
   job: {
     name: "",
+    logo: "",
     link: "",
-    description: "",
+    title: "",
   },
-  setJob: (name, link, description) =>
+  setJob: (name, logo, link, title) =>
     set((state) => ({
       job: {
         name,
+        logo,
         link,
-        description,
+        title,
       },
     })),
 }));

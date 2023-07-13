@@ -15,9 +15,10 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 
 interface GigResponse {
   response: string;
-  jobName: string;
+  companyName: string;
+  companyLogo: string;
   jobLink: string;
-  jobDescription: string;
+  jobTitle: string;
 }
 
 export default function Home() {
@@ -60,7 +61,7 @@ export default function Home() {
           .then((res: GigResponse) => {
             console.log(res);
             setResponse(res.response);
-            setJob(res.jobName, res.jobLink, res.jobDescription);
+            setJob(res.companyName, res.companyLogo, res.jobLink, res.jobTitle);
             setStage(GigStages.Message);
           })
           .catch((err) => {
@@ -123,8 +124,13 @@ export default function Home() {
                 <a href={job.link} target="_blank" rel="noreferrer">
                   <Card>
                     <CardHeader>
-                      <CardTitle>{job.name}</CardTitle>
-                      <CardDescription>{job.link}</CardDescription>
+                      <div className="flex w-full items-center">
+                        <img src={job.logo} className="w-12 h-12 mr-4" />
+                        <div className="flex flex-col">
+                          <CardTitle>{job.name}</CardTitle>
+                          <CardDescription>{job.link}</CardDescription>
+                        </div>
+                      </div>
                     </CardHeader>
                   </Card>
                 </a>
