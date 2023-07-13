@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import "@rainbow-me/rainbowkit/styles.css";
 import "../styles/globals.css";
 import "../styles/tailwind.css";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
   title: "Autogig",
@@ -27,6 +28,7 @@ export default function RootLayout({
           </div>
         </Provider>
         <Toaster />
+        <Analytics />
       </body>
     </html>
   );
