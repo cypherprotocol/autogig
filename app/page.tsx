@@ -37,7 +37,7 @@ export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const fakeLoadingText = [
-    "Collecting the data",
+    "",
     "Collecting the data",
     "Finding your dream job",
     "Crafting your message",
@@ -54,16 +54,18 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      if (currentIndex !== fakeLoadingText.length - 1) {
-        setCurrentIndex(currentIndex + 1);
-      }
-    }, 3000); // Update every 3  seconds
+    if (stage === GigStages.FindJob) {
+      const intervalId = setInterval(() => {
+        if (currentIndex !== fakeLoadingText.length - 1) {
+          setCurrentIndex(currentIndex + 1);
+        }
+      }, 3000); // Update every 3  seconds
 
-    return () => {
-      clearInterval(intervalId); // Clear interval on unmount
-    };
-  }, [currentIndex, fakeLoadingText.length]);
+      return () => {
+        clearInterval(intervalId); // Clear interval on unmount
+      };
+    }
+  }, [currentIndex, fakeLoadingText.length, stage]);
 
   useEffect(() => {
     if (stage === GigStages.FindJob && resume) {
