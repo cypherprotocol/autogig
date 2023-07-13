@@ -108,70 +108,70 @@ export async function POST(req: NextRequest) {
     }
 
     // STEP 3: Parse information
-    const synposisQuestion =
-      "Given the details from this person's resume, could you provide a concise and accurate summary of their key skills, areas of expertise, and their professional interests?";
-    const synopsisMessage = `${synposisQuestion}\n${values.resume}`;
 
-    // Ask OpenAI for a streaming chat completion given the prompt
-    const synposisResponse = await openai.createChatCompletion({
-      model: "gpt-3.5-turbo",
-      messages: [
-        {
-          role: "user",
-          content: synopsisMessage,
-        },
-      ],
-      max_tokens: 500,
+    const resumeEmbedding = await openai.createEmbedding({
+      model: "text-embedding-ada-002",
+      input: values.resume!,
     });
 
-    const { data: jobs } = await supabase.from("jobs").select("*");
+    const [{ embedding }] = resumeEmbedding.data.data;
 
-    const getGigQuestion =
-      'We have a potential candidate with expertise in several areas. They have worked on these repositories, showcasing their skills and contributions. I will also provide a list of potential job openings. Given all this information, could you please recommend the most suitable job for this candidate? The job recommendation should be provided as a JSON object in the format: {"jobName": "<job name>", "jobLink": "<job link>", "jobDescription": "<job description>:}.';
-    const getGigMessage = `${getGigQuestion}\n${repos.toString()}\n${
-      synposisResponse.data.choices[0].message?.content
-    }\n${JSON.stringify(jobs?.splice(0, 1))}`;
-
-    const gigResponse = await openai.createChatCompletion({
-      model: "gpt-3.5-turbo",
-      messages: [
-        {
-          role: "system",
-          content:
-            'Hello, you are an AI job matchmaker. Your task is to analyze the data provided about a person\'s professional experience and expertise, and then recommend a job that would be a good fit for them. The job recommendation should be provided as a JSON object in the format: {"jobName": "<job name>", "jobLink": "<job link>", "jobDescription": "<job description>"}.',
-        },
-        {
-          role: "user",
-          content: getGigMessage,
-        },
-      ],
-      max_tokens: 500,
+    const { data: chunks, error } = await supabase.rpc("jobs_search", {
+      query_embedding: "[" + embedding.toString() + "]",
+      similarity_threshold: 0.5,
+      match_count: 5,
     });
 
-    const response = gigResponse.data.choices[0].message?.content as string;
+    console.log(error);
 
-    console.log("Response:", response);
-    const jsonStart = response.indexOf("{");
-    const jsonEnd = response.lastIndexOf("}") + 1;
-    const jsonString = response.slice(jsonStart, jsonEnd);
+    // const { data: jobs } = await supabase.from("jobs").select("*");
 
-    let jobData: {
-      jobName: string;
-      jobLink: string;
-      jobDescription: string;
-    } = {
-      jobName: "",
-      jobLink: "",
-      jobDescription: "",
-    };
+    // const getGigQuestion =
+    //   'We have a potential candidate with expertise in several areas. They have worked on these repositories, showcasing their skills and contributions. I will also provide a list of potential job openings. Given all this information, could you please recommend the most suitable job for this candidate? The job recommendation should be provided as a JSON object in the format: {"jobName": "<job name>", "jobLink": "<job link>", "jobDescription": "<job description>:}.';
+    // const getGigMessage = `${getGigQuestion}\n${repos.toString()}\n${
+    //   synposisResponse.data.choices[0].message?.content
+    // }\n${JSON.stringify(jobs?.splice(0, 1))}`;
 
-    try {
-      console.log("JSON data:", jsonString);
-      jobData = JSON.parse(jsonString);
-      console.log("Parsed JSON data:", jobData);
-    } catch (e) {
-      console.log("Error parsing JSON data:", e);
-    }
+    // const gigResponse = await openai.createChatCompletion({
+    //   model: "gpt-3.5-turbo",
+    //   messages: [
+    //     {
+    //       role: "system",
+    //       content:
+    //         'Hello, you are an AI job matchmaker. Your task is to analyze the data provided about a person\'s professional experience and expertise, and then recommend a job that would be a good fit for them. The job recommendation should be provided as a JSON object in the format: {"jobName": "<job name>", "jobLink": "<job link>", "jobDescription": "<job description>"}.',
+    //     },
+    //     {
+    //       role: "user",
+    //       content: getGigMessage,
+    //     },
+    //   ],
+    //   max_tokens: 500,
+    // });
+
+    // const response = gigResponse.data.choices[0].message?.content as string;
+
+    // console.log("Response:", response);
+    // const jsonStart = response.indexOf("{");
+    // const jsonEnd = response.lastIndexOf("}") + 1;
+    // const jsonString = response.slice(jsonStart, jsonEnd);
+
+    // let jobData: {
+    //   jobName: string;
+    //   jobLink: string;
+    //   jobDescription: string;
+    // } = {
+    //   jobName: "",
+    //   jobLink: "",
+    //   jobDescription: "",
+    // };
+
+    // try {
+    //   console.log("JSON data:", jsonString);
+    //   jobData = JSON.parse(jsonString);
+    //   console.log("Parsed JSON data:", jobData);
+    // } catch (e) {
+    //   console.log("Error parsing JSON data:", e);
+    // }
 
     const introResponse = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
@@ -179,23 +179,32 @@ export async function POST(req: NextRequest) {
         {
           role: "system",
           content:
-            "Using the information from the person's resume, their areas of expertise, key skills, and professional interests, generate a persuasive and professional introduction message. This message should express the candidate's enthusiasm for the potential job role, align their experience with the job requirements, and initiate further discussions or negotiations.",
+            "You are a helpful assistant that efficiently matches resumes with job listings, analyzing the expertise and specialty of each individual. By leveraging the provided resumes and job descriptions, you provide tailored recommendations for the best-fitting jobs. Your goal is to assist users in finding relevant opportunities that align with their skills and experience. Your expertise lies in efficiently comparing resumes to job listings and providing accurate and concise recommendations for the users' benefit.",
         },
         {
           role: "user",
           // content: `Please prepare an introduction for the candidate named ${candidate.name}, who has expertise in ${candidate.expertise}, experience in ${candidate.experience}, and a demonstrated interest in ${candidate.interests}. They are being considered for the role of ${jobRole}, which requires skills in ${jobSkills}.`,
-          content: `Given the candidate synopsis: '${synposisResponse.data.choices[0].message?.content}', and the potential job description: '${gigResponse.data.choices[0].message?.content}', please generate a persuasive and professional introduction message. The message should express the candidate's enthusiasm for the potential job role, align their experience with the job requirements, and initiate further discussions or negotiations.`,
+          content: `Given the candidates resume: '${values.resume}', and the potential job description: '${chunks}', please generate a persuasive and professional introduction message. The message should express the candidate's enthusiasm for the potential job role, align their experience with the job requirements, and initiate further discussions or negotiations.`,
         },
       ],
-      max_tokens: 500,
     });
+
+    // console.log(
+    //   `Given the candidates resume: '${
+    //     values.resume
+    //   }', and the potential job description: '${chunks
+    //     ?.map((d: any) => d.content)
+    //     .join(
+    //       "\n\n"
+    //     )}', please generate a persuasive and professional introduction message. The message should express the candidate's enthusiasm for the potential job role, align their experience with the job requirements, and initiate further discussions or negotiations.`
+    // );
 
     return new Response(
       JSON.stringify({
         response: introResponse.data.choices[0].message?.content,
-        jobName: jobData.jobName,
-        jobLink: jobData.jobLink,
-        jobDescription: jobData.jobDescription,
+        jobName: "jobData.jobName",
+        jobLink: "jobData.jobLink",
+        jobDescription: "jobData.jobDescription",
       })
     );
   } else {

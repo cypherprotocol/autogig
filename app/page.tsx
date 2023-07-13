@@ -44,7 +44,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    if (stage === GigStages.FindJob) {
+    if (stage === GigStages.FindJob && resume) {
       console.log(session);
       (async function findGig() {
         const res = await fetch("/api/gig?", {
@@ -68,7 +68,7 @@ export default function Home() {
           });
       })();
     }
-  }, [stage, session]);
+  }, [stage, session, resume]);
 
   // useEffect(() => {
   //   if (session) {

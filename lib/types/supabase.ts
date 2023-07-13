@@ -34,16 +34,19 @@ export interface Database {
         Row: {
           created_at: string | null
           data: Json
+          embedding: string | null
           id: number
         }
         Insert: {
           created_at?: string | null
           data: Json
+          embedding?: string | null
           id?: number
         }
         Update: {
           created_at?: string | null
           data?: Json
+          embedding?: string | null
           id?: number
         }
         Relationships: []
@@ -115,7 +118,61 @@ export interface Database {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      ivfflathandler: {
+        Args: {
+          "": unknown
+        }
+        Returns: unknown
+      }
+      jobs_search: {
+        Args: {
+          query_embedding: string
+          similarity_threshold: number
+          match_count: number
+        }
+        Returns: {
+          id: number
+          created_at: string
+          data: Json
+          similarity: number
+        }[]
+      }
+      vector_avg: {
+        Args: {
+          "": number[]
+        }
+        Returns: string
+      }
+      vector_dims: {
+        Args: {
+          "": string
+        }
+        Returns: number
+      }
+      vector_norm: {
+        Args: {
+          "": string
+        }
+        Returns: number
+      }
+      vector_out: {
+        Args: {
+          "": string
+        }
+        Returns: unknown
+      }
+      vector_send: {
+        Args: {
+          "": string
+        }
+        Returns: string
+      }
+      vector_typmod_in: {
+        Args: {
+          "": unknown[]
+        }
+        Returns: number
+      }
     }
     Enums: {
       [_ in never]: never
