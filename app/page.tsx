@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/card";
 import { Upload } from "@/components/upload";
 import useUserStore, { GigStages } from "@/state/user/useUserStore";
+import { Copy } from "lucide-react";
 import { signIn, useSession } from "next-auth/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -170,12 +171,23 @@ export default function Home() {
                     </CardHeader>
                   </Card>
                 </a>
-                <blockquote className="my-8 h-80 w-full overflow-y-scroll border-l-2 pl-6 italic">
+                <blockquote className="my-8 h-80 max-w-3xl pr-2 overflow-y-scroll border-l-2 pl-6 italic">
                   {response}
                 </blockquote>
-                <CopyToClipboard text={response} onCopy={() => setCopied(true)}>
-                  <Button>{copied ? "Copied!" : "Copy to clipboard"}</Button>
-                </CopyToClipboard>
+                <div className="w-full flex flex-row justify-center space-x-2">
+                  <Button variant="secondary" onClick={() => setStage(0)}>
+                    Start Over
+                  </Button>
+                  <CopyToClipboard
+                    text={response}
+                    onCopy={() => setCopied(true)}
+                  >
+                    <Button>
+                      {copied ? "Copied!" : "Copy to clipboard"}
+                      <Copy className="ml-2 h-4 w-4" />
+                    </Button>
+                  </CopyToClipboard>
+                </div>
               </div>
             );
         }
