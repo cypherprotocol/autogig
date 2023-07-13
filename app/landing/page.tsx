@@ -58,7 +58,7 @@ export default function Home() {
               type="email"
               name="email"
               placeholder="Email"
-              className="mr-2"
+              className="mr-2 "
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
