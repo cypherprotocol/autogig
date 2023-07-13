@@ -6,6 +6,8 @@ import { Octokit } from "octokit";
 import { Configuration, OpenAIApi } from "openai";
 import * as z from "zod";
 
+export const runtime = "edge";
+
 const gigSchema = z.object({
   twitter: z.string().optional(),
   github: z.string().optional(),

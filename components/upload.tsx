@@ -1,18 +1,16 @@
 import { Button } from "@/components/ui/button";
 import useUserStore, { GigStages } from "@/state/user/useUserStore";
+import { UploadIcon } from "lucide-react";
 import { PDFDocumentProxy } from "pdfjs-dist";
 import { TextItem } from "pdfjs-dist/types/src/display/api";
-import React, { useRef } from "react";
+import React, { useCallback, useRef } from "react";
+import { useDropzone } from "react-dropzone";
 
 export function Upload() {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const setSocials = useUserStore((state) => state.setSocials);
   const setResume = useUserStore((state) => state.setResume);
   const setStage = useUserStore((state) => state.setStage);
-
-  const handleFileClick = () => {
-    fileInputRef.current?.click();
-  };
 
   const uploadPhoto = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]!;
@@ -101,25 +99,49 @@ export function Upload() {
     return items.map(({ str }) => str).join("\n\n");
   }
 
+  const onDrop = useCallback((acceptedFiles) => {
+    // Do something with the files
+    uploadPhoto({
+      target: {
+        files: acceptedFiles,
+      },
+    } as any);
+  }, []);
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
+
+  const handleFileClick = () => {
+    fileInputRef.current?.click();
+  };
+
   return (
     <>
       <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
         Upload your resume
       </h3>
-      <input
-        type="file"
-        style={{ display: "none" }}
-        onChange={uploadPhoto}
-        ref={fileInputRef}
-        accept=".txt, .pdf"
-      />
-      <Button onClick={handleFileClick} className="mb-2">
-        Upload
-      </Button>
-
-      <p className="text-sm text-muted-foreground">
-        We support .txt and .pdf files
-      </p>
+      <div
+        className="flex h-64 w-[32rem] flex-col items-center justify-center rounded-md border border-dashed"
+        {...getRootProps()}
+      >
+        <input
+          {...getInputProps()}
+          type="file"
+          style={{ display: "none" }}
+          ref={fileInputRef}
+          accept=".txt, .pdf"
+        />
+        <div className="mb-4 flex flex-col items-center">
+          <UploadIcon className="mb-4" />
+          {isDragActive ? (
+            <p>Drop the files here...</p>
+          ) : (
+            <p>Drag and drop resume to upload</p>
+          )}
+        </div>
+        <Button className="mb-4" onClick={handleFileClick}>
+          Select file
+        </Button>
+        <p className="text-sm text-muted-foreground">PDF or TXT</p>
+      </div>
     </>
   );
 }
