@@ -1,5 +1,6 @@
 import supabase from "@/lib/supabase";
 import { Json } from "@/lib/types/supabase";
+import { Client } from "linkedin-private-api";
 import { getServerSession } from "next-auth";
 import { getToken } from "next-auth/jwt";
 import { NextRequest } from "next/server";
@@ -21,6 +22,9 @@ const config = new Configuration({
 });
 const openai = new OpenAIApi(config);
 
+const linkedinUsername = process.env.LINKEDIN_USERNAME as string;
+const linkedinPassword = process.env.LINKEDIN_PASSWORD as string;
+
 interface Repositories {
   name: string | null;
   language_data: Json | null;
@@ -37,7 +41,7 @@ export async function POST(req: NextRequest) {
   const token = await getToken({ req, secret: process.env.SECRET });
 
   let githubId = 0;
-  let repos: Repositories[] = [];
+  let githubRepos: Repositories[] = [];
 
   // Make sure user is authenticated
   if (true) {
@@ -59,7 +63,7 @@ export async function POST(req: NextRequest) {
           .eq("user_id", githubId);
 
         if (repositories && repositories.length > 0) {
-          repos = repositories;
+          githubRepos = repositories;
         }
       } else {
         // If user does not exist, create them and their repositories
@@ -112,6 +116,12 @@ export async function POST(req: NextRequest) {
               },
             ]);
 
+            githubRepos.push({
+              name: repo.name,
+              description: repo.description,
+              language_data: repoLanguages.data,
+            });
+
             if (error) {
               console.log("Error storing data in database:", error);
             }
@@ -120,6 +130,18 @@ export async function POST(req: NextRequest) {
           }
         }
       }
+    }
+
+    if (values.linkedin) {
+      const client = new Client();
+      await client.login.userPass({
+        username: linkedinUsername,
+        password: linkedinPassword,
+      });
+
+      client.search.searchPeople({
+        
+      })
     }
 
     // STEP 3: Parse information
@@ -140,7 +162,9 @@ export async function POST(req: NextRequest) {
 
     // Collect all data relevant to user looking for a job
     const profileInput =
-      values.resume?.replace(/\n/g, " ")! + " " + convertToReadable(repos);
+      values.resume?.replace(/\n/g, " ")! +
+      " " +
+      convertToReadable(githubRepos);
 
     const profileEmbedding = await openai.createEmbedding({
       model: "text-embedding-ada-002",
