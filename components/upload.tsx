@@ -55,15 +55,16 @@ export function Upload() {
       (match) => match[1]
     );
 
-    const githubUsername = githubUsernames[0] || null;
-    const linkedinUsername = linkedinUsernames[0] || null;
+    const githubUsername = githubUsernames[0];
+    const linkedinUsername = linkedinUsernames[0];
 
     console.log("GitHub Username:", githubUsername);
     console.log("LinkedIn Username:", linkedinUsername);
 
-    if (githubUsername && linkedinUsername) {
-      setSocials(githubUsername, linkedinUsername);
-    }
+    setSocials({
+      github: githubUsername,
+      linkedin: linkedinUsername,
+    });
   };
 
   async function loadPDF(data: ArrayBuffer): Promise<string> {

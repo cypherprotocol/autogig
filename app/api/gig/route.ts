@@ -1,4 +1,5 @@
 import supabase from "@/lib/supabase";
+import { Json } from "@/lib/types/supabase";
 import { getServerSession } from "next-auth";
 import { getToken } from "next-auth/jwt";
 import { NextRequest } from "next/server";
@@ -20,113 +21,141 @@ const config = new Configuration({
 });
 const openai = new OpenAIApi(config);
 
+interface Repositories {
+  name: string | null;
+  language_data: Json | null;
+  description: string | null;
+}
+
 export async function POST(req: NextRequest) {
   const json = await req.json();
   const values = gigSchema.parse(json);
+
+  console.log("values", values);
 
   const session = await getServerSession();
   const token = await getToken({ req, secret: process.env.SECRET });
 
   let githubId = 0;
-  let repos: any[] = [];
+  let repos: Repositories[] = [];
 
   // Make sure user is authenticated
   if (true) {
-    // If user already exists, get their repositories from database
-    const { data: github } = await supabase
-      .from("github")
-      .select("*")
-      .eq("name", values.github);
-
-    if (github && github.length > 0) {
-      githubId = github[0].id;
-
-      const { data: repositories } = await supabase
-        .from("repository")
-        .select("*")
-        .eq("user_id", githubId);
-
-      if (repositories && repositories.length > 0) {
-        repos = repositories;
-      }
-    } else {
-      // If user does not exist, create them and their repositories
-      console.log("github does not exist");
-      const githubUser = await supabase
+    if (values.github) {
+      // If user already exists, get their repositories from database
+      const { data: github } = await supabase
         .from("github")
-        .insert([
-          {
-            name: values.github!,
-          },
-        ])
-        .select();
+        .select("*")
+        .eq("name", values.github);
 
-      if (githubUser.data) {
-        githubId = githubUser.data[0].id;
-      }
+      console.log("github", github);
 
-      // STEP 1: Setup twitter API for authenticated user
-      // const client = new TwitterApi(token?.twitter?.accessToken as string);
+      if (github && github.length > 0) {
+        githubId = github[0].id;
 
-      // const user = await client.v2.me();
+        const { data: repositories } = await supabase
+          .from("repository")
+          .select("name, language_data, description")
+          .eq("user_id", githubId);
 
-      // STEP 2: Get revelant information on user based on github from resume
-      const octokit = new Octokit({
-        auth: token?.github?.accessToken as string,
-      });
-
-      const userRepos = await octokit.rest.repos.listForUser({
-        username: values?.github ?? "",
-      });
-
-      const top3Repos = userRepos.data
-        .filter((repo) => !!repo.stargazers_count) // Filter out repos without stars count
-        .sort((a, b) => b.stargazers_count! - a.stargazers_count!) // Sort in descending order
-        .slice(0, 3); // Take the top 3
-
-      for (const repo of top3Repos) {
-        try {
-          const repoLanguages = await octokit.rest.repos.listLanguages({
-            owner: values?.github ?? "",
-            repo: repo.name,
-          });
-
-          const { error } = await supabase.from("repository").insert([
+        if (repositories && repositories.length > 0) {
+          repos = repositories;
+        }
+      } else {
+        // If user does not exist, create them and their repositories
+        console.log("github does not exist");
+        const githubUser = await supabase
+          .from("github")
+          .insert([
             {
-              name: repo.name,
-              description: repo.description,
-              language_data: repoLanguages.data,
-              user_id: githubUser?.data?.[0]?.id,
+              name: values.github!,
             },
-          ]);
+          ])
+          .select();
 
-          if (error) {
-            console.log("Error storing data in database:", error);
+        if (githubUser.data) {
+          githubId = githubUser.data[0].id;
+        }
+
+        // STEP 1: Setup twitter API for authenticated user
+        // const client = new TwitterApi(token?.twitter?.accessToken as string);
+
+        // const user = await client.v2.me();
+
+        // STEP 2: Get revelant information on user based on github from resume
+        const octokit = new Octokit({
+          auth: token?.github?.accessToken as string,
+        });
+
+        const userRepos = await octokit.rest.repos.listForUser({
+          username: values?.github ?? "",
+        });
+
+        const top3Repos = userRepos.data
+          .filter((repo) => !!repo.stargazers_count) // Filter out repos without stars count
+          .sort((a, b) => b.stargazers_count! - a.stargazers_count!) // Sort in descending order
+          .slice(0, 3); // Take the top 3
+
+        for (const repo of top3Repos) {
+          try {
+            const repoLanguages = await octokit.rest.repos.listLanguages({
+              owner: values?.github ?? "",
+              repo: repo.name,
+            });
+
+            const { error } = await supabase.from("repository").insert([
+              {
+                name: repo.name,
+                description: repo.description,
+                language_data: repoLanguages.data,
+                user_id: githubUser?.data?.[0]?.id,
+              },
+            ]);
+
+            if (error) {
+              console.log("Error storing data in database:", error);
+            }
+          } catch (e) {
+            console.log(e);
           }
-        } catch (e) {
-          console.log(e);
         }
       }
     }
 
     // STEP 3: Parse information
 
-    const resumeEmbedding = await openai.createEmbedding({
+    const convertToReadable = (data: Repositories[]): string => {
+      const text = data
+        .map((repo) => {
+          return `Repository: ${repo.name}, Description: ${
+            repo.description
+          }, Languages: ${
+            repo.language_data ? Object.keys(repo.language_data).join(", ") : ""
+          } `;
+        })
+        .join("\n");
+
+      return text;
+    };
+
+    // Collect all data relevant to user looking for a job
+    const profileInput =
+      values.resume?.replace(/\n/g, " ")! + " " + convertToReadable(repos);
+
+    const profileEmbedding = await openai.createEmbedding({
       model: "text-embedding-ada-002",
-      input: values.resume?.replace(/\n/g, " ")!,
+      input: profileInput,
     });
 
-    const [{ embedding }] = resumeEmbedding.data.data;
+    console.log("profileEmbedding", profileInput);
 
-    console.log(embedding);
+    const [{ embedding }] = profileEmbedding.data.data;
 
     const { data: chunks, error } = await supabase.rpc("jobs_search", {
       query_embedding: embedding,
       similarity_threshold: 0.5,
       match_count: 1,
     });
-
-    console.log(chunks);
 
     // const { data: jobs } = await supabase.from("jobs").select("*");
 

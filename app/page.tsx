@@ -25,7 +25,6 @@ interface GigResponse {
 export default function Home() {
   const [dots, setDots] = useState(".");
   const { data: session, status } = useSession();
-  const loading = status === "loading";
   const socials = useUserStore((state) => state.socials);
   const stage = useUserStore((state) => state.stage);
   const setStage = useUserStore((state) => state.setStage);
@@ -68,12 +67,12 @@ export default function Home() {
   }, [currentIndex, fakeLoadingText.length, stage]);
 
   useEffect(() => {
-    if (stage === GigStages.FindJob && resume) {
+    if (stage === GigStages.FindJob) {
       (async function findGig() {
         const res = await fetch("/api/gig?", {
           method: "POST",
           body: JSON.stringify({
-            twitter: session?.user?.name ?? "",
+            twitter: session?.user?.name,
             github: socials.github,
             linkedin: socials.linkedin,
             resume: resume,
@@ -91,7 +90,15 @@ export default function Home() {
           });
       })();
     }
-  }, [stage, session, resume]);
+  }, [
+    stage,
+    session,
+    resume,
+    socials.github,
+    socials.linkedin,
+    setStage,
+    setJob,
+  ]);
 
   // useEffect(() => {
   //   if (session) {
@@ -140,7 +147,7 @@ export default function Home() {
             );
           case GigStages.Message:
             return (
-              <>
+              <div className="flex w-full max-w-7xl flex-col items-center">
                 <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
                   Message crafted!
                 </h3>
@@ -163,13 +170,13 @@ export default function Home() {
                     </CardHeader>
                   </Card>
                 </a>
-                <blockquote className="my-8 h-80 w-1/2 overflow-y-scroll border-l-2 pl-6 italic">
+                <blockquote className="my-8 h-80 w-full overflow-y-scroll border-l-2 pl-6 italic">
                   {response}
                 </blockquote>
                 <CopyToClipboard text={response} onCopy={() => setCopied(true)}>
                   <Button>{copied ? "Copied!" : "Copy to clipboard"}</Button>
                 </CopyToClipboard>
-              </>
+              </div>
             );
         }
       })()}

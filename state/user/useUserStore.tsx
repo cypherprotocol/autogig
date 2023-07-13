@@ -11,10 +11,16 @@ export enum GigStages {
 
 interface StoreState {
   socials: {
-    github: string;
-    linkedin: string;
+    github?: string;
+    linkedin?: string;
   };
-  setSocials: (github: string, linkedin: string) => void;
+  setSocials: ({
+    github,
+    linkedin,
+  }: {
+    github?: string;
+    linkedin?: string;
+  }) => void;
   stage: GigStages;
   setStage: (stage: GigStages) => void;
   resume: string;
@@ -29,11 +35,8 @@ interface StoreState {
 }
 
 const useUserStore = create<StoreState>((set) => ({
-  socials: {
-    github: "",
-    linkedin: "",
-  },
-  setSocials: (github, linkedin) =>
+  socials: {},
+  setSocials: ({ github, linkedin }) =>
     set((state) => ({
       socials: {
         github,

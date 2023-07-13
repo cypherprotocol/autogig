@@ -1,12 +1,13 @@
 import useUserStore from "@/state/user/useUserStore";
 import { useChat } from "ai/react";
 import { motion } from "framer-motion";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 export function UploadStyled() {
   const { messages, input, setInput, handleSubmit } = useChat();
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const setSocials = useUserStore((state) => state.setSocials);
+  const socials = useUserStore((state) => state.socials);
 
   const handleFileClick = () => {
     fileInputRef.current?.click();
@@ -40,10 +41,6 @@ export function UploadStyled() {
 
           console.log("GitHub Username:", githubUsername);
           console.log("LinkedIn Username:", linkedinUsername);
-
-          if (githubUsername && linkedinUsername) {
-            setSocials(githubUsername, linkedinUsername);
-          }
         }
 
         const question =
@@ -55,6 +52,10 @@ export function UploadStyled() {
       reader.readAsText(file);
     }
   };
+
+  useEffect(() => {
+    console.log(socials);
+  }, [socials]);
 
   return (
     <>
