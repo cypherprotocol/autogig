@@ -1,6 +1,5 @@
 import supabase from "@/lib/supabase";
 import { Json } from "@/lib/types/supabase";
-import { Client } from "linkedin-private-api";
 import { getServerSession } from "next-auth";
 import { getToken } from "next-auth/jwt";
 import { NextRequest } from "next/server";
@@ -132,17 +131,15 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    if (values.linkedin) {
-      const client = new Client();
-      await client.login.userPass({
-        username: linkedinUsername,
-        password: linkedinPassword,
-      });
+    // if (values.linkedin) {
+    //   const client = new Client();
+    //   await client.login.userPass({
+    //     username: linkedinUsername,
+    //     password: linkedinPassword,
+    //   });
 
-      client.search.searchPeople({
-        
-      })
-    }
+    //   client.search.searchPeople({});
+    // }
 
     // STEP 3: Parse information
 
