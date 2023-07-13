@@ -1,4 +1,7 @@
 module.exports = {
+  images: {
+    domains: ["wellfound.com"],
+  },
   experimental: { appDir: true },
   webpack: (config) => {
     config.resolve.fallback = {

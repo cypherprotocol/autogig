@@ -10,6 +10,7 @@ import {
 import { Upload } from "@/components/upload";
 import useUserStore, { GigStages } from "@/state/user/useUserStore";
 import { signIn, useSession } from "next-auth/react";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
@@ -125,7 +126,13 @@ export default function Home() {
                   <Card>
                     <CardHeader>
                       <div className="flex w-full items-center">
-                        <img src={job.logo} className="w-12 h-12 mr-4" />
+                        <Image
+                          src={job.logo}
+                          width={48}
+                          height={48}
+                          className="mr-4 object-cover"
+                          alt=""
+                        />
                         <div className="flex flex-col">
                           <CardTitle>{job.name}</CardTitle>
                           <CardDescription>{job.link}</CardDescription>
