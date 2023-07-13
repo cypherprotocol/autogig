@@ -37,7 +37,7 @@ export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const fakeLoadingText = [
-    "",
+    "Analyzing your resume",
     "Collecting the data",
     "Finding your dream job",
     "Crafting your message",
