@@ -1,3 +1,4 @@
+import { PotentialJob } from "@/lib/types";
 import { create } from "zustand";
 
 export enum GigStages {
@@ -25,13 +26,8 @@ interface StoreState {
   setStage: (stage: GigStages) => void;
   resume: string;
   setResume: (resume: string) => void;
-  job: {
-    name: string;
-    logo: string;
-    link: string;
-    title: string;
-  };
-  setJob: (name: string, logo: string, link: string, title: string) => void;
+  jobs: PotentialJob[];
+  setJobs: (jobs: PotentialJob[]) => void;
 }
 
 const useUserStore = create<StoreState>((set) => ({
@@ -53,20 +49,10 @@ const useUserStore = create<StoreState>((set) => ({
     set((state) => ({
       resume,
     })),
-  job: {
-    name: "",
-    logo: "",
-    link: "",
-    title: "",
-  },
-  setJob: (name, logo, link, title) =>
+  jobs: [],
+  setJobs: (jobs) =>
     set((state) => ({
-      job: {
-        name,
-        logo,
-        link,
-        title,
-      },
+      jobs,
     })),
 }));
 

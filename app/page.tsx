@@ -7,7 +7,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Upload } from "@/components/upload";
+import { PotentialJob } from "@/lib/types";
 import useUserStore, { GigStages } from "@/state/user/useUserStore";
 import { Copy } from "lucide-react";
 import { signIn, useSession } from "next-auth/react";
@@ -16,11 +18,7 @@ import { useEffect, useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 interface GigResponse {
-  response: string;
-  companyName: string;
-  companyLogo: string;
-  jobLink: string;
-  jobTitle: string;
+  potentialJobs: PotentialJob[];
 }
 
 export default function Home() {
@@ -30,10 +28,9 @@ export default function Home() {
   const stage = useUserStore((state) => state.stage);
   const setStage = useUserStore((state) => state.setStage);
   const resume = useUserStore((state) => state.resume);
-  const job = useUserStore((state) => state.job);
-  const setJob = useUserStore((state) => state.setJob);
+  const jobs = useUserStore((state) => state.jobs);
+  const setJobs = useUserStore((state) => state.setJobs);
   const [copied, setCopied] = useState(false);
-  const [response, setResponse] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const fakeLoadingText = [
@@ -82,8 +79,7 @@ export default function Home() {
           .then((res) => res.json())
           .then((res: GigResponse) => {
             console.log(res);
-            setResponse(res.response);
-            setJob(res.companyName, res.companyLogo, res.jobLink, res.jobTitle);
+            setJobs(res.potentialJobs);
             setStage(GigStages.Message);
           })
           .catch((err) => {
@@ -98,7 +94,7 @@ export default function Home() {
     socials.github,
     socials.linkedin,
     setStage,
-    setJob,
+    setJobs,
   ]);
 
   // useEffect(() => {
@@ -150,44 +146,59 @@ export default function Home() {
             return (
               <div className="flex w-full max-w-7xl flex-col items-center">
                 <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
-                  Message crafted!
+                  Here are some jobs we found for you 🎉
                 </h3>
-                <a href={job.link} target="_blank" rel="noreferrer">
-                  <Card>
-                    <CardHeader>
-                      <div className="flex w-full items-center">
-                        <Image
-                          src={job.logo}
-                          width={48}
-                          height={48}
-                          className="mr-4 object-cover"
-                          alt=""
-                        />
-                        <div className="flex flex-col">
-                          <CardTitle>{job.name}</CardTitle>
-                          <CardDescription>{job.link}</CardDescription>
-                        </div>
+                <Tabs defaultValue={"0"} className="flex flex-col items-center">
+                  <TabsList>
+                    {jobs.map((job, index) => {
+                      return (
+                        <TabsTrigger key={index} value={index.toString()}>
+                          {job.companyName}
+                        </TabsTrigger>
+                      );
+                    })}
+                  </TabsList>
+                  {jobs.map((job, index) => (
+                    <TabsContent key={index} value={index.toString()}>
+                      <a href={job.jobLink} target="_blank" rel="noreferrer">
+                        <Card>
+                          <CardHeader>
+                            <div className="flex w-full items-center">
+                              <Image
+                                src={job.companyLogo}
+                                width={48}
+                                height={48}
+                                className="mr-4 object-cover"
+                                alt=""
+                              />
+                              <div className="flex flex-col">
+                                <CardTitle>{job.companyName}</CardTitle>
+                                <CardDescription>{job.jobLink}</CardDescription>
+                              </div>
+                            </div>
+                          </CardHeader>
+                        </Card>
+                      </a>
+                      <blockquote className="my-8 h-80 max-w-3xl overflow-y-scroll border-l-2 pl-6 pr-2 italic">
+                        {job.response}
+                      </blockquote>
+                      <div className="flex w-full flex-row justify-center space-x-2">
+                        <Button variant="secondary" onClick={() => setStage(0)}>
+                          Start Over
+                        </Button>
+                        <CopyToClipboard
+                          text={job.response}
+                          onCopy={() => setCopied(true)}
+                        >
+                          <Button>
+                            {copied ? "Copied!" : "Copy to clipboard"}
+                            <Copy className="ml-2 h-4 w-4" />
+                          </Button>
+                        </CopyToClipboard>
                       </div>
-                    </CardHeader>
-                  </Card>
-                </a>
-                <blockquote className="my-8 h-80 max-w-3xl pr-2 overflow-y-scroll border-l-2 pl-6 italic">
-                  {response}
-                </blockquote>
-                <div className="w-full flex flex-row justify-center space-x-2">
-                  <Button variant="secondary" onClick={() => setStage(0)}>
-                    Start Over
-                  </Button>
-                  <CopyToClipboard
-                    text={response}
-                    onCopy={() => setCopied(true)}
-                  >
-                    <Button>
-                      {copied ? "Copied!" : "Copy to clipboard"}
-                      <Copy className="ml-2 h-4 w-4" />
-                    </Button>
-                  </CopyToClipboard>
-                </div>
+                    </TabsContent>
+                  ))}
+                </Tabs>
               </div>
             );
         }
