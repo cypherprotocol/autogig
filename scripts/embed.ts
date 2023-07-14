@@ -46,7 +46,7 @@ const generateEmbeddings = async (jobs: any[]) => {
 
 (async () => {
   const jobs: any[] = JSON.parse(
-    fs.readFileSync("lib/data/wellfound_2.json", "utf8")
+    fs.readFileSync("lib/data/handpick.json", "utf8")
   );
 
   await generateEmbeddings(jobs);
