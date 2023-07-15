@@ -135,20 +135,22 @@ export function Upload() {
                   </Button>
                 </div> */}
             <Button
+              variant={"outline"}
               onClick={() => setOption("portfolio")}
               className="flex h-64 w-full flex-col items-center justify-center"
             >
               <div className="flex flex-col items-center">
-                <Link className="mb-4 h-6 w-6" />
+                <Link className="mb-4 h-12 w-12" />
                 <p className="mb-4">Portfolio</p>
               </div>
             </Button>
             <Button
+              variant={"outline"}
               onClick={() => setOption("resume")}
               className="flex h-64 w-full flex-col items-center justify-center"
             >
               <div className="flex flex-col items-center">
-                <FileText className="mb-4 h-6 w-6" />
+                <FileText className="mb-4 h-12 w-12" />
                 <p className="mb-4">Resume</p>
               </div>
             </Button>
