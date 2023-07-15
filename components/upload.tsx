@@ -123,7 +123,7 @@ export function Upload() {
       {option === "" && (
         <>
           <h3 className="mb-8 scroll-m-20 text-center text-2xl font-semibold tracking-tight">
-            Choose your desired option
+            Upload your resume or portfolio
           </h3>
           <div className="flex w-full flex-row items-center justify-center space-x-4">
             {/* <div className="flex w-full h-64 flex-col items-center justify-center rounded-md border border-dashed">
@@ -134,22 +134,24 @@ export function Upload() {
                     Portfolio
                   </Button>
                 </div> */}
-            <div className="flex h-64 w-full flex-col items-center justify-center rounded-md border border-dashed">
+            <Button
+              onClick={() => setOption("portfolio")}
+              className="flex h-64 w-full flex-col items-center justify-center"
+            >
               <div className="flex flex-col items-center">
                 <Link className="mb-4 h-6 w-6" />
-                <Button className="mb-4" onClick={() => setOption("portfolio")}>
-                  Portfolio
-                </Button>
+                <p className="mb-4">Portfolio</p>
               </div>
-            </div>
-            <div className="flex h-64 w-full flex-col items-center justify-center rounded-md border border-dashed">
+            </Button>
+            <Button
+              onClick={() => setOption("resume")}
+              className="flex h-64 w-full flex-col items-center justify-center"
+            >
               <div className="flex flex-col items-center">
                 <FileText className="mb-4 h-6 w-6" />
-                <Button className="mb-4" onClick={() => setOption("resume")}>
-                  Resume
-                </Button>
+                <p className="mb-4">Resume</p>
               </div>
-            </div>
+            </Button>
           </div>
         </>
       )}
