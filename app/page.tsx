@@ -12,7 +12,7 @@ import { Upload } from "@/components/upload";
 import { PotentialJob } from "@/lib/types";
 import useUserStore, { GigStages } from "@/state/user/useUserStore";
 import { Copy } from "lucide-react";
-import { signIn, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
@@ -118,24 +118,24 @@ export default function Home() {
                   Find a job
                 </Button>
               );
-            case GigStages.LinkTwitter:
-              return (
-                <>
-                  <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
-                    Link your twitter
-                  </h3>
-                  <Button onClick={() => signIn("twitter")}>Link</Button>
-                </>
-              );
-            case GigStages.LinkGithub:
-              return (
-                <>
-                  <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
-                    Link your github
-                  </h3>
-                  <Button onClick={() => signIn("github")}>Link</Button>
-                </>
-              );
+            // case GigStages.LinkTwitter:
+            //   return (
+            //     <>
+            //       <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
+            //         Link your twitter
+            //       </h3>
+            //       <Button onClick={() => signIn("twitter")}>Link</Button>
+            //     </>
+            //   );
+            // case GigStages.LinkGithub:
+            //   return (
+            //     <>
+            //       <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
+            //         Link your github
+            //       </h3>
+            //       <Button onClick={() => signIn("github")}>Link</Button>
+            //     </>
+            //   );
             case GigStages.UploadResume:
               return <Upload />;
             case GigStages.FindJob:
@@ -220,7 +220,9 @@ export default function Home() {
         })()}
 
         <div className="absolute bottom-16 flex space-x-8">
-          <p className="text-sm text-muted-foreground">Step {stage} of 5</p>
+          <p className="text-sm text-muted-foreground">
+            Step {stage} of {Object.keys(GigStages).length / 2}
+          </p>
         </div>
       </div>
     </div>

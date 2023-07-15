@@ -1,10 +1,19 @@
 import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import useUserStore, { GigStages } from "@/state/user/useUserStore";
 import { FileText, Link, UploadIcon } from "lucide-react";
 import { PDFDocumentProxy } from "pdfjs-dist";
 import { TextItem } from "pdfjs-dist/types/src/display/api";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import { useDropzone } from "react-dropzone";
 
 export function Upload() {
@@ -13,9 +22,10 @@ export function Upload() {
   const setResume = useUserStore((state) => state.setResume);
   const setPortfolio = useUserStore((state) => state.setPortfolio);
   const setStage = useUserStore((state) => state.setStage);
+  const resume = useUserStore((state) => state.resume);
   const portfolio = useUserStore((state) => state.portfolio);
 
-  const [option, setOption] = useState<"portfolio" | "resume" | "">("");
+  const [option, setOption] = useState<"portfolio" | "resume">("resume");
 
   const uploadPhoto = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]!;
@@ -43,8 +53,6 @@ export function Upload() {
         setResume(content);
       };
     }
-
-    setStage(GigStages.FindJob);
   };
 
   const extractSocials = (content: string) => {
@@ -72,11 +80,11 @@ export function Upload() {
     });
   };
 
-  useEffect(() => {
-    if (portfolio) {
+  const onSubmit = () => {
+    if (resume || portfolio) {
       setStage(GigStages.FindJob);
     }
-  }, [portfolio, setStage]);
+  };
 
   async function loadPDF(data: ArrayBuffer): Promise<string> {
     const now = Date.now();
@@ -125,94 +133,83 @@ export function Upload() {
     fileInputRef.current?.click();
   };
 
+  console.log("option", option);
+
   return (
     <div className="flex w-full flex-col items-center justify-center">
-      {option === "" && (
-        <>
-          <h3 className="mb-8 scroll-m-20 text-center text-2xl font-semibold tracking-tight">
-            Upload your resume or portfolio
-          </h3>
-          <div className="flex w-full flex-row items-center justify-center space-x-4">
-            {/* <div className="flex w-full h-64 flex-col items-center justify-center rounded-md border border-dashed">
-                  <div className="mb-6 flex flex-col items-center">
-                    <Link className="w-8 h-8" />
-                  </div>
-                  <Button className="mb-4" onClick={() => setOption("portfolio")}>
-                    Portfolio
-                  </Button>
-                </div> */}
-            <Button
-              variant={"outline"}
-              onClick={() => setOption("portfolio")}
-              className="flex h-64 w-full flex-col items-center justify-center"
-            >
-              <div className="flex flex-col items-center">
-                <Link className="mb-4 h-12 w-12" />
-                <p className="mb-4">Portfolio</p>
-              </div>
-            </Button>
-            <Button
-              variant={"outline"}
-              onClick={() => setOption("resume")}
-              className="flex h-64 w-full flex-col items-center justify-center"
-            >
-              <div className="flex flex-col items-center">
-                <FileText className="mb-4 h-12 w-12" />
-                <p className="mb-4">Resume</p>
-              </div>
-            </Button>
-          </div>
-        </>
-      )}
-
-      {option === "portfolio" && (
-        <>
-          <h3 className="mb-8 scroll-m-20 text-center text-2xl font-semibold tracking-tight">
-            Link your portfolio
-          </h3>
-          <div className="flex h-64 w-full flex-col items-center justify-center rounded-md border border-dashed">
-            <Link className="mb-4" />
-            <p>Link your personal portfolio</p>
-            <Input
-              className="mt-4 w-3/4"
-              onChange={(e) => setPortfolio(e.target.value)}
-              placeholder="https://example.com"
-            />
-          </div>
-        </>
-      )}
-
-      {option === "resume" && (
-        <>
-          <h3 className="mb-8 scroll-m-20 text-center text-2xl font-semibold tracking-tight">
-            Upload your resume
-          </h3>
-          <div
-            className="flex h-64 w-full flex-col items-center justify-center rounded-md border border-dashed"
-            {...getRootProps()}
+      <Card className="w-full">
+        <CardHeader>
+          <CardTitle className="text-2xl">Tell us about yourself</CardTitle>
+          <CardDescription>Upload your resume or portfolio</CardDescription>
+        </CardHeader>
+        <CardContent className="h-96">
+          <RadioGroup
+            defaultValue={option}
+            onValueChange={(value) => setOption(value as any)}
+            className="mb-4 grid grid-cols-2 gap-4"
           >
-            <input
-              {...getInputProps()}
-              type="file"
-              style={{ display: "none" }}
-              ref={fileInputRef}
-              accept=".txt, .pdf"
-            />
-            <div className="mb-4 flex flex-col items-center">
-              <UploadIcon className="mb-4" />
-              {isDragActive ? (
-                <p>Drop the files here...</p>
-              ) : (
-                <p>Drag and drop resume to upload</p>
-              )}
+            <Label
+              htmlFor="resume"
+              className="flex cursor-pointer flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground [&:has([data-state=checked])]:border-primary"
+            >
+              <RadioGroupItem value="resume" id="resume" className="sr-only" />
+              <FileText className="mb-4 h-12 w-12" />
+              Resume
+            </Label>
+            <Label
+              htmlFor="portfolio"
+              className="flex cursor-pointer flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground [&:has([data-state=checked])]:border-primary"
+            >
+              <RadioGroupItem
+                value="portfolio"
+                id="portfolio"
+                className="sr-only"
+              />
+              <Link className="mb-4 h-12 w-12" />
+              Portfolio
+            </Label>
+          </RadioGroup>
+          {option === "resume" && (
+            <div
+              className="flex w-full flex-col items-center justify-center rounded-md border border-dashed py-4"
+              {...getRootProps()}
+            >
+              <input
+                {...getInputProps()}
+                type="file"
+                style={{ display: "none" }}
+                ref={fileInputRef}
+                accept=".txt, .pdf"
+              />
+              <div className="mb-4 flex flex-col items-center">
+                <UploadIcon className="mb-4" />
+                {isDragActive ? (
+                  <p>Drop the files here...</p>
+                ) : (
+                  <p>Drag and drop resume to upload</p>
+                )}
+              </div>
+              <Button className="mb-2" onClick={handleFileClick}>
+                Select file
+              </Button>
+              <p className="text-sm text-muted-foreground">PDF or TXT</p>
             </div>
-            <Button className="mb-4" onClick={handleFileClick}>
-              Select file
-            </Button>
-            <p className="text-sm text-muted-foreground">PDF or TXT</p>
-          </div>
-        </>
-      )}
+          )}
+          {option === "portfolio" && (
+            <div className="flex flex-col space-y-1.5">
+              <Label htmlFor="portfolio">Portfolio link</Label>
+              <Input
+                className="mt-4 w-full"
+                onChange={(e) => setPortfolio(e.target.value)}
+                placeholder="https://example.com"
+              />
+            </div>
+          )}
+          <Button onClick={onSubmit} className="mt-4 w-full">
+            Submit
+          </Button>
+        </CardContent>
+      </Card>
     </div>
   );
 }

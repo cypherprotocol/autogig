@@ -3,8 +3,8 @@ import { create } from "zustand";
 
 export enum GigStages {
   Start,
-  LinkTwitter,
-  LinkGithub,
+  // LinkTwitter,
+  // LinkGithub,
   UploadResume,
   FindJob,
   Message,
