@@ -119,13 +119,13 @@ export function Upload() {
   };
 
   return (
-    <div className="w-full flex flex-col items-center justify-center">
+    <div className="flex w-full flex-col items-center justify-center">
       {option === "" && (
         <>
-          <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight text-center">
+          <h3 className="mb-8 scroll-m-20 text-center text-2xl font-semibold tracking-tight">
             Choose your desired option
           </h3>
-          <div className="w-full flex flex-row items-center justify-center space-x-4">
+          <div className="flex w-full flex-row items-center justify-center space-x-4">
             {/* <div className="flex w-full h-64 flex-col items-center justify-center rounded-md border border-dashed">
                   <div className="mb-6 flex flex-col items-center">
                     <Link className="w-8 h-8" />
@@ -134,17 +134,17 @@ export function Upload() {
                     Portfolio
                   </Button>
                 </div> */}
-            <div className="flex w-full h-64 flex-col items-center justify-center rounded-md border border-dashed">
+            <div className="flex h-64 w-full flex-col items-center justify-center rounded-md border border-dashed">
               <div className="flex flex-col items-center">
-                <Link className="w-6 h-6 mb-4" />
+                <Link className="mb-4 h-6 w-6" />
                 <Button className="mb-4" onClick={() => setOption("portfolio")}>
                   Portfolio
                 </Button>
               </div>
             </div>
-            <div className="flex w-full h-64 flex-col items-center justify-center rounded-md border border-dashed">
+            <div className="flex h-64 w-full flex-col items-center justify-center rounded-md border border-dashed">
               <div className="flex flex-col items-center">
-                <FileText className="w-6 h-6 mb-4" />
+                <FileText className="mb-4 h-6 w-6" />
                 <Button className="mb-4" onClick={() => setOption("resume")}>
                   Resume
                 </Button>
@@ -156,15 +156,16 @@ export function Upload() {
 
       {option === "portfolio" && (
         <>
-          <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight text-center">
+          <h3 className="mb-8 scroll-m-20 text-center text-2xl font-semibold tracking-tight">
             Link your portfolio
           </h3>
           <div className="flex h-64 w-full flex-col items-center justify-center rounded-md border border-dashed">
             <Link className="mb-4" />
             <p>Link your personal portfolio</p>
             <Input
-              className="w-3/4 mt-4"
+              className="mt-4 w-3/4"
               onChange={(e) => setPortfolio(e.target.value)}
+              placeholder="https://example.com"
             />
           </div>
         </>
@@ -172,7 +173,7 @@ export function Upload() {
 
       {option === "resume" && (
         <>
-          <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight text-center">
+          <h3 className="mb-8 scroll-m-20 text-center text-2xl font-semibold tracking-tight">
             Upload your resume
           </h3>
           <div
