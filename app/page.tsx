@@ -30,6 +30,7 @@ export default function Home() {
   const resume = useUserStore((state) => state.resume);
   const jobs = useUserStore((state) => state.jobs);
   const setJobs = useUserStore((state) => state.setJobs);
+  const portfolio = useUserStore((state) => state.portfolio);
   const [copied, setCopied] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -74,6 +75,7 @@ export default function Home() {
             github: socials.github,
             linkedin: socials.linkedin,
             resume: resume,
+            portfolio: portfolio,
           }),
         })
           .then((res) => res.json())

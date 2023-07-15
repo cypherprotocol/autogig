@@ -1,6 +1,8 @@
 import supabase from "@/lib/supabase";
 import { PotentialJob } from "@/lib/types";
 import { Json } from "@/lib/types/supabase";
+import axios from "axios";
+import { load } from "cheerio";
 import { getServerSession } from "next-auth";
 import { getToken } from "next-auth/jwt";
 import { NextRequest } from "next/server";
@@ -15,6 +17,7 @@ const gigSchema = z.object({
   github: z.string().optional(),
   linkedin: z.string().optional(),
   resume: z.string().optional(),
+  portfolio: z.string().optional(),
 });
 
 const config = new Configuration({
@@ -158,9 +161,24 @@ export async function POST(req: NextRequest) {
       return text;
     };
 
+    let portfolioText = "";
+
+    if (values.portfolio) {
+      const response = await axios.get(values.portfolio);
+      const html = response.data;
+
+      const $ = load(html);
+
+      const text = $("body").text();
+
+      console.log("text", text);
+
+      portfolioText = text;
+    }
+
     // Collect all data relevant to user looking for a job
     const profileInput =
-      values.resume?.replace(/\n/g, " ")! +
+      (values.resume ? values.resume?.replace(/\n/g, " ")! : portfolioText) +
       " " +
       convertToReadable(githubRepos);
 

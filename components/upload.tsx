@@ -4,7 +4,7 @@ import useUserStore, { GigStages } from "@/state/user/useUserStore";
 import { FileText, Link, UploadIcon } from "lucide-react";
 import { PDFDocumentProxy } from "pdfjs-dist";
 import { TextItem } from "pdfjs-dist/types/src/display/api";
-import React, { useCallback, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useDropzone } from "react-dropzone";
 
 export function Upload() {
@@ -13,6 +13,7 @@ export function Upload() {
   const setResume = useUserStore((state) => state.setResume);
   const setPortfolio = useUserStore((state) => state.setPortfolio);
   const setStage = useUserStore((state) => state.setStage);
+  const portfolio = useUserStore((state) => state.portfolio);
 
   const [option, setOption] = useState<"portfolio" | "resume" | "">("");
 
@@ -70,6 +71,12 @@ export function Upload() {
       linkedin: linkedinUsername,
     });
   };
+
+  useEffect(() => {
+    if (portfolio) {
+      setStage(GigStages.FindJob);
+    }
+  }, [portfolio, setStage]);
 
   async function loadPDF(data: ArrayBuffer): Promise<string> {
     const now = Date.now();
