@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import useUserStore, { GigStages } from "@/state/user/useUserStore";
-import { FileText, Link, UploadIcon } from "lucide-react";
+import { FileText, Github, Link, UploadIcon } from "lucide-react";
 import { PDFDocumentProxy } from "pdfjs-dist";
 import { TextItem } from "pdfjs-dist/types/src/display/api";
 import React, { useCallback, useRef, useState } from "react";
@@ -18,14 +18,18 @@ import { useDropzone } from "react-dropzone";
 
 export function Upload() {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
-  const setSocials = useUserStore((state) => state.setSocials);
+  const setGithub = useUserStore((state) => state.setGithub);
+  const setLinkedin = useUserStore((state) => state.setLinkedin);
   const setResume = useUserStore((state) => state.setResume);
   const setPortfolio = useUserStore((state) => state.setPortfolio);
   const setStage = useUserStore((state) => state.setStage);
   const resume = useUserStore((state) => state.resume);
   const portfolio = useUserStore((state) => state.portfolio);
+  const github = useUserStore((state) => state.github);
 
-  const [option, setOption] = useState<"portfolio" | "resume">("resume");
+  const [option, setOption] = useState<"portfolio" | "resume" | "github">(
+    "github"
+  );
 
   const uploadPhoto = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]!;
@@ -74,14 +78,12 @@ export function Upload() {
     console.log("GitHub Username:", githubUsername);
     console.log("LinkedIn Username:", linkedinUsername);
 
-    setSocials({
-      github: githubUsername,
-      linkedin: linkedinUsername,
-    });
+    setGithub(githubUsername);
+    setLinkedin(linkedinUsername);
   };
 
   const onSubmit = () => {
-    if (resume || portfolio) {
+    if (resume || portfolio || github) {
       setStage(GigStages.FindJob);
     }
   };
@@ -142,12 +144,20 @@ export function Upload() {
           <CardTitle className="text-2xl">Tell us about yourself</CardTitle>
           <CardDescription>Upload your resume or portfolio</CardDescription>
         </CardHeader>
-        <CardContent className="h-96">
+        <CardContent>
           <RadioGroup
             defaultValue={option}
             onValueChange={(value) => setOption(value as any)}
-            className="mb-4 grid grid-cols-2 gap-4"
+            className="mb-4 grid grid-cols-3 gap-4"
           >
+            <Label
+              htmlFor="github"
+              className="flex cursor-pointer flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground [&:has([data-state=checked])]:border-primary"
+            >
+              <RadioGroupItem value="github" id="github" className="sr-only" />
+              <Github className="mb-4 h-12 w-12" />
+              Github
+            </Label>
             <Label
               htmlFor="resume"
               className="flex cursor-pointer flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground [&:has([data-state=checked])]:border-primary"
@@ -171,7 +181,7 @@ export function Upload() {
           </RadioGroup>
           {option === "resume" && (
             <div
-              className="flex w-full flex-col items-center justify-center rounded-md border border-dashed py-4"
+              className="flex w-full flex-col items-center justify-center rounded-md border border-dashed p-8"
               {...getRootProps()}
             >
               <input
@@ -181,18 +191,17 @@ export function Upload() {
                 ref={fileInputRef}
                 accept=".txt, .pdf"
               />
-              <div className="mb-4 flex flex-col items-center">
+              <div className="mb-2 flex flex-col items-center">
                 <UploadIcon className="mb-4" />
                 {isDragActive ? (
-                  <p>Drop the files here...</p>
+                  <p>Drop here...</p>
                 ) : (
-                  <p>Drag and drop resume to upload</p>
+                  <p>Drag PDF or TXT here</p>
                 )}
               </div>
-              <Button className="mb-2" onClick={handleFileClick}>
-                Select file
-              </Button>
-              <p className="text-sm text-muted-foreground">PDF or TXT</p>
+              <p className="text-sm text-muted-foreground">
+                or click to browse (10mb max)
+              </p>
             </div>
           )}
           {option === "portfolio" && (
@@ -202,6 +211,16 @@ export function Upload() {
                 className="mt-4 w-full"
                 onChange={(e) => setPortfolio(e.target.value)}
                 placeholder="https://example.com"
+              />
+            </div>
+          )}
+          {option === "github" && (
+            <div className="flex flex-col space-y-1.5">
+              <Label htmlFor="github">Github username</Label>
+              <Input
+                className="mt-4 w-full"
+                onChange={(e) => setGithub(e.target.value)}
+                placeholder="Username"
               />
             </div>
           )}

@@ -178,7 +178,9 @@ export async function POST(req: NextRequest) {
 
     // Collect all data relevant to user looking for a job
     const profileInput =
-      (values.resume ? values.resume?.replace(/\n/g, " ")! : portfolioText) +
+      (values.resume && values.resume?.replace(/\n/g, " ")!) +
+      " " +
+      (values.portfolio && portfolioText) +
       " " +
       convertToReadable(githubRepos);
 

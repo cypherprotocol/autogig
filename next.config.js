@@ -1,6 +1,6 @@
 module.exports = {
   images: {
-    domains: ["wellfound.com"],
+    domains: ["wellfound.com", "i.imgur.com"],
   },
   experimental: { appDir: true },
   webpack: (config) => {

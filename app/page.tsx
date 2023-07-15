@@ -24,13 +24,14 @@ interface GigResponse {
 export default function Home() {
   const [dots, setDots] = useState(".");
   const { data: session, status } = useSession();
-  const socials = useUserStore((state) => state.socials);
   const stage = useUserStore((state) => state.stage);
   const setStage = useUserStore((state) => state.setStage);
   const resume = useUserStore((state) => state.resume);
   const jobs = useUserStore((state) => state.jobs);
   const setJobs = useUserStore((state) => state.setJobs);
   const portfolio = useUserStore((state) => state.portfolio);
+  const github = useUserStore((state) => state.github);
+  const linkedin = useUserStore((state) => state.linkedin);
   const [copied, setCopied] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -72,8 +73,8 @@ export default function Home() {
           method: "POST",
           body: JSON.stringify({
             twitter: session?.user?.name,
-            github: socials.github,
-            linkedin: socials.linkedin,
+            github: github,
+            linkedin: linkedin,
             resume: resume,
             portfolio: portfolio,
           }),
@@ -89,15 +90,7 @@ export default function Home() {
           });
       })();
     }
-  }, [
-    stage,
-    session,
-    resume,
-    socials.github,
-    socials.linkedin,
-    setStage,
-    setJobs,
-  ]);
+  }, [stage, session, resume, github, linkedin, setStage, setJobs]);
 
   // useEffect(() => {
   //   if (session) {
@@ -174,13 +167,14 @@ export default function Home() {
                           <Card>
                             <CardHeader>
                               <div className="flex w-full items-center">
-                                <Image
-                                  src={job.companyLogo}
-                                  width={48}
-                                  height={48}
-                                  className="mr-4 object-cover"
-                                  alt=""
-                                />
+                                <div className="relative mr-4 h-12 w-12 shrink-0">
+                                  <Image
+                                    src={job.companyLogo}
+                                    fill
+                                    className="object-contain"
+                                    alt=""
+                                  />
+                                </div>
                                 <div className="flex flex-col truncate">
                                   <CardTitle>{job.companyName}</CardTitle>
                                   <CardDescription>
