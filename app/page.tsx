@@ -189,7 +189,7 @@ export default function Home() {
                             </CardHeader>
                           </Card>
                         </a>
-                        <blockquote className="my-8 h-80 max-w-3xl overflow-y-scroll border-l-2 pl-6 pr-2 italic">
+                        <blockquote className="my-8 h-64 md:h-80 max-w-3xl overflow-y-scroll border-l-2 pl-6 pr-2 italic">
                           {job.response}
                         </blockquote>
                         <div className="flex w-full flex-row justify-center space-x-2">

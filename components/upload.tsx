@@ -122,7 +122,7 @@ export function Upload() {
     <div className="w-full flex flex-col items-center justify-center">
       {option === "" && (
         <>
-          <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
+          <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight text-center">
             Choose your desired option
           </h3>
           <div className="w-full flex flex-row items-center justify-center space-x-4">
@@ -156,7 +156,7 @@ export function Upload() {
 
       {option === "portfolio" && (
         <>
-          <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
+          <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight text-center">
             Link your portfolio
           </h3>
           <div className="flex h-64 w-full flex-col items-center justify-center rounded-md border border-dashed">
@@ -172,7 +172,7 @@ export function Upload() {
 
       {option === "resume" && (
         <>
-          <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
+          <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight text-center">
             Upload your resume
           </h3>
           <div
