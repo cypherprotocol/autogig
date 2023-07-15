@@ -107,105 +107,119 @@ export default function Home() {
 
   return (
     <div className="relative z-10 flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-white">
-      {(() => {
-        switch (stage) {
-          case GigStages.Start:
-            return (
-              <Button onClick={() => setStage(GigStages.UploadResume)}>
-                Find a job
-              </Button>
-            );
-          case GigStages.LinkTwitter:
-            return (
-              <>
+      <div className="w-72 md:w-[24rem] lg:w-[32rem] flex items-center justify-center">
+        {(() => {
+          switch (stage) {
+            case GigStages.Start:
+              return (
+                <Button onClick={() => setStage(GigStages.UploadResume)}>
+                  Find a job
+                </Button>
+              );
+            case GigStages.LinkTwitter:
+              return (
+                <>
+                  <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
+                    Link your twitter
+                  </h3>
+                  <Button onClick={() => signIn("twitter")}>Link</Button>
+                </>
+              );
+            case GigStages.LinkGithub:
+              return (
+                <>
+                  <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
+                    Link your github
+                  </h3>
+                  <Button onClick={() => signIn("github")}>Link</Button>
+                </>
+              );
+            case GigStages.UploadResume:
+              return <Upload />;
+            case GigStages.FindJob:
+              return (
                 <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
-                  Link your twitter
+                  {fakeLoadingText[currentIndex]}
+                  {dots}
                 </h3>
-                <Button onClick={() => signIn("twitter")}>Link</Button>
-              </>
-            );
-          case GigStages.LinkGithub:
-            return (
-              <>
-                <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
-                  Link your github
-                </h3>
-                <Button onClick={() => signIn("github")}>Link</Button>
-              </>
-            );
-          case GigStages.UploadResume:
-            return <Upload />;
-          case GigStages.FindJob:
-            return (
-              <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
-                {fakeLoadingText[currentIndex]}
-                {dots}
-              </h3>
-            );
-          case GigStages.Message:
-            return (
-              <div className="flex w-full max-w-7xl flex-col items-center">
-                <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
-                  Here are some jobs we found for you 🎉
-                </h3>
-                <Tabs defaultValue={"0"} className="flex flex-col items-center">
-                  <TabsList>
-                    {jobs.map((job, index) => {
-                      return (
-                        <TabsTrigger key={index} value={index.toString()}>
-                          {job.companyName}
-                        </TabsTrigger>
-                      );
-                    })}
-                  </TabsList>
-                  {jobs.map((job, index) => (
-                    <TabsContent key={index} value={index.toString()}>
-                      <a href={job.jobLink} target="_blank" rel="noreferrer">
-                        <Card>
-                          <CardHeader>
-                            <div className="flex w-full items-center">
-                              <Image
-                                src={job.companyLogo}
-                                width={48}
-                                height={48}
-                                className="mr-4 object-cover"
-                                alt=""
-                              />
-                              <div className="flex flex-col">
-                                <CardTitle>{job.companyName}</CardTitle>
-                                <CardDescription>{job.jobLink}</CardDescription>
+              );
+            case GigStages.Message:
+              return (
+                <div className="flex w-full max-w-7xl flex-col items-center">
+                  <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight text-center">
+                    Here are some jobs we found for you 🎉
+                  </h3>
+                  <Tabs
+                    defaultValue={"0"}
+                    className="flex flex-col items-center w-full"
+                  >
+                    <TabsList>
+                      {jobs.map((job, index) => {
+                        return (
+                          <TabsTrigger key={index} value={index.toString()}>
+                            {job.companyName}
+                          </TabsTrigger>
+                        );
+                      })}
+                    </TabsList>
+                    {jobs.map((job, index) => (
+                      <TabsContent
+                        key={index}
+                        value={index.toString()}
+                        className="w-full"
+                      >
+                        <a href={job.jobLink} target="_blank" rel="noreferrer">
+                          <Card>
+                            <CardHeader>
+                              <div className="flex w-full items-center">
+                                <Image
+                                  src={job.companyLogo}
+                                  width={48}
+                                  height={48}
+                                  className="mr-4 object-cover"
+                                  alt=""
+                                />
+                                <div className="flex flex-col truncate">
+                                  <CardTitle>{job.companyName}</CardTitle>
+                                  <CardDescription>
+                                    {job.jobLink}
+                                  </CardDescription>
+                                </div>
                               </div>
-                            </div>
-                          </CardHeader>
-                        </Card>
-                      </a>
-                      <blockquote className="my-8 h-80 max-w-3xl overflow-y-scroll border-l-2 pl-6 pr-2 italic">
-                        {job.response}
-                      </blockquote>
-                      <div className="flex w-full flex-row justify-center space-x-2">
-                        <Button variant="secondary" onClick={() => setStage(0)}>
-                          Start Over
-                        </Button>
-                        <CopyToClipboard
-                          text={job.response}
-                          onCopy={() => setCopied(true)}
-                        >
-                          <Button>
-                            {copied ? "Copied!" : "Copy to clipboard"}
-                            <Copy className="ml-2 h-4 w-4" />
+                            </CardHeader>
+                          </Card>
+                        </a>
+                        <blockquote className="my-8 h-80 max-w-3xl overflow-y-scroll border-l-2 pl-6 pr-2 italic">
+                          {job.response}
+                        </blockquote>
+                        <div className="flex w-full flex-row justify-center space-x-2">
+                          <Button
+                            variant="secondary"
+                            onClick={() => setStage(0)}
+                          >
+                            Start Over
                           </Button>
-                        </CopyToClipboard>
-                      </div>
-                    </TabsContent>
-                  ))}
-                </Tabs>
-              </div>
-            );
-        }
-      })()}
+                          <CopyToClipboard
+                            text={job.response}
+                            onCopy={() => setCopied(true)}
+                          >
+                            <Button>
+                              {copied ? "Copied!" : "Copy to clipboard"}
+                              <Copy className="ml-2 h-4 w-4" />
+                            </Button>
+                          </CopyToClipboard>
+                        </div>
+                      </TabsContent>
+                    ))}
+                  </Tabs>
+                </div>
+              );
+          }
+        })()}
 
-      <div className="absolute bottom-16 flex space-x-8">
-        <p className="text-sm text-muted-foreground">Step {stage} of 5</p>
+        <div className="absolute bottom-16 flex space-x-8">
+          <p className="text-sm text-muted-foreground">Step {stage} of 5</p>
+        </div>
       </div>
     </div>
   );

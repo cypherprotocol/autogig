@@ -115,12 +115,12 @@ export function Upload() {
   };
 
   return (
-    <>
+    <div className="w-full flex flex-col items-center justify-center">
       <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
         Upload your resume
       </h3>
       <div
-        className="flex h-64 w-[32rem] flex-col items-center justify-center rounded-md border border-dashed"
+        className="flex h-64 w-full flex-col items-center justify-center rounded-md border border-dashed"
         {...getRootProps()}
       >
         <input
@@ -143,6 +143,6 @@ export function Upload() {
         </Button>
         <p className="text-sm text-muted-foreground">PDF or TXT</p>
       </div>
-    </>
+    </div>
   );
 }
