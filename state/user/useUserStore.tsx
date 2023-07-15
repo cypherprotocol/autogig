@@ -26,6 +26,8 @@ interface StoreState {
   setStage: (stage: GigStages) => void;
   resume: string;
   setResume: (resume: string) => void;
+  portfolio: string;
+  setPortfolio: (resume: string) => void;
   jobs: PotentialJob[];
   setJobs: (jobs: PotentialJob[]) => void;
 }
@@ -48,6 +50,11 @@ const useUserStore = create<StoreState>((set) => ({
   setResume: (resume) =>
     set((state) => ({
       resume,
+    })),
+  portfolio: "",
+  setPortfolio: (portfolio) =>
+    set((state) => ({
+      portfolio,
     })),
   jobs: [],
   setJobs: (jobs) =>

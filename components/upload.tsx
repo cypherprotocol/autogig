@@ -1,16 +1,20 @@
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import useUserStore, { GigStages } from "@/state/user/useUserStore";
-import { UploadIcon } from "lucide-react";
+import { FileText, Link, UploadIcon } from "lucide-react";
 import { PDFDocumentProxy } from "pdfjs-dist";
 import { TextItem } from "pdfjs-dist/types/src/display/api";
-import React, { useCallback, useRef } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import { useDropzone } from "react-dropzone";
 
 export function Upload() {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const setSocials = useUserStore((state) => state.setSocials);
   const setResume = useUserStore((state) => state.setResume);
+  const setPortfolio = useUserStore((state) => state.setPortfolio);
   const setStage = useUserStore((state) => state.setStage);
+
+  const [option, setOption] = useState<"portfolio" | "resume" | "">("");
 
   const uploadPhoto = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]!;
@@ -116,33 +120,87 @@ export function Upload() {
 
   return (
     <div className="w-full flex flex-col items-center justify-center">
-      <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
-        Upload your resume
-      </h3>
-      <div
-        className="flex h-64 w-full flex-col items-center justify-center rounded-md border border-dashed"
-        {...getRootProps()}
-      >
-        <input
-          {...getInputProps()}
-          type="file"
-          style={{ display: "none" }}
-          ref={fileInputRef}
-          accept=".txt, .pdf"
-        />
-        <div className="mb-4 flex flex-col items-center">
-          <UploadIcon className="mb-4" />
-          {isDragActive ? (
-            <p>Drop the files here...</p>
-          ) : (
-            <p>Drag and drop resume to upload</p>
-          )}
-        </div>
-        <Button className="mb-4" onClick={handleFileClick}>
-          Select file
-        </Button>
-        <p className="text-sm text-muted-foreground">PDF or TXT</p>
-      </div>
+      {option === "" && (
+        <>
+          <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
+            Choose your desired option
+          </h3>
+          <div className="w-full flex flex-row items-center justify-center space-x-4">
+            {/* <div className="flex w-full h-64 flex-col items-center justify-center rounded-md border border-dashed">
+                  <div className="mb-6 flex flex-col items-center">
+                    <Link className="w-8 h-8" />
+                  </div>
+                  <Button className="mb-4" onClick={() => setOption("portfolio")}>
+                    Portfolio
+                  </Button>
+                </div> */}
+            <div className="flex w-full h-64 flex-col items-center justify-center rounded-md border border-dashed">
+              <div className="flex flex-col items-center">
+                <Link className="w-6 h-6 mb-4" />
+                <Button className="mb-4" onClick={() => setOption("portfolio")}>
+                  Portfolio
+                </Button>
+              </div>
+            </div>
+            <div className="flex w-full h-64 flex-col items-center justify-center rounded-md border border-dashed">
+              <div className="flex flex-col items-center">
+                <FileText className="w-6 h-6 mb-4" />
+                <Button className="mb-4" onClick={() => setOption("resume")}>
+                  Resume
+                </Button>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+
+      {option === "portfolio" && (
+        <>
+          <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
+            Link your portfolio
+          </h3>
+          <div className="flex h-64 w-full flex-col items-center justify-center rounded-md border border-dashed">
+            <Link className="mb-4" />
+            <p>Link your personal portfolio</p>
+            <Input
+              className="w-3/4 mt-4"
+              onChange={(e) => setPortfolio(e.target.value)}
+            />
+          </div>
+        </>
+      )}
+
+      {option === "resume" && (
+        <>
+          <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
+            Upload your resume
+          </h3>
+          <div
+            className="flex h-64 w-full flex-col items-center justify-center rounded-md border border-dashed"
+            {...getRootProps()}
+          >
+            <input
+              {...getInputProps()}
+              type="file"
+              style={{ display: "none" }}
+              ref={fileInputRef}
+              accept=".txt, .pdf"
+            />
+            <div className="mb-4 flex flex-col items-center">
+              <UploadIcon className="mb-4" />
+              {isDragActive ? (
+                <p>Drop the files here...</p>
+              ) : (
+                <p>Drag and drop resume to upload</p>
+              )}
+            </div>
+            <Button className="mb-4" onClick={handleFileClick}>
+              Select file
+            </Button>
+            <p className="text-sm text-muted-foreground">PDF or TXT</p>
+          </div>
+        </>
+      )}
     </div>
   );
 }
