@@ -107,7 +107,7 @@ export default function Home() {
 
   return (
     <div className="relative z-10 flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-white">
-      <div className="w-72 md:w-[24rem] lg:w-[32rem] flex items-center justify-center">
+      <div className="flex w-72 items-center justify-center md:w-[24rem] lg:w-[32rem]">
         {(() => {
           switch (stage) {
             case GigStages.Start:
@@ -146,12 +146,12 @@ export default function Home() {
             case GigStages.Message:
               return (
                 <div className="flex w-full max-w-7xl flex-col items-center">
-                  <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight text-center">
+                  <h3 className="mb-8 scroll-m-20 text-center text-2xl font-semibold tracking-tight">
                     Here are some jobs we found for you 🎉
                   </h3>
                   <Tabs
                     defaultValue={"0"}
-                    className="flex flex-col items-center w-full"
+                    className="flex w-full flex-col items-center"
                   >
                     <TabsList>
                       {jobs.map((job, index) => {
@@ -189,7 +189,7 @@ export default function Home() {
                             </CardHeader>
                           </Card>
                         </a>
-                        <blockquote className="my-8 h-64 md:h-80 max-w-3xl overflow-y-scroll border-l-2 pl-6 pr-2 italic">
+                        <blockquote className="my-8 h-64 max-w-3xl overflow-y-scroll border-l-2 pl-6 pr-2 italic md:h-80">
                           {job.response}
                         </blockquote>
                         <div className="flex w-full flex-row justify-center space-x-2">
