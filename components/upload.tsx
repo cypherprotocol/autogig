@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import useUserStore, { GigStages } from "@/state/user/useUserStore";
+import va from "@vercel/analytics";
 import { FileText, Github, Link, UploadIcon } from "lucide-react";
 import { PDFDocumentProxy } from "pdfjs-dist";
 import { TextItem } from "pdfjs-dist/types/src/display/api";
@@ -84,6 +85,18 @@ export function Upload() {
 
   const onSubmit = () => {
     if (resume || portfolio || github) {
+      if (resume) {
+        va.track("resume-upload");
+      }
+
+      if (portfolio) {
+        va.track("portfolio-upload");
+      }
+
+      if (github) {
+        va.track("github-upload");
+      }
+
       setStage(GigStages.FindJob);
     }
   };
@@ -142,7 +155,9 @@ export function Upload() {
       <Card className="w-full">
         <CardHeader>
           <CardTitle className="text-2xl">Tell us about yourself</CardTitle>
-          <CardDescription>Upload your resume or portfolio</CardDescription>
+          <CardDescription>
+            We will use this information to find you the best job opportunities.
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <RadioGroup
