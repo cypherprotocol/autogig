@@ -16,7 +16,6 @@ import { PDFDocumentProxy } from "pdfjs-dist";
 import { TextItem } from "pdfjs-dist/types/src/display/api";
 import React, { useCallback, useRef, useState } from "react";
 import { useDropzone } from "react-dropzone";
-import { set } from "zod";
 
 export function Upload() {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
@@ -32,7 +31,7 @@ export function Upload() {
   const [isValidLink, setIsValidLink] = useState(true);
 
   const [option, setOption] = useState<"portfolio" | "resume" | "github">(
-    "github"
+    "resume"
   );
 
   const uploadPhoto = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -170,7 +169,7 @@ export function Upload() {
           <RadioGroup
             defaultValue={option}
             onValueChange={(value) => setOption(value as any)}
-            className="mb-4 grid grid-rows-3 md:grid-rows-none md:grid-cols-3 gap-4"
+            className="mb-4 grid grid-rows-3 gap-4 md:grid-cols-3 md:grid-rows-none"
           >
             <Label
               htmlFor="github"
@@ -238,7 +237,7 @@ export function Upload() {
                 {!isValidLink && (
                   <Label
                     htmlFor="portfolio"
-                    className="text-red-600 flex flex-row items-center space-x-1"
+                    className="flex flex-row items-center space-x-1 text-red-600"
                   >
                     <AlertCircle className="scale-75" />
                     <p>Invalid link please try again </p>
