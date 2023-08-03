@@ -13,10 +13,6 @@ export default function Home() {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
 
-  const autofill = async () => {
-    const res = await fetch("/api/autofill");
-  };
-
   const subscribe = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
@@ -48,8 +44,8 @@ export default function Home() {
   };
 
   return (
-    <div className="flex w-full max-w-6xl flex-col md:flex-row grow items-center justify-center md:justify-start px-4">
-      <div className="md:mr-16 flex w-full flex-col items-start justify-center">
+    <div className="flex w-full max-w-6xl grow flex-col items-center justify-center px-4 md:flex-row md:justify-start">
+      <div className="flex w-full flex-col items-start justify-center md:mr-16">
         <h1 className="mb-6 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
           <Balancer> Get a job without doing shit 💩</Balancer>
         </h1>
@@ -74,8 +70,7 @@ export default function Home() {
           </Button>
         </form>
       </div>
-      <Button onClick={autofill} />
-      <div className="hidden md:flex h-full w-full">
+      <div className="hidden h-full w-full md:flex">
         <div className="h-96 w-full rounded-md bg-slate-800" />
       </div>
     </div>
