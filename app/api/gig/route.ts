@@ -48,7 +48,7 @@ export async function POST(req: NextRequest) {
   const { data: chunks, error } = await supabase.rpc("jobs_search", {
     query_embedding: embedding,
     similarity_threshold: 0.5,
-    match_count: 3,
+    match_count: 1,
   });
 
   const applicantInfoResponse = await openai.createChatCompletion({
