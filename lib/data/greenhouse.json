@@ -1,0 +1,575 @@
+[
+  {
+    "title": "Software Engineer, Mobile",
+    "company_name": "Level",
+    "location": " Anywhere ",
+    "via": "via ZipRecruiter",
+    "description": "At Level, we believe using your benefits should be as easy as buying a cup of coffee. We're unlocking the full value of compensation by rebuilding benefits as a simple payments experience - fast, flexible, and transparent. Our mission is to empower people to build better financial futures, and we're accomplishing that by transforming the status quo of benefits.\n\nLevel is a B2B2C fintech company... comprised of a diverse team from industry-leading companies like Square, Oscar, Google, Uber, and Airbnb. Together, we're creating a new payments tech stack to help employers offer more accessible and personalized benefits for their teams - and this is just the beginning.\n\nAt Level, collaboration is our superpower. By leveraging each other's strengths and curiosity, we've been able to build a best-in-class product, culture, and business. Plus, our employee benefits are so awesome that we let our customers buy them too.\n\nWhat You'll Do:\n• Build scalable mobile applications for our Members\n• Define architecture, frameworks, and solutions to support new features for external customers\n• Collaborate with product and design to experiences that are elegant in their simplicity\n• Mentor junior team members\n\nWho You Are:\n• 5+ years of programming experience with significant experience in at least 1 mobile technology (React Native, Android, iOS)\n• 2+ years of experience building complex mobile applications\n• Experience with developing customer-facing features in collaboration with product and design teams\n• Experience defining extensible development patterns for mobile applications\n• Enjoy mentoring team members with your expertise and discoveries\n• Experience working with highly sensitive information (PII/PHI)\n• A passion for working in high performing teams and delivering products to end-users\n\nOur technologies:\n\nThese are some of the technologies we use today. You don't need to be familiar with all of these-many people on our team learned them with us. During our interview process, you're welcome to use any language you're most comfortable with.\n• React/React Native\n• Typescript, Go\n• Protobuf/gRPC, Kubernetes, MySQL, Elastic Search\n• AWS\n\nWhat We Offer:\n• Competitive salary and equity\n• Remote first, with an office in NYC as an option to come in\n• For those not in the NYC area, we offer up to $500 monthly for renting a co-working or office space\n• 100% paid medical for you and 80% for your dependents\n• 100% employer paid dental through Level with a $3,000 benefit allowance for you and each of your dependents\n• 100% employer paid vision through Level with an $800 benefit allowance for you and each of your dependents\n• Generous additional fringe benefits offered through Level's platform:\n• $150 monthly through our Wellbeing lifestyle spending account\n• $700 in Office Funds available in your first 90 days to assist with getting your home office set up\n• $1,000 annually through Level's Mental Health EAP\n• $3,000 annually in Education benefits (made available upon your 1 year anniversary) that can be used to continue professional education or be applied towards student loan payments.\n• $4,000 lifetime balance through our Medical Travel EAP\n• Flexible paid time off: take the time you need when you need it! Plus, get up to 10 days of paid sick leave per year\n• 401(k), long-term and short-term disability, and life insurance\n• Fully paid parental leave: up to 14 weeks for primary and 8 weeks for secondary caregivers\n• Quarterly company sponsored events\n• Have the chance to work at a leading innovator and trailblazer in the world of benefits and payments\n\nThis position has a minimum base salary of $150,000 and a midpoint base salary of $175,000. The base pay may vary depending on job-related knowledge, skills, and experience. In addition to a competitive base salary this position is also eligible for equity awards.\n\nLevel is proud to be an Equal Opportunity Employer . We celebrate diversity and are committed to creating a welcoming and inclusive environment for all. Please apply to this role if you feel you are a good fit, regardless of your race, color, religion, gender identity, sex, sexual preference, sexual identity, pregnancy, national origin, ancestry, citizenship, age, marital status, physical disability, mental disability, medical condition, military status, or any other perceived limiting factor. We welcome applicants from all walks of life.\n\nE-Verify Program Participant: Level participates in the Department of Homeland Security U.S. Citizenship and Immigration Services' E-Verify program (For U.S. based applicants and employees only). Please click below to learn more about the E-Verify program:\n• E-Verify Notice (bilingual)\n• Right to Work Notice (English) / (Spanish",
+    "job_highlights": [
+      {
+        "title": "Qualifications",
+        "items": [
+          "5+ years of programming experience with significant experience in at least 1 mobile technology (React Native, Android, iOS)",
+          "2+ years of experience building complex mobile applications",
+          "Experience with developing customer-facing features in collaboration with product and design teams",
+          "Experience defining extensible development patterns for mobile applications",
+          "Experience working with highly sensitive information (PII/PHI)",
+          "A passion for working in high performing teams and delivering products to end-users",
+          "You don't need to be familiar with all of these-many people on our team learned them with us",
+          "During our interview process, you're welcome to use any language you're most comfortable with"
+        ]
+      },
+      {
+        "title": "Responsibilities",
+        "items": [
+          "Build scalable mobile applications for our Members",
+          "Define architecture, frameworks, and solutions to support new features for external customers",
+          "Collaborate with product and design to experiences that are elegant in their simplicity",
+          "Mentor junior team members"
+        ]
+      },
+      {
+        "title": "Benefits",
+        "items": [
+          "Remote first, with an office in NYC as an option to come in",
+          "For those not in the NYC area, we offer up to $500 monthly for renting a co-working or office space",
+          "100% paid medical for you and 80% for your dependents",
+          "100% employer paid dental through Level with a $3,000 benefit allowance for you and each of your dependents",
+          "Generous additional fringe benefits offered through Level's platform:",
+          "$150 monthly through our Wellbeing lifestyle spending account",
+          "$700 in Office Funds available in your first 90 days to assist with getting your home office set up",
+          "$1,000 annually through Level's Mental Health EAP",
+          "$3,000 annually in Education benefits (made available upon your 1 year anniversary) that can be used to continue professional education or be applied towards student loan payments",
+          "$4,000 lifetime balance through our Medical Travel EAP",
+          "Flexible paid time off: take the time you need when you need it!",
+          "Plus, get up to 10 days of paid sick leave per year",
+          "401(k), long-term and short-term disability, and life insurance",
+          "Fully paid parental leave: up to 14 weeks for primary and 8 weeks for secondary caregivers",
+          "Quarterly company sponsored events",
+          "Have the chance to work at a leading innovator and trailblazer in the world of benefits and payments",
+          "This position has a minimum base salary of $150,000 and a midpoint base salary of $175,000",
+          "In addition to a competitive base salary this position is also eligible for equity awards"
+        ]
+      }
+    ],
+    "related_links": [
+      {
+        "link": "https://www.google.com/search?hl=en&q=Level&sa=X&ved=0ahUKEwjHgdK41r6AAxXCFrkGHV8oDy04HhCYkAII2Qk",
+        "text": "See web results for Level"
+      }
+    ],
+    "extensions": [
+      "Work from home",
+      "Full-time",
+      "No degree mentioned",
+      "Health insurance",
+      "Dental insurance",
+      "Paid time off"
+    ],
+    "detected_extensions": {
+      "schedule_type": "Full-time",
+      "work_from_home": true
+    },
+    "job_id": "eyJqb2JfdGl0bGUiOiJTb2Z0d2FyZSBFbmdpbmVlciwgTW9iaWxlIiwiaHRpZG9jaWQiOiJfekV3a2k1Z3M2QUFBQUFBQUFBQUFBPT0iLCJ1dWxlIjoidytDQUlRSUNJa1UyRnVJRVp5WVc1amFYTmpieUJDWVhrZ1FYSmxZU3hWYm1sMFpXUWdVM1JoZEdWeiIsImhsIjoiZW4iLCJmYyI6IkV2Y0JDcmNCUVUxck1teHNUSHAwUXkwNFNtOTBXbHBIZFd0c1V5MTRaMTlzWld0TGNqZEpjblJoYjJFMGEyTXRjMGxXTW5VdFgwMWtTbGRJVm5RelpGRktNamw2Y1daa1NrZG1VRVo1ZEdaTGJrVk1WWFZvYlhoaVIxY3haWGR0WVZOM05sWm5iM2g0ZW1VM1VXUjJiMnRZTjNObU5qUlRjbTlQU1haU2JrcFBkMk55VEROc1NIUkVjV3AyUTNaNlYyRTFjVmhIU2pCSWVXbGFOV0ZLZDNONE1rMHdRWEZNTVVaeVdGSlBabmN3TjJzeU5XNUVNV1ZtZG5WQkVoYzJTMjVMV2sxbWRFVk5TM1ExVDFWUU16bERPRFpCU1JvaVFVeEZVemwxVURsM1UzSllOR3hNYzFORVFqTTVYM051V21aemJHSnNUbFJrWnciLCJmY3YiOiIzIiwiZmNfaWQiOiJmY18xIiwiYXBwbHlfbGluayI6eyJ0aXRsZSI6Ii5uRmcyZWJ7Zm9udC13ZWlnaHQ6NTAwfS5CaTZEZGN7Zm9udC13ZWlnaHQ6NTAwfUFwcGx5IG9uIFppcFJlY3J1aXRlciIsImxpbmsiOiJodHRwczovL3d3dy56aXByZWNydWl0ZXIuY29tL2MvTGV2ZWwvSm9iL1NvZnR3YXJlLUVuZ2luZWVyLC1Nb2JpbGUvLWluLVNhbi1GcmFuY2lzY28sQ0E/amlkPWY4YjQ2MDc0YmY0NGFjYTJcdTAwMjZ1dG1fY2FtcGFpZ249Z29vZ2xlX2pvYnNfYXBwbHlcdTAwMjZ1dG1fc291cmNlPWdvb2dsZV9qb2JzX2FwcGx5XHUwMDI2dXRtX21lZGl1bT1vcmdhbmljIn19",
+    "job_link": "https://boards.greenhouse.io/level/jobs/5658954003?utm_source=ziprecruiter"
+  },
+  {
+    "title": "Software Engineer, Leverage Engineering",
+    "company_name": "OpenAI",
+    "location": "  San Francisco, CA   ",
+    "via": "via ZipRecruiter",
+    "description": "About the Team\n\nWe build infrastructure to enable OpenAI to scale. The software we build empowers the OpenAI team to work faster, smarter and more collaboratively...\n\nAbout the Role\n\nWe are looking for a self-starter engineer who loves building new products in an iterative and fast-moving environment. In this role, you will build software from the ground up to solve critical bottlenecks internally, often by applying our large language models.\n\nThis role is cross functional: you'll interface directly with leaders across the company to identify critical bottlenecks and fix them, and you'll collaborate with our research teams to learn how to apply our LLMs and share feedback.\n\nIn this role, you will:\n• Own the full product development lifecycle for new internal infrastructure and product experiences end-to-end\n• Talk to internal stakeholders to understand their problems and design solutions to address them\n• Work with the research team to share relevant feedback and iterate on applying their latest models\n• Collaborate with a cross-functional team of engineers, researchers, product managers, designers, and operations folks to create cutting-edge products\n\nYour background might look something like:\n• Relevant engineering experience at tech and product-driven companies\n• Former founder, or early engineer at a startup who built a product from scratch\n• Proficiency with JavaScript, React, and other web technologies\n• Proficiency with some backend language (we use Python)\n• Some experience with relational databases like Postgres/MySQL\n• Interest in AI/ML (direct experience not required)\n• Ability to move fast in an environment where things are sometimes loosely defined and you may have competing priorities or deadlines\n\nAbout OpenAI\n\nOpenAI is an AI research and deployment company dedicated to ensuring that general-purpose artificial intelligence benefits all of humanity. We push the boundaries of the capabilities of AI systems and seek to safely deploy them to the world through our products. AI is an extremely powerful tool that must be created with safety and human needs at its core, and to achieve our mission, we must encompass and value the many different perspectives, voices, and experiences that form the full spectrum of humanity.\n\nAt OpenAI, we believe artificial intelligence has the potential to help people solve immense global challenges, and we want the upside of AI to be widely shared. Join us in shaping the future of technology.\n\nBenefits and Perks\n\nThe annual salary range for the role is $200,000- $370,000. Total compensation also includes generous equity and benefits\n• Medical, dental, and vision insurance for you and your family\n• Mental health and wellness support\n• 401(k) plan with 4% matching\n• Unlimited time off and 18+ company holidays per year\n• Paid parental leave (20 weeks) and family-planning support\n• Annual learning & development stipend ($1,500 per year)\n\nWe are an equal opportunity employer and do not discriminate on the basis of race, religion, national origin, gender, sexual orientation, age, veteran status, disability or other legally protected statuses. Pursuant to the San Francisco Fair Chance Ordinance, we will consider qualified applicants with arrest and conviction records.\n\nWe are committed to providing reasonable accommodations to applicants with disabilities, and requests can be made via this link.\n\nOpenAI US Applicant Privacy Policy\n\nOpenAI UK Applicant Privacy Policy",
+    "job_highlights": [
+      {
+        "title": "Qualifications",
+        "items": [
+          "Relevant engineering experience at tech and product-driven companies",
+          "Former founder, or early engineer at a startup who built a product from scratch",
+          "Proficiency with JavaScript, React, and other web technologies",
+          "Proficiency with some backend language (we use Python)",
+          "Some experience with relational databases like Postgres/MySQL",
+          "Interest in AI/ML (direct experience not required)",
+          "Ability to move fast in an environment where things are sometimes loosely defined and you may have competing priorities or deadlines"
+        ]
+      },
+      {
+        "title": "Responsibilities",
+        "items": [
+          "In this role, you will build software from the ground up to solve critical bottlenecks internally, often by applying our large language models",
+          "This role is cross functional: you'll interface directly with leaders across the company to identify critical bottlenecks and fix them, and you'll collaborate with our research teams to learn how to apply our LLMs and share feedback",
+          "Own the full product development lifecycle for new internal infrastructure and product experiences end-to-end",
+          "Talk to internal stakeholders to understand their problems and design solutions to address them",
+          "Work with the research team to share relevant feedback and iterate on applying their latest models",
+          "Collaborate with a cross-functional team of engineers, researchers, product managers, designers, and operations folks to create cutting-edge products"
+        ]
+      },
+      {
+        "title": "Benefits",
+        "items": [
+          "The annual salary range for the role is $200,000- $370,000",
+          "Total compensation also includes generous equity and benefits",
+          "Medical, dental, and vision insurance for you and your family",
+          "Mental health and wellness support",
+          "401(k) plan with 4% matching",
+          "Unlimited time off and 18+ company holidays per year",
+          "Paid parental leave (20 weeks) and family-planning support",
+          "Annual learning & development stipend ($1,500 per year)"
+        ]
+      }
+    ],
+    "related_links": [
+      { "link": "http://openai.com/", "text": "openai.com" },
+      {
+        "link": "https://www.google.com/search?hl=en&q=OpenAI&sa=X&ved=0ahUKEwjHgdK41r6AAxXCFrkGHV8oDy04HhCYkAIIqQo",
+        "text": "See web results for OpenAI"
+      }
+    ],
+    "extensions": [
+      "200K–370K a year",
+      "Full-time",
+      "No degree mentioned",
+      "Health insurance",
+      "Dental insurance",
+      "Paid time off"
+    ],
+    "detected_extensions": {
+      "schedule_type": "Full-time",
+      "salary": "200K–370K a year"
+    },
+    "job_id": "eyJqb2JfdGl0bGUiOiJTb2Z0d2FyZSBFbmdpbmVlciwgTGV2ZXJhZ2UgRW5naW5lZXJpbmciLCJodGlkb2NpZCI6IklnajV1WDZlT3BzQUFBQUFBQUFBQUE9PSIsInV1bGUiOiJ3K0NBSVFJQ0lrVTJGdUlFWnlZVzVqYVhOamJ5QkNZWGtnUVhKbFlTeFZibWwwWldRZ1UzUmhkR1Z6IiwiaGwiOiJlbiIsImZjIjoiRXFJQ0N1SUJRVTFyTW14c1N6TkpSVmRSZG5KME1YbzJNRGcyUldSMGFVRkplVTFxYlhWdU5VMXpjVGRwZG5GTVNsYzNhRVl5Y2tseFYzQTRaWFJuV2xwd2JsZzFMVkJCY2kxeGNURnVSVWxCUkc1UE9HZ3RlVFZqYzFkbU4xQm5UMmREUjFac2NuUkllSGt4TW5sS016TjBSRWxDUm1FMlZXaFVNRE5QWldWWGFWWmhVV05HYzFSNGIzUnRaWGhmZGw4MlZGWm5TeTFtWnpkd2RrUjNaM2h2U2pKd2VXeE5aWEZhUnkxaVRteFlWbWhNUmpKb2VuTjVkemxwU3pkVGVtaFNXa2QyYld4cll6Sk5jbFY1U21wcFdIZFVXVTU1VGs5WlpVMUtlWFU0WXpkaGEwWTRVUklYTmt0dVMxcE5ablJGVFV0ME5VOVZVRE01UXpnMlFVa2FJa0ZNUlZNNWRVODVlRUoxZFUwM1EyRTFOMk5pZDBreFNYcFdPRm80VVc1NWIyYyIsImZjdiI6IjMiLCJmY19pZCI6ImZjXzIiLCJhcHBseV9saW5rIjp7InRpdGxlIjoiQXBwbHkgb24gWmlwUmVjcnVpdGVyIiwibGluayI6Imh0dHBzOi8vd3d3LnppcHJlY3J1aXRlci5jb20vYy9PcGVuQUkvSm9iL1NvZnR3YXJlLUVuZ2luZWVyLC1MZXZlcmFnZS1FbmdpbmVlcmluZy8taW4tU2FuLUZyYW5jaXNjbyxDQT9qaWQ9NmUyZDU1YzA4NWNlNjUzZVx1MDAyNnV0bV9jYW1wYWlnbj1nb29nbGVfam9ic19hcHBseVx1MDAyNnV0bV9zb3VyY2U9Z29vZ2xlX2pvYnNfYXBwbHlcdTAwMjZ1dG1fbWVkaXVtPW9yZ2FuaWMifX0=",
+    "job_link": "https://boards.greenhouse.io/openai/jobs/4907969004?utm_source=ziprecruiter"
+  },
+  {
+    "title": "Software Engineer, Developer Experience",
+    "company_name": "OpenAI",
+    "location": "  San Francisco, CA   ",
+    "via": "via ZipRecruiter",
+    "description": "About the Team\n\nThe Research Acceleration team builds high-quality research tools and frameworks to increase research productivity across OpenAI, with the goal of accelerating progress towards AGI. We frequently collaborate with other teams to speed up the development of new state-of-the-art capabilities...\n\nAbout the Role\n\nAs we scale up with more researchers and engineers joining OpenAI, we seek a pragmatic and passionate engineer with a strong focus on the researcher experience.\n\nIn this role, you will be responsible for building and maintaining systems that allow our research + engineering organization to iteratively develop, test, and deploy new features reliably, with high velocity, and with a frictionless and fast development cycle.\n\nYou will be tasked with profiling and optimizing continuous integration pipelines, building better testing infrastructure, and serving as the go-to expert for any build or test-related inquiries. Our current environment relies heavily on Python, Rust, and C++, which you will take ownership of and strive to transform into a state of the art development experience for research.\n\nUltimately, your role will be to provide the necessary tools and metrics to support our fast-paced culture and ensure a stable, scalable platform for growth, while also fostering a seamless and low friction experience for OpenAI's research.\n\nThis role is based in our San Francisco HQ. We offer relocation assistance to new employees.\n\nYou might thrive in this role if you:\n• Are a proficient Python programmer, with experience using Rust in production\n• Have worked with and on build systems\n• Are proficient with Kubernetes\n\nAbout OpenAI\n\nOpenAI is an AI research and deployment company dedicated to ensuring that general-purpose artificial intelligence benefits all of humanity. We push the boundaries of the capabilities of AI systems and seek to safely deploy them to the world through our products. AI is an extremely powerful tool that must be created with safety and human needs at its core, and to achieve our mission, we must encompass and value the many different perspectives, voices, and experiences that form the full spectrum of humanity.\n\nAt OpenAI, we believe artificial intelligence has the potential to help people solve immense global challenges, and we want the upside of AI to be widely shared. Join us in shaping the future of technology.\n\nCompensation, Benefits and Perks\n\nThe annual salary range for this role is $245,000 - $370,000. Total compensation also includes generous equity and benefits.\n• Medical, dental, and vision insurance for you and your family\n• Mental health and wellness support\n• 401(k) plan with 4% matching\n• Unlimited time off and 18+ company holidays per year\n• Paid parental leave (20 weeks) and family-planning support\n• Annual learning & development stipend ($1,500 per year)\n\nWe are an equal opportunity employer and do not discriminate on the basis of race, religion, national origin, gender, sexual orientation, age, veteran status, disability or any other legally protected status. Pursuant to the San Francisco Fair Chance Ordinance, we will consider qualified applicants with arrest and conviction records.\n\nWe are committed to providing reasonable accommodations to applicants with disabilities, and requests can be made via this link.\n\nOpenAI US Applicant Privacy Policy",
+    "job_highlights": [
+      {
+        "title": "Qualifications",
+        "items": [
+          "Are a proficient Python programmer, with experience using Rust in production",
+          "Have worked with and on build systems",
+          "Are proficient with Kubernetes"
+        ]
+      },
+      {
+        "title": "Responsibilities",
+        "items": [
+          "In this role, you will be responsible for building and maintaining systems that allow our research + engineering organization to iteratively develop, test, and deploy new features reliably, with high velocity, and with a frictionless and fast development cycle",
+          "You will be tasked with profiling and optimizing continuous integration pipelines, building better testing infrastructure, and serving as the go-to expert for any build or test-related inquiries",
+          "Our current environment relies heavily on Python, Rust, and C++, which you will take ownership of and strive to transform into a state of the art development experience for research"
+        ]
+      },
+      {
+        "title": "Benefits",
+        "items": [
+          "The annual salary range for this role is $245,000 - $370,000",
+          "Total compensation also includes generous equity and benefits",
+          "Medical, dental, and vision insurance for you and your family",
+          "Mental health and wellness support",
+          "401(k) plan with 4% matching",
+          "Unlimited time off and 18+ company holidays per year",
+          "Paid parental leave (20 weeks) and family-planning support",
+          "Annual learning & development stipend ($1,500 per year)"
+        ]
+      }
+    ],
+    "related_links": [
+      { "link": "http://openai.com/", "text": "openai.com" },
+      {
+        "link": "https://www.google.com/search?hl=en&q=OpenAI&sa=X&ved=0ahUKEwjbvd7I0r6AAxUbLrkGHXh0D2sQmJACCPgL",
+        "text": "See web results for OpenAI"
+      }
+    ],
+    "extensions": [
+      "245K–370K a year",
+      "Full-time",
+      "No degree mentioned",
+      "Health insurance",
+      "Dental insurance",
+      "Paid time off"
+    ],
+    "detected_extensions": {
+      "schedule_type": "Full-time",
+      "salary": "245K–370K a year"
+    },
+    "job_id": "eyJqb2JfdGl0bGUiOiJTb2Z0d2FyZSBFbmdpbmVlciwgRGV2ZWxvcGVyIEV4cGVyaWVuY2UiLCJodGlkb2NpZCI6IlBMREUzZVhIRktBQUFBQUFBQUFBQUE9PSIsInV1bGUiOiJ3K0NBSVFJQ0lrVTJGdUlFWnlZVzVqYVhOamJ5QkNZWGtnUVhKbFlTeFZibWwwWldRZ1UzUmhkR1Z6IiwiaGwiOiJlbiIsImZjIjoiRXFJQ0N1SUJRVTFyTW14c1RFSlpPVFJaUTAxWVZUVmxaRTV4VFhaeVdqRTVWRFpqVDFwSWJXY3RTRzQzUm1aT1ZubFBXRkpJTFVRdE5VZ3dZa2ROZFd0dE9XUk1WRXg2UzNRdExWTm5hMlJsU2xOb1FsWlhUa0kwWTBsRVVUTXlWR3hqTVRWZlpYaGFVMW94WnpZNU1FcHpVa05LTWxnNFJWQjRiMGMxTTBsck9GVnNUVk5aVkRkcmRtcDVlbnBoWVhwd1JWWldUVWxyYlZwc04zUmtSRFl5ZEdkR0xXeFZMWE5pTmtrNVlWTjRTbmQzWWpSdlVtTm9VbGRLTkVoSmVHMUdVVUpGVW5sTFZqTnhUSEJyVkRGb05ubFVMVTlSTlMxZk5GOWFhMlYzUkdrdE1rbHVkeElYTWt0WVMxcE9kbmhGV25aak5VOVZVQzFQYVRreVFWa2FJa0ZNUlZNNWRVMW9kMVo1YVZsR1RURTJOR0ptYVVwNk1UZ3dPVEJ6ZWsxUGFFRSIsImZjdiI6IjMiLCJmY19pZCI6ImZjXzciLCJhcHBseV9saW5rIjp7InRpdGxlIjoiQXBwbHkgb24gWmlwUmVjcnVpdGVyIiwibGluayI6Imh0dHBzOi8vd3d3LnppcHJlY3J1aXRlci5jb20vYy9PcGVuQUkvSm9iL1NvZnR3YXJlLUVuZ2luZWVyLC1EZXZlbG9wZXItRXhwZXJpZW5jZS8taW4tU2FuLUZyYW5jaXNjbyxDQT9qaWQ9ODY1OWZmMWZlNjg1YjkzY1x1MDAyNnV0bV9jYW1wYWlnbj1nb29nbGVfam9ic19hcHBseVx1MDAyNnV0bV9zb3VyY2U9Z29vZ2xlX2pvYnNfYXBwbHlcdTAwMjZ1dG1fbWVkaXVtPW9yZ2FuaWMifX0=",
+    "job_link": "https://boards.greenhouse.io/openai/jobs/4911334004?utm_source=ziprecruiter"
+  },
+  {
+    "title": "Software Engineer, Public API",
+    "company_name": "Notion",
+    "location": "  San Francisco, CA   ",
+    "via": "via ZipRecruiter",
+    "description": "About Us:\n\nWe're on a mission to make it possible for every person, team, and company to be able to tailor their software to solve any problem and take on any challenge. Computers may be our most powerful tools, but most of us can't build or modify the software we use on them every day. At Notion, we want to change this with focus, design, and craft...\n\nWe've been working on this together since 2016, and have customers like Pixar, Mitsubishi, Figma, Plaid, Match Group, and thousands more on this journey with us. Today, we're growing fast and excited for new teammates to join us who are the best at what they do. We're passionate about building a company as diverse and creative as the millions of people Notion reaches worldwide.\n\nNotion is an in person company, and currently requires its employees to come to the office for two Anchor Days (Mondays & Thursdays) and requests that employees spend the majority of their week in the office (including a third day).\nAbout The Role:\n\nMillions of people use Notion, and tens of thousands of developers are making Notion more powerful for those users (and themselves) by building features, power-ups, and novel new tools on top of Notion's developer interface.\n\nWe are focusing on extending our API for strategic partnerships and use cases. We need your help to make existing APIs more robust & reliable, while architecting new classes of APIs to cultivate a rich ecosystem of tooling built on top of Notion. You will design and build powerful, scalable, and developer-friendly sets of APIs, enabling partner and customer developers to extend Notion to be even more useful as a connected workspace for the millions of users and teams who rely on us every day.\nWhat You'll Achieve:\n• You'll help architect new classes of APIs that can be composed together by partner and customer developers to solve users' needs.\n• You'll understand the developer use cases and work to ensure that they are all well supported in the APIs you design and implement.\n• You'll improve the usability, performance, reliability and architecture of our externally facing developer APIs service and system.\nSkills You'll Need to Bring:\n• Experienced engineer & mentor: You have 8+ years of experience as a software engineer building scalable technology. You're excited about bringing your pre-existing knowledge and experience to the team. You have experience working with and mentoring other software engineers.\n• Pragmatic and business-oriented: You care about business impact and prioritize projects accordingly. You're not just going after cool stuff-you understand the balance between craft, speed, and the bottom line.\n• External developer API expertise: You have experience building interfaces or tools for external developers to use, or you're motivated and excited to learn best practices in this domain.\n• Thoughtful problem-solving: For you, problem-solving starts with a clear and accurate understanding of the context. You can decompose tricky problems and work towards a clean solution, by yourself or with teammates. You're comfortable asking for help when you get stuck.\n• Put users first: You think critically about the implications of what you're building, and how it shapes real people's lives. You understand that reach comes with responsibility for our impact-good and bad.\n• Empathetic communication: You communicate nuanced ideas clearly, whether you're explaining technical decisions in writing or brainstorming in real time. In disagreements, you engage thoughtfully with other perspectives and compromise when needed.\nNice to Haves:\n• You have experience working with public APIs either as a developer using, creating, or maintaining those APIs.\n• You have experience driving teams toward shared goals and can balance business priorities with individuals' strengths, areas of interest, and career development goals.\n• You're proficient with any part of our technology stack: React, TypeScript, Node.js, Memcached, Postgres and Docker.\n• You've heard of computing pioneers like Ada Lovelace, Douglas Engelbart, Alan Kay, and others-and understand why we're big fans of their work.\n\nWe hire talented and passionate people from a variety of backgrounds because we want our global employee base to represent the wide diversity of our customers. If you're excited about a role but your past experience doesn't align perfectly with every bullet point listed in the job description, we still encourage you to apply. If you're a builder at heart, share our company values, and enthusiastic about making software toolmaking ubiquitous, we want to hear from you.\n\nNotion is proud to be an equal opportunity employer. We do not discriminate in hiring or any employment decision based on race, color, religion, national origin, age, sex (including pregnancy, childbirth, or related medical conditions), marital status, ancestry, physical or mental disability, genetic information, veteran status, gender identity or expression, sexual orientation, or other applicable legally protected characteristic. Notion considers qualified applicants with criminal histories, consistent with applicable federal, state and local law. Notion is also committed to providing reasonable accommodations for qualified individuals with disabilities and disabled veterans in our job application procedures. If you need assistance or an accommodation made due to a disability, please let your recruiter know.Notion is committed to providing highly competitive cash compensation, equity, and benefits. The compensation offered for this role will be based on multiple factors such as location, the role's scope and complexity, and the candidate's experience and expertise, and may vary from the range provided below. For roles based in San Francisco, the estimated base salary range for this role is $190,000 - $250,000 per year",
+    "job_highlights": [
+      {
+        "title": "Qualifications",
+        "items": [
+          "Experienced engineer & mentor: You have 8+ years of experience as a software engineer building scalable technology",
+          "You're excited about bringing your pre-existing knowledge and experience to the team",
+          "You have experience working with and mentoring other software engineers",
+          "Pragmatic and business-oriented: You care about business impact and prioritize projects accordingly",
+          "You're not just going after cool stuff-you understand the balance between craft, speed, and the bottom line",
+          "External developer API expertise: You have experience building interfaces or tools for external developers to use, or you're motivated and excited to learn best practices in this domain",
+          "You can decompose tricky problems and work towards a clean solution, by yourself or with teammates",
+          "Empathetic communication: You communicate nuanced ideas clearly, whether you're explaining technical decisions in writing or brainstorming in real time",
+          "In disagreements, you engage thoughtfully with other perspectives and compromise when needed",
+          "You have experience working with public APIs either as a developer using, creating, or maintaining those APIs",
+          "You have experience driving teams toward shared goals and can balance business priorities with individuals' strengths, areas of interest, and career development goals",
+          "You're proficient with any part of our technology stack: React, TypeScript, Node.js, Memcached, Postgres and Docker",
+          "You've heard of computing pioneers like Ada Lovelace, Douglas Engelbart, Alan Kay, and others-and understand why we're big fans of their work"
+        ]
+      },
+      {
+        "title": "Responsibilities",
+        "items": [
+          "You'll help architect new classes of APIs that can be composed together by partner and customer developers to solve users' needs",
+          "You'll understand the developer use cases and work to ensure that they are all well supported in the APIs you design and implement",
+          "You'll improve the usability, performance, reliability and architecture of our externally facing developer APIs service and system"
+        ]
+      },
+      {
+        "title": "Benefits",
+        "items": [
+          "Notion is committed to providing highly competitive cash compensation, equity, and benefits",
+          "For roles based in San Francisco, the estimated base salary range for this role is $190,000 - $250,000 per year"
+        ]
+      }
+    ],
+    "related_links": [
+      { "link": "http://www.notion.so/", "text": "notion.so" },
+      {
+        "link": "https://www.google.com/search?hl=en&q=Notion&sa=X&ved=0ahUKEwjbvd7I0r6AAxUbLrkGHXh0D2sQmJACCIoN",
+        "text": "See web results for Notion"
+      }
+    ],
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa8C_nOtiWrGe3PQqs04B7JV8QD_XSAB_9G5wZ&s=0",
+    "extensions": ["6 days ago", "Full-time", "No degree mentioned"],
+    "detected_extensions": {
+      "posted_at": "6 days ago",
+      "schedule_type": "Full-time"
+    },
+    "job_id": "eyJqb2JfdGl0bGUiOiJTb2Z0d2FyZSBFbmdpbmVlciwgUHVibGljIEFQSSIsImh0aWRvY2lkIjoiY2lhalNXdG5sMGNBQUFBQUFBQUFBQT09IiwidXVsZSI6IncrQ0FJUUlDSWtVMkZ1SUVaeVlXNWphWE5qYnlCQ1lYa2dRWEpsWVN4VmJtbDBaV1FnVTNSaGRHVnoiLCJobCI6ImVuIiwiZmMiOiJFb3dDQ3N3QlFVMXJNbXhzVEdwaFdVOTBXSGsyWWxkS1R6YzJjSHBFWDFSbGIxUlJhbVZoUmxsSk4xSmpTWFJKWWxOZk5WUjFNR1J0ZDNNMmNXOHRaSFZ6ZDBWR00zZFZjamxVTTBkV1dqRlVlalpuZW05VlVtdDBSMlpyYjE5dVRHNW5iRmhhTWkxeFNFSkZSVTlUYTNCcWJXUlZWSFY1UTNwTldVNWhNV2xvUmpSVGNXWmpXSGR1WldOeGNYSnVXa05DWDNSNk5HTlliMjk1U2xoRE5HNXdNMVZzTld4M1kyMDBPRUZwWDFkeWVYRkRlblZEZFVWV1ZsRk1iWFpYY1dWSExXTlZUMHhrYkVsS2VuTnhSbHByRWhjeVMxaExXazUyZUVWYWRtTTFUMVZRTFU5cE9USkJXUm9pUVV4RlV6bDFUMDlFTVdGVU4yeExiV1JwWVUxWFQweDFVa3RVTms1NFlsSlBkdyIsImZjdiI6IjMiLCJmY19pZCI6ImZjXzEwIiwiYXBwbHlfbGluayI6eyJ0aXRsZSI6IkFwcGx5IG9uIFppcFJlY3J1aXRlciIsImxpbmsiOiJodHRwczovL3d3dy56aXByZWNydWl0ZXIuY29tL2MvTm90aW9uL0pvYi9Tb2Z0d2FyZS1FbmdpbmVlciwtUHVibGljLUFQSS8taW4tU2FuLUZyYW5jaXNjbyxDQT9qaWQ9Y2RkY2U3MjU2NWFiYTE2M1x1MDAyNnV0bV9jYW1wYWlnbj1nb29nbGVfam9ic19hcHBseVx1MDAyNnV0bV9zb3VyY2U9Z29vZ2xlX2pvYnNfYXBwbHlcdTAwMjZ1dG1fbWVkaXVtPW9yZ2FuaWMifX0=",
+    "job_link": "https://boards.greenhouse.io/notion/jobs/5696775003?utm_source=ziprecruiter"
+  },
+  {
+    "title": "Software Engineer, Mobile",
+    "company_name": "Level",
+    "location": " Anywhere ",
+    "via": "via ZipRecruiter",
+    "description": "At Level, we believe using your benefits should be as easy as buying a cup of coffee. We're unlocking the full value of compensation by rebuilding benefits as a simple payments experience - fast, flexible, and transparent. Our mission is to empower people to build better financial futures, and we're accomplishing that by transforming the status quo of benefits.\n\nLevel is a B2B2C fintech company... comprised of a diverse team from industry-leading companies like Square, Oscar, Google, Uber, and Airbnb. Together, we're creating a new payments tech stack to help employers offer more accessible and personalized benefits for their teams - and this is just the beginning.\n\nAt Level, collaboration is our superpower. By leveraging each other's strengths and curiosity, we've been able to build a best-in-class product, culture, and business. Plus, our employee benefits are so awesome that we let our customers buy them too.\n\nWhat You'll Do:\n• Build scalable mobile applications for our Members\n• Define architecture, frameworks, and solutions to support new features for external customers\n• Collaborate with product and design to experiences that are elegant in their simplicity\n• Mentor junior team members\n\nWho You Are:\n• 5+ years of programming experience with significant experience in at least 1 mobile technology (React Native, Android, iOS)\n• 2+ years of experience building complex mobile applications\n• Experience with developing customer-facing features in collaboration with product and design teams\n• Experience defining extensible development patterns for mobile applications\n• Enjoy mentoring team members with your expertise and discoveries\n• Experience working with highly sensitive information (PII/PHI)\n• A passion for working in high performing teams and delivering products to end-users\n\nOur technologies:\n\nThese are some of the technologies we use today. You don't need to be familiar with all of these-many people on our team learned them with us. During our interview process, you're welcome to use any language you're most comfortable with.\n• React/React Native\n• Typescript, Go\n• Protobuf/gRPC, Kubernetes, MySQL, Elastic Search\n• AWS\n\nWhat We Offer:\n• Competitive salary and equity\n• Remote first, with an office in NYC as an option to come in\n• For those not in the NYC area, we offer up to $500 monthly for renting a co-working or office space\n• 100% paid medical for you and 80% for your dependents\n• 100% employer paid dental through Level with a $3,000 benefit allowance for you and each of your dependents\n• 100% employer paid vision through Level with an $800 benefit allowance for you and each of your dependents\n• Generous additional fringe benefits offered through Level's platform:\n• $150 monthly through our Wellbeing lifestyle spending account\n• $700 in Office Funds available in your first 90 days to assist with getting your home office set up\n• $1,000 annually through Level's Mental Health EAP\n• $3,000 annually in Education benefits (made available upon your 1 year anniversary) that can be used to continue professional education or be applied towards student loan payments.\n• $4,000 lifetime balance through our Medical Travel EAP\n• Flexible paid time off: take the time you need when you need it! Plus, get up to 10 days of paid sick leave per year\n• 401(k), long-term and short-term disability, and life insurance\n• Fully paid parental leave: up to 14 weeks for primary and 8 weeks for secondary caregivers\n• Quarterly company sponsored events\n• Have the chance to work at a leading innovator and trailblazer in the world of benefits and payments\n\nThis position has a minimum base salary of $150,000 and a midpoint base salary of $175,000. The base pay may vary depending on job-related knowledge, skills, and experience. In addition to a competitive base salary this position is also eligible for equity awards.\n\nLevel is proud to be an Equal Opportunity Employer . We celebrate diversity and are committed to creating a welcoming and inclusive environment for all. Please apply to this role if you feel you are a good fit, regardless of your race, color, religion, gender identity, sex, sexual preference, sexual identity, pregnancy, national origin, ancestry, citizenship, age, marital status, physical disability, mental disability, medical condition, military status, or any other perceived limiting factor. We welcome applicants from all walks of life.\n\nE-Verify Program Participant: Level participates in the Department of Homeland Security U.S. Citizenship and Immigration Services' E-Verify program (For U.S. based applicants and employees only). Please click below to learn more about the E-Verify program:\n• E-Verify Notice (bilingual)\n• Right to Work Notice (English) / (Spanish",
+    "job_highlights": [
+      {
+        "title": "Qualifications",
+        "items": [
+          "5+ years of programming experience with significant experience in at least 1 mobile technology (React Native, Android, iOS)",
+          "2+ years of experience building complex mobile applications",
+          "Experience with developing customer-facing features in collaboration with product and design teams",
+          "Experience defining extensible development patterns for mobile applications",
+          "Experience working with highly sensitive information (PII/PHI)",
+          "A passion for working in high performing teams and delivering products to end-users",
+          "You don't need to be familiar with all of these-many people on our team learned them with us",
+          "During our interview process, you're welcome to use any language you're most comfortable with"
+        ]
+      },
+      {
+        "title": "Responsibilities",
+        "items": [
+          "Build scalable mobile applications for our Members",
+          "Define architecture, frameworks, and solutions to support new features for external customers",
+          "Collaborate with product and design to experiences that are elegant in their simplicity",
+          "Mentor junior team members"
+        ]
+      },
+      {
+        "title": "Benefits",
+        "items": [
+          "Remote first, with an office in NYC as an option to come in",
+          "For those not in the NYC area, we offer up to $500 monthly for renting a co-working or office space",
+          "100% paid medical for you and 80% for your dependents",
+          "100% employer paid dental through Level with a $3,000 benefit allowance for you and each of your dependents",
+          "Generous additional fringe benefits offered through Level's platform:",
+          "$150 monthly through our Wellbeing lifestyle spending account",
+          "$700 in Office Funds available in your first 90 days to assist with getting your home office set up",
+          "$1,000 annually through Level's Mental Health EAP",
+          "$3,000 annually in Education benefits (made available upon your 1 year anniversary) that can be used to continue professional education or be applied towards student loan payments",
+          "$4,000 lifetime balance through our Medical Travel EAP",
+          "Flexible paid time off: take the time you need when you need it!",
+          "Plus, get up to 10 days of paid sick leave per year",
+          "401(k), long-term and short-term disability, and life insurance",
+          "Fully paid parental leave: up to 14 weeks for primary and 8 weeks for secondary caregivers",
+          "Quarterly company sponsored events",
+          "Have the chance to work at a leading innovator and trailblazer in the world of benefits and payments",
+          "This position has a minimum base salary of $150,000 and a midpoint base salary of $175,000",
+          "In addition to a competitive base salary this position is also eligible for equity awards"
+        ]
+      }
+    ],
+    "related_links": [
+      {
+        "link": "https://www.google.com/search?hl=en&q=Level&sa=X&ved=0ahUKEwjbvd7I0r6AAxUbLrkGHXh0D2sQmJACCNUN",
+        "text": "See web results for Level"
+      }
+    ],
+    "extensions": [
+      "Work from home",
+      "Full-time",
+      "No degree mentioned",
+      "Health insurance",
+      "Dental insurance",
+      "Paid time off"
+    ],
+    "detected_extensions": {
+      "schedule_type": "Full-time",
+      "work_from_home": true
+    },
+    "job_id": "eyJqb2JfdGl0bGUiOiJTb2Z0d2FyZSBFbmdpbmVlciwgTW9iaWxlIiwiaHRpZG9jaWQiOiJfekV3a2k1Z3M2QUFBQUFBQUFBQUFBPT0iLCJ1dWxlIjoidytDQUlRSUNJa1UyRnVJRVp5WVc1amFYTmpieUJDWVhrZ1FYSmxZU3hWYm1sMFpXUWdVM1JoZEdWeiIsImhsIjoiZW4iLCJmYyI6IkV2Y0JDcmNCUVUxck1teHNTM2hmUTFoV09HOUZVSFJPZHpkUVlXNVRjVUZ2Y0ZRd05IUlhXRWN0Wm1WcldGbENOVUpRVlhnd2EyaGpia2d0TkUxVGEzSnBkVlZoYmpBMFpUQnVVRFZSWjAwd09XOXplamhpVVdwdVFucEpUWGRvU0hCV09FcE5jRGhvVVhCbE1TMW5kak5aVm1weldFOWljRVZ5YTFwb1VuaE9XRUozZG1veFkyaG9Tek5CT0RneFpISmpUSFZLVEU1QmJXOXdNV2hCVTNSQk1tSnJRMmRPZUdaWVYySnpjMmxLYWtWRVV6UmtOMDVVTkdWWkVoY3lTMWhMV2s1MmVFVmFkbU0xVDFWUUxVOXBPVEpCV1JvaVFVeEZVemwxVUZaSk9YWTRWSHBRV1cxTmNYcG5ja0ZHTTJaWFpqZGhhMDlvVVEiLCJmY3YiOiIzIiwiZmNfaWQiOiJmY18xMiIsImFwcGx5X2xpbmsiOnsidGl0bGUiOiJBcHBseSBvbiBaaXBSZWNydWl0ZXIiLCJsaW5rIjoiaHR0cHM6Ly93d3cuemlwcmVjcnVpdGVyLmNvbS9jL0xldmVsL0pvYi9Tb2Z0d2FyZS1FbmdpbmVlciwtTW9iaWxlLy1pbi1TYW4tRnJhbmNpc2NvLENBP2ppZD1mOGI0NjA3NGJmNDRhY2EyXHUwMDI2dXRtX2NhbXBhaWduPWdvb2dsZV9qb2JzX2FwcGx5XHUwMDI2dXRtX3NvdXJjZT1nb29nbGVfam9ic19hcHBseVx1MDAyNnV0bV9tZWRpdW09b3JnYW5pYyJ9fQ==",
+    "job_link": "https://boards.greenhouse.io/level/jobs/5658954003?utm_source=ziprecruiter"
+  },
+  {
+    "title": "Software Engineer, Backend (Mid-Level)",
+    "company_name": "Genies, Inc.",
+    "location": " Anywhere ",
+    "via": "via ZipRecruiter",
+    "description": "Genies is culture's leading avatar technology company empowering humans to create their own avatar experiences. To-date, Genies has been widely adopted by cultural tastemakers and has partnerships with Universal Music Group and Warner Music Group as their rosters' \"official avatar.\" Genies has recently launched its consumer arm via its AR Developer Kit which allows developers to create... interoperable avatar experiences for mobile and hardware AR. Their first avatar experience, Silver Studio, allows users to design and exchange digital fashion. Genies has raised $250M from investors such as Silver Lake, BOND, NEA, and Bob Iger valuing the company at $1 billion.\n\nGenies is looking for an experienced Backend Engineer to join our rapidly growing team. In this role you'll help to contribute to the current and future growth of our backend services and infrastructure, blockchain technologies, and our smart contracts for our suite of products. The ideal candidate thrives in complex and challenging technical environments that involve the latest technologies that will define consumer experiences. You'll work cross functionally with our product and design teams as we scale our products and platform, and introduce solutions that will deliver a world class, one of a kind consumer experience.\nWhat You'll Be Doing:\n• Development of backend services supporting mobile and web applications\n• Development of video rendering and encoding pipeline\n• Be responsible for the complete lifecycle of product features from planning to implementation to testing to live ops\n• Build and operate high-quality infrastructure and services\n• Day-to-day coding, performance profiling, optimization and general troubleshooting for new features and existing features\n• Work with the engineering team to help plan the company's long-term engineering roadmap and identify areas of improvement\n• Design database schemas\n• Scale our infrastructure\n• Additional responsibilities may be assigned as needed\n\nWhat You Should Have:\n• This position requires a 4 year degree plus 4+ years of work experience\n• Must have completed a Bachelor's degree or be pursuing a Master's degree in Computer Science or related field\n• Experience in NoSQL database design and development\n• Experience in Linux & Windows server administration\n• Experience in developing, designing and working with APIs, distributed databases and caching systems\n• Experience with Amazon Web Services or Google Cloud Platform\n• Knowledge of Cloud security best practices and cost-effective cloud architecture\n• Node.js - development with JavaScript and TypeScript\n• Exposure to languages such as Python, Golang, Java or C++ is a plus\n• Best practices and hands on experience in handling multi-tier architectures, deployments, and backup systems\n• Robust exploratory/experimental skills\n• Self-starter, analytical, creative, highly motivated with a visionary spirit\n• Strong skills in terms of identifying and articulating goals and risks to management\n• Team player with strong influencing skills\n\nHow Genies will support you\n\nGenies is a well-funded, growing start-up that cares deeply about each of our employees' growth and success. Our roles and their responsibilities are created with a breadth of scope that introduces each employee to exciting new challenges and opportunities that a growing start-up encounters. The actual base pay is dependent upon a number of factors, including: professional background, training, transferable skills, work experience, education, location, business and product needs, and market demand. The base pay range is subject to change and may be modified in the future. Full-time employees may also be eligible for equity compensation, in addition to a robust health, wellness, and benefits package.\n\nStarting Salary Range: $160,000.00 to $190,000.00 USD\n\nHere's why you'll love working at Genies:\n• You'll work with a team that you'll be able to learn from and grow with, including support for your own professional development\n• You'll be at the helm of your own career, shaping it with your own innovative contributions to a nascent team and product with flexible hours and a work from home policy\n• You'll enjoy the culture and perks of a startup, with the stability of being well funded\n• Comprehensive health insurance for you and your family (Anthem + Kaiser Options Available), Dental and Vision Insurance\n• Competitive salaries and 401K program for all full time employees\n• Flexible paid time off, sick time, and paid company holidays, in addition to paid parental leave, bereavement leave, and jury duty leave for full-time employees\n• Health & wellness support through programs such as monthly wellness reimbursement\n• Working in a brand new, bright, open-environment and fun office space - there's even a slide!\n• Choice of MacBook or windows laptop\n\nGenies is an equal opportunity employer committed to promoting an inclusive work environment free of discrimination and harassment. We value diversity, inclusion, and aim to provide a sense of belonging for everyone",
+    "job_highlights": [
+      {
+        "title": "Qualifications",
+        "items": [
+          "This position requires a 4 year degree plus 4+ years of work experience",
+          "Must have completed a Bachelor's degree or be pursuing a Master's degree in Computer Science or related field",
+          "Experience in Linux & Windows server administration",
+          "Experience in developing, designing and working with APIs, distributed databases and caching systems",
+          "Experience with Amazon Web Services or Google Cloud Platform",
+          "Knowledge of Cloud security best practices and cost-effective cloud architecture",
+          "Node.js - development with JavaScript and TypeScript",
+          "Best practices and hands on experience in handling multi-tier architectures, deployments, and backup systems",
+          "Robust exploratory/experimental skills",
+          "Self-starter, analytical, creative, highly motivated with a visionary spirit",
+          "Strong skills in terms of identifying and articulating goals and risks to management",
+          "Team player with strong influencing skills"
+        ]
+      },
+      {
+        "title": "Responsibilities",
+        "items": [
+          "You'll work cross functionally with our product and design teams as we scale our products and platform, and introduce solutions that will deliver a world class, one of a kind consumer experience",
+          "Development of backend services supporting mobile and web applications",
+          "Development of video rendering and encoding pipeline",
+          "Be responsible for the complete lifecycle of product features from planning to implementation to testing to live ops",
+          "Build and operate high-quality infrastructure and services",
+          "Day-to-day coding, performance profiling, optimization and general troubleshooting for new features and existing features",
+          "Work with the engineering team to help plan the company's long-term engineering roadmap and identify areas of improvement",
+          "Design database schemas",
+          "Additional responsibilities may be assigned as needed"
+        ]
+      },
+      {
+        "title": "Benefits",
+        "items": [
+          "Full-time employees may also be eligible for equity compensation, in addition to a robust health, wellness, and benefits package",
+          "Starting Salary Range: $160,000.00 to $190,000.00 USD",
+          "You'll work with a team that you'll be able to learn from and grow with, including support for your own professional development",
+          "You'll be at the helm of your own career, shaping it with your own innovative contributions to a nascent team and product with flexible hours and a work from home policy",
+          "You'll enjoy the culture and perks of a startup, with the stability of being well funded",
+          "Comprehensive health insurance for you and your family (Anthem + Kaiser Options Available), Dental and Vision Insurance",
+          "Competitive salaries and 401K program for all full time employees",
+          "Flexible paid time off, sick time, and paid company holidays, in addition to paid parental leave, bereavement leave, and jury duty leave for full-time employees",
+          "Health & wellness support through programs such as monthly wellness reimbursement",
+          "Working in a brand new, bright, open-environment and fun office space - there's even a slide!"
+        ]
+      }
+    ],
+    "related_links": [
+      { "link": "http://genies.com/", "text": "genies.com" },
+      {
+        "link": "https://www.google.com/search?hl=en&q=Genies,+Inc.&sa=X&ved=0ahUKEwjbvd7I0r6AAxUbLrkGHXh0D2sQmJACCKUO",
+        "text": "See web results for Genies, Inc."
+      }
+    ],
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmClrOjLFSM-ziqkXd0H9xXDJ1YTb1dbUD-RL_&s=0",
+    "extensions": [
+      "9 days ago",
+      "Work from home",
+      "Full-time",
+      "Health insurance",
+      "Dental insurance",
+      "Paid time off"
+    ],
+    "detected_extensions": {
+      "posted_at": "9 days ago",
+      "schedule_type": "Full-time",
+      "work_from_home": true
+    },
+    "job_id": "eyJqb2JfdGl0bGUiOiJTb2Z0d2FyZSBFbmdpbmVlciwgQmFja2VuZCAoTWlkLUxldmVsKSIsImh0aWRvY2lkIjoiUC1XLWE5cVdvTFVBQUFBQUFBQUFBQT09IiwidXVsZSI6IncrQ0FJUUlDSWtVMkZ1SUVaeVlXNWphWE5qYnlCQ1lYa2dRWEpsWVN4VmJtbDBaV1FnVTNSaGRHVnoiLCJobCI6ImVuIiwiZmMiOiJFcUlDQ3VJQlFVMXJNbXhzU2t3dFJYZENSSEkwWkROR09YSkxSbWcxV0c1dFZtSkxiMDVETnpKbWJqbFJaRmN5WVc5ak5WRjNVa05VUTFaVWNVTjRkR2hNY0U5aldXNTBPR05MYVVaTVNqazNOelV3T1cwNFlqTjRTMmhEV1VsV1NHSkVTRzFWYzNkeGJ6ZGFNRzR6YW1WWUxYTk1ka2xQTW01QlExOWxaVlp5TURacFYzSmlaMUZYWm1kWWFXMVpiR3BoWXpWU1N6aFROME5KYlZwUk5HOXlhVXRCV0MxNlRuSkJVMjk2WkhSMVdtVmthM1oxYzFoeFRubDBOVGxpWHpFeVRIQlhaVFZ3VkVKTmFtdENha0pCUWpseVYxTkVOWEJVY0RKaE9FMWpjMHROY3pGemR4SVhNa3RZUzFwT2RuaEZXblpqTlU5VlVDMVBhVGt5UVZrYUlrRk1SVk01ZFZCaFlrVlFkMlpHU2toNU5XRmFaR0pUVDNKdmR6UlVlV1JSYm5jIiwiZmN2IjoiMyIsImZjX2lkIjoiZmNfMTMiLCJhcHBseV9saW5rIjp7InRpdGxlIjoiQXBwbHkgb24gWmlwUmVjcnVpdGVyIiwibGluayI6Imh0dHBzOi8vd3d3LnppcHJlY3J1aXRlci5jb20vYy9HZW5pZXMsLUluYy4vSm9iL1NvZnR3YXJlLUVuZ2luZWVyLC1CYWNrZW5kLShNaWQtTGV2ZWwpLy1pbi1TYW4tRnJhbmNpc2NvLENBP2ppZD02ODFlNjNhNTA0OTJmYjllXHUwMDI2dXRtX2NhbXBhaWduPWdvb2dsZV9qb2JzX2FwcGx5XHUwMDI2dXRtX3NvdXJjZT1nb29nbGVfam9ic19hcHBseVx1MDAyNnV0bV9tZWRpdW09b3JnYW5pYyJ9fQ==",
+    "job_link": "https://boards.greenhouse.io/genies/jobs/5663330003?utm_source=ziprecruiter"
+  },
+  {
+    "title": "Senior Fullstack Software Engineer, Channels",
+    "company_name": "Reddit",
+    "location": " Anywhere ",
+    "via": "via ZipRecruiter",
+    "description": "Reddit is a community of communities where people can dive into anything through experiences built around their interests, hobbies, and passions. Our mission is to bring community, belonging, and empowerment to everyone in the world. Reddit users submit, vote, and comment on content, stories, and discussions about the topics they care about the most. From pets to parenting, there's a community... for everybody on Reddit and with over 50 million daily active users, it is home to the most open and authentic conversations on the internet. For more information, visit redditinc.com .\n\nReddit is poised to rapidly innovate and grow like no other time in its history. This is a unique opportunity to leave your mark on one of the most influential and trafficked corners of the internet\n\nThe Channels team at Reddit helps us achieve our mission of bringing community and belonging to everyone in the world by delivering users engaging content at the right time. We deliver hundreds and millions of push notifications and emails to Reddit users every day. With Reddit's growth trajectory, we are solving both product and engineering problems for the next magnitude of scale . We are hiring senior fullstack engineers to focus on bringing the goodness of Reddit to more people.\n\nAs a Senior Engineer, you'll design, build and scale products within our notifications system. You'll have an opportunity to work across the stack and with cross-functional teams such as product, Machine Learning and Data Science. With our small focused team, your work will directly impact hundreds of millions of users around the world. Join us and help build the future of Reddit!\n\nQualifications:\n• 5+ years software engineering experience, with experience in working cross-functionally to lead projects from start to finish with end user impact.\n• We are language agnostic when hiring but use primarily golang, python in the backend stack.\n• A past track record of Quality, for example:\n• enabling a testing culture, such as unit testing, setting up load testing framework, enabling local testing or other automated testing.\n• Structurally improving the resiliency and fault tolerance of systems or code\n• Performance tuning database queries or network calls\n• Collaboration skills: you work well with a team, but also help level-up those around you.\n• You may demonstrate skills in one or more of the following: written/verbal communication, project leadership, mentorship, negotiating conflict, or engineering culture improvements.\n• You embody our company value of Evolve: you view challenges as learning opportunities and continuously seek to improve.\n\nBenefits:\n• Comprehensive Health benefits\n• 401k Matching\n• Workspace benefits for your home office\n• Personal & Professional development funds\n• Family Planning Support\n• Flexible Vacation (please use them!) & Reddit Global Days Off\n• 4+ months paid Parental Leave\n• Paid Volunteer time off\n\nThis role is US-based and 100%, permanently remote.\n\nPay Transparency:\n\nThis job posting may span more than one career level.\n\nIn addition to base salary, this job is eligible to receive equity in the form of restricted stock units, and depending on the position offered, it may also be eligible to receive a commission. Additionally, Reddit offers a wide range of benefits to U.S.-based employees, including medical, dental, and vision insurance, 401(k) program with employer match, generous time off for vacation, and parental leave. To learn more, please visit https://www.redditinc.com/careers/ .\n\nTo provide greater transparency to candidates, we share base pay ranges for all US-based job postings regardless of state. We set standard base pay ranges for all roles based on function, level, and country location, benchmarked against similar stage growth companies. Final offer amounts are determined by multiple factors including, skills, depth of work experience and relevant licenses/credentials, and may vary from the amounts listed below.\n\nThe base pay range for this position is:\n\n$183,500 - $275,300 USD\n\nReddit is committed to providing reasonable accommodations for qualified individuals with disabilities and disabled veterans in our job application procedures. If you need assistance or an accommodation due to a disability, please contact us at ApplicationAssistance@Reddit.com ",
+    "job_highlights": [
+      {
+        "title": "Qualifications",
+        "items": [
+          "5+ years software engineering experience, with experience in working cross-functionally to lead projects from start to finish with end user impact",
+          "We are language agnostic when hiring but use primarily golang, python in the backend stack",
+          "A past track record of Quality, for example:",
+          "enabling a testing culture, such as unit testing, setting up load testing framework, enabling local testing or other automated testing",
+          "Structurally improving the resiliency and fault tolerance of systems or code",
+          "Performance tuning database queries or network calls",
+          "Collaboration skills: you work well with a team, but also help level-up those around you",
+          "You may demonstrate skills in one or more of the following: written/verbal communication, project leadership, mentorship, negotiating conflict, or engineering culture improvements",
+          "You embody our company value of Evolve: you view challenges as learning opportunities and continuously seek to improve"
+        ]
+      },
+      {
+        "title": "Responsibilities",
+        "items": [
+          "As a Senior Engineer, you'll design, build and scale products within our notifications system",
+          "You'll have an opportunity to work across the stack and with cross-functional teams such as product, Machine Learning and Data Science"
+        ]
+      },
+      {
+        "title": "Benefits",
+        "items": [
+          "Comprehensive Health benefits",
+          "401k Matching",
+          "Workspace benefits for your home office",
+          "Personal & Professional development funds",
+          "Family Planning Support",
+          "Flexible Vacation (please use them!)",
+          "& Reddit Global Days Off",
+          "4+ months paid Parental Leave",
+          "Paid Volunteer time off",
+          "This role is US-based and 100%, permanently remote",
+          "Additionally, Reddit offers a wide range of benefits to U.S.-based employees, including medical, dental, and vision insurance, 401(k) program with employer match, generous time off for vacation, and parental leave",
+          "$183,500 - $275,300 USD"
+        ]
+      }
+    ],
+    "related_links": [
+      { "link": "https://www.reddit.com/", "text": "reddit.com" },
+      {
+        "link": "https://www.google.com/search?hl=en&q=Reddit&sa=X&ved=0ahUKEwjbvd7I0r6AAxUbLrkGHXh0D2sQmJACCPUO",
+        "text": "See web results for Reddit"
+      }
+    ],
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-dIXKryZ_vyt-LsqzVfWg495Dz9iUv6wPYGwK&s=0",
+    "extensions": [
+      "7 days ago",
+      "Work from home",
+      "Full-time",
+      "No degree mentioned",
+      "Health insurance",
+      "Dental insurance",
+      "Paid time off"
+    ],
+    "detected_extensions": {
+      "posted_at": "7 days ago",
+      "schedule_type": "Full-time",
+      "work_from_home": true
+    },
+    "job_id": "eyJqb2JfdGl0bGUiOiJTZW5pb3IgRnVsbHN0YWNrIFNvZnR3YXJlIEVuZ2luZWVyLCBDaGFubmVscyIsImh0aWRvY2lkIjoid0o5YnVRODlzTHNBQUFBQUFBQUFBQT09IiwidXVsZSI6IncrQ0FJUUlDSWtVMkZ1SUVaeVlXNWphWE5qYnlCQ1lYa2dRWEpsWVN4VmJtbDBaV1FnVTNSaGRHVnoiLCJobCI6ImVuIiwiZmMiOiJFcUlDQ3VJQlFVMXJNbXhzUzAxTmVFSnZRM1pXYlhGa1RHaHNObGM1YzNOalJHUnpTMWRMWjBwTGVuSTJaR1ZYWTA5cVVsazRablUxY1c5WlZuUk1VbGR2Tkd0T1pEWTFZV3BpYVdsU1RrTjBWRVZUTms5Q1UwRmpXRTVHWnkxTFVqTlpRa3QwZVdSb1RFUmxSamxsTm5nMmNFMHdkRmxEVTA5UFFsazVOekkzYlhGa2RHdG5OMGhyYVRSc2N6RjZielpPVVRoUWRubERURUoxWmxKSFRrcE1jSHBCWTJWa2VrSkZSMWRXUlhseFZFdDZWWGxSU0ROeGRqaEZORGs1UmxGa1VWRjBTSEpoZVZocFExZ3RXV3RQWHpCdk0xVnhSbUpPV0Mxc1VubzJRbkpxTFd4Q1p4SVhNa3RZUzFwT2RuaEZXblpqTlU5VlVDMVBhVGt5UVZrYUlrRk1SVk01ZFU1VWFuVmlNVGgyVUhVME1HdDFiRkY1VURGS1oxbFpURUYyZFVFIiwiZmN2IjoiMyIsImZjX2lkIjoiZmNfMTUiLCJhcHBseV9saW5rIjp7InRpdGxlIjoiQXBwbHkgb24gWmlwUmVjcnVpdGVyIiwibGluayI6Imh0dHBzOi8vd3d3LnppcHJlY3J1aXRlci5jb20vYy9SZWRkaXQvSm9iL1Nlbmlvci1GdWxsc3RhY2stU29mdHdhcmUtRW5naW5lZXIsLUNoYW5uZWxzLy1pbi1TYW4tRnJhbmNpc2NvLENBP2ppZD01YmQ1YzYwNDU0ZjM1YzgyXHUwMDI2dXRtX2NhbXBhaWduPWdvb2dsZV9qb2JzX2FwcGx5XHUwMDI2dXRtX3NvdXJjZT1nb29nbGVfam9ic19hcHBseVx1MDAyNnV0bV9tZWRpdW09b3JnYW5pYyJ9fQ==",
+    "job_link": "https://boards.greenhouse.io/reddit/jobs/5136849?utm_source=ziprecruiter"
+  },
+  {
+    "title": "Full Stack Software Engineer",
+    "company_name": "ZipRecruiter",
+    "location": "  Palo Alto, CA   ",
+    "via": "via Greenhouse",
+    "description": "Our Mission:\n\nTo actively connect people to their next great opportunity...\n\nWho We Are:\n\nZipRecruiter is a leading online employment marketplace. Powered by AI-driven smart matching technology, the company actively connects millions of all-sized businesses and job seekers through innovative mobile, web, and email services, as well as through partnerships with the best job boards on the web. ZipRecruiter has the #1 rated job search app on iOS & Android.\n\nAbout the Team:\n\nOur team has a unique opportunity to work on applications at scale, serving millions of jobseekers and tens of thousands of customers. We’re working on building an efficient marketplace of jobseekers and employers and need full-stack engineers to build fast, scalable, and effective applications that help connect people to their next job. We provide an essential service and have a thriving business as a result.\n\nOur stack is complex and we’re looking for engineers who know how to write evolvable, properly instrumented, and efficient code as part of a growing distributed system. We’re working on mobile-first web applications and need people who can build fast and intuitive experiences.\n\nAbout the Job:\n• Design and implement user-facing web applications at scale and hold up to expansion of a diverse user base\n• Raise the bar in engineering innovation and the evolution of our approach to backend and front end development\n• Communicate and deliver complex, technical solutions to a variety of stakeholders both technical and non technical\n• Develop and maintain highly scalable and reliable web applications and user interfaces (UIs) to interact with complex backend systems to a consumer facing audience\n• Utilize product requirements and engage with cross functional teams to deliver rapidly evolving product in a timely manner\n\nMinimum Qualifications:\n• 3+ years of experience in full stack software development\n• Comprehensive computer science fundamentals in coding, object-oriented programming, data structures, and algorithms\n• Experience in client side development using ReactJS, Javascript, AngularJS, or other modern programming language\n\nPreferred Qualifications:\n• 5+ years of experience in full stack software development\n• BS/MS/PhD in Mathematics, Computer Science, Physics, related technical field or equivalent practical experience\n• Experience building and developing large-scale web applications\n\nAs part of our team you’ll enjoy:\n• Competitive compensation\n• Exceptional benefits package\n• Flexible Vacation & Paid Time Off\n• Employer-matched 401(k) plan\n\n#LI-Remote\n\nThe US base salary range for this full-time position is $105,000-$145,000. Our salary ranges are determined by role, level, and location, and the range displayed on each job posting reflects the minimum and maximum target for new hire salaries for the position across all US locations. Within the range, individual pay is determined by work location, role-related knowledge and skills, depth of experience, relevant education or training, and additional role-related considerations.\n\nDepending on the position offered, equity, bonuses, commission, or other forms of compensation may also be provided as part of a total compensation package, in addition to a full range of medical, financial, and other benefits",
+    "job_highlights": [
+      {
+        "title": "Qualifications",
+        "items": [
+          "3+ years of experience in full stack software development",
+          "Comprehensive computer science fundamentals in coding, object-oriented programming, data structures, and algorithms",
+          "Experience in client side development using ReactJS, Javascript, AngularJS, or other modern programming language"
+        ]
+      },
+      {
+        "title": "Responsibilities",
+        "items": [
+          "Design and implement user-facing web applications at scale and hold up to expansion of a diverse user base",
+          "Raise the bar in engineering innovation and the evolution of our approach to backend and front end development",
+          "Communicate and deliver complex, technical solutions to a variety of stakeholders both technical and non technical",
+          "Develop and maintain highly scalable and reliable web applications and user interfaces (UIs) to interact with complex backend systems to a consumer facing audience",
+          "Utilize product requirements and engage with cross functional teams to deliver rapidly evolving product in a timely manner"
+        ]
+      },
+      {
+        "title": "Benefits",
+        "items": [
+          "Competitive compensation",
+          "Exceptional benefits package",
+          "Flexible Vacation & Paid Time Off",
+          "Employer-matched 401(k) plan",
+          "The US base salary range for this full-time position is $105,000-$145,000",
+          "Depending on the position offered, equity, bonuses, commission, or other forms of compensation may also be provided as part of a total compensation package, in addition to a full range of medical, financial, and other benefits"
+        ]
+      }
+    ],
+    "related_links": [
+      {
+        "link": "https://www.google.com/search?hl=en&q=ZipRecruiter&sa=X&ved=0ahUKEwiTgejn1b6AAxVFppUCHReZDiM4FBCYkAIIwgw",
+        "text": "See web results for ZipRecruiter"
+      }
+    ],
+    "extensions": ["Full-time", "Health insurance", "Paid time off"],
+    "detected_extensions": { "schedule_type": "Full-time" },
+    "job_id": "eyJqb2JfdGl0bGUiOiJGdWxsIFN0YWNrIFNvZnR3YXJlIEVuZ2luZWVyIiwiaHRpZG9jaWQiOiJMRk1EVjJoNkluY0FBQUFBQUFBQUFBPT0iLCJ1dWxlIjoidytDQUlRSUNJa1UyRnVJRVp5WVc1amFYTmpieUJDWVhrZ1FYSmxZU3hWYm1sMFpXUWdVM1JoZEdWeiIsImhsIjoiZW4iLCJmYyI6IkV2Y0JDcmNCUVUxck1teHNTM3A2TUZKa04xRkhNMWR1VlZFdE16WkZkekpTWDJOdlFUSk5hMnMzUWpKUWRETlplVW96ZUVSaFIxZFlRV1F5YUdGalZIbGlTVWRYTjFrMVJXUnNTVFJoY2todlIwcDRTSGRoUm1OZlRqVnRNMEpRVHpkWlIya3diVUo2Vm05b2NsVlRYM2hrTW05eVJrZHpWRzg0WW5WMWNFZ3lVbk10TUV4RE1VUjBPRVJqUkRGZmRWRnRaRFoxVGxsYWFEWjZaMVp5YTFGUU9ISnpZbTVqY25nMWIwOHhia28xWVVwYU0zVXlXSGM0VVdkM0VoZFFjVzVMV2twUWNVeHpXRTB4YzFGUWJEZExObTFCU1JvaVFVeEZVemwxVGtGdmNGOUJaR0ZoWDFWQlduSnFUVUpOUmxKMk9EWnZTREoxZHciLCJmY3YiOiIzIiwiZmNfaWQiOiJmY18xMCIsImFwcGx5X2xpbmsiOnsidGl0bGUiOiJBcHBseSBvbiBHcmVlbmhvdXNlIiwibGluayI6Imh0dHBzOi8vYm9hcmRzLmdyZWVuaG91c2UuaW8vemlwcmVjcnVpdGVyL2pvYnMvMjQyNjY4Nz91dG1fY2FtcGFpZ249Z29vZ2xlX2pvYnNfYXBwbHlcdTAwMjZ1dG1fc291cmNlPWdvb2dsZV9qb2JzX2FwcGx5XHUwMDI2dXRtX21lZGl1bT1vcmdhbmljIn19",
+    "job_link": "https://boards.greenhouse.io/ziprecruiter/jobs/2426687?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+  },
+  {
+    "title": "Software Engineer, Big Data",
+    "company_name": "ZipRecruiter",
+    "location": "  Palo Alto, CA   ",
+    "via": "via Greenhouse",
+    "description": "Our Mission:\n\nTo actively connect people to their next great opportunity...\n\nWho We Are:\n\nZipRecruiter is a leading online employment marketplace. Powered by AI-driven smart matching technology, the company actively connects millions of all-sized businesses and job seekers through innovative mobile, web, and email services, as well as through partnerships with the best job boards on the web. ZipRecruiter has the #1 rated job search app on iOS & Android.\n\nAbout the Team:\n\nWe’re looking for software engineers who can handle the volume of data created by billions of interactions within our ecosystem. This enables the machine learning and analysis capabilities required of a growing distributed system.\n\nAt ZipRecruiter, we’re looking for software engineers who are passionate about building an intuitive experience for our marketplace of job seekers and employers. Our stack is complex and we prioritize cutting-edge smart match technology, innovation, and cross functional collaboration. Our teams have a unique opportunity to work at scale - build effective, data driven applications, stream and batch data processing, and develop ML infrastructure - all to help connect people to their next great opportunity.\n\nAbout the Job:\n• Build data processing and exploration pipelines along with ML infrastructure to power our intelligence using tools like Spark and Flink\n• Take part in the full life cycle of user-facing applications at scale, from design to implementation, testing and production\n• Develop a strong understanding of the business, industry, codebase, and/or systems\n\nMinimum Qualifications:\n• 1+ year of professional software development experience with a focus on big data technologies\n• Experience with Hadoop, Spark, Hive, and/or other big data technologies\n• Comprehensive computer science fundamentals in coding, object-oriented programming, data structures, and algorithms\n• Experience with containerization technologies like Docker and/or Kubernetes\n\nPreferred Qualifications:\n• 3+ year of professional software development experience, with a focus on big data technologies\n• BS/MS/PhD in Mathematics, Computer Science, Physics, related technical field or equivalent practical experience\n• Experience with data integration tools like Apache Kafka, Flume, and NiFi\n• Familiarity with data storage technologies such as Delta Lake, HBase, Cassandra, and MongoDB\n• Familiarity with Apache Hudi, Apache Beam, Apache Flink, Google Cloud Dataflow, Amazon Kinesis Data Analytics, and/or Azure Databricks\n\nAs part of our team you’ll enjoy:\n• Competitive compensation\n• Exceptional benefits package\n• Flexible Vacation & Paid Time Off\n• Employer-matched 401(k) plan\n\n#LI-Remote\n\nThe US base salary range for this full-time position is $105,000-$145,000. Our salary ranges are determined by role, level, and location, and the range displayed on each job posting reflects the minimum and maximum target for new hire salaries for the position across all US locations. Within the range, individual pay is determined by work location, role-related knowledge and skills, depth of experience, relevant education or training, and additional role-related considerations.\n\nDepending on the position offered, equity, bonuses, commission, or other forms of compensation may also be provided as part of a total compensation package, in addition to a full range of medical, financial, and other benefits",
+    "job_highlights": [
+      {
+        "title": "Qualifications",
+        "items": [
+          "1+ year of professional software development experience with a focus on big data technologies",
+          "Experience with Hadoop, Spark, Hive, and/or other big data technologies",
+          "Comprehensive computer science fundamentals in coding, object-oriented programming, data structures, and algorithms",
+          "Experience with containerization technologies like Docker and/or Kubernetes"
+        ]
+      },
+      {
+        "title": "Responsibilities",
+        "items": [
+          "Take part in the full life cycle of user-facing applications at scale, from design to implementation, testing and production",
+          "Develop a strong understanding of the business, industry, codebase, and/or systems"
+        ]
+      },
+      {
+        "title": "Benefits",
+        "items": [
+          "Competitive compensation",
+          "Exceptional benefits package",
+          "Flexible Vacation & Paid Time Off",
+          "Employer-matched 401(k) plan",
+          "The US base salary range for this full-time position is $105,000-$145,000",
+          "Depending on the position offered, equity, bonuses, commission, or other forms of compensation may also be provided as part of a total compensation package, in addition to a full range of medical, financial, and other benefits"
+        ]
+      }
+    ],
+    "related_links": [
+      {
+        "link": "https://www.google.com/search?hl=en&q=ZipRecruiter&sa=X&ved=0ahUKEwiTgejn1b6AAxVFppUCHReZDiM4FBCYkAII0g0",
+        "text": "See web results for ZipRecruiter"
+      }
+    ],
+    "extensions": ["Full-time", "Health insurance", "Paid time off"],
+    "detected_extensions": { "schedule_type": "Full-time" },
+    "job_id": "eyJqb2JfdGl0bGUiOiJTb2Z0d2FyZSBFbmdpbmVlciwgQmlnIERhdGEiLCJodGlkb2NpZCI6InE0SXRYVDRObk9ZQUFBQUFBQUFBQUE9PSIsInV1bGUiOiJ3K0NBSVFJQ0lrVTJGdUlFWnlZVzVqYVhOamJ5QkNZWGtnUVhKbFlTeFZibWwwWldRZ1UzUmhkR1Z6IiwiaGwiOiJlbiIsImZjIjoiRXZjQkNyY0JRVTFyTW14c1N6UnFhMGRFU214T2VFNXVObnB3ZVVodmQycFRjalYzYzAxWVJtNVdlazUxTlZWeFlYb3haRVZzWTFjd1MwaFdSbTlDZFZoNlIwMWZMVmhHWjNwRlN6SmpVRjl6TWt4U1dXZGlhVXhRVjFKRWVXeEVaalEzWlUxUk1tUm1jR0Z5YXkxTUxUZHpja3h5VEUxNldqYzJVREp5UlRSdllWVkhiVVppTlZFME5teGlZa2hrVVZSVGNXdEdRMHhsVUZGVFYzVjZZM2ROTFU1dlltVTJkREZvVlVwSk0wRk1WREpHTUROaVIzbzNhRzQ0RWhkUWNXNUxXa3BRY1V4eldFMHhjMUZRYkRkTE5tMUJTUm9pUVV4RlV6bDFVQzAwYW5WcWEyVndjWFZTTkhGNWQzZHpXVFZUU1dsd1NURXhVUSIsImZjdiI6IjMiLCJmY19pZCI6ImZjXzEzIiwiYXBwbHlfbGluayI6eyJ0aXRsZSI6IkFwcGx5IG9uIEdyZWVuaG91c2UiLCJsaW5rIjoiaHR0cHM6Ly9ib2FyZHMuZ3JlZW5ob3VzZS5pby96aXByZWNydWl0ZXIvam9icy81MTIyODgzP3V0bV9jYW1wYWlnbj1nb29nbGVfam9ic19hcHBseVx1MDAyNnV0bV9zb3VyY2U9Z29vZ2xlX2pvYnNfYXBwbHlcdTAwMjZ1dG1fbWVkaXVtPW9yZ2FuaWMifX0=",
+    "job_link": "https://boards.greenhouse.io/ziprecruiter/jobs/5122883?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+  }
+]

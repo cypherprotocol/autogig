@@ -2,7 +2,8 @@ module.exports = {
   images: {
     domains: ["wellfound.com", "i.imgur.com"],
   },
-  experimental: { appDir: true },
+  experimental: { appDir: true, serverActions: true },
+  transpilePackages: ["crawlee"],
   webpack: (config) => {
     config.resolve.fallback = {
       fs: false,

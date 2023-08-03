@@ -1,3 +1,5 @@
+import { JobData } from "@/lib/types";
+
 export type Json =
   | string
   | number
@@ -9,23 +11,130 @@ export type Json =
 export interface Database {
   public: {
     Tables: {
+      chats: {
+        Row: {
+          applicant: string;
+          chat_id: string;
+          compensation: string | null;
+          created_at: string | null;
+          gig: number;
+          id: number;
+          is_approved: boolean | null;
+          title: string;
+          user: string;
+        };
+        Insert: {
+          applicant: string;
+          chat_id: string;
+          compensation?: string | null;
+          created_at?: string | null;
+          gig: number;
+          id?: number;
+          is_approved?: boolean | null;
+          title: string;
+          user: string;
+        };
+        Update: {
+          applicant?: string;
+          chat_id?: string;
+          compensation?: string | null;
+          created_at?: string | null;
+          gig?: number;
+          id?: number;
+          is_approved?: boolean | null;
+          title?: string;
+          user?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "chats_applicant_fkey";
+            columns: ["applicant"];
+            referencedRelation: "users";
+            referencedColumns: ["clerk_id"];
+          },
+          {
+            foreignKeyName: "chats_gig_fkey";
+            columns: ["gig"];
+            referencedRelation: "gigs";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "chats_user_fkey";
+            columns: ["user"];
+            referencedRelation: "users";
+            referencedColumns: ["clerk_id"];
+          }
+        ];
+      };
+      gigs: {
+        Row: {
+          company_logo: string | null;
+          company_name: string | null;
+          compensation: string | null;
+          contact: string | null;
+          created_at: string | null;
+          creator: string;
+          description: string | null;
+          embedding: string | null;
+          id: number;
+          skills: string[] | null;
+          title: string | null;
+          url: string | null;
+        };
+        Insert: {
+          company_logo?: string | null;
+          company_name?: string | null;
+          compensation?: string | null;
+          contact?: string | null;
+          created_at?: string | null;
+          creator: string;
+          description?: string | null;
+          embedding?: string | null;
+          id?: number;
+          skills?: string[] | null;
+          title?: string | null;
+          url?: string | null;
+        };
+        Update: {
+          company_logo?: string | null;
+          company_name?: string | null;
+          compensation?: string | null;
+          contact?: string | null;
+          created_at?: string | null;
+          creator?: string;
+          description?: string | null;
+          embedding?: string | null;
+          id?: number;
+          skills?: string[] | null;
+          title?: string | null;
+          url?: string | null;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "gigs_creator_fkey";
+            columns: ["creator"];
+            referencedRelation: "users";
+            referencedColumns: ["clerk_id"];
+          }
+        ];
+      };
       github: {
         Row: {
           id: number;
           inserted_at: string;
-          name: string;
+          name: string | null;
           updated_at: string;
         };
         Insert: {
           id?: number;
           inserted_at?: string;
-          name: string;
+          name?: string | null;
           updated_at?: string;
         };
         Update: {
           id?: number;
           inserted_at?: string;
-          name?: string;
+          name?: string | null;
           updated_at?: string;
         };
         Relationships: [];
@@ -33,19 +142,19 @@ export interface Database {
       jobs: {
         Row: {
           created_at: string | null;
-          data: Json;
+          data: JobData;
           embedding: string | null;
           id: number;
         };
         Insert: {
           created_at?: string | null;
-          data: Json;
+          data: JobData;
           embedding?: string | null;
           id?: number;
         };
         Update: {
           created_at?: string | null;
-          data?: Json;
+          data?: JobData;
           embedding?: string | null;
           id?: number;
         };
@@ -85,39 +194,49 @@ export interface Database {
           }
         ];
       };
-      synopsis: {
+      users: {
         Row: {
+          clerk_id: string;
           created_at: string | null;
-          data: string | null;
           id: number;
-          user_id: number;
         };
         Insert: {
+          clerk_id: string;
           created_at?: string | null;
-          data?: string | null;
           id?: number;
-          user_id: number;
         };
         Update: {
+          clerk_id?: string;
           created_at?: string | null;
-          data?: string | null;
           id?: number;
-          user_id?: number;
         };
-        Relationships: [
-          {
-            foreignKeyName: "synopsis_user_id_fkey";
-            columns: ["user_id"];
-            referencedRelation: "github";
-            referencedColumns: ["id"];
-          }
-        ];
+        Relationships: [];
       };
     };
     Views: {
       [_ in never]: never;
     };
     Functions: {
+      gigs_search: {
+        Args: {
+          query_embedding: number[];
+          similarity_threshold: number;
+          match_count: number;
+        };
+        Returns: {
+          id: number;
+          title: string;
+          description: string;
+          url: string;
+          skills: string[];
+          compensation: string;
+          creator: string;
+          company_name: string;
+          company_logo: string;
+          contact: string;
+          similarity: number;
+        }[];
+      };
       ivfflathandler: {
         Args: {
           "": unknown;
@@ -126,14 +245,13 @@ export interface Database {
       };
       jobs_search: {
         Args: {
-          query_embedding: any;
+          query_embedding: number[];
           similarity_threshold: number;
           match_count: number;
         };
         Returns: {
           id: number;
-          created_at: string;
-          data: Json;
+          data: JobData;
           similarity: number;
         }[];
       };

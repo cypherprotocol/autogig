@@ -1,223 +1,82 @@
 "use client";
 
+import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Upload } from "@/components/upload";
-import { PotentialJob } from "@/lib/types";
-import useUserStore, { GigStages } from "@/state/user/useUserStore";
-import { Copy } from "lucide-react";
-import { useSession } from "next-auth/react";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import { CopyToClipboard } from "react-copy-to-clipboard";
-
-interface GigResponse {
-  potentialJobs: PotentialJob[];
-}
+import { Input } from "@/components/ui/input";
+import { useToast } from "@/components/ui/use-toast";
+import { useState } from "react";
+import Balancer from "react-wrap-balancer";
 
 export default function Home() {
-  const [dots, setDots] = useState(".");
-  const { data: session, status } = useSession();
-  const stage = useUserStore((state) => state.stage);
-  const setStage = useUserStore((state) => state.setStage);
-  const resume = useUserStore((state) => state.resume);
-  const jobs = useUserStore((state) => state.jobs);
-  const setJobs = useUserStore((state) => state.setJobs);
-  const portfolio = useUserStore((state) => state.portfolio);
-  const github = useUserStore((state) => state.github);
-  const linkedin = useUserStore((state) => state.linkedin);
-  const [copied, setCopied] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const { toast } = useToast();
+  const [isLoading, setIsLoading] = useState(false);
 
-  const fakeLoadingText = [
-    "Analyzing your resume",
-    "Collecting the data",
-    "Finding your dream job",
-    "Crafting your message",
-  ];
+  const autofill = async () => {
+    const res = await fetch("/api/autofill");
+  };
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setDots((prevDots) => {
-        return prevDots.length >= 3 ? "." : prevDots + ".";
+  const subscribe = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    const res = await fetch("/api/subscribe", {
+      body: JSON.stringify({
+        email: email,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    });
+
+    if (res.ok) {
+      toast({
+        title: "Subscribed",
+        description: "Subscription successful. Thank you!",
       });
-    }, 500); // 500ms delay
-
-    return () => clearInterval(intervalId); // cleanup on unmount
-  }, []);
-
-  useEffect(() => {
-    if (stage === GigStages.FindJob) {
-      const intervalId = setInterval(() => {
-        if (currentIndex !== fakeLoadingText.length - 1) {
-          setCurrentIndex(currentIndex + 1);
-        }
-      }, 3000); // Update every 3  seconds
-
-      return () => {
-        clearInterval(intervalId); // Clear interval on unmount
-      };
+    } else {
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+      });
     }
-  }, [currentIndex, fakeLoadingText.length, stage]);
 
-  useEffect(() => {
-    if (stage === GigStages.FindJob) {
-      (async function findGig() {
-        const res = await fetch("/api/gig?", {
-          method: "POST",
-          body: JSON.stringify({
-            twitter: session?.user?.name,
-            github: github,
-            linkedin: linkedin,
-            resume: resume,
-            portfolio: portfolio,
-          }),
-        })
-          .then((res) => res.json())
-          .then((res: GigResponse) => {
-            console.log(res);
-            setJobs(res.potentialJobs);
-            setStage(GigStages.Message);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-      })();
-    }
-  }, [stage, session, resume, github, linkedin, setStage, setJobs]);
-
-  // useEffect(() => {
-  //   if (session) {
-  //     setStage(GigStages.UploadResume);
-  //   }
-
-  //   // Add contain github/twitter
-  // }, [session]);
+    setIsLoading(false);
+    setEmail("");
+  };
 
   return (
-    <div className="relative z-10 flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-white">
-      <div className="flex w-72 items-center justify-center md:w-[24rem] lg:w-[32rem]">
-        {(() => {
-          switch (stage) {
-            case GigStages.Start:
-              return (
-                <Button onClick={() => setStage(GigStages.UploadResume)}>
-                  Find a job
-                </Button>
-              );
-            // case GigStages.LinkTwitter:
-            //   return (
-            //     <>
-            //       <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
-            //         Link your twitter
-            //       </h3>
-            //       <Button onClick={() => signIn("twitter")}>Link</Button>
-            //     </>
-            //   );
-            // case GigStages.LinkGithub:
-            //   return (
-            //     <>
-            //       <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
-            //         Link your github
-            //       </h3>
-            //       <Button onClick={() => signIn("github")}>Link</Button>
-            //     </>
-            //   );
-            case GigStages.UploadResume:
-              return <Upload />;
-            case GigStages.FindJob:
-              return (
-                <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
-                  {fakeLoadingText[currentIndex]}
-                  {dots}
-                </h3>
-              );
-            case GigStages.Message:
-              return (
-                <div className="flex w-full max-w-7xl flex-col items-center">
-                  <h3 className="mb-8 scroll-m-20 text-center text-2xl font-semibold tracking-tight">
-                    Here are some jobs we found for you 🎉
-                  </h3>
-                  <Tabs
-                    defaultValue={"0"}
-                    className="flex w-full flex-col items-center"
-                  >
-                    <TabsList>
-                      {jobs.map((job, index) => {
-                        return (
-                          <TabsTrigger key={index} value={index.toString()}>
-                            {job.companyName}
-                          </TabsTrigger>
-                        );
-                      })}
-                    </TabsList>
-                    {jobs.map((job, index) => (
-                      <TabsContent
-                        key={index}
-                        value={index.toString()}
-                        className="w-full"
-                      >
-                        <a href={job.jobLink} target="_blank" rel="noreferrer">
-                          <Card>
-                            <CardHeader>
-                              <div className="flex w-full items-center">
-                                <div className="relative mr-4 h-12 w-12 shrink-0">
-                                  <Image
-                                    src={job.companyLogo}
-                                    fill
-                                    className="object-contain"
-                                    alt=""
-                                  />
-                                </div>
-                                <div className="flex flex-col truncate">
-                                  <CardTitle>{job.companyName}</CardTitle>
-                                  <CardDescription>
-                                    {job.jobLink}
-                                  </CardDescription>
-                                </div>
-                              </div>
-                            </CardHeader>
-                          </Card>
-                        </a>
-                        <blockquote className="my-8 h-64 max-w-3xl overflow-y-scroll border-l-2 pl-6 pr-2 italic md:h-80">
-                          {job.response}
-                        </blockquote>
-                        <div className="flex w-full flex-row justify-center space-x-2">
-                          <Button
-                            variant="secondary"
-                            onClick={() => setStage(0)}
-                          >
-                            Start Over
-                          </Button>
-                          <CopyToClipboard
-                            text={job.response}
-                            onCopy={() => setCopied(true)}
-                          >
-                            <Button>
-                              {copied ? "Copied!" : "Copy to clipboard"}
-                              <Copy className="ml-2 h-4 w-4" />
-                            </Button>
-                          </CopyToClipboard>
-                        </div>
-                      </TabsContent>
-                    ))}
-                  </Tabs>
-                </div>
-              );
-          }
-        })()}
-
-        <div className="absolute bottom-16 flex space-x-8">
-          <p className="text-sm text-muted-foreground">
-            Step {stage} of {Object.keys(GigStages).length / 2}
-          </p>
-        </div>
+    <div className="flex w-full max-w-6xl flex-col md:flex-row grow items-center justify-center md:justify-start px-4">
+      <div className="md:mr-16 flex w-full flex-col items-start justify-center">
+        <h1 className="mb-6 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+          <Balancer> Get a job without doing shit 💩</Balancer>
+        </h1>
+        <p className="mb-6 leading-7">
+          Upload your resume, land your dream gig. Job hunting has never been
+          this effortless.
+        </p>
+        <form onSubmit={subscribe} className="flex">
+          <Input
+            type="email"
+            name="email"
+            placeholder="Email"
+            className="mr-2 "
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <Button disabled={isLoading}>
+            {isLoading && (
+              <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+            )}
+            Notify
+          </Button>
+        </form>
+      </div>
+      <Button onClick={autofill} />
+      <div className="hidden md:flex h-full w-full">
+        <div className="h-96 w-full rounded-md bg-slate-800" />
       </div>
     </div>
   );

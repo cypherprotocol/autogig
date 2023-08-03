@@ -9,13 +9,14 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import useUserStore, { GigStages } from "@/state/user/useUserStore";
+import useUserStore, { BotStages } from "@/state/user/useUserStore";
 import va from "@vercel/analytics";
-import { FileText, Github, Link, UploadIcon } from "lucide-react";
+import { AlertCircle, FileText, Github, Link, UploadIcon } from "lucide-react";
 import { PDFDocumentProxy } from "pdfjs-dist";
 import { TextItem } from "pdfjs-dist/types/src/display/api";
 import React, { useCallback, useRef, useState } from "react";
 import { useDropzone } from "react-dropzone";
+import { set } from "zod";
 
 export function Upload() {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
@@ -27,6 +28,8 @@ export function Upload() {
   const resume = useUserStore((state) => state.resume);
   const portfolio = useUserStore((state) => state.portfolio);
   const github = useUserStore((state) => state.github);
+
+  const [isValidLink, setIsValidLink] = useState(true);
 
   const [option, setOption] = useState<"portfolio" | "resume" | "github">(
     "github"
@@ -91,13 +94,19 @@ export function Upload() {
 
       if (portfolio) {
         va.track("portfolio-upload");
+        const urlPattern = /^(https?:\/\/)/;
+        if (!urlPattern.test(portfolio)) {
+          setIsValidLink(false);
+          return;
+        }
+        setIsValidLink(true);
       }
 
       if (github) {
         va.track("github-upload");
       }
 
-      setStage(GigStages.FindJob);
+      setStage(BotStages.FindJob);
     }
   };
 
@@ -148,10 +157,8 @@ export function Upload() {
     fileInputRef.current?.click();
   };
 
-  console.log("option", option);
-
   return (
-    <div className="flex w-full flex-col items-center justify-center">
+    <div className="flex w-full flex-col items-center justify-center px-4">
       <Card className="w-full">
         <CardHeader>
           <CardTitle className="text-2xl">Tell us about yourself</CardTitle>
@@ -163,7 +170,7 @@ export function Upload() {
           <RadioGroup
             defaultValue={option}
             onValueChange={(value) => setOption(value as any)}
-            className="mb-4 grid grid-cols-3 gap-4"
+            className="mb-4 grid grid-rows-3 md:grid-rows-none md:grid-cols-3 gap-4"
           >
             <Label
               htmlFor="github"
@@ -220,24 +227,37 @@ export function Upload() {
             </div>
           )}
           {option === "portfolio" && (
-            <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="portfolio">Portfolio link</Label>
-              <Input
-                className="mt-4 w-full"
-                onChange={(e) => setPortfolio(e.target.value)}
-                placeholder="https://example.com"
-              />
-            </div>
+            <form onSubmit={onSubmit}>
+              <div className="flex flex-col space-y-1.5">
+                <Label htmlFor="portfolio">Portfolio link</Label>
+                <Input
+                  className="mt-4 w-full"
+                  onChange={(e) => setPortfolio(e.target.value)}
+                  placeholder="https://example.com"
+                />
+                {!isValidLink && (
+                  <Label
+                    htmlFor="portfolio"
+                    className="text-red-600 flex flex-row items-center space-x-1"
+                  >
+                    <AlertCircle className="scale-75" />
+                    <p>Invalid link please try again </p>
+                  </Label>
+                )}
+              </div>
+            </form>
           )}
           {option === "github" && (
-            <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="github">Github username</Label>
-              <Input
-                className="mt-4 w-full"
-                onChange={(e) => setGithub(e.target.value)}
-                placeholder="Username"
-              />
-            </div>
+            <form onSubmit={onSubmit}>
+              <div className="flex flex-col space-y-1.5">
+                <Label htmlFor="github">Github username</Label>
+                <Input
+                  className="mt-4 w-full"
+                  onChange={(e) => setGithub(e.target.value)}
+                  placeholder="Username"
+                />
+              </div>
+            </form>
           )}
           <Button onClick={onSubmit} className="mt-4 w-full">
             Submit

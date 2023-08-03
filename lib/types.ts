@@ -1,7 +1,47 @@
-export interface PotentialJob {
-  companyName: string;
-  companyLogo: string;
-  jobLink: string;
-  jobTitle: string;
-  response: string;
+import { Json } from "@/lib/types/supabase";
+import { type Message } from "ai";
+
+export interface Chat extends Record<string, any> {
+  id: string;
+  title: string;
+  createdAt: Date;
+  userId: string;
+  path: string;
+  messages: Message[];
+  sharePath?: string;
+}
+
+export interface Repositories {
+  name: string | null;
+  language_data: Json | null;
+  description: string | null;
+}
+
+export interface Job {
+  created_at: string | null;
+  embedding: string | null;
+  data: JobData;
+}
+
+export interface JobData {
+  title: string;
+  company_name: string;
+  location: string;
+  via: string;
+  description: string;
+  job_highlights: {
+    title: string;
+    items: string[];
+  }[];
+  related_links: {
+    links: string;
+    text: string;
+  }[];
+  extensions: string[];
+  detected_extensions: {
+    schedule_type: string;
+    work_from_home: boolean;
+  }[];
+  job_id: string;
+  job_link: string;
 }

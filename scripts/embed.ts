@@ -11,10 +11,11 @@ const generateEmbeddings = async (jobs: any[]) => {
   });
   const openai = new OpenAIApi(configuration);
 
-  const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!
-  );
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseServiceRoleKey =
+    process.env.NEXT_PUBLIC_SUPABASE_SERVICE_ROLE_KEY;
+
+  const supabase = createClient(supabaseUrl!, supabaseServiceRoleKey!);
 
   for (let i = 0; i < jobs.length; i++) {
     const job = jobs[i];
@@ -46,7 +47,7 @@ const generateEmbeddings = async (jobs: any[]) => {
 
 (async () => {
   const jobs: any[] = JSON.parse(
-    fs.readFileSync("lib/data/handpick.json", "utf8")
+    fs.readFileSync("lib/data/greenhouse.json", "utf8")
   );
 
   await generateEmbeddings(jobs);

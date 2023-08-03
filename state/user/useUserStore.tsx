@@ -1,7 +1,7 @@
-import { PotentialJob } from "@/lib/types";
+import { Job } from "@/lib/types";
 import { create } from "zustand";
 
-export enum GigStages {
+export enum BotStages {
   Start,
   // LinkTwitter,
   // LinkGithub,
@@ -15,14 +15,14 @@ interface StoreState {
   setGithub: (github: string) => void;
   linkedin?: string;
   setLinkedin: (linkedin: string) => void;
-  stage: GigStages;
-  setStage: (stage: GigStages) => void;
+  stage: BotStages;
+  setStage: (stage: BotStages) => void;
   resume?: string;
   setResume: (resume: string) => void;
   portfolio?: string;
   setPortfolio: (resume: string) => void;
-  jobs: PotentialJob[];
-  setJobs: (jobs: PotentialJob[]) => void;
+  jobs: Job[];
+  setJobs: (jobs: Job[]) => void;
 }
 
 const useUserStore = create<StoreState>((set) => ({
@@ -36,7 +36,7 @@ const useUserStore = create<StoreState>((set) => ({
     set((state) => ({
       linkedin,
     })),
-  stage: GigStages.Start,
+  stage: BotStages.UploadResume,
   setStage: (stage) =>
     set((state) => ({
       stage,
