@@ -1,5 +1,4 @@
 import { autogigFunctions } from "@/app/api/gig/functions";
-import { apifyClient } from "@/lib/apify";
 import supabase from "@/lib/supabase";
 import { convertToReadable, getPortfolio, getRepos } from "@/lib/utils";
 import { currentUser } from "@clerk/nextjs";
@@ -112,7 +111,7 @@ export async function POST(req: NextRequest) {
         startDate: applicantInfo?.startDate,
       };
 
-      apifyClient.actor("guiltless_peach/autogig").call(input);
+      // apifyClient.actor("guiltless_peach/autogig").call(input);
     }
   }
 
