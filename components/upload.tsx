@@ -178,7 +178,7 @@ export function Upload() {
             <>
               {!isFileUploaded ? (
                 <div
-                  className="flex w-full flex-col items-center justify-center rounded-md border border-dashed p-8"
+                  className="flex w-full cursor-pointer flex-col items-center justify-center rounded-md border border-dashed p-8"
                   {...getRootProps()}
                 >
                   <input
@@ -188,7 +188,7 @@ export function Upload() {
                     ref={fileInputRef}
                     accept=".txt, .pdf"
                   />
-                  <div className="mb-4 flex flex-col items-center">
+                  <div className="pointer-events-none mb-4 flex flex-col items-center">
                     <UploadIcon className="mb-4" />
                     {isDragActive ? (
                       <p>Drop here...</p>
