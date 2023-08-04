@@ -3,53 +3,58 @@ import { ChatCompletionFunctions } from "openai";
 export const autogigFunctions: ChatCompletionFunctions[] = [
   {
     name: "get_applicant_info",
-    description: "Get applicant's information",
+    description:
+      "Retrieves applicants information from the resume based on the parameters provided",
     parameters: {
+      required: ["name", "email", "phone"],
       type: "object",
       properties: {
         name: {
           type: "string",
-          description: "Applicant's name",
+          description: "The name of the applicant (i.e John Doe)",
         },
         email: {
           type: "string",
-          description: "Applicant's email",
+          description: "The email address of the applicant",
         },
         phone: {
           type: "string",
-          description: "Applicant's phone number",
+          description: "The phone number of the applicant (i.e 123-456-7890)",
         },
         address: {
           type: "string",
-          description: "Applicant's address",
+          description:
+            "The address of the applicant (i.e 123 Main St, New York, NY 10001)",
         },
         organization: {
           type: "string",
-          description: "Applicant's organization",
+          description: "The organization of the applicant",
         },
         github: {
           type: "string",
-          description: "Applicant's github link",
+          description:
+            "The link to the github profile of the applicant (i.e. https://github.com/josh)",
         },
         linkedin: {
           type: "string",
-          description: "Applicant's linkedin link",
+          description:
+            "The link to the linkedin profile of the applicant (i.e. https://linkedin.com/in/josh)",
         },
         portfolio: {
           type: "string",
-          description: "Applicant's portfolio link",
+          description: "The link to the portfolio of the applicant",
         },
         location: {
           type: "string",
-          description: "Applicant's location",
+          description: "The location of the applicant (i.e. New York, NY)",
         },
         school: {
           type: "string",
-          description: "Applicant's school",
+          description: "The school of the applicant (i.e. Harvard University)",
         },
         startDate: {
           type: "string",
-          description: "Applicant's desired start date",
+          description: "The start date of the applicant (i.e. May 2019)",
         },
       },
     },

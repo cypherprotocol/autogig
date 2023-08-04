@@ -8,7 +8,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Upload } from "@/components/upload";
 import { Job } from "@/lib/types";
 import useUserStore, { BotStages } from "@/state/user/useUserStore";
@@ -128,49 +127,29 @@ export default function Home() {
                   We have sent your profile to these companies. Check your email
                   for updates.
                 </p>
-
-                <Tabs
-                  defaultValue={"0"}
-                  className="flex w-full flex-col items-center"
-                >
-                  <TabsList>
-                    {jobs.map((job, index) => {
-                      return (
-                        <TabsTrigger key={index} value={index.toString()}>
-                          {job.data.company_name}
-                        </TabsTrigger>
-                      );
-                    })}
-                  </TabsList>
+                <div className="flex w-full flex-col space-y-4">
                   {jobs.map((job, index) => (
-                    <TabsContent
-                      key={index}
-                      value={index.toString()}
-                      className="w-full"
-                    >
-                      <Card>
-                        <CardHeader>
-                          <div className="flex w-full items-center">
-                            <div className="relative mr-4 h-12 w-12 shrink-0">
-                              <Image
-                                src={"/robot.png"}
-                                fill
-                                className="object-contain"
-                                alt=""
-                              />
-                            </div>
-                            <div className="flex flex-col truncate">
-                              <CardTitle>{job.data.company_name}</CardTitle>
-                              <CardDescription>
-                                {job.data.title}
-                              </CardDescription>
-                            </div>
+                    <Card key={index}>
+                      <CardHeader>
+                        <div className="flex w-full items-center">
+                          <div className="relative mr-4 h-12 w-12 shrink-0">
+                            <Image
+                              src={"/robot.png"}
+                              fill
+                              className="rounded-md object-contain"
+                              alt=""
+                            />
                           </div>
-                        </CardHeader>
-                      </Card>
-                    </TabsContent>
+                          <div className="flex flex-col truncate">
+                            <CardTitle>{job.data.company_name}</CardTitle>
+                            <CardDescription>{job.data.title}</CardDescription>
+                          </div>
+                        </div>
+                      </CardHeader>
+                    </Card>
                   ))}
-                </Tabs>
+                </div>
+
                 <Button
                   className="mt-8"
                   onClick={() => setStage(BotStages.UploadResume)}
