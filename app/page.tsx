@@ -83,7 +83,14 @@ export default function Home() {
         </div>
       </div>
       <div className="hidden h-full w-full md:flex">
-        <div className="h-96 w-full rounded-md bg-slate-800" />
+        <div className="h-[36rem] w-full overflow-hidden rounded-md bg-slate-800">
+          <video
+            autoPlay
+            muted
+            src="/autogig.mp4"
+            className="h-full w-full object-cover"
+          />
+        </div>
       </div>
     </div>
   );
