@@ -44,14 +44,6 @@ export async function POST(req: NextRequest) {
       .single();
   }
 
-  if (user.data?.num_runs && user.data.num_runs >= 1) {
-    return new Response(
-      JSON.stringify({
-        jobs: [],
-      })
-    );
-  }
-
   // Collect all data relevant to user looking for a job
   const profileInput = JSON.stringify({
     resume: resume && resume?.replace(/\n/g, " "),
@@ -71,6 +63,15 @@ export async function POST(req: NextRequest) {
     similarity_threshold: 0.5,
     match_count: 3,
   });
+
+  if (user.data?.num_runs && user.data.num_runs >= 1) {
+    return new Response(
+      JSON.stringify({
+        numRuns: user.data.num_runs,
+        jobs: chunks,
+      })
+    );
+  }
 
   const applicantInfoResponse = await openai.createChatCompletion({
     model: "gpt-3.5-turbo-0613",
@@ -143,6 +144,7 @@ export async function POST(req: NextRequest) {
 
   return new Response(
     JSON.stringify({
+      numRuns: user.data?.num_runs,
       jobs: chunks,
     })
   );

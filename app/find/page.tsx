@@ -16,6 +16,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 interface BotResponse {
+  numRuns: number;
   jobs: Job[];
 }
 
@@ -31,6 +32,7 @@ export default function Home() {
   const [copied, setCopied] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [tip, setTip] = useState<string | undefined>();
+  const [numRuns, setNumRuns] = useState(0);
 
   const fakeLoadingText = [
     "Building your profile",
@@ -85,6 +87,7 @@ export default function Home() {
               console.log(res);
               setJobs(res.jobs);
               setTip(undefined);
+              setNumRuns(res.numRuns);
               setStage(BotStages.Message);
             })
             .catch((err) => {
@@ -121,7 +124,9 @@ export default function Home() {
             return (
               <div className="flex w-full max-w-7xl flex-col items-center">
                 <h3 className="mb-4 scroll-m-20 text-center text-2xl font-semibold tracking-tight">
-                  Boom, done! Here are some gigs we found for you 🎉
+                  {numRuns >= 1
+                    ? "Enjoy yourself. We already applied to the following jobs for you."
+                    : "Boom, done! Here are some jobs we found for you 🎉"}
                 </h3>
                 <p className="mb-8 text-sm text-muted-foreground">
                   We have sent your profile to these companies. Check your email
