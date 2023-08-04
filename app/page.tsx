@@ -3,6 +3,11 @@
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { useToast } from "@/components/ui/use-toast";
 import { useState } from "react";
 import Balancer from "react-wrap-balancer";
@@ -44,31 +49,38 @@ export default function Home() {
   };
 
   return (
-    <div className="flex w-full max-w-6xl grow flex-col items-center justify-center px-4 md:flex-row md:justify-start">
-      <div className="flex w-full flex-col items-start justify-center md:mr-16">
-        <h1 className="mb-6 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-          <Balancer> Get a job without doing shit 💩</Balancer>
+    <div className="w-full max-w-5xl grow flex-col items-center justify-center px-4 pt-28 md:flex-row md:justify-start">
+      <div className="mb-6 flex w-full items-center justify-between">
+        <h1 className="w-96 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+          <Balancer> Get a job without doing shit. 💩</Balancer>
         </h1>
-        <p className="mb-6 leading-7">
-          Upload your resume, land your dream gig. Job hunting has never been
-          this effortless.
-        </p>
-        <form onSubmit={subscribe} className="flex">
-          <Input
-            type="email"
-            name="email"
-            placeholder="Email"
-            className="mr-2 "
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <Button disabled={isLoading}>
-            {isLoading && (
-              <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
-            )}
-            Notify
-          </Button>
-        </form>
+        <div className="flex flex-col">
+          <Popover>
+            <PopoverTrigger>
+              <Button className="h-16 w-48" disabled={isLoading}>
+                Notify me
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent align="end">
+              <form onSubmit={subscribe} className="flex">
+                <Input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  className="mr-2 "
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <Button disabled={isLoading}>
+                  {isLoading && (
+                    <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+                  )}
+                  Notify
+                </Button>
+              </form>
+            </PopoverContent>
+          </Popover>
+        </div>
       </div>
       <div className="hidden h-full w-full md:flex">
         <div className="h-96 w-full rounded-md bg-slate-800" />

@@ -95,14 +95,6 @@ export default function Home() {
     }
   }, [stage, resume, github, setStage, setJobs]);
 
-  // useEffect(() => {
-  //   if (session) {
-  //     setStage(BotStages.UploadResume);
-  //   }
-
-  //   // Add contain github/twitter
-  // }, [session]);
-
   return (
     <div className="flex w-full max-w-3xl grow flex-col items-center justify-center px-4">
       {(() => {
