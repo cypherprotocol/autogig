@@ -134,9 +134,9 @@ export function Upload() {
     <div className="flex w-full flex-col items-center justify-center px-4">
       <Card className="w-full">
         <CardHeader>
-          <CardTitle className="text-2xl">Tell us about yourself</CardTitle>
+          <CardTitle className="text-2xl">Upload resume</CardTitle>
           <CardDescription>
-            We will use this information to find you the best job opportunities.
+            We need to know a little bit about you before we can start looking.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -188,17 +188,20 @@ export function Upload() {
                     ref={fileInputRef}
                     accept=".txt, .pdf"
                   />
-                  <div className="mb-2 flex flex-col items-center">
+                  <div className="mb-4 flex flex-col items-center">
                     <UploadIcon className="mb-4" />
                     {isDragActive ? (
                       <p>Drop here...</p>
                     ) : (
-                      <p>Drag resume here</p>
+                      <p className="font-medium">
+                        Choose a file or drag & drop here
+                      </p>
                     )}
+                    <p className="text-sm text-muted-foreground">
+                      PDF or TXT format, up to 10mb.
+                    </p>
                   </div>
-                  <p className="text-sm text-muted-foreground">
-                    or click to browse (10mb max)
-                  </p>
+                  <Button variant={"outline"}>Browse files</Button>
                 </div>
               ) : (
                 <Alert>
