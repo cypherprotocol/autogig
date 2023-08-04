@@ -34,10 +34,9 @@ export default function Home() {
   const [tip, setTip] = useState<string | undefined>();
 
   const fakeLoadingText = [
-    "Analyzing your profile",
+    "Building your profile",
     "Kissing some ass",
     "Adding some perfume",
-    "Boom, done",
   ];
 
   useEffect(() => {
@@ -67,30 +66,32 @@ export default function Home() {
   useEffect(() => {
     if (stage === BotStages.FindJob) {
       (async function findGig() {
-        await fetch("/api/tip?", {
-          method: "POST",
-          body: JSON.stringify({
-            resume: resume,
-          }),
-        })
-          .then((res) => res.json())
-          .then((res) => setTip(res.tip));
-        const res = await fetch("/api/gig?", {
-          method: "POST",
-          body: JSON.stringify({
-            resume: resume,
-          }),
-        })
-          .then((res) => res.json())
-          .then((res: BotResponse) => {
-            console.log(res);
-            setJobs(res.jobs);
-            setTip(undefined);
-            setStage(BotStages.Message);
+        const [tipResponse, gigResponse] = await Promise.all([
+          fetch("/api/tip?", {
+            method: "POST",
+            body: JSON.stringify({
+              resume: resume,
+            }),
           })
-          .catch((err) => {
-            console.log(err);
-          });
+            .then((res) => res.json())
+            .then((res) => setTip(res.tip)),
+          fetch("/api/gig?", {
+            method: "POST",
+            body: JSON.stringify({
+              resume: resume,
+            }),
+          })
+            .then((res) => res.json())
+            .then((res: BotResponse) => {
+              console.log(res);
+              setJobs(res.jobs);
+              setTip(undefined);
+              setStage(BotStages.Message);
+            })
+            .catch((err) => {
+              console.log(err);
+            }),
+        ]);
       })();
     }
   }, [stage, resume, github, setStage, setJobs]);
@@ -121,7 +122,7 @@ export default function Home() {
             return (
               <div className="flex w-full max-w-7xl flex-col items-center">
                 <h3 className="mb-4 scroll-m-20 text-center text-2xl font-semibold tracking-tight">
-                  Here are some gigs we found for you 🎉
+                  Boom, done! Here are some gigs we found for you 🎉
                 </h3>
                 <p className="mb-8 text-sm text-muted-foreground">
                   We have sent your profile to these companies. Check your email
