@@ -1,3 +1,4 @@
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -11,7 +12,14 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import useUserStore, { BotStages } from "@/state/user/useUserStore";
 import va from "@vercel/analytics";
-import { AlertCircle, FileText, Github, Link, UploadIcon } from "lucide-react";
+import {
+  AlertCircle,
+  FileCheck,
+  FileText,
+  Github,
+  Link,
+  UploadIcon,
+} from "lucide-react";
 import { PDFDocumentProxy } from "pdfjs-dist";
 import { TextItem } from "pdfjs-dist/types/src/display/api";
 import React, { useCallback, useRef, useState } from "react";
@@ -28,13 +36,13 @@ export function Upload() {
   const portfolio = useUserStore((state) => state.portfolio);
   const github = useUserStore((state) => state.github);
 
+  const [isFileUploaded, setIsFileUploaded] = useState(false);
   const [isValidLink, setIsValidLink] = useState(true);
-
   const [option, setOption] = useState<"portfolio" | "resume" | "github">(
     "resume"
   );
 
-  const uploadPhoto = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const upload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]!;
     if (!file) return;
 
@@ -45,7 +53,6 @@ export function Upload() {
         const data = reader.result;
         const content = await loadPDF(data as ArrayBuffer);
 
-        extractSocials(content);
         setResume(content);
       };
     } else {
@@ -56,33 +63,9 @@ export function Upload() {
 
         if (typeof content !== "string") return;
 
-        extractSocials(content);
         setResume(content);
       };
     }
-  };
-
-  const extractSocials = (content: string) => {
-    const githubRegex = /github\.com\/([a-zA-Z0-9]+)/g;
-    const linkedinRegex = /linkedin\.com\/in\/([a-zA-Z0-9-]+)/g;
-
-    const githubUsernames = Array.from(
-      content.matchAll(githubRegex),
-      (match) => match[1]
-    );
-    const linkedinUsernames = Array.from(
-      content.matchAll(linkedinRegex),
-      (match) => match[1]
-    );
-
-    const githubUsername = githubUsernames[0];
-    const linkedinUsername = linkedinUsernames[0];
-
-    console.log("GitHub Username:", githubUsername);
-    console.log("LinkedIn Username:", linkedinUsername);
-
-    setGithub(githubUsername);
-    setLinkedin(linkedinUsername);
   };
 
   const onSubmit = () => {
@@ -144,17 +127,16 @@ export function Upload() {
 
   const onDrop = useCallback((acceptedFiles) => {
     // Do something with the files
-    uploadPhoto({
+    upload({
       target: {
         files: acceptedFiles,
       },
     } as any);
-  }, []);
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
-  const handleFileClick = () => {
-    fileInputRef.current?.click();
-  };
+    setIsFileUploaded(true);
+  }, []);
+
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
   return (
     <div className="flex w-full flex-col items-center justify-center px-4">
@@ -172,20 +154,20 @@ export function Upload() {
             className="mb-4 grid grid-rows-3 gap-4 md:grid-cols-3 md:grid-rows-none"
           >
             <Label
-              htmlFor="github"
-              className="flex cursor-pointer flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground [&:has([data-state=checked])]:border-primary"
-            >
-              <RadioGroupItem value="github" id="github" className="sr-only" />
-              <Github className="mb-4 h-12 w-12" />
-              Github
-            </Label>
-            <Label
               htmlFor="resume"
               className="flex cursor-pointer flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground [&:has([data-state=checked])]:border-primary"
             >
               <RadioGroupItem value="resume" id="resume" className="sr-only" />
               <FileText className="mb-4 h-12 w-12" />
               Resume
+            </Label>
+            <Label
+              htmlFor="github"
+              className="flex cursor-pointer flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground [&:has([data-state=checked])]:border-primary"
+            >
+              <RadioGroupItem value="github" id="github" className="sr-only" />
+              <Github className="mb-4 h-12 w-12" />
+              Github
             </Label>
             <Label
               htmlFor="portfolio"
@@ -201,29 +183,41 @@ export function Upload() {
             </Label>
           </RadioGroup>
           {option === "resume" && (
-            <div
-              className="flex w-full flex-col items-center justify-center rounded-md border border-dashed p-8"
-              {...getRootProps()}
-            >
-              <input
-                {...getInputProps()}
-                type="file"
-                style={{ display: "none" }}
-                ref={fileInputRef}
-                accept=".txt, .pdf"
-              />
-              <div className="mb-2 flex flex-col items-center">
-                <UploadIcon className="mb-4" />
-                {isDragActive ? (
-                  <p>Drop here...</p>
-                ) : (
-                  <p>Drag PDF or TXT here</p>
-                )}
-              </div>
-              <p className="text-sm text-muted-foreground">
-                or click to browse (10mb max)
-              </p>
-            </div>
+            <>
+              {!isFileUploaded ? (
+                <div
+                  className="flex w-full flex-col items-center justify-center rounded-md border border-dashed p-8"
+                  {...getRootProps()}
+                >
+                  <input
+                    {...getInputProps()}
+                    type="file"
+                    style={{ display: "none" }}
+                    ref={fileInputRef}
+                    accept=".txt, .pdf"
+                  />
+                  <div className="mb-2 flex flex-col items-center">
+                    <UploadIcon className="mb-4" />
+                    {isDragActive ? (
+                      <p>Drop here...</p>
+                    ) : (
+                      <p>Drag PDF or TXT here</p>
+                    )}
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    or click to browse (10mb max)
+                  </p>
+                </div>
+              ) : (
+                <Alert>
+                  <FileCheck className="h-4 w-4" />
+                  <AlertTitle>Resume uploaded!</AlertTitle>
+                  <AlertDescription>
+                    We will use this information to find you the best jobs.
+                  </AlertDescription>
+                </Alert>
+              )}
+            </>
           )}
           {option === "portfolio" && (
             <form onSubmit={onSubmit}>
