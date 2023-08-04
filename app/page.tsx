@@ -52,7 +52,7 @@ export default function Home() {
     <div className="w-full max-w-5xl grow flex-col items-center justify-center px-4 pt-28 md:flex-row md:justify-start">
       <div className="mb-6 flex w-full items-center justify-between">
         <h1 className="w-96 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-          <Balancer> Get a job without doing shit. 💩</Balancer>
+          <Balancer> Get a job without doing shit 💩</Balancer>
         </h1>
         <div className="flex flex-col">
           <Popover>
