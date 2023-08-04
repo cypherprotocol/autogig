@@ -9,17 +9,9 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import useUserStore, { BotStages } from "@/state/user/useUserStore";
 import va from "@vercel/analytics";
-import {
-  AlertCircle,
-  FileCheck,
-  FileText,
-  Github,
-  Link,
-  UploadIcon,
-} from "lucide-react";
+import { AlertCircle, FileCheck, UploadIcon } from "lucide-react";
 import { PDFDocumentProxy } from "pdfjs-dist";
 import { TextItem } from "pdfjs-dist/types/src/display/api";
 import React, { useCallback, useRef, useState } from "react";
@@ -148,7 +140,7 @@ export function Upload() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <RadioGroup
+          {/* <RadioGroup
             defaultValue={option}
             onValueChange={(value) => setOption(value as any)}
             className="mb-4 grid grid-rows-3 gap-4 md:grid-cols-3 md:grid-rows-none"
@@ -181,7 +173,7 @@ export function Upload() {
               <Link className="mb-4 h-12 w-12" />
               Portfolio
             </Label>
-          </RadioGroup>
+          </RadioGroup> */}
           {option === "resume" && (
             <>
               {!isFileUploaded ? (
@@ -201,7 +193,7 @@ export function Upload() {
                     {isDragActive ? (
                       <p>Drop here...</p>
                     ) : (
-                      <p>Drag PDF or TXT here</p>
+                      <p>Drag resume here</p>
                     )}
                   </div>
                   <p className="text-sm text-muted-foreground">

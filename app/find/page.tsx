@@ -70,9 +70,7 @@ export default function Home() {
         await fetch("/api/tip?", {
           method: "POST",
           body: JSON.stringify({
-            github: github,
             resume: resume,
-            portfolio: portfolio,
           }),
         })
           .then((res) => res.json())
@@ -80,9 +78,7 @@ export default function Home() {
         const res = await fetch("/api/gig?", {
           method: "POST",
           body: JSON.stringify({
-            github: github,
             resume: resume,
-            portfolio: portfolio,
           }),
         })
           .then((res) => res.json())
