@@ -5,22 +5,23 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Analytics } from "@vercel/analytics/react";
+import { Metadata } from "next";
 import "../styles/globals.css";
 import "../styles/tailwind.css";
 
-export const metadata = {
-  metadataBase: new URL("https://autogig.pro"),
-  title: "Autogig",
-  description: "Get a job without doing shit",
+export const metadata: Metadata = {
+  metadataBase: new URL("https://0xhoneyjar.xyz"),
+  title: "The Honey Jar",
+  description: "The Honey Jar - Your NFT Gateway to DeFi",
   openGraph: {
     type: "website",
-    title: "Autogig",
-    description: "Get a job without doing shit",
-    // images: [
-    //   {
-    //     url: "https://res.cloudinary.com/honeyjar/image/upload/v1677023883/THJ_WebBanner.jpg",
-    //   },
-    // ],
+    title: "The Honey Jar",
+    description: "The Honey Jar - Your NFT Gateway to DeFi",
+    images: [
+      {
+        url: "https://res.cloudinary.com/honeyjar/image/upload/v1677023883/THJ_WebBanner.jpg",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
