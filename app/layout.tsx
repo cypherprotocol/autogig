@@ -10,22 +10,22 @@ import "../styles/globals.css";
 import "../styles/tailwind.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://0xhoneyjar.xyz"),
-  title: "The Honey Jar",
-  description: "The Honey Jar - Your NFT Gateway to DeFi",
+  metadataBase: new URL("https://autogig.pro"),
+  title: "Autogig",
+  description: "Get a job without doing shit",
   openGraph: {
     type: "website",
-    title: "The Honey Jar",
-    description: "The Honey Jar - Your NFT Gateway to DeFi",
-    images: [
-      {
-        url: "https://res.cloudinary.com/honeyjar/image/upload/v1677023883/THJ_WebBanner.jpg",
-      },
-    ],
+    title: "Autogig",
+    description: "Get a job without doing shit",
+    // images: [
+    //   {
+    //     url: "https://res.cloudinary.com/honeyjar/image/upload/v1677023883/THJ_WebBanner.jpg",
+    //   },
+    // ],
   },
-  twitter: {
-    card: "summary_large_image",
-  },
+  // twitter: {
+  //   card: "summary_large_image",
+  // },
 };
 
 export default function RootLayout({
