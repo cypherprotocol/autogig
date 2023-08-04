@@ -199,16 +199,19 @@ export interface Database {
           clerk_id: string;
           created_at: string | null;
           id: number;
+          num_runs: number;
         };
         Insert: {
           clerk_id: string;
           created_at?: string | null;
           id?: number;
+          num_runs?: number;
         };
         Update: {
           clerk_id?: string;
           created_at?: string | null;
           id?: number;
+          num_runs?: number;
         };
         Relationships: [];
       };

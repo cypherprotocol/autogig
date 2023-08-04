@@ -1,7 +1,7 @@
 import { ChatCompletionFunctions } from "openai";
 
 export const autogigFunctions: ChatCompletionFunctions[] = [
-  {
+  { 
     name: "get_applicant_info",
     description:
       "Retrieves applicants information from the resume based on the parameters provided",

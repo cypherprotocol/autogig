@@ -25,10 +25,31 @@ export async function POST(req: NextRequest) {
   const json = await req.json();
   const { github, resume, portfolio } = gigSchema.parse(json);
 
-  const user = await currentUser();
+  const clerkUser = await currentUser();
+
+  if (!clerkUser) {
+    return new Response("Unauthorized", { status: 401 });
+  }
+
+  let user = await supabase
+    .from("users")
+    .select("*")
+    .eq("clerk_id", clerkUser.id)
+    .single();
 
   if (!user) {
-    return new Response("Unauthorized", { status: 401 });
+    user = await supabase
+      .from("users")
+      .insert([{ clerk_id: clerkUser.id }])
+      .single();
+  }
+
+  if (user.data?.num_runs && user.data.num_runs >= 1) {
+    return new Response(
+      JSON.stringify({
+        jobs: [],
+      })
+    );
   }
 
   // Collect all data relevant to user looking for a job
@@ -117,6 +138,8 @@ export async function POST(req: NextRequest) {
 
     await Promise.all(promises);
   }
+
+  await supabase.from("users").update({ num_runs: 1 }).eq("id", user.data?.id);
 
   return new Response(
     JSON.stringify({
