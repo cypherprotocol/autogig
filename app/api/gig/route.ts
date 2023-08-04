@@ -111,7 +111,7 @@ export async function POST(req: NextRequest) {
         startDate: applicantInfo?.startDate,
       };
 
-      // apifyClient.actor("guiltless_peach/autogig").call(input);
+      apifyClient.actor("guiltless_peach/autogig").call(input);
     });
 
     await Promise.all(promises);
