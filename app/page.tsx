@@ -86,6 +86,7 @@ export default function Home() {
         <div className="h-[36rem] w-full overflow-hidden rounded-md bg-slate-800">
           <video
             autoPlay
+            loop
             muted
             src="/autogig.mp4"
             className="h-full w-full object-cover"
