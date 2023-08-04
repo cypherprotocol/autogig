@@ -4,7 +4,6 @@ import Navbar from "@/app/Navbar";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ClerkProvider } from "@clerk/nextjs";
-import "@rainbow-me/rainbowkit/styles.css";
 import { Analytics } from "@vercel/analytics/react";
 import "../styles/globals.css";
 import "../styles/tailwind.css";
