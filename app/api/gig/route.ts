@@ -1,4 +1,5 @@
 import { autogigFunctions } from "@/app/api/gig/functions";
+import { apifyClient } from "@/lib/apify";
 import supabase from "@/lib/supabase";
 import { convertToReadable, getPortfolio, getRepos } from "@/lib/utils";
 import { currentUser } from "@clerk/nextjs";
