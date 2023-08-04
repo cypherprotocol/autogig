@@ -1,5 +1,4 @@
 import { autogigFunctions } from "@/app/api/gig/functions";
-import { apifyClient } from "@/lib/apify";
 import supabase from "@/lib/supabase";
 import { convertToReadable, getPortfolio, getRepos } from "@/lib/utils";
 import { currentUser } from "@clerk/nextjs";
@@ -75,7 +74,7 @@ export async function POST(req: NextRequest) {
   );
 
   if (chunks) {
-    for (const chunk of chunks) {
+    const promises = chunks.map(async (chunk) => {
       const coverLetterResponse = await openai.createChatCompletion({
         model: "gpt-3.5-turbo-0613",
         messages: [
@@ -112,8 +111,10 @@ export async function POST(req: NextRequest) {
         startDate: applicantInfo?.startDate,
       };
 
-      apifyClient.actor("guiltless_peach/autogig").call(input);
-    }
+      // apifyClient.actor("guiltless_peach/autogig").call(input);
+    });
+
+    await Promise.all(promises);
   }
 
   return new Response(
