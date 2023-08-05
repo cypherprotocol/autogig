@@ -49,16 +49,21 @@ export default function Home() {
   };
 
   return (
-    <div className="w-full max-w-5xl grow flex-col items-center justify-center px-4 pt-28 md:flex-row md:justify-start">
+    <div className="w-full max-w-5xl grow flex-col items-center justify-center px-4 pt-24 md:flex-row md:justify-start">
       <div className="mb-6 flex w-full items-center justify-between">
-        <h1 className="w-96 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-          <Balancer> Get a job without doing shit 💩</Balancer>
-        </h1>
+        <div className="flex flex-col">
+          <h1 className="mb-4 w-96 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+            <Balancer> Get a job without doing shit 💩</Balancer>
+          </h1>
+          <p className="text-xl text-muted-foreground">
+            Upload your resume and land a job effortlessly with 1 click.
+          </p>
+        </div>
         <div className="flex flex-col">
           <Popover>
             <PopoverTrigger>
               <Button className="h-16 w-48" disabled={isLoading}>
-                Notify me
+                Join the waitlist
               </Button>
             </PopoverTrigger>
             <PopoverContent align="end">
@@ -67,7 +72,7 @@ export default function Home() {
                   type="email"
                   name="email"
                   placeholder="Email"
-                  className="mr-2 "
+                  className="mr-2"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -75,7 +80,7 @@ export default function Home() {
                   {isLoading && (
                     <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
                   )}
-                  Notify
+                  Join
                 </Button>
               </form>
             </PopoverContent>

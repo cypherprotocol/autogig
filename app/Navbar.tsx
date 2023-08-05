@@ -1,8 +1,7 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { UserButton } from "@clerk/nextjs";
-import { Bot, PackageSearch } from "lucide-react";
+import { Bot } from "lucide-react";
 import Link from "next/link";
 
 const Navbar = () => {
@@ -15,12 +14,12 @@ const Navbar = () => {
         </div>
       </Link>
       <div className="flex flex-row space-x-4">
-        <Link href="/find">
+        {/* <Link href="/find">
           <Button>
             <PackageSearch className="mr-2 h-4 w-4" />
             Find gigs
           </Button>
-        </Link>
+        </Link> */}
         {/* <Link href="/pending">
           <Button variant={"secondary"}>
             <Briefcase className="mr-2 h-4 w-4" />
