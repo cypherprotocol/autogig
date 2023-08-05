@@ -49,7 +49,7 @@ export default function Home() {
   };
 
   return (
-    <div className="w-full max-w-5xl grow flex-col items-center justify-center px-4 pt-24 md:flex-row md:justify-start">
+    <div className="w-full max-w-5xl grow flex-col items-center justify-center px-4 py-24 md:flex-row md:justify-start">
       <div className="mb-6 flex w-full items-center justify-between">
         <div className="flex flex-col">
           <h1 className="mb-4 w-96 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">

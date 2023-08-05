@@ -56,7 +56,7 @@ export default function Home() {
         if (currentIndex !== fakeLoadingText.length - 1) {
           setCurrentIndex(currentIndex + 1);
         }
-      }, 3000); // Update every 3  seconds
+      }, 5000); // Update every 3  seconds
 
       return () => {
         clearInterval(intervalId); // Clear interval on unmount
