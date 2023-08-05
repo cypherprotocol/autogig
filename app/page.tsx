@@ -62,9 +62,7 @@ export default function Home() {
         <div className="flex flex-col">
           <Popover>
             <PopoverTrigger>
-              <Button className="h-16 w-48" disabled={isLoading}>
-                Join the waitlist
-              </Button>
+              <Button className="h-16 w-48">Join the waitlist</Button>
             </PopoverTrigger>
             <PopoverContent align="end">
               <form onSubmit={subscribe} className="flex">
