@@ -76,7 +76,7 @@ export default function Home() {
           })
             .then((res) => res.json())
             .then((res) => setTip(res.tip)),
-          fetch("/api/gig?", {
+          fetch("/api/find?", {
             method: "POST",
             body: JSON.stringify({
               resume: resume,

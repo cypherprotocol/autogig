@@ -1,4 +1,4 @@
-import { autogigFunctions } from "@/app/api/gig/functions";
+import { autogigFunctions } from "@/app/api/find/functions";
 import { apifyClient } from "@/lib/apify";
 import supabase from "@/lib/supabase";
 import { convertToReadable, getPortfolio, getRepos } from "@/lib/utils";
@@ -89,6 +89,7 @@ export async function POST(req: NextRequest) {
     function_call: {
       name: "get_applicant_info",
     },
+    temperature: 0,
   });
 
   const applicantInfo = JSON.parse(
@@ -100,6 +101,7 @@ export async function POST(req: NextRequest) {
     const promises = chunks.map(async (chunk) => {
       const coverLetterResponse = await openai.createChatCompletion({
         model: "gpt-3.5-turbo-0613",
+        temperature: 0,
         messages: [
           {
             role: "system",
