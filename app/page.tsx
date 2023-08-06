@@ -91,7 +91,7 @@ export default function Home() {
             autoPlay
             loop
             muted
-            src="https://res.cloudinary.com/autogig/video/upload/v1691304940/autogig_uknedd.mp4"
+            src="https://res.cloudinary.com/autogig/video/upload/v1691305891/Autogig-web_phd4gd.mp4"
             className="h-full w-full object-cover"
           />
         </div>
