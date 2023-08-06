@@ -49,13 +49,13 @@ export default function Home() {
   };
 
   return (
-    <div className="w-full max-w-5xl grow flex-col items-center justify-center px-4 py-24 md:flex-row md:justify-start">
-      <div className="mb-6 flex w-full items-center justify-between">
+    <div className="w-full max-w-5xl grow flex-col items-center justify-center px-4 py-16 md:flex-row md:justify-start md:py-24">
+      <div className="mb-6 flex w-full flex-col items-start justify-between md:flex-row md:items-center">
         <div className="flex flex-col">
           <h1 className="mb-4 w-96 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
             <Balancer> Get a job without doing shit 💩</Balancer>
           </h1>
-          <p className="text-xl text-muted-foreground">
+          <p className="mb-4 text-xl text-muted-foreground md:mb-0">
             Upload your resume and land a job effortlessly with 1 click.
           </p>
         </div>
@@ -85,7 +85,7 @@ export default function Home() {
           </Popover>
         </div>
       </div>
-      <div className="hidden h-full w-full md:flex">
+      <div className="flex h-full w-full">
         <div className="h-[36rem] w-full overflow-hidden rounded-md bg-slate-800">
           <video
             autoPlay
