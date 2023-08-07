@@ -139,14 +139,14 @@ export function Upload() {
               </div>
             </form>
           )} */}
-          <div className="mt-4 flex flex-col space-y-1.5">
+          {/* <div className="mt-4 flex flex-col space-y-1.5">
             <Label htmlFor="github">Github username</Label>
             <Input
               className="mt-4 w-full"
               onChange={(e) => setGithub(e.target.value)}
               placeholder="Username"
             />
-          </div>
+          </div> */}
 
           <Button
             onClick={onSubmit}
