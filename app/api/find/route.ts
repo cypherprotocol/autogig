@@ -1,13 +1,15 @@
 import { autogigFunctions } from "@/app/api/find/functions";
-import { apifyClient } from "@/lib/apify";
+import { coverLetterSystem } from "@/app/api/find/prompts";
 import supabase from "@/lib/supabase";
-import { convertToReadable, getPortfolio, getRepos } from "@/lib/utils";
 import { currentUser } from "@clerk/nextjs";
+import { OpenAIEmbeddings } from "langchain/embeddings/openai";
+import { SupabaseVectorStore } from "langchain/vectorstores/supabase";
 import { NextRequest } from "next/server";
-import { ChatCompletionRequestMessage, Configuration, OpenAIApi } from "openai";
+import OpenAI from "openai";
 import * as z from "zod";
 
-// export const runtime = "edge";
+export const runtime = "edge";
+export const fetchCache = "auto";
 
 const gigSchema = z.object({
   github: z.string().optional(),
@@ -15,15 +17,13 @@ const gigSchema = z.object({
   portfolio: z.string().optional(),
 });
 
-const config = new Configuration({
+const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-const openai = new OpenAIApi(config);
-
 export async function POST(req: NextRequest) {
   const json = await req.json();
-  const { github, resume, portfolio } = gigSchema.parse(json);
+  const { resume } = gigSchema.parse(json);
 
   const clerkUser = await currentUser();
 
@@ -46,34 +46,41 @@ export async function POST(req: NextRequest) {
 
   // Collect all data relevant to user looking for a job
   const profileInput = JSON.stringify({
-    resume: resume && resume?.replace(/\n/g, " "),
-    portfolio: await getPortfolio(portfolio),
-    github: convertToReadable(await getRepos(github)),
+    resume: resume,
+    // portfolio: await getPortfolio(portfolio),
+    // github: convertToReadable(await getRepos(github)),
   });
 
-  const profileEmbedding = await openai.createEmbedding({
+  const vectorStore = new SupabaseVectorStore(new OpenAIEmbeddings(), {
+    client: supabase,
+    tableName: "documents",
+  });
+
+  const profileEmbedding = await openai.embeddings.create({
     model: "text-embedding-ada-002",
     input: profileInput,
   });
 
-  const [{ embedding }] = profileEmbedding.data.data;
+  const embedding = profileEmbedding.data[0].embedding;
 
-  const { data: chunks, error } = await supabase.rpc("jobs_search", {
-    query_embedding: embedding,
-    similarity_threshold: 0.5,
-    match_count: 3,
-  });
+  const chunks = await vectorStore.similaritySearchVectorWithScore(
+    embedding,
+    3,
+    {
+      type: "jobs",
+    }
+  );
 
   if (user.data?.num_runs && user.data.num_runs >= 1) {
     return new Response(
       JSON.stringify({
         numRuns: user.data.num_runs,
-        jobs: chunks,
+        jobs: chunks.map((chunk) => JSON.parse(chunk[0].pageContent)),
       })
     );
   }
 
-  const applicantInfoResponse = await openai.createChatCompletion({
+  const applicantInfoResponse = await openai.chat.completions.create({
     model: "gpt-3.5-turbo-0613",
     functions: autogigFunctions,
     messages: [
@@ -89,38 +96,41 @@ export async function POST(req: NextRequest) {
     function_call: {
       name: "get_applicant_info",
     },
-    temperature: 0,
   });
 
   const applicantInfo = JSON.parse(
-    applicantInfoResponse.data.choices[0].message?.function_call?.arguments ??
-      "{}"
+    applicantInfoResponse.choices[0].message?.function_call?.arguments ?? "{}"
   );
 
   if (chunks) {
     const promises = chunks.map(async (chunk) => {
-      const coverLetterResponse = await openai.createChatCompletion({
+      const coverLetterResponse = await openai.chat.completions.create({
         model: "gpt-3.5-turbo-0613",
-        temperature: 0,
         messages: [
           {
             role: "system",
-            content:
-              "You are a helpful assistant that efficiently finds details about a job candidate and generates a cover letter for them. You are given a candidate's profile and a job description. You must generate a persuasive and professional introduction message. The message should express the candidate's enthusiasm for the potential job role, align their experience with the job requirements, and initiate further discussions or negotiations.",
+            content: coverLetterSystem,
           },
           {
             role: "user",
-            content: `Given the candidates profile: '${profileInput}', and the potential job description: '${JSON.stringify(
-              chunk
-            )}', please generate a persuasive and professional introduction message. The message should express the candidate's enthusiasm for the potential job role, align their experience with the job requirements, and initiate further discussions or negotiations.`,
+            content: `
+            Given my profile: '${profileInput}', and the potential job description: '${JSON.stringify(
+              chunk[0].pageContent
+            )}',
+            please generate me a persuasive and professional introduction message.
+            The message should express my enthusiasm for the potential job role,
+            align my experience with the job requirements, and initiate further discussions or negotiations.
+  `,
           },
-        ] as ChatCompletionRequestMessage[],
+        ],
       });
 
-      const coverLetter = coverLetterResponse.data.choices[0].message?.content;
+      const coverLetter = coverLetterResponse.choices[0].message?.content;
+
+      console.log(chunk);
 
       const input = {
-        url: chunk.data.job_link,
+        url: JSON.parse(chunk[0].pageContent).job_link,
         name: applicantInfo?.name,
         email: applicantInfo?.email,
         phone: applicantInfo?.phone,
@@ -136,7 +146,16 @@ export async function POST(req: NextRequest) {
         startDate: applicantInfo?.startDate,
       };
 
-      apifyClient.actor("guiltless_peach/autogig").call(input);
+      fetch(
+        `https://api.apify.com/v2/acts/guiltless_peach~autogig/runs?token=${process.env.APIFY_TOKEN}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(input),
+        }
+      );
     });
 
     await Promise.all(promises);
@@ -147,7 +166,7 @@ export async function POST(req: NextRequest) {
   return new Response(
     JSON.stringify({
       numRuns: user.data?.num_runs,
-      jobs: chunks,
+      jobs: chunks.map((chunk) => JSON.parse(chunk[0].pageContent)),
     })
   );
 }

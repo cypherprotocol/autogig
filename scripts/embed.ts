@@ -1,48 +1,41 @@
 import { loadEnvConfig } from "@next/env";
 import { createClient } from "@supabase/supabase-js";
 import fs from "fs";
-import { Configuration, OpenAIApi } from "openai";
+import { OpenAIEmbeddings } from "langchain/embeddings/openai";
+import { SupabaseVectorStore } from "langchain/vectorstores/supabase";
+import OpenAI from "openai";
 
 loadEnvConfig("");
 
 const generateEmbeddings = async (jobs: any[]) => {
-  const configuration = new Configuration({
+  const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
   });
-  const openai = new OpenAIApi(configuration);
 
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseServiceRoleKey =
     process.env.NEXT_PUBLIC_SUPABASE_SERVICE_ROLE_KEY;
 
-  const supabase = createClient(supabaseUrl!, supabaseServiceRoleKey!);
+  const client = createClient(supabaseUrl!, supabaseServiceRoleKey!);
 
-  for (let i = 0; i < jobs.length; i++) {
-    const job = jobs[i];
-
-    const embeddingResponse = await openai.createEmbedding({
-      model: "text-embedding-ada-002",
-      input: JSON.stringify(job),
-    });
-
-    const [{ embedding }] = embeddingResponse.data.data;
-
-    const { data, error } = await supabase
-      .from("jobs")
-      .insert({
-        data: job,
-        embedding: embedding,
-      })
-      .select("*");
-
-    if (error) {
-      console.log("error", error);
-    } else {
-      console.log("saved", i);
+  const vectorStore = await SupabaseVectorStore.fromTexts(
+    jobs.map((job) => JSON.stringify(job)),
+    Array(jobs.length).fill({
+      type: "jobs",
+    }),
+    new OpenAIEmbeddings(),
+    {
+      client,
+      tableName: "documents",
+      queryName: "match_documents",
     }
-  }
+  );
 
-  await new Promise((resolve) => setTimeout(resolve, 200));
+  const result = await vectorStore.similaritySearch("Software Engineer", 1, {
+    type: "jobs",
+  });
+
+  console.log(result);
 };
 
 (async () => {

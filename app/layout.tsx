@@ -5,9 +5,28 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Analytics } from "@vercel/analytics/react";
+import clsx from "clsx";
 import { Metadata } from "next";
+import localFont from "next/font/local";
 import "../styles/globals.css";
 import "../styles/tailwind.css";
+
+const circular = localFont({
+  display: "swap",
+  src: [
+    {
+      path: "../public/fonts/CircularStd-Book.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/CircularStd-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+  ],
+  variable: "--font-circular",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://autogig.pro"),
@@ -17,15 +36,15 @@ export const metadata: Metadata = {
     type: "website",
     title: "Autogig",
     description: "Get a job without doing shit",
-    // images: [
-    //   {
-    //     url: "https://res.cloudinary.com/honeyjar/image/upload/v1677023883/THJ_WebBanner.jpg",
-    //   },
-    // ],
+    images: [
+      {
+        url: "https://autogig.pro/og_image.png",
+      },
+    ],
   },
-  // twitter: {
-  //   card: "summary_large_image",
-  // },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({
@@ -36,12 +55,12 @@ export default function RootLayout({
   return (
     <html>
       <head></head>
-      <body>
+      <body className={clsx(circular.variable, circular.className)}>
         <TooltipProvider>
           <ClerkProvider>
             <div className="flex min-h-screen flex-col">
               <Navbar />
-              <main className="flex flex-1 flex-col items-center bg-muted/50">
+              <main className="flex flex-1 flex-col items-center bg-white">
                 {children}
               </main>
             </div>

@@ -17,11 +17,6 @@ export interface Repositories {
   description: string | null;
 }
 
-export interface Job {
-  created_at: string | null;
-  embedding: string | null;
-  data: JobData;
-}
 
 export interface JobData {
   title: string;

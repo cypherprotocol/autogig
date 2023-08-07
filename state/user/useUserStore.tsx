@@ -1,4 +1,4 @@
-import { Job } from "@/lib/types";
+import { JobData } from "@/lib/types";
 import { create } from "zustand";
 
 export enum BotStages {
@@ -17,12 +17,12 @@ interface StoreState {
   setLinkedin: (linkedin: string) => void;
   stage: BotStages;
   setStage: (stage: BotStages) => void;
-  resume?: string;
-  setResume: (resume: string) => void;
+  resume?: File;
+  setResume: (resume: File) => void;
   portfolio?: string;
   setPortfolio: (resume: string) => void;
-  jobs: Job[];
-  setJobs: (jobs: Job[]) => void;
+  jobs: JobData[];
+  setJobs: (jobs: JobData[]) => void;
 }
 
 const useUserStore = create<StoreState>((set) => ({
