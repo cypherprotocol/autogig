@@ -40,7 +40,7 @@ const Navbar = () => {
         </a>
         <Link href="/find">
           <Button className="bg-[#ffc434] text-primary hover:bg-[#fed46f]">
-            Find jobs
+            Get a job
           </Button>
         </Link>
         {/* <Link href="/pending">

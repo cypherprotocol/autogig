@@ -61,11 +61,12 @@ export default function Home() {
               <span className="text-[#5c5bee]">without doing shit</span>
             </h1>
             <p className="mb-4 text-slate-600 md:mb-0 md:text-xl">
-              Upload your resume and land a job effortlessly with 1 click.
+              Upload your resume and land your dream job effortlessly with 1
+              click.
             </p>
             <Link href="/find">
               <Button className="mt-8 h-16 w-48 bg-[#ffc434] text-primary hover:bg-[#fed46f]">
-                Try it now!
+                Try it free!
               </Button>
             </Link>
           </div>
