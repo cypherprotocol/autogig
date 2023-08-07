@@ -53,22 +53,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html>
-      <head></head>
-      <body className={clsx(circular.variable, circular.className)}>
-        <TooltipProvider>
-          <ClerkProvider>
+    <ClerkProvider>
+      <html>
+        <head></head>
+        <body className={clsx(circular.variable, circular.className)}>
+          <TooltipProvider>
             <div className="flex min-h-screen flex-col">
               <Navbar />
               <main className="flex flex-1 flex-col items-center bg-white">
                 {children}
               </main>
             </div>
-          </ClerkProvider>
-        </TooltipProvider>
-        <Toaster />
-        <Analytics />
-      </body>
-    </html>
+          </TooltipProvider>
+          <Toaster />
+          <Analytics />
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
