@@ -43,23 +43,24 @@ export default function Home() {
   };
 
   return (
-    <div className="w-full max-w-5xl grow flex-col items-center justify-center px-4 py-16 md:flex-row md:justify-start md:py-20">
+    <div className="w-full max-w-5xl grow flex-col items-center justify-center px-4 py-8 md:flex-row md:justify-start md:py-20">
       <div className="mb-16 flex w-full flex-col items-start justify-between md:flex-row md:items-center">
-        <div className="relative flex items-center">
-          <Image
-            src="/fullcolor-retro-dudes-laptop.svg"
-            width={250}
-            height={250}
-            className="mr-16"
-            alt=""
-          />
+        <div className="relative flex flex-col items-start md:flex-row md:items-center">
+          <div className="relative h-36 w-36 md:h-80 md:w-80">
+            <Image
+              src="/fullcolor-retro-dudes-laptop.svg"
+              fill
+              className="mr-16 object-contain"
+              alt=""
+            />
+          </div>
           <div className="flex flex-col">
-            <h1 className="mb-4 w-[48rem] scroll-m-20 font-wagmi text-4xl font-extrabold tracking-tight lg:text-7xl">
+            <h1 className="mb-4 w-full scroll-m-20 font-wagmi text-5xl font-extrabold tracking-tight md:w-[48rem] lg:text-7xl">
               Get a job
               <br />
               <span className="text-[#5c5bee]">without doing shit</span>
             </h1>
-            <p className="mb-4 text-xl text-slate-600 md:mb-0">
+            <p className="mb-4 text-slate-600 md:mb-0 md:text-xl">
               Upload your resume and land a job effortlessly with 1 click.
             </p>
             <Link href="/find">
