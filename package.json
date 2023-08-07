@@ -58,7 +58,7 @@
     "langchain": "^0.0.123",
     "linkedin-private-api": "^1.1.2",
     "lucide": "^0.258.0",
-    "lucide-react": "^0.258.0",
+    "lucide-react": "^0.264.0",
     "nanoid": "^4.0.2",
     "next": "^13.4.9",
     "next-seo": "^5.1.0",
