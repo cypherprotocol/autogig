@@ -146,16 +146,16 @@ export async function POST(req: NextRequest) {
         startDate: applicantInfo?.startDate,
       };
 
-      fetch(
-        `https://api.apify.com/v2/acts/guiltless_peach~autogig/runs?token=${process.env.APIFY_TOKEN}`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(input),
-        }
-      );
+      // fetch(
+      //   `https://api.apify.com/v2/acts/guiltless_peach~autogig/runs?token=${process.env.APIFY_TOKEN}`,
+      //   {
+      //     method: "POST",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //     body: JSON.stringify(input),
+      //   }
+      // );
     });
 
     await Promise.all(promises);

@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { HOME_BUCKETS } from "@/lib/buckets";
+import va from "@vercel/analytics";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -13,6 +14,7 @@ export async function generateStaticParams() {
 
 export default function Home({ params }: { params: { bucket: string } }) {
   const bucket = params?.bucket as string;
+  console.log(bucket);
 
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -52,28 +54,38 @@ export default function Home({ params }: { params: { bucket: string } }) {
   return (
     <div className="w-full max-w-5xl grow flex-col items-center justify-center px-4 py-8 md:flex-row md:justify-start md:py-20">
       <div className="mb-16 flex w-full flex-col items-start justify-between md:flex-row md:items-center">
-        <div className="relative flex flex-col items-start md:flex-row md:items-center">
-          <div className="relative h-36 w-36 md:h-80 md:w-80">
+        <div className="relative flex w-full flex-col items-start md:flex-row md:items-center">
+          <div className="relative mr-16 h-36 w-36 shrink-0 md:h-80 md:w-80">
             <Image
               src="/fullcolor-retro-dudes-laptop.svg"
               fill
-              className="mr-16 object-contain"
+              className="object-contain"
               alt=""
             />
           </div>
-          <div className="flex flex-col">
-            <h1 className="mb-4 w-full scroll-m-20 font-wagmi text-5xl font-extrabold tracking-tight md:w-[48rem] lg:text-7xl">
+          <div className="flex w-full flex-col">
+            <h1 className="mb-4 w-full scroll-m-20 font-wagmi text-5xl font-extrabold tracking-tight lg:text-7xl">
               Get a job
               <br />
               <span className="text-[#5c5bee]">without doing shit</span>
             </h1>
             <p className="mb-4 text-slate-600 md:mb-0 md:text-xl">
-              Upload your resume and land your dream job effortlessly with 1
-              click.
+              {bucket === "a"
+                ? "Upload your resume and land your dream job effortlessly with 1 click"
+                : "$2500 and a guaranteed job at the end of it with a company you are excited about, or your money back"}
             </p>
-            <Link href="/find">
-              <Button className="mt-8 h-16 w-48 bg-[#ffc434] text-primary hover:bg-[#fed46f]">
-                Try it free!
+            <Link href={bucket === "a" ? "/find" : "/contact"}>
+              <Button
+                onClick={() => {
+                  if (bucket === "a") {
+                    va.track("Free Trial");
+                  } else {
+                    va.track("Contact Us");
+                  }
+                }}
+                className="mt-8 h-16 w-48 bg-[#ffc434] text-primary hover:bg-[#fed46f]"
+              >
+                {bucket === "a" ? "Try it free" : "Contact us"}
               </Button>
             </Link>
           </div>

@@ -4,6 +4,15 @@ module.exports = {
   },
   experimental: { appDir: true, serverActions: true },
   transpilePackages: ["crawlee"],
+  async redirects() {
+    return [
+      {
+        source: "/contact",
+        destination: "https://discord.gg/j4BAHXm77",
+        permanent: false,
+      },
+    ];
+  }
   // webpack: (config) => {
   //   config.resolve.fallback = {
   //     fs: false,

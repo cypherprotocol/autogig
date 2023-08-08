@@ -9,10 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import useUserStore, { BotStages } from "@/state/user/useUserStore";
-import va from "@vercel/analytics";
 import { FileCheck, UploadIcon } from "lucide-react";
 import Image from "next/image";
 import { useCallback, useRef, useState } from "react";
@@ -35,24 +32,6 @@ export function Upload() {
 
   const onSubmit = () => {
     if (resume || portfolio || github) {
-      if (resume) {
-        va.track("resume-upload");
-      }
-
-      if (portfolio) {
-        va.track("portfolio-upload");
-        const urlPattern = /^(https?:\/\/)/;
-        if (!urlPattern.test(portfolio)) {
-          setIsValidLink(false);
-          return;
-        }
-        setIsValidLink(true);
-      }
-
-      if (github) {
-        va.track("github-upload");
-      }
-
       setStage(BotStages.FindJob);
     }
   };
