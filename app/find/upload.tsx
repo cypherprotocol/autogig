@@ -200,7 +200,7 @@ export function Upload() {
                     name="username"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Username</FormLabel>
+                        <FormLabel>Github username</FormLabel>
                         <FormControl>
                           <Input placeholder="autobot" required {...field} />
                         </FormControl>
