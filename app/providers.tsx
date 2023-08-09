@@ -17,7 +17,7 @@ export default function Providers({
         userID: userId,
       }}
       options={{
-        environment: { tier: "staging" },
+        environment: { tier: "production" },
       }}
     >
       {children}
