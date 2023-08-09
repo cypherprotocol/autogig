@@ -19,49 +19,19 @@ export default function Home() {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
 
-  const variant = useFeatureFlagVariantKey("offers");
-
-  const subscribe = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsLoading(true);
-
-    const res = await fetch("/api/subscribe", {
-      body: JSON.stringify({
-        email: email,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-    });
-
-    if (res.ok) {
-      toast({
-        title: "Subscribed",
-        description: "Subscription successful. Thank you!",
-      });
-    } else {
-      toast({
-        title: "Error",
-        description: "Something went wrong. Please try again.",
-      });
-    }
-
-    setIsLoading(false);
-    setEmail("");
-  };
+  const variant = useFeatureFlagVariantKey("offer");
 
   return (
     <>
       {(() => {
         switch (variant) {
-          case "a":
+          case "control":
             return <OfferA />;
-          case "b":
+          case "test":
             return <OfferB />;
-          case "c":
+          case "test_group_2":
             return <OfferC />;
-          case "d":
+          case "test_group_3":
             return <OfferD />;
         }
       })()}
