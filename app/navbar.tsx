@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
-import { Statsig } from "statsig-react";
+import { posthog } from "posthog-js";
 
 const Navbar = () => {
   return (
@@ -43,7 +43,7 @@ const Navbar = () => {
           <Link href="/find">
             <Button
               onClick={() => {
-                Statsig.logEvent("find_job_click");
+                posthog.capture("find_job_click");
               }}
               className="bg-[#ffc434] text-primary hover:bg-[#fed46f]"
             >

@@ -178,6 +178,9 @@ dependencies:
   pdfjs-dist:
     specifier: ^3.9.179
     version: 3.9.179(encoding@0.1.13)
+  posthog-js:
+    specifier: ^1.75.4
+    version: 1.75.4
   proxy-chain:
     specifier: ^2.3.0
     version: 2.3.0
@@ -6905,6 +6908,10 @@ packages:
       web-streams-polyfill: 3.2.1
     dev: true
 
+  /fflate@0.4.8:
+    resolution: {integrity: sha512-FJqqoDBR00Mdj9ppamLa/Y7vxm+PRmNWA67N846RvsoYVMKB4q3y/de5PA7gUmRMYK/8CMz2GDZQmCRN1wBcWA==}
+    dev: false
+
   /figlet@1.6.0:
     resolution: {integrity: sha512-31EQGhCEITv6+hi2ORRPyn3bulaV9Fl4xOdR169cBzH/n1UqcxsiSB/noo6SJdD7Kfb1Ljit+IgR1USvF/XbdA==}
     engines: {node: '>= 0.4.0'}
@@ -9963,6 +9970,12 @@ packages:
       nanoid: 3.3.6
       picocolors: 1.0.0
       source-map-js: 1.0.2
+    dev: false
+
+  /posthog-js@1.75.4:
+    resolution: {integrity: sha512-6vJTNe9FlkK8QyzpOLAzTQb1bp3Z+Qi/JOaX9+/H2CqvKaV7EUjToLDmAJG+vUibturAtzAlLeISpQt8GJB1sg==}
+    dependencies:
+      fflate: 0.4.8
     dev: false
 
   /prelude-ls@1.2.1:

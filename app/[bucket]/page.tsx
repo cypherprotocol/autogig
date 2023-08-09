@@ -5,8 +5,8 @@ import { useToast } from "@/components/ui/use-toast";
 import { HOME_BUCKETS } from "@/lib/buckets";
 import Image from "next/image";
 import Link from "next/link";
+import { posthog } from "posthog-js";
 import { useEffect, useState } from "react";
-import { Statsig } from "statsig-react";
 
 export async function generateStaticParams() {
   return HOME_BUCKETS.map((group) => ({ bucket: group }));
@@ -21,7 +21,7 @@ export default function Home({ params }: { params: { bucket: string } }) {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    Statsig.logEvent("visit_home");
+    posthog.capture("visit_home");
   }, []);
 
   const subscribe = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -79,7 +79,7 @@ export default function Home({ params }: { params: { bucket: string } }) {
             <Link href="/contact" className="mt-8 h-16 w-48">
               <Button
                 onClick={() => {
-                  Statsig.logEvent("contact_us");
+                  posthog.capture("contact_us");
                 }}
                 className="h-full w-full bg-[#ffc434] text-primary hover:bg-[#fed46f]"
               >
