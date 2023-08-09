@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
+import { Statsig } from "statsig-react";
 
 const Navbar = () => {
   return (
@@ -40,7 +41,12 @@ const Navbar = () => {
             </Button>
           </a>
           <Link href="/find">
-            <Button className="bg-[#ffc434] text-primary hover:bg-[#fed46f]">
+            <Button
+              onClick={() => {
+                Statsig.logEvent("find_job_click");
+              }}
+              className="bg-[#ffc434] text-primary hover:bg-[#fed46f]"
+            >
               Get a job
             </Button>
           </Link>
