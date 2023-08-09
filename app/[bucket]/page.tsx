@@ -3,10 +3,10 @@
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { HOME_BUCKETS } from "@/lib/buckets";
-import va from "@vercel/analytics";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Statsig } from "statsig-react";
 
 export async function generateStaticParams() {
   return HOME_BUCKETS.map((group) => ({ bucket: group }));
@@ -14,12 +14,15 @@ export async function generateStaticParams() {
 
 export default function Home({ params }: { params: { bucket: string } }) {
   const bucket = params?.bucket as string;
-  console.log(bucket);
 
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    Statsig.logEvent("visit_home");
+  }, []);
 
   const subscribe = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -70,22 +73,17 @@ export default function Home({ params }: { params: { bucket: string } }) {
               <span className="text-[#5c5bee]">without doing shit</span>
             </h1>
             <p className="mb-4 text-slate-600 md:mb-0 md:text-xl">
-              {bucket === "a"
-                ? "Upload your resume and land your dream job effortlessly with 1 click"
-                : "$2500 and a guaranteed job at the end of it with a company you are excited about, or your money back"}
+              $2500 and a guaranteed job at the end of it with a company you are
+              excited about, or your money back
             </p>
-            <Link href={bucket === "a" ? "/find" : "/contact"}>
+            <Link href="/contact">
               <Button
                 onClick={() => {
-                  if (bucket === "a") {
-                    va.track("Free Trial");
-                  } else {
-                    va.track("Contact Us");
-                  }
+                  Statsig.logEvent("contact_us");
                 }}
                 className="mt-8 h-16 w-48 bg-[#ffc434] text-primary hover:bg-[#fed46f]"
               >
-                {bucket === "a" ? "Try it free" : "Contact us"}
+                Contact us
               </Button>
             </Link>
           </div>

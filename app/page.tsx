@@ -5,7 +5,7 @@ import { useToast } from "@/components/ui/use-toast";
 import { HOME_BUCKETS } from "@/lib/buckets";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Statsig } from "statsig-react";
 
 export async function generateStaticParams() {
@@ -19,6 +19,10 @@ export default function Home({ params }: { params: { bucket: string } }) {
   const [message, setMessage] = useState("");
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    Statsig.logEvent("visit_home");
+  }, []);
 
   const subscribe = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
