@@ -1,54 +1,56 @@
-import { getBucket } from "@/lib/ab-testing";
-import { HOME_BUCKETS } from "@/lib/buckets";
+import {
+  EXPERIMENT,
+  GROUP_PARAM_FALLBACK,
+  UID_COOKIE,
+} from "@/lib/statsig-api";
 import { authMiddleware } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
+import Statsig from "statsig-node";
+import { EdgeConfigDataAdapter } from "statsig-node-vercel";
 
-type Route = {
-  page: string;
-  cookie: string;
-  buckets: readonly string[];
-};
-
-const ROUTES: Record<string, Route | undefined> = {
-  "/": {
-    page: "",
-    cookie: "bucket-home",
-    buckets: HOME_BUCKETS,
-  },
-  // "/marketing": {
-  //   page: "/marketing",
-  //   cookie: "bucket-marketing",
-  //   buckets: MARKETING_BUCKETS,
-  // },
-};
+const IS_UUID = /^[0-9a-f-]+$/i;
+const dataAdapter = new EdgeConfigDataAdapter(
+  process.env.EDGE_CONFIG_ITEM_KEY!
+);
 
 export default authMiddleware({
-  beforeAuth: (req) => {
-    const { pathname } = req.nextUrl;
-    console.log(pathname);
-    const route = ROUTES[pathname];
+  beforeAuth: async (req) => {
+    // Get the user ID from the cookie or get a new one
+    let userId = req.cookies.get(UID_COOKIE)?.value;
+    let hasUserId = !!userId;
 
-    if (!route) return;
-
-    // Get the bucket from the cookie
-    let bucket = req.cookies.get(route.cookie)?.value;
-    let hasBucket = !!bucket;
-
-    // If there's no active bucket in cookies or its value is invalid, get a new one
-    if (!bucket || !route.buckets.includes(bucket as any)) {
-      bucket = getBucket(route.buckets);
-      hasBucket = false;
+    // If there's no active user ID in cookies or its value is invalid, get a new one
+    if (!userId || !IS_UUID.test(userId)) {
+      userId = crypto.randomUUID();
+      hasUserId = false;
     }
 
-    // Create a rewrite to the page matching the bucket
+    // pass data adapter in for edge compatibility
+    await Statsig.initialize(process.env.STATSIG_SERVER_API_KEY!, {
+      dataAdapter,
+    });
+
+    // get experiment that user is in
+    const experiment = await Statsig.getExperiment(
+      { userID: userId },
+      EXPERIMENT
+    );
+
+    const bucket = experiment.get<string>("bucket", GROUP_PARAM_FALLBACK);
+
+    // Clone the URL and change its pathname to point to a bucket
     const url = req.nextUrl.clone();
-    url.pathname = `${route.page}/${bucket}`;
+    url.pathname =
+      req.nextUrl.pathname === "/" ? `/${bucket}` : req.nextUrl.pathname;
+
+    // Response that'll rewrite to the selected bucket
     const res = NextResponse.rewrite(url);
 
-    // Add the bucket to the response cookies if it's not there
-    // or if its value was invalid
-    if (!hasBucket) {
-      res.cookies.set(route.cookie, bucket);
+    // Add the user ID to the response cookies if it's not there or if its value was invalid
+    if (!hasUserId) {
+      res.cookies.set(UID_COOKIE, userId, {
+        maxAge: 60 * 60 * 24, // identify users for 24 hours
+      });
     }
 
     return res;

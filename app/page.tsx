@@ -6,6 +6,7 @@ import { HOME_BUCKETS } from "@/lib/buckets";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { Statsig } from "statsig-react";
 
 export async function generateStaticParams() {
   return HOME_BUCKETS.map((group) => ({ bucket: group }));
@@ -72,7 +73,12 @@ export default function Home({ params }: { params: { bucket: string } }) {
               click.
             </p>
             <Link href="/find">
-              <Button className="mt-8 h-16 w-48 bg-[#ffc434] text-primary hover:bg-[#fed46f]">
+              <Button
+                onClick={() => {
+                  Statsig.logEvent("free_trial");
+                }}
+                className="mt-8 h-16 w-48 bg-[#ffc434] text-primary hover:bg-[#fed46f]"
+              >
                 Try it free!
               </Button>
             </Link>

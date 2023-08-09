@@ -1,13 +1,16 @@
 /* eslint-disable @next/next/no-head-element */
 
-import Navbar from "@/app/Navbar";
+import Navbar from "@/app/navbar";
+import Providers from "@/app/providers";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { UID_COOKIE } from "@/lib/statsig-api";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Analytics } from "@vercel/analytics/react";
 import clsx from "clsx";
 import { Metadata } from "next";
 import localFont from "next/font/local";
+import { cookies } from "next/headers";
 import "../styles/globals.css";
 import "../styles/tailwind.css";
 
@@ -52,19 +55,23 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  let userId = cookies().get(UID_COOKIE)?.value;
+
   return (
     <ClerkProvider>
       <html>
         <head></head>
         <body className={clsx(circular.variable, circular.className)}>
-          <TooltipProvider>
-            <div className="flex min-h-screen flex-col">
-              <Navbar />
-              <main className="flex flex-1 flex-col items-center bg-white">
-                {children}
-              </main>
-            </div>
-          </TooltipProvider>
+          <Providers userId={userId ?? ""}>
+            <TooltipProvider>
+              <div className="flex min-h-screen flex-col">
+                <Navbar />
+                <main className="flex flex-1 flex-col items-center bg-white">
+                  {children}
+                </main>
+              </div>
+            </TooltipProvider>
+          </Providers>
           <Toaster />
           <Analytics />
         </body>
