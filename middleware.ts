@@ -1,10 +1,4 @@
 import { authMiddleware } from "@clerk/nextjs";
-import { EdgeConfigDataAdapter } from "statsig-node-vercel";
-
-const IS_UUID = /^[0-9a-f-]+$/i;
-const dataAdapter = new EdgeConfigDataAdapter(
-  process.env.EDGE_CONFIG_ITEM_KEY!
-);
 
 export default authMiddleware({
   publicRoutes: ["/"],

@@ -1,14 +1,17 @@
 "use client";
-
-import posthog from "posthog-js";
-import { useEffect } from "react";
+import { PostHogProvider } from "posthog-js/react";
 
 export default function Providers({ children }: { children: React.ReactNode }) {
-  useEffect(() => {
-    posthog.init("phc_6ltAoWOCKyM9629q34EWBsFH9SL3xzEFRvzmghr1EIz", {
-      api_host: "https://app.posthog.com",
-    });
-  }, []);
+  const options = {
+    api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST,
+  };
 
-  return <>{children}</>;
+  return (
+    <PostHogProvider
+      apiKey={process.env.NEXT_PUBLIC_POSTHOG_KEY}
+      options={options}
+    >
+      {children}
+    </PostHogProvider>
+  );
 }
