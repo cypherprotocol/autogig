@@ -8,9 +8,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
     posthog.init("phc_6ltAoWOCKyM9629q34EWBsFH9SL3xzEFRvzmghr1EIz", {
       api_host: "https://app.posthog.com",
     });
-
-    posthog.capture("my event", { property: "value" });
   }, []);
 
-  return <>children</>;
+  return <>{children}</>;
 }

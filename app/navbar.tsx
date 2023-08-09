@@ -43,7 +43,7 @@ const Navbar = () => {
           <Link href="/find">
             <Button
               onClick={() => {
-                posthog.capture("find_job_click");
+                posthog.capture("navbar_cta");
               }}
               className="bg-[#ffc434] text-primary hover:bg-[#fed46f]"
             >
