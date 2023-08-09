@@ -25,6 +25,7 @@ import useUserStore, { BotStages } from "@/state/user/useUserStore";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FileCheck, FileText, Github, UploadIcon } from "lucide-react";
 import Image from "next/image";
+import { posthog } from "posthog-js";
 import { useCallback, useRef, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { useForm } from "react-hook-form";
@@ -75,8 +76,14 @@ export function Upload() {
 
   const onSubmit = () => {
     if (resume || formValues.username) {
+      if (resume) {
+        posthog.capture("user_submitted_form_resume");
+      } else {
+        posthog.capture("user_submitted_form_github");
+      }
       setGithubForm(formValues);
       setStage(BotStages.FindJob);
+      posthog.capture("user_submitted_form");
     }
   };
 
