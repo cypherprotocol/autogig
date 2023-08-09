@@ -28,7 +28,7 @@ export default function Home() {
   const jobs = useUserStore((state) => state.jobs);
   const setJobs = useUserStore((state) => state.setJobs);
   const portfolio = useUserStore((state) => state.portfolio);
-  const github = useUserStore((state) => state.github);
+  const githubForm = useUserStore((state) => state.githubForm);
   const [copied, setCopied] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [tip, setTip] = useState<string | undefined>();
@@ -65,23 +65,25 @@ export default function Home() {
   }, [currentIndex, fakeLoadingText.length, stage]);
 
   useEffect(() => {
-    if (stage === BotStages.FindJob && resume) {
+    if (stage === BotStages.FindJob && (resume || githubForm)) {
       (async function findGig() {
-        const formData = new FormData();
-        formData.set("resume", resume, resume?.name);
-        console.log(resume);
-        const res = await fetch("/api/file", {
-          method: "POST",
-          body: formData,
-        }).then((res) => res.json());
-
-        console.log(res);
+        let res;
+        if (resume) {
+          const formData = new FormData();
+          formData.set("resume", resume, resume?.name);
+          console.log(resume);
+          res = await fetch("/api/file", {
+            method: "POST",
+            body: formData,
+          }).then((res) => res.json());
+        }
 
         const [tipResponse, findResponse] = await Promise.all([
           fetch("/api/tip", {
             method: "POST",
             body: JSON.stringify({
               resume: res.resume,
+              githubForm: githubForm,
             }),
           })
             .then((res) => res.json())
@@ -90,6 +92,7 @@ export default function Home() {
             method: "POST",
             body: JSON.stringify({
               resume: res.resume,
+              githubForm: githubForm,
             }),
           })
             .then((res) => res.json())
@@ -107,10 +110,10 @@ export default function Home() {
         ]);
       })();
     }
-  }, [stage, resume, github, setStage, setJobs]);
+  }, [stage, resume, githubForm, setStage, setJobs]);
 
   return (
-    <div className="flex w-full max-w-3xl grow flex-col items-center justify-center px-4">
+    <div className="flex w-full max-w-3xl grow flex-col items-center justify-start px-4 py-8 md:py-20">
       {(() => {
         switch (stage) {
           case BotStages.UploadResume:

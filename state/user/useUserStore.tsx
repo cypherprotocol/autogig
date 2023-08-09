@@ -1,4 +1,6 @@
+import { formSchema } from "@/app/find/upload";
 import { JobData } from "@/lib/types";
+import { z } from "zod";
 import { create } from "zustand";
 
 export enum BotStages {
@@ -11,8 +13,8 @@ export enum BotStages {
 }
 
 interface StoreState {
-  github?: string;
-  setGithub: (github: string) => void;
+  githubForm?: z.infer<typeof formSchema>;
+  setGithubForm: (githubForm: z.infer<typeof formSchema>) => void;
   linkedin?: string;
   setLinkedin: (linkedin: string) => void;
   stage: BotStages;
@@ -27,9 +29,9 @@ interface StoreState {
 
 const useUserStore = create<StoreState>((set) => ({
   github: undefined,
-  setGithub: (github) =>
+  setGithubForm: (githubForm) =>
     set((state) => ({
-      github,
+      githubForm,
     })),
   linkedin: undefined,
   setLinkedin: (linkedin) =>
