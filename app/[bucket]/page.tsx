@@ -76,12 +76,12 @@ export default function Home({ params }: { params: { bucket: string } }) {
               $2500 and a guaranteed job at the end of it with a company you are
               excited about, or your money back
             </p>
-            <Link href="/contact">
+            <Link href="/contact" className="mt-8 h-16 w-48">
               <Button
                 onClick={() => {
                   Statsig.logEvent("contact_us");
                 }}
-                className="mt-8 h-16 w-48 bg-[#ffc434] text-primary hover:bg-[#fed46f]"
+                className="h-full w-full bg-[#ffc434] text-primary hover:bg-[#fed46f]"
               >
                 Contact us
               </Button>

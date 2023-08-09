@@ -76,12 +76,12 @@ export default function Home({ params }: { params: { bucket: string } }) {
               Upload your resume and land your dream job effortlessly with 1
               click.
             </p>
-            <Link href="/find">
+            <Link href="/find" className="mt-8 h-16 w-48">
               <Button
                 onClick={() => {
                   Statsig.logEvent("free_trial");
                 }}
-                className="mt-8 h-16 w-48 bg-[#ffc434] text-primary hover:bg-[#fed46f]"
+                className="h-full w-full bg-[#ffc434] text-primary hover:bg-[#fed46f]"
               >
                 Try it free!
               </Button>
