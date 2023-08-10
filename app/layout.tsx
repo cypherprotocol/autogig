@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-head-element */
 
 import Navbar from "@/app/navbar";
-import Providers from "@/app/providers";
+import { PHProvider, PostHogPageview } from "@/app/providers";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ClerkProvider } from "@clerk/nextjs";
@@ -9,6 +9,7 @@ import { Analytics } from "@vercel/analytics/react";
 import clsx from "clsx";
 import { Metadata } from "next";
 import localFont from "next/font/local";
+import { Suspense } from "react";
 import "../styles/globals.css";
 import "../styles/tailwind.css";
 
@@ -56,9 +57,12 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html>
+        <Suspense fallback>
+          <PostHogPageview />
+        </Suspense>
         <head></head>
-        <body className={clsx(circular.variable, circular.className)}>
-          <Providers>
+        <PHProvider>
+          <body className={clsx(circular.variable, circular.className)}>
             <TooltipProvider>
               <div className="flex min-h-screen flex-col">
                 <Navbar />
@@ -67,10 +71,10 @@ export default function RootLayout({
                 </main>
               </div>
             </TooltipProvider>
-          </Providers>
-          <Toaster />
-          <Analytics />
-        </body>
+            <Toaster />
+            <Analytics />
+          </body>
+        </PHProvider>
       </html>
     </ClerkProvider>
   );

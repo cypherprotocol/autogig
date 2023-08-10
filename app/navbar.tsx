@@ -4,9 +4,11 @@ import { Button } from "@/components/ui/button";
 import { UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
-import { posthog } from "posthog-js";
+import { usePostHog } from "posthog-js/react";
 
 const Navbar = () => {
+  const posthog = usePostHog();
+
   return (
     <header className="sticky top-0 z-50 flex h-16 w-full shrink-0 items-center justify-between border-b bg-background px-4">
       <Link href="/">

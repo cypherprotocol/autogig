@@ -26,13 +26,14 @@ import useUserStore, { BotStages } from "@/state/user/useUserStore";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FileCheck, FileText, Github, UploadIcon } from "lucide-react";
 import Image from "next/image";
-import { posthog } from "posthog-js";
+import { usePostHog } from "posthog-js/react";
 import { useCallback, useRef, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
 export function Upload() {
+  const posthog = usePostHog();
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const setStage = useUserStore((state) => state.setStage);
   const setResume = useUserStore((state) => state.setResume);
