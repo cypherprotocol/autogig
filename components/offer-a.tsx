@@ -5,7 +5,6 @@ import { usePostHog } from "posthog-js/react";
 
 export default function OfferA() {
   const posthog = usePostHog();
-
   return (
     <div className="w-full max-w-5xl grow flex-col items-center justify-center px-4 py-8 md:flex-row md:justify-start md:py-20">
       <div className="mb-16 flex w-full flex-col items-start justify-between md:flex-row md:items-center">
