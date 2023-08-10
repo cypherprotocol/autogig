@@ -11,6 +11,10 @@ module.exports = {
         destination: "https://discord.gg/j4BAHXm77",
         permanent: false,
       },
+      {
+        source: "/ingest/:path*",
+        destination: "https://app.posthog.com/:path*",
+      },
     ];
   }
   // webpack: (config) => {
