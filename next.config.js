@@ -14,9 +14,10 @@ module.exports = {
       {
         source: "/ingest/:path*",
         destination: "https://app.posthog.com/:path*",
+        permanent: false,
       },
     ];
-  }
+  },
   // webpack: (config) => {
   //   config.resolve.fallback = {
   //     fs: false,
