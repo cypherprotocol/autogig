@@ -26,14 +26,14 @@ export default function OfferD() {
               Guaranteed job with a company you are excited about. Just pay a
               percentage of your first check.
             </p>
-            <Link href="/find" className="mt-8 h-16 w-48">
+            <Link href="/contact" className="mt-8 h-16 w-48">
               <Button
                 onClick={() => {
                   posthog.capture("cta");
                 }}
                 className="h-full w-full bg-[#ffc434] text-primary hover:bg-[#fed46f]"
               >
-                Try it free!
+                Contact us
               </Button>
             </Link>
           </div>
