@@ -1,7 +1,6 @@
 import * as LabelPrimitive from "@radix-ui/react-label";
 import { Slot } from "@radix-ui/react-slot";
 import * as React from "react";
-import { useId } from "react";
 import {
   Controller,
   ControllerProps,
@@ -13,6 +12,7 @@ import {
 
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
+import { nanoid } from "nanoid";
 
 const Form = FormProvider;
 
@@ -75,7 +75,7 @@ const FormItem = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => {
-  const id = useId();
+  const id = nanoid();
 
   return (
     <FormItemContext.Provider value={{ id }}>
