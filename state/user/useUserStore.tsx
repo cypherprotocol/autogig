@@ -1,5 +1,4 @@
-import { formSchema } from "@/app/find/upload";
-import { JobData } from "@/lib/types";
+import { formSchema, JobData } from "@/lib/types";
 import { z } from "zod";
 import { create } from "zustand";
 

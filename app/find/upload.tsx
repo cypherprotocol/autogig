@@ -21,6 +21,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { formSchema } from "@/lib/types";
 import useUserStore, { BotStages } from "@/state/user/useUserStore";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FileCheck, FileText, Github, UploadIcon } from "lucide-react";
@@ -30,13 +31,6 @@ import { useCallback, useRef, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-
-export const formSchema = z.object({
-  username: z.string().min(1, "Github is required"),
-  name: z.string().min(1, "Name is required"),
-  email: z.string().min(1, "Email is required").email("Invalid email"),
-  address: z.string().min(1, "Address is required"),
-});
 
 export function Upload() {
   const fileInputRef = useRef<HTMLInputElement | null>(null);

@@ -4,7 +4,6 @@ import axios from "axios";
 import { load } from "cheerio";
 import { clsx, type ClassValue } from "clsx";
 import { customAlphabet } from "nanoid";
-import { Octokit } from "octokit";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
@@ -39,7 +38,7 @@ export const getPortfolio = async (
 
 export const getRepos = async (
   github: string | undefined
-): Promise<Repositories[]> => {
+): Promise<Repositories[] | undefined> => {
   let githubId = 0;
 
   if (github) {
@@ -81,29 +80,56 @@ export const getRepos = async (
       }
 
       // STEP 2: Get revelant information on user based on github from resume
-      const octokit = new Octokit();
+      const result = await fetch(
+        `https://api.github.com/users/${github}/repos`,
+        {
+          headers: {
+            Accept: "application/vnd.github+json",
+            // Authorization: `Bearer ${ghToken}`,
+            "X-GitHub-Api-Version": "2022-11-28",
+          },
+        }
+      ).then((res) => res.json());
 
-      const userRepos = await octokit.rest.repos.listForUser({
-        username: github,
-      });
+      let top3Repos;
 
-      const top3Repos = userRepos.data
-        .filter((repo) => !!repo.stargazers_count) // Filter out repos without stars count
-        .sort((a, b) => b.stargazers_count! - a.stargazers_count!) // Sort in descending order
-        .slice(0, 3); // Take the top 3
+      if (result.message) {
+        return undefined;
+      } else {
+        top3Repos = (result as any[])
+          .sort((a: any, b: any) => {
+            return b.stargazers_count - a.stargazers_count;
+          })
+          .slice(0, 3);
+      }
+
+      // const userRepos = await octokit.rest.repos.listForUser({
+      //   username: github,
+      // });
+
+      // const top3Repos = userRepos.data
+      //   .filter((repo) => !!repo.stargazers_count) // Filter out repos without stars count
+      //   .sort((a, b) => b.stargazers_count! - a.stargazers_count!) // Sort in descending order
+      //   .slice(0, 3); // Take the top 3
 
       for (const repo of top3Repos) {
         try {
-          const repoLanguages = await octokit.rest.repos.listLanguages({
-            owner: github,
-            repo: repo.name,
-          });
+          const repoLanguages = await fetch(
+            `https://api.github.com/repos/${github}/${repo.name}/languages`,
+            {
+              headers: {
+                Accept: "application/vnd.github+json",
+                // Authorization: `Bearer ${ghToken}`,
+                "X-GitHub-Api-Version": "2022-11-28",
+              },
+            }
+          ).then((res) => res.json());
 
           const { error } = await supabase.from("repository").insert([
             {
               name: repo.name,
               description: repo.description,
-              language_data: repoLanguages.data,
+              language_data: repoLanguages,
               user_id: githubUser?.data?.[0]?.id,
             },
           ]);
@@ -125,7 +151,7 @@ export const getRepos = async (
       return githubRepos;
     }
   } else {
-    return [];
+    return undefined;
   }
 };
 

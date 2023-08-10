@@ -1,4 +1,6 @@
+import { formSchema } from "@/lib/types";
 import { Json } from "@/lib/types/supabase";
+import { getRepos } from "@/lib/utils";
 import { currentUser } from "@clerk/nextjs";
 import { NextRequest } from "next/server";
 import OpenAI from "openai";
@@ -7,9 +9,8 @@ import * as z from "zod";
 export const runtime = "edge";
 
 const gigSchema = z.object({
-  github: z.string().optional(),
+  githubForm: formSchema.optional(),
   resume: z.string().optional(),
-  portfolio: z.string().optional(),
 });
 
 const openai = new OpenAI({
@@ -24,7 +25,7 @@ interface Repositories {
 
 export async function POST(req: NextRequest) {
   const json = await req.json();
-  const { resume } = gigSchema.parse(json);
+  const { resume, githubForm } = gigSchema.parse(json);
 
   const clerkUser = await currentUser();
 
@@ -36,7 +37,7 @@ export async function POST(req: NextRequest) {
   const profileInput = JSON.stringify({
     resume: resume,
     // portfolio: await getPortfolio(portfolio),
-    // github: convertToReadable(await getRepos(github)),
+    github: await getRepos(githubForm?.username),
   });
 
   const tipResponse = await openai.chat.completions.create({

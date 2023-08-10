@@ -82,7 +82,7 @@ export default function Home() {
           fetch("/api/tip", {
             method: "POST",
             body: JSON.stringify({
-              resume: res.resume,
+              resume: res && res.resume,
               githubForm: githubForm,
             }),
           })
@@ -91,7 +91,7 @@ export default function Home() {
           fetch("/api/find", {
             method: "POST",
             body: JSON.stringify({
-              resume: res.resume,
+              resume: res && res.resume,
               githubForm: githubForm,
             }),
           })

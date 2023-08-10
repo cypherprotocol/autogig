@@ -1,5 +1,6 @@
 import { Json } from "@/lib/types/supabase";
 import { type Message } from "ai";
+import { z } from "zod";
 
 export interface Chat extends Record<string, any> {
   id: string;
@@ -40,3 +41,10 @@ export interface JobData {
   job_id: string;
   job_link: string;
 }
+
+export const formSchema = z.object({
+  username: z.string().min(1, "Github is required"),
+  name: z.string().min(1, "Name is required"),
+  email: z.string().min(1, "Email is required").email("Invalid email"),
+  address: z.string().min(1, "Address is required"),
+});

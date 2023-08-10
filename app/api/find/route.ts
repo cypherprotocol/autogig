@@ -1,6 +1,8 @@
 import { autogigFunctions } from "@/app/api/find/functions";
 import { coverLetterSystem } from "@/app/api/find/prompts";
 import supabase from "@/lib/supabase";
+import { formSchema } from "@/lib/types";
+import { getRepos } from "@/lib/utils";
 import { currentUser } from "@clerk/nextjs";
 import { OpenAIEmbeddings } from "langchain/embeddings/openai";
 import { SupabaseVectorStore } from "langchain/vectorstores/supabase";
@@ -12,9 +14,8 @@ export const runtime = "edge";
 export const fetchCache = "auto";
 
 const gigSchema = z.object({
-  github: z.string().optional(),
+  githubForm: formSchema.optional(),
   resume: z.string().optional(),
-  portfolio: z.string().optional(),
 });
 
 const openai = new OpenAI({
@@ -23,7 +24,7 @@ const openai = new OpenAI({
 
 export async function POST(req: NextRequest) {
   const json = await req.json();
-  const { resume } = gigSchema.parse(json);
+  const { resume, githubForm } = gigSchema.parse(json);
 
   const clerkUser = await currentUser();
 
@@ -48,8 +49,10 @@ export async function POST(req: NextRequest) {
   const profileInput = JSON.stringify({
     resume: resume,
     // portfolio: await getPortfolio(portfolio),
-    // github: convertToReadable(await getRepos(github)),
+    github: await getRepos(githubForm?.username),
   });
+
+  console.log(profileInput);
 
   const vectorStore = new SupabaseVectorStore(new OpenAIEmbeddings(), {
     client: supabase,
