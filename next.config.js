@@ -7,7 +7,7 @@ module.exports = {
   async headers() {
     return [
       {
-        source: "/ingest/(.*)",
+        source: "/ingest/:path*",
         headers: [
           { key: "Access-Control-Allow-Credentials", value: "true" },
           { key: "Access-Control-Allow-Origin", value: "*" },
