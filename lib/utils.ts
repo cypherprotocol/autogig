@@ -54,11 +54,11 @@ export const getRepos = async (
 ): Promise<Repositories[] | undefined> => {
   let githubId = 0;
 
-  if (github.includes("github.com/")) {
-    github = github.split("github.com/")[1];
-  }
-
   if (github) {
+    if (github.includes("github.com/")) {
+      github = github.split("github.com/")[1];
+    }
+
     // If user already exists, get their repositories from database
     const { data: githubData } = await supabase
       .from("github")
