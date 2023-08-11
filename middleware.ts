@@ -21,7 +21,7 @@ export default authMiddleware({
       });
     }
   },
-  publicRoutes: ["/"],
+  publicRoutes: ["/", "/ingest"],
   // debug: true,
 });
 
