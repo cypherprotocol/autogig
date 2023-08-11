@@ -40,6 +40,7 @@ export interface JobData {
   job_id: string;
   job_link: string;
 }
+
 export const formSchema = z.object({
   username: z.string().min(1, "Github is required"),
   name: z.string().min(1, "Name is required"),
