@@ -52,7 +52,13 @@ export const autogigFunctions = [
         },
         startDate: {
           type: "string",
-          description: "The start date of the applicant (i.e. May 2019)",
+          description:
+            "The desired start date of the applicant (i.e. May 2019)",
+        },
+        compensation: {
+          type: "string",
+          description:
+            "The compensation desired for the applicant (i.e $100k/yr)",
         },
       },
     },
