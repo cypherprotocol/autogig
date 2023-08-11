@@ -47,8 +47,8 @@ export async function POST(req: NextRequest) {
   }
 
   // Collect all data relevant to user looking for a job
-  let profileInput;
-  let applicantInfo;
+  let profileInput: any;
+  let applicantInfo: any;
 
   if (resume) {
     profileInput = {
@@ -65,7 +65,7 @@ export async function POST(req: NextRequest) {
         },
         {
           role: "user",
-          content: profileInput,
+          content: JSON.stringify(profileInput),
         },
       ],
       function_call: {
@@ -129,7 +129,9 @@ export async function POST(req: NextRequest) {
           {
             role: "user",
             content: `
-            Given my profile: '${profileInput}', and the potential job description: '${JSON.stringify(
+            Given my profile: '${JSON.stringify(
+              profileInput
+            )}', and the potential job description: '${JSON.stringify(
               chunk[0].pageContent
             )}',
             please generate me a persuasive and professional introduction message.
