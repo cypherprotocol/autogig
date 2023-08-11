@@ -14,7 +14,7 @@ module.exports = {
       {
         source: "/ingest/:path*",
         destination: "https://app.posthog.com/:path*",
-        permanent: false,
+        permanent: true,
       },
     ];
   },

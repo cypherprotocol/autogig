@@ -21,7 +21,7 @@ const generateEmbeddings = async (jobs: any[]) => {
   const vectorStore = await SupabaseVectorStore.fromTexts(
     jobs.map((job) => JSON.stringify(job)),
     Array(jobs.length).fill({
-      type: "jobs",
+      type: "new_jobs",
     }),
     new OpenAIEmbeddings(),
     {
@@ -40,7 +40,7 @@ const generateEmbeddings = async (jobs: any[]) => {
 
 (async () => {
   const jobs: any[] = JSON.parse(
-    fs.readFileSync("lib/data/greenhouse.json", "utf8")
+    fs.readFileSync("lib/data/greenhouse3.json", "utf8")
   );
 
   await generateEmbeddings(jobs);
