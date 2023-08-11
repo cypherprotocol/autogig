@@ -1,5 +1,6 @@
 import { autogigFunctions } from "@/app/api/find/functions";
 import { coverLetterSystem } from "@/app/api/find/prompts";
+import { embedData } from "@/lib/embed";
 import supabase from "@/lib/supabase";
 import { formSchema } from "@/lib/types";
 import { getRepos } from "@/lib/utils";
@@ -132,22 +133,49 @@ export async function POST(req: NextRequest) {
 
       console.log(chunk);
 
-      const input = {
-        url: JSON.parse(chunk[0].pageContent).job_link,
-        name: applicantInfo?.name,
-        email: applicantInfo?.email,
-        phone: applicantInfo?.phone,
-        address: applicantInfo?.address,
-        organization: applicantInfo?.organization,
-        linkedin: applicantInfo?.linkedin,
-        github: applicantInfo?.github,
-        portfolio: applicantInfo?.portfolio,
-        coverLetter: coverLetter,
-        resume: resume,
-        location: applicantInfo?.location,
-        school: applicantInfo?.school,
-        startDate: applicantInfo?.startDate,
-      };
+      let input;
+
+      if (resume) {
+        input = {
+          url: JSON.parse(chunk[0].pageContent).job_link,
+          name: applicantInfo?.name,
+          email: applicantInfo?.email,
+          phone: applicantInfo?.phone,
+          address: applicantInfo?.address,
+          organization: applicantInfo?.organization,
+          linkedin: applicantInfo?.linkedin,
+          github: applicantInfo?.github,
+          portfolio: applicantInfo?.portfolio,
+          coverLetter: coverLetter,
+          resume: resume,
+          location: applicantInfo?.location,
+          school: applicantInfo?.school,
+          startDate: applicantInfo?.startDate,
+        };
+      } else {
+        // Github submission
+        input = {
+          url: JSON.parse(chunk[0].pageContent).job_link,
+          name: githubForm?.name,
+          email: githubForm?.email,
+          phone: undefined,
+          address: githubForm?.address,
+          organization: undefined,
+          linkedin: undefined,
+          github: githubForm?.username,
+          portfolio: undefined,
+          coverLetter: coverLetter,
+          resume: undefined,
+          location: undefined,
+          school: undefined,
+          startDate: undefined,
+        };
+      }
+
+      await embedData([JSON.stringify(input)], {
+        id: clerkUser.id,
+        type: "autogig_run",
+      });
 
       // fetch(
       //   `https://api.apify.com/v2/acts/guiltless_peach~autogig/runs?token=${process.env.APIFY_TOKEN}`,

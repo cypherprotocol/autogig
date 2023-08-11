@@ -59,12 +59,6 @@ export function Upload() {
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      username: "",
-      name: "",
-      email: "",
-      address: "",
-    },
   });
 
   const formValues = form.watch();
@@ -74,15 +68,15 @@ export function Upload() {
       if (resume) {
         posthog.capture("user_submitted_form_resume");
       } else {
-        posthog.capture("user_submitted_form_github");
+        if (form.formState.isValid) {
+          setGithubForm(formValues);
+          posthog.capture("user_submitted_form_github");
+        }
       }
-      setGithubForm(formValues);
       setStage(BotStages.FindJob);
       posthog.capture("user_submitted_form");
     }
   };
-
-  console.log(form.formState.isValid);
 
   return (
     <div className="flex w-full flex-col items-center justify-center px-4">
@@ -295,7 +289,7 @@ export function Upload() {
             onClick={onSubmit}
             disabled={
               (option === "resume" && !isFileUploaded) ||
-              !form.formState.isValid
+              (option === "github" && !form.formState.isValid)
             }
             className="mt-4 w-full"
           >

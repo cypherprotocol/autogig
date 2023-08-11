@@ -27,7 +27,7 @@ interface StoreState {
 }
 
 const useUserStore = create<StoreState>((set) => ({
-  github: undefined,
+  githubForm: undefined,
   setGithubForm: (githubForm) =>
     set((state) => ({
       githubForm,
