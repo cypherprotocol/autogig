@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     description: "Get a job without doing shit",
     images: [
       {
-        url: "https://autogig.pro/og_image.png",
+        url: "https://autogig.pro/images/og_image.jpg",
       },
     ],
   },
