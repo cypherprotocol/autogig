@@ -259,6 +259,9 @@ dependencies:
   remark-math:
     specifier: ^5.1.1
     version: 5.1.1
+  shiki:
+    specifier: ^0.14.3
+    version: 0.14.3
   statsig-node:
     specifier: ^5.8.2
     version: 5.8.2(encoding@0.1.13)

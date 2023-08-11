@@ -94,6 +94,7 @@
     "remark-gfm": "^3.0.1",
     "remark-html": "^15.0.2",
     "remark-math": "^5.1.1",
+    "shiki": "^0.14.3",
     "statsig-node": "^5.8.2",
     "statsig-node-vercel": "^0.1.0",
     "statsig-react": "^1.30.1",
