@@ -47,13 +47,46 @@ export async function POST(req: NextRequest) {
   }
 
   // Collect all data relevant to user looking for a job
-  const profileInput = JSON.stringify({
-    resume: resume,
-    // portfolio: await getPortfolio(portfolio),
-    github: await getRepos(githubForm?.username),
-  });
+  let profileInput;
+  let applicantInfo;
 
-  console.log(profileInput);
+  if (resume) {
+    profileInput = {
+      resume: resume,
+    };
+
+    const applicantInfoResponse = await openai.chat.completions.create({
+      model: "gpt-3.5-turbo-0613",
+      functions: autogigFunctions,
+      messages: [
+        {
+          role: "system",
+          content: "You are a helpful assistant.",
+        },
+        {
+          role: "user",
+          content: profileInput,
+        },
+      ],
+      function_call: {
+        name: "get_applicant_info",
+      },
+    });
+
+    applicantInfo = JSON.parse(
+      applicantInfoResponse.choices[0].message?.function_call?.arguments ?? "{}"
+    );
+
+    profileInput = {
+      ...profileInput,
+      github: await getRepos(applicantInfo?.github),
+    };
+  } else {
+    // Github submission
+    profileInput = {
+      github: await getRepos(githubForm?.username),
+    };
+  }
 
   const vectorStore = new SupabaseVectorStore(new OpenAIEmbeddings(), {
     client: supabase,
@@ -83,28 +116,6 @@ export async function POST(req: NextRequest) {
       })
     );
   }
-
-  const applicantInfoResponse = await openai.chat.completions.create({
-    model: "gpt-3.5-turbo-0613",
-    functions: autogigFunctions,
-    messages: [
-      {
-        role: "system",
-        content: "You are a helpful assistant.",
-      },
-      {
-        role: "user",
-        content: profileInput,
-      },
-    ],
-    function_call: {
-      name: "get_applicant_info",
-    },
-  });
-
-  const applicantInfo = JSON.parse(
-    applicantInfoResponse.choices[0].message?.function_call?.arguments ?? "{}"
-  );
 
   if (chunks) {
     const promises = chunks.map(async (chunk) => {

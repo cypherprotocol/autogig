@@ -31,7 +31,7 @@ export const autogigFunctions = [
         github: {
           type: "string",
           description:
-            "The link to the github profile of the applicant (i.e. https://github.com/josh)",
+            "The username of github profile of the applicant (i.e. joshua123)",
         },
         linkedin: {
           type: "string",
