@@ -25,6 +25,16 @@ const Navbar = () => {
       </Link>
       <div className="flex flex-row space-x-4">
         <div className="hidden space-x-4 md:flex">
+          <Link href="/blog">
+            <Button
+              onClick={() => {
+                posthog.capture("visit_blog");
+              }}
+              variant={"ghost"}
+            >
+              Blog
+            </Button>
+          </Link>
           <a
             href="https://discord.gg/j4BAHXm77"
             target={"_blank"}
@@ -42,6 +52,7 @@ const Navbar = () => {
               </svg>
             </Button>
           </a>
+
           <Link href="/find">
             <Button
               onClick={() => {

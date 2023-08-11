@@ -1,9 +1,11 @@
-module.exports = {
+import million from "million/compiler";
+import { withContentlayer } from "next-contentlayer";
+
+const nextConfig = {
   images: {
     domains: [],
   },
   experimental: { appDir: true, serverActions: true },
-  transpilePackages: ["crawlee"],
   // webpack: (config) => {
   //   config.resolve.fallback = {
   //     fs: false,
@@ -18,3 +20,9 @@ module.exports = {
   //   return config;
   // },
 };
+
+export default million.next(withContentlayer(nextConfig), {
+  auto: {
+    rsc: true,
+  },
+});
