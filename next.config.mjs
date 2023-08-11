@@ -1,5 +1,5 @@
 import million from "million/compiler";
-import { withContentlayer } from "next-contentlayer";
+const { withContentlayer } = require("next-contentlayer");
 
 const nextConfig = {
   images: {
