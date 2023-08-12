@@ -95,7 +95,7 @@ export async function POST(req: NextRequest) {
 
   const profileEmbedding = await openai.embeddings.create({
     model: "text-embedding-ada-002",
-    input: profileInput,
+    input: JSON.stringify(profileInput),
   });
 
   const embedding = profileEmbedding.data[0].embedding;
@@ -107,6 +107,8 @@ export async function POST(req: NextRequest) {
       type: "jobs",
     }
   );
+
+  console.log(chunks);
 
   if (user.data?.num_runs && user.data.num_runs >= 1) {
     return new Response(
