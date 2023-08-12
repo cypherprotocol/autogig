@@ -86,7 +86,7 @@ export function Upload() {
           width={200}
           height={200}
           alt=""
-          className="absolute -right-16 -top-16"
+          className="absolute -right-16 -top-16 hidden md:block"
         />
         <CardHeader>
           <CardTitle className="text-2xl">
