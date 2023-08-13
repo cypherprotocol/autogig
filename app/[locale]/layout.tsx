@@ -8,21 +8,23 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { Analytics } from "@vercel/analytics/react";
 import clsx from "clsx";
 import { Metadata } from "next";
+import { NextIntlClientProvider, useLocale } from "next-intl";
 import localFont from "next/font/local";
+import { notFound } from "next/navigation";
 import { Suspense } from "react";
-import "../styles/globals.css";
-import "../styles/tailwind.css";
+import "../../styles/globals.css";
+import "../../styles/tailwind.css";
 
 const circular = localFont({
   display: "swap",
   src: [
     {
-      path: "../public/fonts/CircularStd-Book.ttf",
+      path: "../../public/fonts/CircularStd-Book.ttf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../public/fonts/CircularStd-Medium.ttf",
+      path: "../../public/fonts/CircularStd-Medium.ttf",
       weight: "500",
       style: "normal",
     },
@@ -49,30 +51,44 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: {
+    locale: string;
+  };
 }) {
+  const locale = useLocale();
+  let messages;
+  try {
+    messages = (await import(`../../messages/${locale}.json`)).default;
+  } catch (error) {
+    notFound();
+  }
+
   return (
     <ClerkProvider>
-      <html>
+      <html lang={locale}>
         <Suspense fallback>
           <PostHogPageview />
         </Suspense>
         <head></head>
         <PHProvider>
           <body className={clsx(circular.variable, circular.className)}>
-            <TooltipProvider>
-              <div className="flex min-h-screen flex-col">
-                <Navbar />
-                <main className="flex flex-1 flex-col items-center bg-white">
-                  {children}
-                </main>
-              </div>
-            </TooltipProvider>
-            <Toaster />
-            <Analytics />
+            <NextIntlClientProvider locale={locale} messages={messages}>
+              <TooltipProvider>
+                <div className="flex min-h-screen flex-col">
+                  <Navbar />
+                  <main className="flex flex-1 flex-col items-center bg-white">
+                    {children}
+                  </main>
+                </div>
+              </TooltipProvider>
+              <Toaster />
+              <Analytics />
+            </NextIntlClientProvider>
           </body>
         </PHProvider>
       </html>

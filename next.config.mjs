@@ -1,8 +1,17 @@
-import million from "million/compiler";
 import { withContentlayer } from "next-contentlayer";
+import withNextIntl from "next-intl/plugin";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "/contact",
+        destination: "https://discord.gg/j4BAHXm77",
+        permanent: false,
+      },
+    ];
+  },
   images: {
     domains: [],
   },
@@ -22,8 +31,4 @@ const nextConfig = {
   // },
 };
 
-export default million.next(withContentlayer(nextConfig), {
-  auto: {
-    rsc: true,
-  },
-});
+export default withContentlayer(withNextIntl()(nextConfig));

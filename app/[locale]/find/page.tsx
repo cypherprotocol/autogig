@@ -1,6 +1,6 @@
 "use client";
 
-import { Upload } from "@/app/find/upload";
+import { Upload } from "@/app/[locale]/find/upload";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import {
@@ -12,6 +12,7 @@ import {
 import { JobData } from "@/lib/types";
 import useUserStore, { BotStages } from "@/state/user/useUserStore";
 import { Lightbulb } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -33,11 +34,13 @@ export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [tip, setTip] = useState<string | undefined>();
   const [numRuns, setNumRuns] = useState(0);
+  const t = useTranslations("Loading");
+  const tm = useTranslations("Message");
 
   const fakeLoadingText = [
-    "Building your profile",
-    "Kissing some ass",
-    "Adding some perfume",
+    t("messages.loading-1"),
+    t("messages.loading-2"),
+    t("messages.loading-3"),
   ];
 
   useEffect(() => {
@@ -145,13 +148,10 @@ export default function Home() {
             return (
               <div className="flex w-full max-w-7xl flex-col items-center">
                 <h3 className="mb-4 scroll-m-20 text-center text-2xl font-semibold tracking-tight">
-                  {numRuns >= 1
-                    ? "Enjoy yourself. 👏 We already applied to the following jobs for you."
-                    : "Boom, done! Here are some jobs we found for you 🎉"}
+                  {numRuns >= 1 ? tm("title.run-2") : tm("title.run")}
                 </h3>
                 <p className="mb-8 text-sm text-muted-foreground">
-                  We have sent your profile to these companies. Check your email
-                  for updates.
+                  {tm("description")}
                 </p>
                 <div className="flex w-full flex-col space-y-4">
                   {jobs.map((job, index) => (
@@ -172,10 +172,22 @@ export default function Home() {
                               alt=""
                             />
                           </div>
-                          <div className="flex flex-col truncate">
+                          <div className="flex w-full flex-col">
                             <CardTitle>{job.company_name}</CardTitle>
                             <CardDescription>{job.title}</CardDescription>
                           </div>
+                          {/* <div className="flex items-center">
+                            <h4 className="scroll-m-20 text-xl font-semibold tracking-tight text-[#5c5bee]">
+                              {index === 0
+                                ? "$75,000"
+                                : index === 1
+                                ? "$125,000"
+                                : "$110,000"}
+                            </h4>
+                            <p className="ml-1 text-sm text-muted-foreground">
+                              /yr
+                            </p>
+                          </div> */}
                         </div>
                       </CardHeader>
                     </Card>
@@ -186,7 +198,7 @@ export default function Home() {
                   className="mt-8"
                   onClick={() => setStage(BotStages.UploadResume)}
                 >
-                  Start over
+                  {tm("button")}
                 </Button>
               </div>
             );

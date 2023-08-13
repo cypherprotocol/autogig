@@ -1,10 +1,14 @@
 import { Button } from "@/components/ui/button";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
-import { usePostHog } from "posthog-js/react";
+import { useFeatureFlagVariantKey, usePostHog } from "posthog-js/react";
 
-export default function OfferA() {
+export default function Offer() {
+  const t = useTranslations("Home");
   const posthog = usePostHog();
+  const variant = useFeatureFlagVariantKey("offer");
+
   return (
     <div className="w-full max-w-5xl grow flex-col items-center justify-center px-4 py-8 md:flex-row md:justify-start md:py-20">
       <div className="mb-16 flex w-full flex-col items-start justify-between md:flex-row md:items-center">
@@ -19,24 +23,28 @@ export default function OfferA() {
           </div>
           <div className="flex w-full flex-col">
             <h1 className="mb-4 scroll-m-20 font-wagmi text-5xl font-extrabold tracking-tight lg:text-7xl">
-              Get a job
+              {t("title")}
               <br />
-              <span className="text-[#5c5bee]">without doing shit</span>
+              <span className="text-[#5c5bee]">{t("title-2")}</span>
             </h1>
             <p className="mb-4 text-slate-600 md:mb-0 md:text-xl">
-              Upload your resume and land your dream job effortlessly with 1
-              click.
+              {t("description", { variant })}
             </p>
-            <Link href="/find" className="mt-8 h-16 w-48">
-              <Button
-                onClick={() => {
-                  posthog.capture("cta");
-                }}
-                className="h-full w-full bg-[#ffc434] text-primary hover:bg-[#fed46f]"
+            {
+              <Link
+                href={variant === "control" ? "/find" : "/contact"}
+                className="mt-8 h-16 w-48"
               >
-                Try it free!
-              </Button>
-            </Link>
+                <Button
+                  onClick={() => {
+                    posthog.capture("cta");
+                  }}
+                  className="h-full w-full bg-[#ffc434] text-primary hover:bg-[#fed46f]"
+                >
+                  {t("button", { variant })}
+                </Button>
+              </Link>
+            }
           </div>
         </div>
       </div>

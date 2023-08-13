@@ -2,12 +2,14 @@
 
 import { Button } from "@/components/ui/button";
 import { UserButton } from "@clerk/nextjs";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { usePostHog } from "posthog-js/react";
 
 const Navbar = () => {
   const posthog = usePostHog();
+  const t = useTranslations("Navbar");
 
   return (
     <header className="sticky top-0 z-50 flex h-16 w-full shrink-0 items-center justify-between border-b bg-background px-4">
@@ -32,7 +34,7 @@ const Navbar = () => {
               }}
               variant={"ghost"}
             >
-              Blog
+              {t("blog")}
             </Button>
           </Link>
           <a
@@ -60,7 +62,7 @@ const Navbar = () => {
               }}
               className="bg-[#ffc434] text-primary hover:bg-[#fed46f]"
             >
-              Get a job
+              {t("cta")}
             </Button>
           </Link>
         </div>

@@ -12,7 +12,6 @@ import {
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -25,6 +24,7 @@ import { formSchema } from "@/lib/types";
 import useUserStore, { BotStages } from "@/state/user/useUserStore";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FileCheck, FileText, Github, UploadIcon } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { usePostHog } from "posthog-js/react";
 import { useCallback, useRef, useState } from "react";
@@ -47,6 +47,8 @@ export function Upload() {
   const [option, setOption] = useState<"portfolio" | "resume" | "github">(
     "resume"
   );
+
+  const t = useTranslations("Upload");
 
   const onDrop = useCallback((acceptedFiles) => {
     setResume(acceptedFiles?.[0]);
@@ -89,12 +91,8 @@ export function Upload() {
           className="absolute -right-16 -top-16 hidden md:block"
         />
         <CardHeader>
-          <CardTitle className="text-2xl">
-            Hey, tell me about yourself.
-          </CardTitle>
-          <CardDescription>
-            We need to know a little bit about you before we can start looking.
-          </CardDescription>
+          <CardTitle className="text-2xl">{t("title")}</CardTitle>
+          <CardDescription>{t("description")}</CardDescription>
         </CardHeader>
         <CardContent>
           <>
@@ -113,7 +111,7 @@ export function Upload() {
                   className="sr-only"
                 />
                 <FileText className="mb-4 h-12 w-12" />
-                Resume
+                {t("choices.resume")}
               </Label>
               <Label
                 htmlFor="github"
@@ -125,7 +123,7 @@ export function Upload() {
                   className="sr-only"
                 />
                 <Github className="mb-4 h-12 w-12" />
-                Github
+                {t("choices.github")}
               </Label>
               {/* <Label
                 htmlFor="portfolio"
@@ -158,17 +156,15 @@ export function Upload() {
                     <div className="pointer-events-none mb-4 flex flex-col items-center">
                       <UploadIcon className="mb-4" />
                       {isDragActive ? (
-                        <p>Drop here...</p>
+                        <p>{t("drag")}</p>
                       ) : (
-                        <p className="font-medium">
-                          Choose a file or drag & drop here
-                        </p>
+                        <p className="font-medium">{t("upload.title")}</p>
                       )}
                       <p className="text-sm text-muted-foreground">
-                        PDF or TXT format, up to 10mb.
+                        {t("upload.description")}
                       </p>
                     </div>
-                    <Button variant={"outline"}>Browse files</Button>
+                    <Button variant={"outline"}>{t("upload.button")}</Button>
                   </div>
                 ) : (
                   <Alert>
@@ -189,13 +185,14 @@ export function Upload() {
                     name="username"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Github username</FormLabel>
+                        <FormLabel>{t("form.input-1.label")}</FormLabel>
                         <FormControl>
-                          <Input placeholder="autobot" required {...field} />
+                          <Input
+                            placeholder={t("form.input-1.placeholder")}
+                            required
+                            {...field}
+                          />
                         </FormControl>
-                        <FormDescription>
-                          This is your public display name.
-                        </FormDescription>
                         <FormMessage />
                       </FormItem>
                     )}
@@ -205,10 +202,10 @@ export function Upload() {
                     name="name"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Name</FormLabel>
+                        <FormLabel>{t("form.input-2.label")}</FormLabel>
                         <FormControl>
                           <Input
-                            placeholder="Anthony Gibbs"
+                            placeholder={t("form.input-2.placeholder")}
                             required
                             {...field}
                           />
@@ -222,10 +219,10 @@ export function Upload() {
                     name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Email</FormLabel>
+                        <FormLabel>{t("form.input-3.label")}</FormLabel>
                         <FormControl>
                           <Input
-                            placeholder="hey@autogig.pro"
+                            placeholder={t("form.input-3.placeholder")}
                             required
                             {...field}
                           />
@@ -239,10 +236,10 @@ export function Upload() {
                     name="address"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Address</FormLabel>
+                        <FormLabel>{t("form.input-4.label")}</FormLabel>
                         <FormControl>
                           <Input
-                            placeholder="1234 Roboto Way, CA 90210"
+                            placeholder={t("form.input-4.placeholder")}
                             required
                             {...field}
                           />
@@ -293,7 +290,7 @@ export function Upload() {
             }
             className="mt-4 w-full"
           >
-            Submit
+            {t("button")}
           </Button>
         </CardContent>
       </Card>

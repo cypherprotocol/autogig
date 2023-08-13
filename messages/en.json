@@ -1,0 +1,60 @@
+{
+  "Home": {
+    "title": "Get a job",
+    "title-2": "without doing shit",
+    "description": "{variant, select, control {Upload your resume and land your dream job effortlessly with 1 click.} test {$2500 and a guaranteed job at the end of it with a company you are excited about, or your money back.} test_group_2 {$2500 and a guaranteed job at the end of it with a company you are excited about, or your money back. 99% success rate.} test_group_3 {Guaranteed job with a company you are excited about. Just pay a percentage of your first check.} other {}}",
+    "button": "{variant, select, control {Try it free!} other {Contact us}}"
+  },
+  "Upload": {
+    "title": "Hey, tell me about yourself",
+    "description": "We need to know a little bit about you before we can start looking",
+    "choices": {
+      "resume": "Resume",
+      "github": "Github"
+    },
+    "upload": {
+      "drag": "Drop here...",
+      "title": "Choose a file or drag & drop here",
+      "description": "PDF or TXT format, up to 10mb.",
+      "button": "Browse files"
+    },
+    "button": "Submit",
+    "form": {
+      "input-1": {
+        "label": "Github username",
+        "placeholder": "johndoe42"
+      },
+      "input-2": {
+        "label": "Name",
+        "placeholder": "John Doe"
+      },
+      "input-3": {
+        "label": "Email",
+        "placeholder": "hey@gmail.com"
+      },
+      "input-4": {
+        "label": "Address",
+        "placeholder": "123 Main St."
+      }
+    }
+  },
+  "Loading": {
+    "messages": {
+      "loading-1": "Building your profile",
+      "loading-2": "Kissing some ass",
+      "loading-3": "Adding some perfume"
+    }
+  },
+  "Navbar": {
+    "blog": "Blog",
+    "cta": "Get a job"
+  },
+  "Message": {
+    "title": {
+      "run": "Boom, done! Here are some jobs we found for you 🎉",
+      "run-2": "Enjoy yourself. 👏 We already applied to the following jobs for you."
+    },
+    "description": "Check your email for updates.",
+    "button": "Start over"
+  }
+}

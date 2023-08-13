@@ -1,0 +1,60 @@
+{
+  "Home": {
+    "title": "일자리를 얻으세요",
+    "title-2": "아무것도 하지 않고",
+    "description": "{variant, select, control {이제 1 클릭으로 이력서를 업로드하고 꿈의 일자리를 손쉽게 얻으세요.} test {2500달러를 지불하고 원하는 회사에서 보장된 일자리를 얻거나 돈을 환불받으세요.} test_group_2 {2500달러를 지불하고 원하는 회사에서 보장된 일자리를 얻거나 돈을 환불받으세요. 99%의 성공률을 자랑합니다.} test_group_3 {원하는 회사에서 보장된 일자리를 얻으세요. 첫 번째 급여의 일부만 지불하면 됩니다.} other {}}",
+    "button": "{variant, select, control {무료로 시도해보세요!} other {문의하기}}"
+  },
+  "Upload": {
+    "title": "안녕하세요, 자기소개 좀 해주세요",
+    "description": "우리는 시작하기 전에 당신에 대해 알아야 합니다",
+    "choices": {
+      "resume": "이력서",
+      "github": "Github"
+    },
+    "upload": {
+      "drag": "여기에 드래그하거나 파일을 선택하세요",
+      "title": "파일을 선택하거나 여기로 드래그하세요",
+      "description": "PDF 또는 TXT 형식, 최대 10mb까지",
+      "button": "파일 찾아보기"
+    },
+    "button": "제출하기",
+    "form": {
+      "input-1": {
+        "label": "Github 사용자 이름",
+        "placeholder": "johndoe42"
+      },
+      "input-2": {
+        "label": "이름",
+        "placeholder": "John Doe"
+      },
+      "input-3": {
+        "label": "이메일",
+        "placeholder": "hey@gmail.com"
+      },
+      "input-4": {
+        "label": "주소",
+        "placeholder": "123 Main St."
+      }
+    }
+  },
+  "Loading": {
+    "messages": {
+      "loading-1": "프로필 만들기",
+      "loading-2": "아부를 좀 떨어야겠어요",
+      "loading-3": "향수를 좀 뿌려야겠어요"
+    }
+  },
+  "Navbar": {
+    "blog": "블로그",
+    "cta": "일자리를 얻으세요"
+  },
+  "Message": {
+    "title": {
+      "run": "와, 끝났어요! 여기에 당신을 위해 찾은 일자리 몇 개가 있습니다 🎉",
+      "run-2": "즐겨보세요. 👏 이미 다음과 같은 일자리에 지원했습니다."
+    },
+    "description": "업데이트를 위해 이메일을 확인하세요.",
+    "button": "다시 시작하기"
+  }
+}
