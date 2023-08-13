@@ -3,6 +3,7 @@ import { getJson } from "serpapi";
 
 type GoogleJobsParameters = {
   q: string;
+  gl: string;
   hl: string;
   api_key: string;
   engine?: string;
