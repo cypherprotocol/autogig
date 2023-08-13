@@ -247,6 +247,9 @@ dependencies:
   remark-math:
     specifier: ^5.1.1
     version: 5.1.1
+  serpapi:
+    specifier: ^2.0.0
+    version: 2.0.0
   shiki:
     specifier: ^0.14.3
     version: 0.14.3
@@ -10760,6 +10763,10 @@ packages:
     dependencies:
       randombytes: 2.1.0
     dev: true
+
+  /serpapi@2.0.0:
+    resolution: {integrity: sha512-LKrIBrXWhZDmS1urFwB8e/T8omW2C7r7ZmW231aVBtMbfNx/p9pi5gkiScM/VSAcsyhX1q3oPeWCvbzQiiwaCg==}
+    dev: false
 
   /server-only@0.0.1:
     resolution: {integrity: sha512-qepMx2JxAa5jjfzxG79yPPq+8BuFToHd1hm7kI+Z4zAq1ftQiP7HcxMhDDItrbtwVeLg/cY2JnKnrcFkmiswNA==}

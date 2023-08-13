@@ -40,7 +40,7 @@ const generateEmbeddings = async (jobs: any[]) => {
 
 (async () => {
   const jobs: any[] = JSON.parse(
-    fs.readFileSync("lib/data/greenhouse3.json", "utf8")
+    fs.readFileSync("lib/data/newjobs4.json", "utf8")
   );
 
   await generateEmbeddings(jobs);

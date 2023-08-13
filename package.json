@@ -6,7 +6,9 @@
     "dev": "concurrently \"contentlayer dev\" \"next dev\"",
     "build": "contentlayer build && next build",
     "start": "next start",
-    "embed": "tsx scripts/embed.ts"
+    "embed": "tsx scripts/embed.ts",
+    "all-jobs": "tsx scripts/allJobs.ts",
+    "jobs": "tsx scripts/jobs.ts"
   },
   "dependencies": {
     "@apollo/client": "^3.7.1",
@@ -90,6 +92,7 @@
     "remark-gfm": "^3.0.1",
     "remark-html": "^15.0.2",
     "remark-math": "^5.1.1",
+    "serpapi": "^2.0.0",
     "shiki": "^0.14.3",
     "tailwind-merge": "^1.10.0",
     "tailwindcss-animate": "^1.0.6",

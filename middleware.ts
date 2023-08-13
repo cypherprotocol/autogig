@@ -11,7 +11,7 @@ export default authMiddleware({
   beforeAuth: (req) => {
     return intlMiddleware(req);
   },
-  publicRoutes: ["/", "/:locale/blog(.*)", "/:locale/sign-in"],
+  publicRoutes: ["/:locale", "/:locale/blog(.*)", "/:locale/sign-in"],
 });
 
 // make sure the middleware only runs when
