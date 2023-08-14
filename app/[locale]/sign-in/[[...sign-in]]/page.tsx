@@ -6,7 +6,10 @@ export default function Page() {
 
   return (
     <div className="relative z-10 flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-white">
-      <SignIn routing="path" path={`/${locale}/sign-in`} />
+      <SignIn
+        routing="path"
+        path={locale === "en" ? "/sign-in" : `/${locale}/sign-in`}
+      />
     </div>
   );
 }

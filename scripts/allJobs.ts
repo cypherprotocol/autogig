@@ -16,11 +16,9 @@ const apiKey =
 const queries = ["software engineer", "web developer"]; // Add more queries if needed
 const locations = [
   // "San Francisco, Bay Area, United States",
-  // "New York, United States",
-  "United Kingdom",
-  "London, England, United Kingdom",
+  "Delhi, India",
 ]; // Add more locations if needed
-const maxIterations = 1000;
+const maxIterations = 5000;
 const startSpacing = 30;
 
 async function main() {
@@ -36,7 +34,7 @@ async function main() {
         ) {
           const params: GoogleJobsParameters = {
             q: query,
-            gl: "uk",
+            gl: "in",
             hl: "en",
             api_key: apiKey,
             engine: "google_jobs",
