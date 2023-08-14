@@ -9,7 +9,11 @@ const intlMiddleware = createMiddleware({
 
 export default authMiddleware({
   beforeAuth: (req) => {
-    return intlMiddleware(req);
+    if (req.url.includes("/api")) {
+      return;
+    } else {
+      return intlMiddleware(req);
+    }
   },
   publicRoutes: [
     "/",
