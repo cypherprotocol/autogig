@@ -34,7 +34,7 @@ const Navbar = () => {
               }}
               variant={"ghost"}
             >
-              {t("blog")}
+              Blog
             </Button>
           </Link>
           <a
@@ -62,7 +62,7 @@ const Navbar = () => {
               }}
               className="bg-[#ffc434] text-primary hover:bg-[#fed46f]"
             >
-              {t("cta")}
+              Get interviews
             </Button>
           </Link>
         </div>

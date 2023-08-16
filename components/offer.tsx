@@ -2,12 +2,13 @@ import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
-import { useFeatureFlagVariantKey, usePostHog } from "posthog-js/react";
+import { usePostHog } from "posthog-js/react";
 
 export default function Offer() {
   const t = useTranslations("Home");
   const posthog = usePostHog();
-  const variant = useFeatureFlagVariantKey("offer");
+
+  const variant = "control";
 
   return (
     <div className="w-full max-w-5xl grow flex-col items-center justify-center px-4 py-8 md:flex-row md:justify-start md:py-20">
@@ -31,10 +32,7 @@ export default function Offer() {
               {t("description", { variant })}
             </p>
             {
-              <Link
-                href={variant === "control" ? "/find" : "/contact"}
-                className="mt-8 h-16 w-48"
-              >
+              <Link href={"/find"} className="mt-8 h-16 w-48">
                 <Button
                   onClick={() => {
                     posthog.capture("cta");
