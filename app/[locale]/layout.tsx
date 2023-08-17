@@ -35,11 +35,11 @@ const circular = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL("https://autogig.pro"),
   title: "Autogig",
-  description: "Get a job without doing shit",
+  description: "Forget applying, just interview.",
   openGraph: {
     type: "website",
     title: "Autogig",
-    description: "Get a job without doing shit",
+    description: "Forget applying, just interview.",
     images: [
       {
         url: "https://autogig.pro/images/og_image.jpg",
