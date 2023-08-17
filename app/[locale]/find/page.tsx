@@ -14,6 +14,7 @@ import useUserStore, { BotStages } from "@/state/user/useUserStore";
 import { Lightbulb } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 interface BotResponse {
@@ -147,12 +148,9 @@ export default function Home() {
           case BotStages.Message:
             return (
               <div className="flex w-full max-w-7xl flex-col items-center">
-                <h3 className="mb-4 scroll-m-20 text-center text-2xl font-semibold tracking-tight">
+                <h3 className="mb-8 scroll-m-20 text-center text-2xl font-semibold tracking-tight">
                   {numRuns >= 1 ? tm("title.run-2") : tm("title.run")}
                 </h3>
-                <p className="mb-8 text-sm text-muted-foreground">
-                  {tm("description")}
-                </p>
                 <div className="flex w-full flex-col space-y-4">
                   {jobs.map((job, index) => (
                     <Card key={index}>
@@ -192,14 +190,23 @@ export default function Home() {
                       </CardHeader>
                     </Card>
                   ))}
+                  <Card>
+                    <CardHeader>
+                      <div className="flex w-full items-center">
+                        <div className="flex w-full flex-col">
+                          <CardTitle>+ 18 more</CardTitle>
+                          <CardDescription>Great matches</CardDescription>
+                        </div>
+                      </div>
+                    </CardHeader>
+                  </Card>
                 </div>
-
-                <Button
-                  className="mt-8"
-                  onClick={() => setStage(BotStages.UploadResume)}
-                >
-                  {tm("button")}
-                </Button>
+                <p className="mt-8 text-sm text-muted-foreground">
+                  {tm("description")}
+                </p>
+                <Link href="/contact">
+                  <Button className="mt-4">{tm("button")}</Button>
+                </Link>
               </div>
             );
         }

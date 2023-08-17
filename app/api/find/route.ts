@@ -104,7 +104,7 @@ export async function POST(req: NextRequest) {
     embedding,
     3,
     {
-      type: "jobs",
+      type: "new_jobs_2",
     }
   );
 

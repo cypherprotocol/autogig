@@ -18,24 +18,27 @@ const generateEmbeddings = async (jobs: any[]) => {
 
   const client = createClient(supabaseUrl!, supabaseServiceRoleKey!);
 
-  const vectorStore = await SupabaseVectorStore.fromTexts(
-    jobs.map((job) => JSON.stringify(job)),
-    Array(jobs.length).fill({
-      type: "new_jobs",
-    }),
-    new OpenAIEmbeddings(),
-    {
-      client,
-      tableName: "documents",
-      queryName: "match_documents",
-    }
-  );
+  console.log(JSON.stringify(jobs[0]));
 
-  const result = await vectorStore.similaritySearch("Software Engineer", 1, {
-    type: "jobs",
-  });
+  // Create batches of 10 jobs
+  for (let i = 0; i < jobs.length; i += 10) {
+    const batch = jobs.slice(i, i + 10);
 
-  console.log(result);
+    const vectorStore = await SupabaseVectorStore.fromTexts(
+      batch.map((job) => JSON.stringify(job)),
+      Array(batch.length).fill({
+        type: "new_jobs_2",
+      }),
+      new OpenAIEmbeddings({
+        batchSize: 10,
+      }),
+      {
+        client,
+        tableName: "documents",
+        queryName: "match_documents",
+      }
+    );
+  }
 };
 
 (async () => {

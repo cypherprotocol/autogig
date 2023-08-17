@@ -51,10 +51,10 @@
   },
   "Message": {
     "title": {
-      "run": "Boom, done! Here are some jobs we found for you 🎉",
-      "run-2": "Enjoy yourself. 👏 We already applied to the following jobs for you."
+      "run": "Boom, done! Matches found just for you, time to secure them 🎉",
+      "run-2": "Matches already found. Reach out so we can secure interviews for you!"
     },
-    "description": "Check your email for updates.",
-    "button": "Start over"
+    "description": "Please contact us via discord to continue the process.",
+    "button": "Contact us"
   }
 }

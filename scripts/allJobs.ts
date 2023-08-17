@@ -13,12 +13,25 @@ type GoogleJobsParameters = {
 
 const apiKey =
   "88b22151dca1a91d8302601288e37b4fda05dc5554f35c37ddf3e31b66063967"; // Replace with your actual API key
-const queries = ["software engineer", "web developer"]; // Add more queries if needed
+const queries = ["software engineer", "smart contract engineer"]; // Add more queries if needed
 const locations = [
-  // "San Francisco, Bay Area, United States",
-  "Delhi, India",
+  "San Francisco, Bay Area, United States",
+  "Sunnyvale, California, United States",
+  "Mountain View, California, United States",
+  "Palo Alto, California, United States",
+  "Los Angeles, California, United States",
+  "New York, New York, United States",
+  "Seattle, Washington, United States",
+  "Austin, Texas, United States",
+  "Chicago, Illinois, United States",
+  "Boston, Massachusetts, United States",
+  "Washington, District of Columbia, United States",
+  "Atlanta, Georgia, United States",
+  "Denver, Colorado, United States",
+  "San Diego, California, United States",
+  "San Jose, California, United States",
 ]; // Add more locations if needed
-const maxIterations = 5000;
+const maxIterations = 2000;
 const startSpacing = 30;
 
 async function main() {
@@ -34,7 +47,7 @@ async function main() {
         ) {
           const params: GoogleJobsParameters = {
             q: query,
-            gl: "in",
+            gl: "us",
             hl: "en",
             api_key: apiKey,
             engine: "google_jobs",
