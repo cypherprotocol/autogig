@@ -37,6 +37,7 @@ export default function Home() {
   const [numRuns, setNumRuns] = useState(0);
   const t = useTranslations("Loading");
   const tm = useTranslations("Message");
+  const [isError, setIsError] = useState(false);
 
   const fakeLoadingText = [
     t("messages.loading-1"),
@@ -102,6 +103,7 @@ export default function Home() {
             .then((res) => res.json())
             .then((res: BotResponse) => {
               console.log(res);
+              setIsError(false);
               setJobs(res.jobs);
               setTip(undefined);
               setNumRuns(res.numRuns);
@@ -109,7 +111,8 @@ export default function Home() {
               setCurrentIndex(0);
             })
             .catch((err) => {
-              console.log(err);
+              setStage(BotStages.Message);
+              setIsError(true);
             }),
         ]);
       })();
@@ -148,33 +151,42 @@ export default function Home() {
           case BotStages.Message:
             return (
               <div className="flex w-full max-w-7xl flex-col items-center">
-                <h3 className="mb-8 scroll-m-20 text-center text-2xl font-semibold tracking-tight">
-                  {numRuns >= 1 ? tm("title.run-2") : tm("title.run")}
-                </h3>
-                <div className="flex w-full flex-col space-y-4">
-                  {jobs.map((job, index) => (
-                    <Card key={index}>
-                      <CardHeader>
-                        <div className="flex w-full items-center">
-                          <div className="relative mr-4 h-12 w-12 shrink-0">
-                            <Image
-                              src={
-                                job.company_name === "OpenAI"
-                                  ? "/logos/openai.svg"
-                                  : job.company_name === "ZipRecruiter"
-                                  ? "/logos/ziprecruiter.webp"
-                                  : "/robot.png"
-                              }
-                              fill
-                              className="rounded-md object-contain"
-                              alt=""
-                            />
-                          </div>
-                          <div className="flex w-full flex-col">
-                            <CardTitle>{job.company_name}</CardTitle>
-                            <CardDescription>{job.title}</CardDescription>
-                          </div>
-                          {/* <div className="flex items-center">
+                {isError ? (
+                  <>
+                    <h3 className="mb-8 scroll-m-20 text-center text-2xl font-semibold tracking-tight">
+                      There are an error with your resume. Please try again.
+                    </h3>
+                    <Button className="mt-4">Try again</Button>
+                  </>
+                ) : (
+                  <>
+                    <h3 className="mb-8 scroll-m-20 text-center text-2xl font-semibold tracking-tight">
+                      {numRuns >= 1 ? tm("title.run-2") : tm("title.run")}
+                    </h3>
+                    <div className="flex w-full flex-col space-y-4">
+                      {jobs.map((job, index) => (
+                        <Card key={index}>
+                          <CardHeader>
+                            <div className="flex w-full items-center">
+                              <div className="relative mr-4 h-12 w-12 shrink-0">
+                                <Image
+                                  src={
+                                    job.company_name === "OpenAI"
+                                      ? "/logos/openai.svg"
+                                      : job.company_name === "ZipRecruiter"
+                                      ? "/logos/ziprecruiter.webp"
+                                      : "/robot.png"
+                                  }
+                                  fill
+                                  className="rounded-md object-contain"
+                                  alt=""
+                                />
+                              </div>
+                              <div className="flex w-full flex-col">
+                                <CardTitle>{job.company_name}</CardTitle>
+                                <CardDescription>{job.title}</CardDescription>
+                              </div>
+                              {/* <div className="flex items-center">
                             <h4 className="scroll-m-20 text-xl font-semibold tracking-tight text-[#5c5bee]">
                               {index === 0
                                 ? "$75,000"
@@ -186,27 +198,29 @@ export default function Home() {
                               /yr
                             </p>
                           </div> */}
-                        </div>
-                      </CardHeader>
-                    </Card>
-                  ))}
-                  <Card>
-                    <CardHeader>
-                      <div className="flex w-full items-center">
-                        <div className="flex w-full flex-col">
-                          <CardTitle>+ 18 more</CardTitle>
-                          <CardDescription>Great matches</CardDescription>
-                        </div>
-                      </div>
-                    </CardHeader>
-                  </Card>
-                </div>
-                <p className="mt-8 text-sm text-muted-foreground">
-                  {tm("description")}
-                </p>
-                <Link href="/contact">
-                  <Button className="mt-4">{tm("button")}</Button>
-                </Link>
+                            </div>
+                          </CardHeader>
+                        </Card>
+                      ))}
+                      <Card>
+                        <CardHeader>
+                          <div className="flex w-full items-center">
+                            <div className="flex w-full flex-col">
+                              <CardTitle>+ 18 more</CardTitle>
+                              <CardDescription>Great matches</CardDescription>
+                            </div>
+                          </div>
+                        </CardHeader>
+                      </Card>
+                    </div>
+                    <p className="mt-8 text-sm text-muted-foreground">
+                      {tm("description")}
+                    </p>
+                    <Link href="/contact">
+                      <Button className="mt-4">{tm("button")}</Button>
+                    </Link>
+                  </>
+                )}
               </div>
             );
         }
