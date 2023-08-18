@@ -156,7 +156,7 @@ export function Upload() {
                     <div className="pointer-events-none mb-4 flex flex-col items-center">
                       <UploadIcon className="mb-4" />
                       {isDragActive ? (
-                        <p>{t("drag")}</p>
+                        <p>{t("upload.drag")}</p>
                       ) : (
                         <p className="font-medium">{t("upload.title")}</p>
                       )}

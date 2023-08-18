@@ -154,9 +154,17 @@ export default function Home() {
                 {isError ? (
                   <>
                     <h3 className="mb-8 scroll-m-20 text-center text-2xl font-semibold tracking-tight">
-                      There are an error with your resume. Please try again.
+                      There was an error with your resume. Please try again.
                     </h3>
-                    <Button className="mt-4">Try again</Button>
+                    <Button
+                      onClick={() => {
+                        setStage(BotStages.UploadResume);
+                        setIsError(false);
+                      }}
+                      className="mt-4"
+                    >
+                      Try again
+                    </Button>
                   </>
                 ) : (
                   <>
