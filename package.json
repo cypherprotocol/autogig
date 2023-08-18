@@ -8,7 +8,8 @@
     "start": "next start",
     "embed": "tsx scripts/embed.ts",
     "all-jobs": "tsx scripts/allJobs.ts",
-    "jobs": "tsx scripts/jobs.ts"
+    "jobs": "tsx scripts/jobs.ts",
+    "deduplicate": "tsx scripts/deduplicate.ts"
   },
   "dependencies": {
     "@apollo/client": "^3.7.1",

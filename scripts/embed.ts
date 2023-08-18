@@ -7,7 +7,7 @@ import OpenAI from "openai";
 
 loadEnvConfig("");
 
-const generateEmbeddings = async () => {
+const generateEmbeddings = async (jobs: any[]) => {
   const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
   });
@@ -18,62 +18,25 @@ const generateEmbeddings = async () => {
 
   const client = createClient(supabaseUrl!, supabaseServiceRoleKey!);
 
-  const jobs = await client
-    .from("documents")
-    .select("*")
-    .eq("metadata->>type", "new_jobs_2");
+  // Create batches of 10 jobs
+  for (let i = 0; i < jobs.length; i += 10) {
+    const batch = jobs.slice(i, i + 10);
 
-  console.log(jobs?.data?.[0]);
-
-  if (jobs.data) {
-    for (let i = 0; i < jobs.data.length; i++) {
-      const vectorStore = new SupabaseVectorStore(new OpenAIEmbeddings(), {
-        client: client,
+    const vectorStore = await SupabaseVectorStore.fromTexts(
+      batch.map((job) => JSON.stringify(job)),
+      Array(batch.length).fill({
+        type: "new_jobs_2",
+      }),
+      new OpenAIEmbeddings({
+        batchSize: 10,
+      }),
+      {
+        client,
         tableName: "documents",
-      });
-
-      // console.log(jobs[i]);
-
-      const matchingJobs = await vectorStore.similaritySearchWithScore(
-        JSON.stringify(jobs.data[i].content),
-        5,
-        {
-          type: "new_jobs_2",
-        }
-      );
-
-      // Delete all matching jobs except the first one
-      for (let j = 1; j < matchingJobs.length; j++) {
-        console.log(matchingJobs[j][1]);
-        if (matchingJobs[j][1] > 0.95) {
-          await client
-            .from("documents")
-            .delete()
-            .match({ content: matchingJobs[j][0].pageContent });
-        }
+        queryName: "match_documents",
       }
-    }
+    );
   }
-
-  //   Create batches of 10 jobs
-  //   for (let i = 0; i < jobs.length; i += 10) {
-  //     const batch = jobs.slice(i, i + 10);
-
-  //     const vectorStore = await SupabaseVectorStore.fromTexts(
-  //       batch.map((job) => JSON.stringify(job)),
-  //       Array(batch.length).fill({
-  //         type: "new_jobs_2",
-  //       }),
-  //       new OpenAIEmbeddings({
-  //         batchSize: 10,
-  //       }),
-  //       {
-  //         client,
-  //         tableName: "documents",
-  //         queryName: "match_documents",
-  //       }
-  //     );
-  //   }
 };
 
 (async () => {
@@ -81,5 +44,5 @@ const generateEmbeddings = async () => {
     fs.readFileSync("lib/data/newjobs3.json", "utf8")
   );
 
-  await generateEmbeddings();
+  await generateEmbeddings(jobs);
 })();
