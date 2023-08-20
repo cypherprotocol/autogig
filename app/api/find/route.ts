@@ -6,7 +6,9 @@ import { formSchema } from "@/lib/types";
 import { getRepos } from "@/lib/utils";
 import { currentUser } from "@clerk/nextjs";
 import { OpenAIEmbeddings } from "langchain/embeddings/openai";
+import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
 import { SupabaseVectorStore } from "langchain/vectorstores/supabase";
+import { nanoid } from "nanoid";
 import { NextRequest } from "next/server";
 import OpenAI from "openai";
 import * as z from "zod";
@@ -28,10 +30,16 @@ export async function POST(req: NextRequest) {
   const { resume, githubForm } = gigSchema.parse(json);
 
   const clerkUser = await currentUser();
+  const id = nanoid();
 
   if (!clerkUser) {
     return new Response("Unauthorized", { status: 401 });
   }
+
+  const vectorStore = new SupabaseVectorStore(new OpenAIEmbeddings(), {
+    client: supabase,
+    tableName: "documents",
+  });
 
   let user = await supabase
     .from("users")
@@ -55,6 +63,42 @@ export async function POST(req: NextRequest) {
       resume: resume,
     };
 
+    // Split the resume into optimal chunks
+    const splitter = new RecursiveCharacterTextSplitter({
+      chunkSize: 500,
+    });
+
+    const output = await splitter.createDocuments([resume]);
+
+    console.log(output.map((chunk) => chunk.pageContent));
+    console.log(output.length);
+
+    // Insert each chunk into the SupabaseVectorStore
+    await SupabaseVectorStore.fromTexts(
+      output.map((chunk) => chunk.pageContent),
+      Array(output.length).fill({
+        type: "resume",
+        id: clerkUser.id,
+        run_id: id,
+      }),
+      new OpenAIEmbeddings(),
+      {
+        client: supabase,
+        tableName: "documents",
+        queryName: "match_documents",
+      }
+    );
+
+    const resumeEmbeddings = await vectorStore.similaritySearch(
+      JSON.stringify(autogigFunctions),
+      5,
+      {
+        type: "resume",
+        id: clerkUser.id,
+        run_id: id,
+      }
+    );
+
     const applicantInfoResponse = await openai.chat.completions.create({
       model: "gpt-3.5-turbo-0613",
       functions: autogigFunctions,
@@ -65,7 +109,7 @@ export async function POST(req: NextRequest) {
         },
         {
           role: "user",
-          content: JSON.stringify(profileInput),
+          content: JSON.stringify(resumeEmbeddings),
         },
       ],
       function_call: {
@@ -88,11 +132,6 @@ export async function POST(req: NextRequest) {
     };
   }
 
-  const vectorStore = new SupabaseVectorStore(new OpenAIEmbeddings(), {
-    client: supabase,
-    tableName: "documents",
-  });
-
   const profileEmbedding = await openai.embeddings.create({
     model: "text-embedding-ada-002",
     input: JSON.stringify(profileInput),
@@ -107,8 +146,6 @@ export async function POST(req: NextRequest) {
       type: "new_jobs_2",
     }
   );
-
-  console.log(chunks);
 
   if (user.data?.num_runs && user.data.num_runs >= 1) {
     return new Response(

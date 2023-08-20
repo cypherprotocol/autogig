@@ -14,7 +14,6 @@ import useUserStore, { BotStages } from "@/state/user/useUserStore";
 import { Lightbulb } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import Link from "next/link";
 import { usePostHog } from "posthog-js/react";
 import { useEffect, useState } from "react";
 
@@ -153,10 +152,17 @@ export default function Home() {
           case BotStages.Message:
             return (
               <div className="flex w-full max-w-7xl flex-col items-center">
-                {isError ? (
+                {true ? (
                   <>
+                    <Image
+                      src="/fullcolor-retro-dudes-lock.svg"
+                      width={200}
+                      height={200}
+                      alt=""
+                      className="mb-4"
+                    />
                     <h3 className="mb-8 scroll-m-20 text-center text-2xl font-semibold tracking-tight">
-                      There was an error with your resume. Please try again.
+                      Whoops, we ran into an error finding your best matches.
                     </h3>
                     <Button
                       onClick={() => {
@@ -170,9 +176,13 @@ export default function Home() {
                   </>
                 ) : (
                   <>
-                    <h3 className="mb-8 scroll-m-20 text-center text-2xl font-semibold tracking-tight">
+                    <h3 className="mb-4 scroll-m-20 text-center text-2xl font-semibold tracking-tight">
                       {numRuns >= 1 ? tm("title.run-2") : tm("title.run")}
                     </h3>
+                    <p className="mb-8 text-sm text-muted-foreground">
+                      {tm("description")}
+                      <span className="text-[#5c5bee]">hey@autogig.pro</span>
+                    </p>
                     <div className="flex w-full flex-col space-y-4">
                       {jobs.map((job, index) => (
                         <Card key={index}>
@@ -217,23 +227,12 @@ export default function Home() {
                           <div className="flex w-full items-center">
                             <div className="flex w-full flex-col">
                               <CardTitle>+ 18 more</CardTitle>
-                              <CardDescription>Great matches</CardDescription>
+                              <CardDescription>great matches</CardDescription>
                             </div>
                           </div>
                         </CardHeader>
                       </Card>
                     </div>
-                    <p className="mt-8 text-sm text-muted-foreground">
-                      {tm("description")}
-                    </p>
-                    <Link
-                      href="/contact"
-                      onClick={() => {
-                        posthog.capture("contact_us");
-                      }}
-                    >
-                      <Button className="mt-4">{tm("button")}</Button>
-                    </Link>
                   </>
                 )}
               </div>

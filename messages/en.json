@@ -51,10 +51,10 @@
   },
   "Message": {
     "title": {
-      "run": "Boom, done! Matches found just for you, time to secure them 🎉",
-      "run-2": "Matches already found. Reach out so we can secure interviews for you!"
+      "run": "Hang tight, your dream job will be awaiting you soon.",
+      "run-2": "Autogig is working the gears still."
     },
-    "description": "Please contact us via discord to continue the process.",
+    "description": "Please check your email for updates, it will come from ",
     "button": "Contact us"
   }
 }
