@@ -16,13 +16,12 @@ const Navbar = () => {
       <Link href="/">
         <div className="flex cursor-pointer items-center">
           <Image
-            src="/fullcolor-retro-dudes-laptop.svg"
-            width={32}
+            src="/logo.svg"
+            width={100}
             height={32}
-            className="mr-2"
+            className="object-contain"
             alt=""
           />
-          <p className="hidden font-medium md:block">Autogig</p>
         </div>
       </Link>
       <div className="flex flex-row space-x-4">

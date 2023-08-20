@@ -99,7 +99,7 @@ export function Upload() {
             <RadioGroup
               defaultValue={option}
               onValueChange={(value) => setOption(value as any)}
-              className="mb-4 grid grid-rows-2 gap-4 md:grid-cols-2 md:grid-rows-none"
+              className="mb-4 grid grid-cols-2 gap-4 md:grid-rows-none"
             >
               <Label
                 htmlFor="resume"

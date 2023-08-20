@@ -122,6 +122,7 @@ export default function Home() {
 
   return (
     <div className="flex w-full max-w-3xl grow flex-col items-center justify-start px-4 py-8 md:py-20">
+      <div className="flex space-x-4"></div>
       {(() => {
         switch (stage) {
           case BotStages.UploadResume:

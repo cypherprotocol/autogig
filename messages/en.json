@@ -6,7 +6,7 @@
     "button": "{variant, select, control {Try it free!} other {Contact us}}"
   },
   "Upload": {
-    "title": "Hey, tell me about yourself",
+    "title": "Hey there, please tell me about yourself",
     "description": "We need to know a little bit about you before we can start looking",
     "choices": {
       "resume": "Resume",
