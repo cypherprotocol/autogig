@@ -15,6 +15,7 @@ import { Lightbulb } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
+import { usePostHog } from "posthog-js/react";
 import { useEffect, useState } from "react";
 
 interface BotResponse {
@@ -38,6 +39,7 @@ export default function Home() {
   const t = useTranslations("Loading");
   const tm = useTranslations("Message");
   const [isError, setIsError] = useState(false);
+  const posthog = usePostHog();
 
   const fakeLoadingText = [
     t("messages.loading-1"),
@@ -224,7 +226,12 @@ export default function Home() {
                     <p className="mt-8 text-sm text-muted-foreground">
                       {tm("description")}
                     </p>
-                    <Link href="/contact">
+                    <Link
+                      href="/contact"
+                      onClick={() => {
+                        posthog.capture("contact_us");
+                      }}
+                    >
                       <Button className="mt-4">{tm("button")}</Button>
                     </Link>
                   </>
