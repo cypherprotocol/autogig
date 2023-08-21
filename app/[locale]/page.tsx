@@ -1,5 +1,6 @@
 "use client";
 
+import Navbar from "@/app/navbar";
 import Offer from "@/components/offer";
 import { HOME_BUCKETS } from "@/lib/buckets";
 
@@ -8,5 +9,10 @@ export async function generateStaticParams() {
 }
 
 export default function Home() {
-  return <Offer />;
+  return (
+    <>
+      <Navbar />
+      <Offer />
+    </>
+  );
 }

@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-head-element */
 
-import Navbar from "@/app/navbar";
 import { PHProvider, PostHogPageview } from "@/app/providers";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -80,7 +79,6 @@ export default async function RootLayout({
             <NextIntlClientProvider locale={locale} messages={messages}>
               <TooltipProvider>
                 <div className="flex min-h-screen flex-col">
-                  <Navbar />
                   <main className="flex flex-1 flex-col items-center bg-white">
                     {children}
                   </main>

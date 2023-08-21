@@ -1,6 +1,7 @@
 "use client";
 
 import { Upload } from "@/app/[locale]/find/upload";
+import Navbar from "@/app/navbar";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import {
@@ -121,93 +122,95 @@ export default function Home() {
   }, [stage, resume, githubForm, setStage, setJobs]);
 
   return (
-    <div className="flex w-full max-w-3xl grow flex-col items-center justify-start px-4 py-8 md:py-20">
-      <div className="flex space-x-4"></div>
-      {(() => {
-        switch (stage) {
-          case BotStages.UploadResume:
-            return <Upload />;
-          case BotStages.FindJob:
-            return (
-              <>
-                <Image
-                  src="/fullcolor-retro-dudes-printer.svg"
-                  width={200}
-                  height={200}
-                  alt=""
-                  className="mb-4"
-                />
-                <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
-                  {fakeLoadingText[currentIndex]}
-                  {dots}
-                </h3>
-                {tip && (
-                  <Alert>
-                    <Lightbulb className="h-4 w-4" />
-                    <AlertTitle>Quick tip</AlertTitle>
-                    <AlertDescription>{tip}</AlertDescription>
-                  </Alert>
-                )}
-              </>
-            );
-          case BotStages.Message:
-            return (
-              <div className="flex w-full max-w-7xl flex-col items-center">
-                {true ? (
-                  <>
-                    <Image
-                      src="/fullcolor-retro-dudes-lock.svg"
-                      width={200}
-                      height={200}
-                      alt=""
-                      className="mb-4"
-                    />
-                    <h3 className="mb-8 scroll-m-20 text-center text-2xl font-semibold tracking-tight">
-                      Whoops, we ran into an error finding your best matches.
-                    </h3>
-                    <Button
-                      onClick={() => {
-                        setStage(BotStages.UploadResume);
-                        setIsError(false);
-                      }}
-                      className="mt-4"
-                    >
-                      Try again
-                    </Button>
-                  </>
-                ) : (
-                  <>
-                    <h3 className="mb-4 scroll-m-20 text-center text-2xl font-semibold tracking-tight">
-                      {numRuns >= 1 ? tm("title.run-2") : tm("title.run")}
-                    </h3>
-                    <p className="mb-8 text-sm text-muted-foreground">
-                      {tm("description")}
-                      <span className="text-[#5c5bee]">hey@autogig.pro</span>
-                    </p>
-                    <div className="flex w-full flex-col space-y-4">
-                      {jobs.map((job, index) => (
-                        <Card key={index}>
-                          <CardHeader>
-                            <div className="flex w-full items-center">
-                              <div className="relative mr-4 h-12 w-12 shrink-0">
-                                <Image
-                                  src={
-                                    job.company_name === "OpenAI"
-                                      ? "/logos/openai.svg"
-                                      : job.company_name === "ZipRecruiter"
-                                      ? "/logos/ziprecruiter.webp"
-                                      : "/robot.png"
-                                  }
-                                  fill
-                                  className="rounded-md object-contain"
-                                  alt=""
-                                />
-                              </div>
-                              <div className="flex w-full flex-col">
-                                <CardTitle>{job.company_name}</CardTitle>
-                                <CardDescription>{job.title}</CardDescription>
-                              </div>
-                              {/* <div className="flex items-center">
+    <>
+      <Navbar />
+      <div className="flex w-full max-w-3xl grow flex-col items-center justify-start px-4 pt-24 md:pt-28">
+        <div className="flex space-x-4"></div>
+        {(() => {
+          switch (stage) {
+            case BotStages.UploadResume:
+              return <Upload />;
+            case BotStages.FindJob:
+              return (
+                <>
+                  <Image
+                    src="/fullcolor-retro-dudes-printer.svg"
+                    width={200}
+                    height={200}
+                    alt=""
+                    className="mb-4"
+                  />
+                  <h3 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
+                    {fakeLoadingText[currentIndex]}
+                    {dots}
+                  </h3>
+                  {tip && (
+                    <Alert>
+                      <Lightbulb className="h-4 w-4" />
+                      <AlertTitle>Quick tip</AlertTitle>
+                      <AlertDescription>{tip}</AlertDescription>
+                    </Alert>
+                  )}
+                </>
+              );
+            case BotStages.Message:
+              return (
+                <div className="flex w-full max-w-7xl flex-col items-center">
+                  {true ? (
+                    <>
+                      <Image
+                        src="/fullcolor-retro-dudes-lock.svg"
+                        width={200}
+                        height={200}
+                        alt=""
+                        className="mb-4"
+                      />
+                      <h3 className="mb-8 scroll-m-20 text-center text-2xl font-semibold tracking-tight">
+                        Whoops, we ran into an error finding your best matches.
+                      </h3>
+                      <Button
+                        onClick={() => {
+                          setStage(BotStages.UploadResume);
+                          setIsError(false);
+                        }}
+                        className="mt-4"
+                      >
+                        Try again
+                      </Button>
+                    </>
+                  ) : (
+                    <>
+                      <h3 className="mb-4 scroll-m-20 text-center text-2xl font-semibold tracking-tight">
+                        {numRuns >= 1 ? tm("title.run-2") : tm("title.run")}
+                      </h3>
+                      <p className="mb-8 text-sm text-muted-foreground">
+                        {tm("description")}
+                        <span className="text-[#5c5bee]">hey@autogig.pro</span>
+                      </p>
+                      <div className="flex w-full flex-col space-y-4">
+                        {jobs.map((job, index) => (
+                          <Card key={index}>
+                            <CardHeader>
+                              <div className="flex w-full items-center">
+                                <div className="relative mr-4 h-12 w-12 shrink-0">
+                                  <Image
+                                    src={
+                                      job.company_name === "OpenAI"
+                                        ? "/logos/openai.svg"
+                                        : job.company_name === "ZipRecruiter"
+                                        ? "/logos/ziprecruiter.webp"
+                                        : "/robot.png"
+                                    }
+                                    fill
+                                    className="rounded-md object-contain"
+                                    alt=""
+                                  />
+                                </div>
+                                <div className="flex w-full flex-col">
+                                  <CardTitle>{job.company_name}</CardTitle>
+                                  <CardDescription>{job.title}</CardDescription>
+                                </div>
+                                {/* <div className="flex items-center">
                             <h4 className="scroll-m-20 text-xl font-semibold tracking-tight text-[#5c5bee]">
                               {index === 0
                                 ? "$75,000"
@@ -219,27 +222,28 @@ export default function Home() {
                               /yr
                             </p>
                           </div> */}
+                              </div>
+                            </CardHeader>
+                          </Card>
+                        ))}
+                        <Card>
+                          <CardHeader>
+                            <div className="flex w-full items-center">
+                              <div className="flex w-full flex-col">
+                                <CardTitle>+ 18 more</CardTitle>
+                                <CardDescription>great matches</CardDescription>
+                              </div>
                             </div>
                           </CardHeader>
                         </Card>
-                      ))}
-                      <Card>
-                        <CardHeader>
-                          <div className="flex w-full items-center">
-                            <div className="flex w-full flex-col">
-                              <CardTitle>+ 18 more</CardTitle>
-                              <CardDescription>great matches</CardDescription>
-                            </div>
-                          </div>
-                        </CardHeader>
-                      </Card>
-                    </div>
-                  </>
-                )}
-              </div>
-            );
-        }
-      })()}
-    </div>
+                      </div>
+                    </>
+                  )}
+                </div>
+              );
+          }
+        })()}
+      </div>
+    </>
   );
 }

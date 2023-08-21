@@ -11,7 +11,7 @@ export default function Offer() {
   const variant = "control";
 
   return (
-    <div className="w-full max-w-5xl grow flex-col items-center justify-center px-4 py-8 md:flex-row md:justify-start md:py-20">
+    <div className="w-full max-w-5xl grow flex-col items-center justify-center px-4 py-24 md:flex-row md:justify-start md:py-28">
       <div className="mb-16 flex w-full flex-col items-start justify-between md:flex-row md:items-center">
         <div className="relative flex flex-col items-start md:flex-row md:items-center">
           <div className="relative mr-8 h-36 w-36 shrink-0 md:h-80 md:w-80">

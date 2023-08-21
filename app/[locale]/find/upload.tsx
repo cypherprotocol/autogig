@@ -83,16 +83,16 @@ export function Upload() {
   return (
     <div className="flex w-full flex-col items-center justify-center px-4">
       <Card className="relative w-full">
-        <Image
-          src="/fullcolor-retro-dudes-file.svg"
-          width={200}
-          height={200}
-          alt=""
-          className="absolute -right-16 -top-16 hidden md:block"
-        />
-        <CardHeader>
+        <CardHeader className="relative">
           <CardTitle className="text-2xl">{t("title")}</CardTitle>
           <CardDescription>{t("description")}</CardDescription>
+          <Image
+            src="/fullcolor-retro-dudes-file.svg"
+            width={160}
+            height={160}
+            alt=""
+            className="absolute right-0 -top-8 hidden md:block"
+          />
         </CardHeader>
         <CardContent>
           <>
