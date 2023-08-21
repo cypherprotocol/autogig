@@ -1,7 +1,8 @@
 "use client";
 
+import { ProfileDropdown } from "@/components/profile-dropdown";
 import { Button } from "@/components/ui/button";
-import { UserButton } from "@clerk/nextjs";
+import { useUser } from "@clerk/nextjs";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,6 +11,8 @@ import { usePostHog } from "posthog-js/react";
 const Navbar = () => {
   const posthog = usePostHog();
   const t = useTranslations("Navbar");
+  const { user } = useUser();
+  console.log(user);
 
   return (
     <header className="fixed top-0 z-50 flex h-16 w-full shrink-0 items-center justify-between border-b bg-background px-4">
@@ -74,7 +77,7 @@ const Navbar = () => {
         <Link href="/dashboard">
           <Button variant={"outline"}>Look for talent</Button>
         </Link> */}
-        <UserButton afterSignOutUrl="/" />
+        <ProfileDropdown userInfo={user} />
       </div>
     </header>
   );

@@ -5,6 +5,20 @@
     "description": "{variant, select, control {Tired of applying to 700+ jobs and not hearing back? We've been there too. Free for the first 100 interviews.} test {$2500 and a guaranteed job at the end of it with a company you are excited about, or your money back.} test_group_2 {$2500 and a guaranteed job at the end of it with a company you are excited about, or your money back. 99% success rate.} test_group_3 {Guaranteed job with a company you are excited about. Just pay a percentage of your first check.} other {}}",
     "button": "{variant, select, control {Try it free!} other {Contact us}}"
   },
+  "SignIn": {
+    "bullet-1": {
+      "title": "{variant, select, control {Apply to thousands of jobs} test {Apply to thousands of jobs} other {}}",
+      "description": "{variant, select, control {with one click} test {with one click} other {}}"
+    },
+    "bullet-2": {
+      "title": "{variant, select, control {Focus on interviewing} test {Craft custom cover letters} other {}}",
+      "description": "{variant, select, control {rather than writing cover letters} test {without having to type} other {}}"
+    },
+    "bullet-3": {
+      "title": "{variant, select, control {Get the salary you deserve} test {Negotiate with recruiters} other {}}",
+      "description": "{variant, select, control {without having to negotiate} test {without talking to them} other {}}"
+    }
+  },
   "Upload": {
     "title": "Hey there, please tell me about yourself",
     "description": "We need to know a little bit about you before we can start looking",

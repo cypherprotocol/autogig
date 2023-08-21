@@ -21,6 +21,7 @@ export default authMiddleware({
     "/:locale((?!find|.*/find).*)",
     "/:locale/blog(.*)",
     "/:locale/sign-in",
+    "/images(.*)",
   ],
 });
 

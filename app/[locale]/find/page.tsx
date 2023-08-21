@@ -48,6 +48,10 @@ export default function Home() {
   ];
 
   useEffect(() => {
+    posthog.capture("find");
+  }, [posthog]);
+
+  useEffect(() => {
     const intervalId = setInterval(() => {
       setDots((prevDots) => {
         return prevDots.length >= 3 ? "." : prevDots + ".";
@@ -113,6 +117,7 @@ export default function Home() {
               setCurrentIndex(0);
             })
             .catch((err) => {
+              console.log(err);
               setStage(BotStages.Message);
               setIsError(true);
             }),
@@ -156,7 +161,7 @@ export default function Home() {
             case BotStages.Message:
               return (
                 <div className="flex w-full max-w-7xl flex-col items-center">
-                  {true ? (
+                  {isError ? (
                     <>
                       <Image
                         src="/fullcolor-retro-dudes-lock.svg"

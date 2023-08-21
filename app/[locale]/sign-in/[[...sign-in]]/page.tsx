@@ -1,15 +1,27 @@
-import { SignIn } from "@clerk/nextjs";
+"use client";
+import { SignIn, useClerk } from "@clerk/nextjs";
 import { CheckSquare } from "lucide-react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
+import { useFeatureFlagVariantKey, usePostHog } from "posthog-js/react";
+import { useEffect } from "react";
 
 export default function Page() {
   const locale = useLocale();
+  const { client } = useClerk();
+  const posthog = usePostHog();
+
+  useEffect(() => {
+    posthog.capture("sign-in");
+  }, [posthog]);
+
+  const variant = useFeatureFlagVariantKey("sign-in-copy");
+  const t = useTranslations("SignIn");
 
   return (
     <div className="relative z-10 flex h-screen w-full items-center justify-center overflow-hidden bg-white">
       <div className="absolute h-full w-full">
-        <Image src="/bg.svg" fill className="object-cover" alt="" />
+        <Image src="/images/bg.svg" fill className="object-cover" alt="" />
       </div>
       <div className="relative flex h-full w-full items-center justify-center">
         <div className="flex h-[36rem] w-full max-w-4xl rounded-md p-1">
@@ -36,19 +48,21 @@ export default function Page() {
                 <CheckSquare className="mr-2 h-4 w-4 shrink-0 text-[#5c5bee]" />
                 <div className="flex flex-col">
                   <p className="font-medium text-[#5c5bee]">
-                    Apply to thousands of jobs
+                    {t("bullet-1.title", { variant })}
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    with one click
+                    {t("bullet-1.description", { variant })}
                   </p>
                 </div>
               </div>
               <div className="flex items-start text-[#5c5bee]">
                 <CheckSquare className="mr-2 h-4 w-4 shrink-0 text-[#5c5bee]" />
                 <div className="flex flex-col">
-                  <p className="font-medium">Focus on interviewing</p>
+                  <p className="font-medium">
+                    {t("bullet-2.title", { variant })}
+                  </p>
                   <p className="text-sm text-muted-foreground">
-                    rather than writing cover letters
+                    {t("bullet-2.description", { variant })}
                   </p>
                 </div>
               </div>
@@ -56,10 +70,10 @@ export default function Page() {
                 <CheckSquare className="mr-2 h-4 w-4 shrink-0 text-[#5c5bee]" />
                 <div className="flex flex-col">
                   <p className="font-medium text-[#5c5bee]">
-                    Get the salary you deserve
+                    {t("bullet-3.title", { variant })}
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    without talking to them
+                    {t("bullet-3.description", { variant })}
                   </p>
                 </div>
               </div>
