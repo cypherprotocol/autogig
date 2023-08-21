@@ -13,3 +13,38 @@ cd auto-gig
 pnpm install
 pnpm dev
 ```
+
+
+## Per job JSON
+```
+{
+    "title": "",
+    "company_name": "",
+    "location": "",
+    "via": "",
+    "description": "",
+    "job_highlights": [
+      {
+        "title": "",
+        "items": [
+          "",
+          "",
+          ""
+        ]
+      }
+    ],
+    "related_links": [
+      {
+        "link": "",
+        "text": ""
+      }
+    ],
+    "thumbnail": "",
+    "extensions": [""],
+    "detected_extensions": {
+      "posted_at": "",
+      "schedule_type": ""
+    },
+    "job_id": ""
+  }
+  ```
