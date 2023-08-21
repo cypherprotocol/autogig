@@ -126,6 +126,12 @@ export default function Home() {
     }
   }, [stage, resume, githubForm, setStage, setJobs]);
 
+  useEffect(() => {
+    if (stage === BotStages.Message) {
+      posthog.capture("completed");
+    }
+  }, [posthog, stage]);
+
   return (
     <>
       <Navbar />
