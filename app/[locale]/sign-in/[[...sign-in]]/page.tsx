@@ -46,7 +46,7 @@ export default function Page() {
               <div className="flex items-start text-[#5c5bee]">
                 <CheckSquare className="mr-2 h-4 w-4 shrink-0 text-[#5c5bee]" />
                 <div className="flex flex-col">
-                  <p className="font-medium">Practice interviews</p>
+                  <p className="font-medium">Focus on interviewing</p>
                   <p className="text-sm text-muted-foreground">
                     rather than writing cover letters
                   </p>
