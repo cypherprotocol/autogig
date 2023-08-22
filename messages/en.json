@@ -65,10 +65,13 @@
   },
   "Message": {
     "title": {
-      "run": "Hang tight, your dream job will be awaiting you soon.",
-      "run-2": "Autogig is working the gears still."
+      "run": "Hang tight, your dream job will be awaiting you soon. ",
+      "run-2": "We are still on the hunt."
     },
-    "description": "Please check your email for updates, it will come from ",
+    "description": {
+      "run": "Please check your email {email} for updates, it will come from {autogig}",
+      "run-2": "Limited to one submission per user. Please check your email for updates."
+    },
     "button": "Contact us"
   }
 }

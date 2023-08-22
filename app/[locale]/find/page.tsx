@@ -43,6 +43,7 @@ export default function Home() {
   const t = useTranslations("Loading");
   const tm = useTranslations("Message");
   const [isError, setIsError] = useState(false);
+  const [email, setEmail] = useState<string>();
   const posthog = usePostHog();
 
   const fakeLoadingText = [
@@ -111,6 +112,7 @@ export default function Home() {
               setCurrentIndex(0);
 
               if (res.email && res.firstName) {
+                setEmail(res.email);
                 await fetch("/api/send", {
                   method: "POST",
                   body: JSON.stringify({
@@ -227,10 +229,12 @@ export default function Home() {
                             {numRuns >= 1 ? tm("title.run-2") : tm("title.run")}
                           </h3>
                           <p className="mb-8 text-sm text-muted-foreground">
-                            {tm("description")}
-                            <span className="text-[#5c5bee]">
-                              hey@autogig.pro
-                            </span>
+                            {numRuns >= 1
+                              ? tm("description.run-2")
+                              : tm("description.run", {
+                                  email,
+                                  autogig: "hey@autogig.pro",
+                                })}
                           </p>
                           <div className="flex w-full flex-col items-center space-y-4">
                             {jobs.map((job, index) => (
