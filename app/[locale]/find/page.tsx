@@ -158,9 +158,9 @@ export default function Home() {
                         <motion.h3
                           key={fakeLoadingText[currentIndex]}
                           className="mt-4 scroll-m-20 text-2xl font-semibold tracking-tight"
-                          initial={{ opacity: 0, y: 20 }}
+                          initial={{ opacity: 0, y: -10 }}
                           animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -20 }}
+                          exit={{ opacity: 0, y: 10 }}
                           transition={{ duration: 0.5 }}
                         >
                           {fakeLoadingText[currentIndex]}
