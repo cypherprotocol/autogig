@@ -53,7 +53,7 @@ export default function Offer() {
             loop
             muted
             playsInline
-            src="https://res.cloudinary.com/autogig/video/upload/v1691369376/Autogig-v2-web_asjahe.mp4"
+            src="https://res.cloudinary.com/autogig/video/upload/v1692686209/Autogig-site_c4lspg.mp4"
             className="h-full w-full object-cover"
           />
         </div>
