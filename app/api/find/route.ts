@@ -244,7 +244,10 @@ export async function POST(req: NextRequest) {
     await Promise.all(promises);
   }
 
-  await supabase.from("users").update({ num_runs: 1 }).eq("id", user.data?.id);
+  await supabase
+    .from("users")
+    .update({ num_runs: 1 })
+    .eq("clerk_id", clerkUser.id);
 
   return new Response(
     JSON.stringify({
