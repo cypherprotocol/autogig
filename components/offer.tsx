@@ -28,7 +28,7 @@ export default function Offer() {
               <br />
               <span className="text-[#5c5bee]">{t("title-2")}</span>
             </h1>
-            <p className="mb-4 text-slate-600 md:mb-0 md:text-xl">
+            <p className="mb-4 text-muted-foreground md:mb-0 md:text-xl">
               {t("description", { variant })}
             </p>
             {
