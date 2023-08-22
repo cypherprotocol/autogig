@@ -250,6 +250,8 @@ export async function POST(req: NextRequest) {
     JSON.stringify({
       numRuns: user.data?.num_runs,
       jobs: chunks.map((chunk) => JSON.parse(chunk[0].pageContent)),
+      email: applicantInfo?.email,
+      firstName: applicantInfo?.name?.split(" ")[0],
     })
   );
 }

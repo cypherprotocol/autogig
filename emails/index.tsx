@@ -1,78 +1,91 @@
 import {
   Body,
+  Button,
   Container,
   Head,
   Heading,
+  Hr,
   Html,
   Img,
+  Link,
   Preview,
   Section,
   Text,
 } from "@react-email/components";
+import { Tailwind } from "@react-email/tailwind";
 
 const baseUrl = process.env.NEXT_PUBLIC_APP_URL
   ? `https://${process.env.NEXT_PUBLIC_APP_URL}`
   : "";
 
 export const FollowupEmail = () => (
-  <Html>
-    <Head />
-    <Preview>Confirm your email address</Preview>
-    <Body style={main}>
-      <Container style={container}>
-        <Section style={logoContainer}>
-          <Img
-            src={`${baseUrl}/images/logo.svg`}
-            width="120"
-            height="36"
-            alt="Slack"
-          />
-        </Section>
-        <Heading style={h1}>Confirm your email address</Heading>
-        <Text style={heroText}>
-          Your confirmation code is below - enter it in your open browser window
-          and we'll help you get signed in.
-        </Text>
+  <Tailwind>
+    <Html>
+      <Head />
+      <Preview>We are on the hunt!</Preview>
+      <Body style={main}>
+        <Container style={container}>
+          <Section className="flex w-full items-center mt-8 justify-center">
+            <Img
+              src={`https://autogig.pro/images/logo.svg`}
+              width="100"
+              height="42"
+              alt="Autogig"
+            />
+          </Section>
+          <Heading style={h1} className="text-center">
+            We are on the hunt! 🤖
+          </Heading>
+          <Text style={heroText} className="text-center">
+            We are working on landing you interviews at your dream job and will
+            be in touch soon. Here are some steps to ace your next interview:
+          </Text>
 
-        <Section style={codeBox}>
+          <Section>
+            <Container className="flex h-8 w-8 items-center justify-center rounded-full bg-[#5c5bee]">
+              <Text className="text-white">1</Text>
+            </Container>
+            <Text className="text-center font-medium">Do your research</Text>
+            <Container className="flex h-8 w-8 items-center justify-center rounded-full bg-[#5c5bee]">
+              <Text className="text-white">2</Text>
+            </Container>
+            <Text className="text-center font-medium">
+              Practice, practice, practice
+            </Text>
+            <Container className="flex h-8 w-8 items-center justify-center rounded-full bg-[#5c5bee]">
+              <Text className="text-white">3</Text>
+            </Container>
+            <Text className="text-center font-medium">Develop projects</Text>
+          </Section>
+          <Hr />
+          <Text className="text-center">
+            For more details, feel free to read{" "}
+            <Link href="https://autogig.pro/blog" className="text-[#5c5bee]">
+              our blog
+            </Link>{" "}
+          </Text>
+
+          <Section className="flex items-center justify-center">
+            <Button
+              pX={20}
+              pY={12}
+              className="rounded bg-[#ffc434] text-center font-semibold text-black no-underline"
+              href={"https://discord.gg/j4BAHXm77"}
+            >
+              Join our Discord
+            </Button>
+          </Section>
+
+          {/* <Section style={codeBox}>
           <Text style={confirmationCodeText}></Text>
-        </Section>
-
-        <Text style={text}>
-          If you didn't request this email, there's nothing to worry about - you
-          can safely ignore it.
-        </Text>
-      </Container>
-    </Body>
-  </Html>
+        </Section> */}
+        </Container>
+      </Body>
+    </Html>
+  </Tailwind>
 );
 
 export default FollowupEmail;
-
-const footerText = {
-  fontSize: "12px",
-  color: "#b7b7b7",
-  lineHeight: "15px",
-  textAlign: "left" as const,
-  marginBottom: "50px",
-};
-
-const footerLink = {
-  color: "#b7b7b7",
-  textDecoration: "underline",
-};
-
-const footerLogos = {
-  marginBottom: "32px",
-  paddingLeft: "8px",
-  paddingRight: "8px",
-  width: "100%",
-};
-
-const socialMediaIcon = {
-  display: "inline",
-  marginLeft: "32px",
-};
 
 const main = {
   backgroundColor: "#ffffff",
@@ -103,24 +116,4 @@ const heroText = {
   fontSize: "20px",
   lineHeight: "28px",
   marginBottom: "30px",
-};
-
-const codeBox = {
-  background: "rgb(245, 244, 245)",
-  borderRadius: "4px",
-  marginRight: "50px",
-  marginBottom: "30px",
-  padding: "43px 23px",
-};
-
-const confirmationCodeText = {
-  fontSize: "30px",
-  textAlign: "center" as const,
-  verticalAlign: "middle",
-};
-
-const text = {
-  color: "#000",
-  fontSize: "14px",
-  lineHeight: "24px",
 };

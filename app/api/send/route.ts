@@ -1,16 +1,25 @@
 import { EmailTemplate } from "@/components/email-template";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import { z } from "zod";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function POST() {
+const sendSchema = z.object({
+  firstName: z.string(),
+  email: z.string().email(),
+});
+
+export async function POST(req: NextRequest) {
+  const json = await req.json();
+  const { firstName, email } = sendSchema.parse(json);
+
   try {
     const data = await resend.emails.send({
       from: "Autogig <hey@autogig.pro>",
-      to: ["underrated@gmail.com"],
-      subject: "Hello world",
-      react: EmailTemplate({ firstName: "John" }),
+      to: [email],
+      subject: `👋 Hey ${firstName}!`,
+      react: EmailTemplate({ firstName: firstName }),
     });
 
     return NextResponse.json(data);

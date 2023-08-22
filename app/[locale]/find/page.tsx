@@ -24,6 +24,8 @@ import { BarLoader } from "react-spinners";
 interface BotResponse {
   numRuns: number;
   jobs: JobData[];
+  email?: string;
+  firstName?: string;
 }
 
 export default function Home() {
@@ -110,6 +112,10 @@ export default function Home() {
 
               await fetch("/api/send", {
                 method: "POST",
+                body: JSON.stringify({
+                  email: res?.email,
+                  firstName: res?.firstName,
+                }),
               });
             })
             .catch((err) => {

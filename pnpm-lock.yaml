@@ -70,6 +70,9 @@ dependencies:
   '@react-email/html':
     specifier: 0.0.4
     version: 0.0.4
+  '@react-email/tailwind':
+    specifier: ^0.0.8
+    version: 0.0.8(ts-node@10.9.1)
   '@sparticuz/chromium':
     specifier: '106'
     version: 106.0.0
@@ -10977,7 +10980,7 @@ packages:
       postcss: 8.4.12
       postcss-value-parser: 4.2.0
       read-cache: 1.0.0
-      resolve: 1.22.2
+      resolve: 1.22.3
 
   /postcss-import@14.1.0(postcss@8.4.21):
     resolution: {integrity: sha512-flwI+Vgm4SElObFVPpTIT7SU7R3qk2L7PyduMcokiaVKuWv9d/U+Gm/QAd8NDLuykTWTkcrjOeD2Pp1rMeBTGw==}
@@ -10988,7 +10991,7 @@ packages:
       postcss: 8.4.21
       postcss-value-parser: 4.2.0
       read-cache: 1.0.0
-      resolve: 1.22.2
+      resolve: 1.22.3
     dev: false
 
   /postcss-js@4.0.1(postcss@8.4.12):
@@ -11806,7 +11809,6 @@ packages:
       is-core-module: 2.12.1
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
-    dev: false
 
   /resolve@2.0.0-next.4:
     resolution: {integrity: sha512-iMDbmAWtfU+MHpxt/I5iWI7cY6YVEZUQ3MBgPQ++XD1PELuJHIl82xBmObyP2KyQmkNB2dsqF7seoQQiAn5yDQ==}
