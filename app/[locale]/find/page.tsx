@@ -128,7 +128,7 @@ export default function Home() {
     <>
       <Navbar />
       <div className="flex w-full max-w-3xl grow flex-col items-center justify-start px-4 pb-16 pt-24 md:pt-28">
-        <AnimatePresence>
+        <AnimatePresence mode="wait">
           <motion.div
             key={stage}
             className="flex h-full w-full flex-col items-center justify-start"
@@ -165,22 +165,22 @@ export default function Home() {
                         >
                           {fakeLoadingText[currentIndex]}
                         </motion.h3>
-                        {tip && (
-                          <motion.div
-                            className="mt-8"
-                            initial={{ opacity: 0, y: -10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: 10 }}
-                            transition={{ duration: 0.5 }}
-                          >
-                            <Alert>
-                              <Lightbulb className="h-4 w-4" />
-                              <AlertTitle>Quick tip</AlertTitle>
-                              <AlertDescription>{tip}</AlertDescription>
-                            </Alert>
-                          </motion.div>
-                        )}
                       </AnimatePresence>
+                      {tip && (
+                        <motion.div
+                          className="mt-8"
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 10 }}
+                          transition={{ duration: 0.5 }}
+                        >
+                          <Alert>
+                            <Lightbulb className="h-4 w-4" />
+                            <AlertTitle>Quick tip</AlertTitle>
+                            <AlertDescription>{tip}</AlertDescription>
+                          </Alert>
+                        </motion.div>
+                      )}
                     </>
                   );
                 case BotStages.Message:
