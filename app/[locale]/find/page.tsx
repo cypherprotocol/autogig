@@ -127,7 +127,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <div className="flex w-full max-w-3xl grow flex-col items-center justify-start px-4 pt-24 md:pt-28">
+      <div className="flex w-full max-w-3xl grow flex-col items-center justify-start px-4 pb-16 pt-24 md:pt-28">
         <AnimatePresence>
           <motion.div
             key={stage}

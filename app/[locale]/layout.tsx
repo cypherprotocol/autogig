@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-head-element */
 
 import { PHProvider, PostHogPageview } from "@/app/providers";
+import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ClerkProvider } from "@clerk/nextjs";
@@ -76,17 +77,19 @@ export default async function RootLayout({
         <head></head>
         <PHProvider>
           <body className={clsx(circular.variable, circular.className)}>
-            <NextIntlClientProvider locale={locale} messages={messages}>
-              <TooltipProvider>
-                <div className="flex min-h-screen flex-col">
-                  <main className="flex flex-1 flex-col items-center bg-white">
-                    {children}
-                  </main>
-                </div>
-              </TooltipProvider>
-              <Toaster />
-              <Analytics />
-            </NextIntlClientProvider>
+            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+              <NextIntlClientProvider locale={locale} messages={messages}>
+                <TooltipProvider>
+                  <div className="flex min-h-screen flex-col">
+                    <main className="flex flex-1 flex-col items-center">
+                      {children}
+                    </main>
+                  </div>
+                </TooltipProvider>
+                <Toaster />
+                <Analytics />
+              </NextIntlClientProvider>
+            </ThemeProvider>
           </body>
         </PHProvider>
       </html>

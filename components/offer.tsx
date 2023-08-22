@@ -37,7 +37,7 @@ export default function Offer() {
                   onClick={() => {
                     posthog.capture("cta");
                   }}
-                  className="h-full w-full bg-[#ffc434] text-primary hover:bg-[#fed46f]"
+                  className="h-full w-full bg-[#ffc434] text-primary hover:bg-[#ffc43495] dark:text-black"
                 >
                   {t("button", { variant })}
                 </Button>
