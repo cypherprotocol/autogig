@@ -1,4 +1,4 @@
-import { EmailTemplate } from "@/components/email-template";
+import FollowupEmail from "@/emails";
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { z } from "zod";
@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
       from: "Autogig <hey@autogig.pro>",
       to: [email],
       subject: `👋 Hey ${firstName}!`,
-      react: EmailTemplate({ firstName: firstName }),
+      react: FollowupEmail(),
     });
 
     return NextResponse.json(data);
