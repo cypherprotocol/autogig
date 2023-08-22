@@ -36,3 +36,4 @@ yarn-error.log*
 package-lock.json
 .vscode
 .contentlayer
+.react-email

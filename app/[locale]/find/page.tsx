@@ -99,7 +99,7 @@ export default function Home() {
             }),
           })
             .then((res) => res.json())
-            .then((res: BotResponse) => {
+            .then(async (res: BotResponse) => {
               console.log(res);
               setIsError(false);
               setJobs(res.jobs);
@@ -107,6 +107,10 @@ export default function Home() {
               setNumRuns(res.numRuns);
               setStage(BotStages.Message);
               setCurrentIndex(0);
+
+              await fetch("/api/send", {
+                method: "POST",
+              });
             })
             .catch((err) => {
               console.log(err);
