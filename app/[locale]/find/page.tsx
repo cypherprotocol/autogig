@@ -165,14 +165,22 @@ export default function Home() {
                         >
                           {fakeLoadingText[currentIndex]}
                         </motion.h3>
+                        {tip && (
+                          <motion.div
+                            className="mt-8"
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 10 }}
+                            transition={{ duration: 0.5 }}
+                          >
+                            <Alert>
+                              <Lightbulb className="h-4 w-4" />
+                              <AlertTitle>Quick tip</AlertTitle>
+                              <AlertDescription>{tip}</AlertDescription>
+                            </Alert>
+                          </motion.div>
+                        )}
                       </AnimatePresence>
-                      {tip && (
-                        <Alert className="mt-8">
-                          <Lightbulb className="h-4 w-4" />
-                          <AlertTitle>Quick tip</AlertTitle>
-                          <AlertDescription>{tip}</AlertDescription>
-                        </Alert>
-                      )}
                     </>
                   );
                 case BotStages.Message:
