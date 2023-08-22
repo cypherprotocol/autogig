@@ -91,7 +91,7 @@ export function Upload() {
             width={160}
             height={160}
             alt=""
-            className="absolute right-0 -top-8 hidden md:block"
+            className="absolute -top-8 right-0 hidden md:block"
           />
         </CardHeader>
         <CardContent>
