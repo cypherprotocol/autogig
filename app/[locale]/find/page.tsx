@@ -110,13 +110,15 @@ export default function Home() {
               setStage(BotStages.Message);
               setCurrentIndex(0);
 
-              await fetch("/api/send", {
-                method: "POST",
-                body: JSON.stringify({
-                  email: res?.email,
-                  firstName: res?.firstName,
-                }),
-              });
+              if (res.email && res.firstName) {
+                await fetch("/api/send", {
+                  method: "POST",
+                  body: JSON.stringify({
+                    email: res?.email,
+                    firstName: res?.firstName,
+                  }),
+                });
+              }
             })
             .catch((err) => {
               console.log(err);

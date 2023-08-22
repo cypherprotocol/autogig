@@ -47,10 +47,10 @@ export async function POST(req: NextRequest) {
     .eq("clerk_id", clerkUser.id)
     .single();
 
-  if (!user) {
-    user = await supabase
+  if (!user.data) {
+    const { error, data } = await supabase
       .from("users")
-      .insert([{ clerk_id: clerkUser.id }])
+      .insert({ clerk_id: clerkUser.id })
       .single();
   }
 
@@ -69,9 +69,6 @@ export async function POST(req: NextRequest) {
     });
 
     const output = await splitter.createDocuments([resume]);
-
-    console.log(output.map((chunk) => chunk.pageContent));
-    console.log(output.length);
 
     // Insert each chunk into the SupabaseVectorStore
     await SupabaseVectorStore.fromTexts(
@@ -182,8 +179,6 @@ export async function POST(req: NextRequest) {
       });
 
       const coverLetter = coverLetterResponse.choices[0].message?.content;
-
-      console.log(chunk);
 
       let input;
 
