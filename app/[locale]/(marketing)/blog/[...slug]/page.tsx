@@ -94,12 +94,12 @@ export default async function PostPage({ params }: PostPageProps) {
   );
 
   return (
-    <article className="container relative max-w-3xl py-6 lg:py-10">
+    <article className="container relative max-w-3xl py-6 md:pt-28">
       <Link
         href="/blog"
         className={cn(
           buttonVariants({ variant: "ghost" }),
-          "absolute left-[-200px] top-14 hidden xl:inline-flex"
+          "absolute left-[-200px] hidden xl:inline-flex"
         )}
       >
         <ChevronLeft className="mr-2 h-4 w-4" />
