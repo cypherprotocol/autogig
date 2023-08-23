@@ -48,6 +48,13 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    title: "Autogig",
+    description: "Forget applying, just interview.",
+    images: [
+      {
+        url: "https://autogig.pro/images/og_image.jpg",
+      },
+    ],
   },
 };
 
