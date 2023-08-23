@@ -228,7 +228,7 @@ export default function Home() {
                           <h3 className="mb-4 scroll-m-20 text-center text-2xl font-semibold tracking-tight">
                             {numRuns >= 1 ? tm("title.run-2") : tm("title.run")}
                           </h3>
-                          <p className="mb-8 text-sm text-muted-foreground">
+                          <p className="mb-8 text-center text-sm text-muted-foreground">
                             {numRuns >= 1
                               ? tm("description.run-2")
                               : tm("description.run", {
