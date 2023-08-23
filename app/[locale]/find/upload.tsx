@@ -58,6 +58,8 @@ export function Upload() {
 
   const { getRootProps, getInputProps, isDragActive, open } = useDropzone({
     onDrop,
+    noClick: true,
+    noKeyboard: true,
   });
 
   // 1. Define your form.
@@ -256,6 +258,7 @@ export function Upload() {
           </>
 
           <Button
+            type="button"
             onClick={open}
             disabled={
               (option === "resume" && !isFileUploaded) ||
