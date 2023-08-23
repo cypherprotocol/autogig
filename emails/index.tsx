@@ -18,14 +18,31 @@ const baseUrl = process.env.NEXT_PUBLIC_APP_URL
   ? `https://${process.env.NEXT_PUBLIC_APP_URL}`
   : "";
 
-export const FollowupEmail = () => (
-  <Tailwind>
-    <Html>
-      <Head />
+const PropDefaults = {
+  tips: [
+    {
+      id: 1,
+      description: "Do your research",
+    },
+    {
+      id: 1,
+      description: "Practice, practice, practice",
+    },
+    {
+      id: 1,
+      description: "Develop projects",
+    },
+  ],
+};
+
+export const FollowupEmail = ({ tips = PropDefaults.tips }) => (
+  <Html>
+    <Head />
+    <Tailwind>
       <Preview>We are on the hunt!</Preview>
-      <Body style={main}>
-        <Container style={container}>
-          <Section className="flex w-full items-center mt-8 justify-center">
+      <Body className="m-auto bg-white font-sans">
+        <Container className="mx-auto my-[40px] w-[600px] rounded border border-solid border-[#eaeaea] p-[20px]">
+          <Section className="mt-8">
             <Img
               src={`https://autogig.pro/images/logo.svg`}
               width="100"
@@ -33,39 +50,30 @@ export const FollowupEmail = () => (
               alt="Autogig"
             />
           </Section>
-          <Heading style={h1} className="text-center">
+          <Heading className="mx-0 my-[30px] p-0 text-[24px] font-normal text-black">
             We are on the hunt! 🤖
           </Heading>
-          <Text style={heroText} className="text-center">
+          <Text className="text-[14px] leading-[24px] text-black">
             We are working on landing you interviews at your dream job and will
             be in touch soon. Here are some steps to ace your next interview:
           </Text>
 
-          <Section>
-            <Container className="flex h-8 w-8 items-center justify-center rounded-full bg-[#5c5bee]">
-              <Text className="text-white">1</Text>
-            </Container>
-            <Text className="text-center font-medium">Do your research</Text>
-            <Container className="flex h-8 w-8 items-center justify-center rounded-full bg-[#5c5bee]">
-              <Text className="text-white">2</Text>
-            </Container>
-            <Text className="text-center font-medium">
-              Practice, practice, practice
-            </Text>
-            <Container className="flex h-8 w-8 items-center justify-center rounded-full bg-[#5c5bee]">
-              <Text className="text-white">3</Text>
-            </Container>
-            <Text className="text-center font-medium">Develop projects</Text>
-          </Section>
-          <Hr />
-          <Text className="text-center">
+          <ul>
+            {tips?.map((tip) => (
+              <li key={tip.id}>
+                <Text>{tip.description}</Text>
+              </li>
+            ))}
+          </ul>
+
+          <Text className="">
             For more details, feel free to read{" "}
             <Link href="https://autogig.pro/blog" className="text-[#5c5bee]">
-              our blog
+              our blog.
             </Link>{" "}
           </Text>
-
-          <Section className="flex items-center justify-center">
+          <Hr />
+          <Section className="my-[32px] text-center">
             <Button
               pX={20}
               pY={12}
@@ -81,39 +89,8 @@ export const FollowupEmail = () => (
         </Section> */}
         </Container>
       </Body>
-    </Html>
-  </Tailwind>
+    </Tailwind>
+  </Html>
 );
 
 export default FollowupEmail;
-
-const main = {
-  backgroundColor: "#ffffff",
-  margin: "0 auto",
-  fontFamily:
-    "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-};
-
-const container = {
-  maxWidth: "600px",
-  margin: "0 auto",
-};
-
-const logoContainer = {
-  marginTop: "32px",
-};
-
-const h1 = {
-  color: "#1d1c1d",
-  fontSize: "36px",
-  fontWeight: "700",
-  margin: "30px 0",
-  padding: "0",
-  lineHeight: "42px",
-};
-
-const heroText = {
-  fontSize: "20px",
-  lineHeight: "28px",
-  marginBottom: "30px",
-};
