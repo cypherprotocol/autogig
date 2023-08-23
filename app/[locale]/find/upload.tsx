@@ -27,7 +27,7 @@ import { FileCheck, FileText, Github, UploadIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { usePostHog } from "posthog-js/react";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -83,6 +83,21 @@ export function Upload() {
       posthog.capture("user_submitted_form");
     }
   };
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+    };
+  }, []);
 
   return (
     <div className="flex w-full flex-col items-center justify-center px-4">
@@ -146,31 +161,44 @@ export function Upload() {
             {option === "resume" ? (
               <>
                 {!isFileUploaded ? (
-                  <div
-                    className="flex w-full cursor-pointer flex-col items-center justify-center rounded-md border border-dashed p-8"
-                    {...getRootProps()}
-                    onClick={open}
-                  >
-                    <input
-                      {...getInputProps()}
-                      type="file"
-                      style={{ display: "none" }}
-                      ref={fileInputRef}
-                      accept=".txt, .pdf"
-                    />
-                    <div className="pointer-events-none mb-4 flex flex-col items-center">
-                      <UploadIcon className="mb-4" />
-                      {isDragActive ? (
-                        <p>{t("upload.drag")}</p>
-                      ) : (
-                        <p className="font-medium">{t("upload.title")}</p>
-                      )}
-                      <p className="text-sm text-muted-foreground">
-                        {t("upload.description")}
-                      </p>
-                    </div>
-                    <Button variant={"outline"}>{t("upload.button")}</Button>
-                  </div>
+                  <>
+                    {isMobile ? (
+                      <input
+                        type="file"
+                        accept=".txt, .pdf"
+                        onChange={(event) => {
+                          onDrop(event.target.files);
+                        }}
+                      />
+                    ) : (
+                      <div
+                        className="flex w-full cursor-pointer flex-col items-center justify-center rounded-md border border-dashed p-8"
+                        {...getRootProps()}
+                      >
+                        <input
+                          {...getInputProps()}
+                          type="file"
+                          style={{ display: "none" }}
+                          ref={fileInputRef}
+                          accept=".txt, .pdf"
+                        />
+                        <div className="pointer-events-none mb-4 flex flex-col items-center">
+                          <UploadIcon className="mb-4" />
+                          {isDragActive ? (
+                            <p>{t("upload.drag")}</p>
+                          ) : (
+                            <p className="font-medium">{t("upload.title")}</p>
+                          )}
+                          <p className="text-sm text-muted-foreground">
+                            {t("upload.description")}
+                          </p>
+                        </div>
+                        <Button variant={"outline"}>
+                          {t("upload.button")}
+                        </Button>
+                      </div>
+                    )}
+                  </>
                 ) : (
                   <Alert>
                     <FileCheck className="h-4 w-4" />
