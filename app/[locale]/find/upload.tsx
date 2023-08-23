@@ -59,7 +59,7 @@ export function Upload() {
   const { getRootProps, getInputProps, isDragActive, open } = useDropzone({
     onDrop,
     noClick: true,
-    noKeyboard: true,
+    // noKeyboard: true,
   });
 
   // 1. Define your form.
@@ -149,6 +149,7 @@ export function Upload() {
                   <div
                     className="flex w-full cursor-pointer flex-col items-center justify-center rounded-md border border-dashed p-8"
                     {...getRootProps()}
+                    onClick={open}
                   >
                     <input
                       {...getInputProps()}

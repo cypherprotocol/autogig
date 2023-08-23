@@ -53,7 +53,7 @@ export const Gauge = ({
           cy="60"
         />
         <circle
-          className="animate-gauge_fill text-[#5c5bee]"
+          className="animate-gauge_fill text-[#5c5bee] dark:text-white"
           strokeWidth="12"
           strokeDasharray={strokeDasharray}
           strokeDashoffset={initialOffset}
