@@ -56,7 +56,9 @@ export function Upload() {
     setIsFileUploaded(true);
   }, []);
 
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
+  const { getRootProps, getInputProps, isDragActive, open } = useDropzone({
+    onDrop,
+  });
 
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
@@ -252,38 +254,9 @@ export function Upload() {
               </Form>
             )}
           </>
-          {/* {option === "portfolio" && (
-            <form onSubmit={onSubmit}>
-              <div className="flex flex-col space-y-1.5">
-                <Label htmlFor="portfolio">Portfolio link</Label>
-                <Input
-                  className="mt-4 w-full"
-                  onChange={(e) => setPortfolio(e.target.value)}
-                  placeholder="https://example.com"
-                />
-                {!isValidLink && (
-                  <Label
-                    htmlFor="portfolio"
-                    className="flex flex-row items-center space-x-1 text-red-600"
-                  >
-                    <AlertCircle className="scale-75" />
-                    <p>Invalid link please try again </p>
-                  </Label>
-                )}
-              </div>
-            </form>
-          )} */}
-          {/* <div className="mt-4 flex flex-col space-y-1.5">
-            <Label htmlFor="github">Github username</Label>
-            <Input
-              className="mt-4 w-full"
-              onChange={(e) => setGithub(e.target.value)}
-              placeholder="Username"
-            />
-          </div> */}
 
           <Button
-            onClick={onSubmit}
+            onClick={open}
             disabled={
               (option === "resume" && !isFileUploaded) ||
               (option === "github" && !form.formState.isValid)
