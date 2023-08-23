@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
       from: "Autogig <hey@autogig.pro>",
       to: [email],
       subject: `👋 Hey ${firstName}!`,
-      react: FollowupEmail(),
+      react: FollowupEmail({}),
     });
 
     return NextResponse.json(data);
