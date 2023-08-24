@@ -1,5 +1,9 @@
 ## Autogig
 
+This is an application that makes it easy for job seekers to find and land interviews at their dream job.
+
+It currently matches candidates with the best jobs based on their preferences (location, experience, and interests) and generates tips for job candidates to bolster their resume.
+
 ### `app` Folder
 
 The `app` folder contains the Next.js application.
