@@ -14,22 +14,19 @@ export default function Offer() {
     <div className="w-full max-w-5xl grow flex-col items-center justify-center px-4 py-24 md:flex-row md:justify-start md:py-28">
       <div className="mb-16 flex w-full flex-col items-start justify-between md:flex-row md:items-center">
         <div className="relative flex flex-col items-start md:flex-row md:items-center">
-          <div className="relative mr-8 h-36 w-36 shrink-0 md:h-80 md:w-80">
-            <Image
-              src="/fullcolor-retro-dudes-laptop.svg"
-              fill
-              className="object-contain"
-              alt=""
-            />
-          </div>
-          <div className="flex w-full flex-col">
+          <div className="mr-0 flex w-full flex-col md:mr-8">
             <h1 className="mb-4 scroll-m-20 font-wagmi text-5xl font-extrabold tracking-tight lg:text-7xl">
               {t("title")}
               <br />
               <span className="text-[#5c5bee]">{t("title-2")}</span>
             </h1>
             <p className="mb-4 text-muted-foreground md:mb-0 md:text-xl">
-              {t("description", { variant })}
+              Tired of applying to 700+ jobs and not hearing back?
+              <br />
+              We've been there too.{" "}
+              <span className="font-medium text-[#5c5bee]">
+                Free for the first 100 interviews.
+              </span>
             </p>
             {
               <Link href={"/find"} className="mt-8 h-16 w-48">
@@ -43,6 +40,14 @@ export default function Offer() {
                 </Button>
               </Link>
             }
+          </div>
+          <div className="relative hidden h-36 w-36 shrink-0 md:block md:h-80 md:w-80">
+            <Image
+              src="/fullcolor-retro-dudes-laptop.svg"
+              fill
+              className="object-contain"
+              alt=""
+            />
           </div>
         </div>
       </div>
