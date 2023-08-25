@@ -1,7 +1,7 @@
 import {
   getProfile,
   getTask,
-} from "@/app/[locale]/dashboard/task/[taskId]/actions";
+} from "@/app/dashboard/task/[taskId]/actions";
 import { SimilarityResults } from "@/components/similarity-results";
 import { taskSchema } from "@/data/schema";
 import supabase from "@/lib/supabase";
