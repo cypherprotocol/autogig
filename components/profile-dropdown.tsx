@@ -1,3 +1,5 @@
+"use client";
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
@@ -7,13 +9,10 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { SignOutButton, useClerk } from "@clerk/nextjs";
+import { SignOutButton, useClerk, useUser } from "@clerk/nextjs";
 
-interface ProfileDropdownProps {
-  userInfo: any;
-}
-
-export function ProfileDropdown({ userInfo }: ProfileDropdownProps) {
+export function ProfileDropdown() {
+  const { user: userInfo } = useUser() as any;
   const { openUserProfile } = useClerk();
   const initials =
     userInfo?.firstName?.toString()[0] + "" + userInfo?.lastName?.toString()[0];

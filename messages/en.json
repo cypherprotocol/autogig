@@ -65,11 +65,11 @@
   },
   "Message": {
     "title": {
-      "run": "Hang tight, an interview from your dream job will be awaiting you soon.",
+      "run": "Hang tight, an interview from your dream job will be coming soon.",
       "run-2": "We are still on the hunt."
     },
     "description": {
-      "run": "Please check your email {email} for updates, it will come from {autogig}",
+      "run": "Please check your email {email} for updates.",
       "run-2": "Limited to one submission per user. Please check your email for updates."
     },
     "button": "Contact us"

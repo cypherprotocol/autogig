@@ -14,7 +14,7 @@ import {
 import { JobData } from "@/lib/types";
 import useUserStore, { BotStages } from "@/state/user/useUserStore";
 import { AnimatePresence, motion } from "framer-motion";
-import { Lightbulb } from "lucide-react";
+import { Lightbulb, Sparkles } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { usePostHog } from "posthog-js/react";
@@ -73,37 +73,29 @@ export default function Home() {
   useEffect(() => {
     if (stage === BotStages.FindJob && (resume || githubForm)) {
       (async function findGig() {
-        let res;
+        const formData = new FormData();
+
         if (resume) {
-          const formData = new FormData();
           formData.set("resume", resume, resume?.name);
-          console.log(resume);
-          res = await fetch("/api/file", {
-            method: "POST",
-            body: formData,
-          }).then((res) => res.json());
+        }
+
+        if (githubForm) {
+          formData.set("githubForm", JSON.stringify(githubForm));
         }
 
         const [tipResponse, findResponse] = await Promise.all([
           fetch("/api/tip", {
             method: "POST",
-            body: JSON.stringify({
-              resume: res && res.resume,
-              githubForm: githubForm,
-            }),
+            body: formData,
           })
             .then((res) => res.json())
             .then((res) => setTip(res.tip)),
           fetch("/api/find", {
             method: "POST",
-            body: JSON.stringify({
-              resume: res && res.resume,
-              githubForm: githubForm,
-            }),
+            body: formData,
           })
             .then((res) => res.json())
             .then(async (res: BotResponse) => {
-              console.log(res);
               setIsError(false);
               setJobs(res.jobs);
               setTip(undefined);
@@ -224,44 +216,48 @@ export default function Home() {
                           </Button>
                         </>
                       ) : (
-                        <>
-                          <h3 className="mb-4 scroll-m-20 text-center text-2xl font-semibold tracking-tight">
-                            {numRuns >= 1 ? tm("title.run-2") : tm("title.run")}
-                          </h3>
-                          <p className="mb-8 text-center text-sm text-muted-foreground">
-                            {numRuns >= 1
-                              ? tm("description.run-2")
-                              : tm("description.run", {
-                                  email,
-                                  autogig: "hey@autogig.pro",
-                                })}
-                          </p>
-                          <div className="flex w-full flex-col items-center space-y-4">
-                            {jobs.map((job, index) => (
-                              <Card key={index} className="w-full">
-                                <CardHeader>
-                                  <div className="flex w-full items-center">
-                                    <div className="relative mr-4 h-12 w-12 shrink-0">
-                                      <Image
-                                        src={
-                                          index === 0
-                                            ? "/company_1.jpg"
-                                            : index === 1
-                                            ? "/company_2.jpg"
-                                            : "/company_3.jpg"
-                                        }
-                                        fill
-                                        className="rounded-md object-contain"
-                                        alt=""
-                                      />
-                                    </div>
-                                    <div className="flex w-full flex-col">
-                                      <CardTitle>{job.company_name}</CardTitle>
-                                      <CardDescription>
-                                        {job.title}
-                                      </CardDescription>
-                                    </div>
-                                    {/* <div className="flex items-center">
+                        <Card className="w-[42rem] pb-6">
+                          <div className="flex flex-col p-6">
+                            <h3 className="mb-2 scroll-m-20 text-center text-2xl font-semibold tracking-tight">
+                              {numRuns >= 1
+                                ? "We are still on the hunt, but here is what we found."
+                                : "Hang tight, an interview from your dream job will be awaiting you soon."}
+                            </h3>
+                            <p className="mb-8 text-center text-sm text-muted-foreground">
+                              {numRuns >= 1
+                                ? tm("description.run-2")
+                                : tm("description.run", {
+                                    email,
+                                  })}
+                            </p>
+                            <div className="flex w-full flex-col items-center space-y-4">
+                              {jobs.map((job, index) => (
+                                <Card key={index} className="w-full">
+                                  <CardHeader>
+                                    <div className="flex w-full items-center">
+                                      <div className="relative mr-4 h-12 w-12 shrink-0">
+                                        <Image
+                                          src={
+                                            index === 0
+                                              ? "/company_1.jpg"
+                                              : index === 1
+                                              ? "/company_2.jpg"
+                                              : "/company_3.jpg"
+                                          }
+                                          fill
+                                          className="rounded-md object-contain"
+                                          alt=""
+                                        />
+                                      </div>
+                                      <div className="flex w-full flex-col">
+                                        <CardTitle>
+                                          {job.company_name}
+                                        </CardTitle>
+                                        <CardDescription>
+                                          {job.title}
+                                        </CardDescription>
+                                      </div>
+                                      {/* <div className="flex items-center">
                             <h4 className="scroll-m-20 text-xl font-semibold tracking-tight text-[#5c5bee]">
                               {index === 0
                                 ? "$75,000"
@@ -273,15 +269,19 @@ export default function Home() {
                               /yr
                             </p>
                           </div> */}
-                                  </div>
-                                </CardHeader>
-                              </Card>
-                            ))}
-                            <p className="text-sm text-[#5c5bee]">
-                              + many more great matches
-                            </p>
+                                    </div>
+                                  </CardHeader>
+                                </Card>
+                              ))}
+                            </div>
                           </div>
-                        </>
+                          <div className="flex w-full items-center justify-center border-y border-[#5c5bee] bg-[#5c5bee10] py-6">
+                            <Sparkles className="mr-2 h-4 w-4 text-[#5c5bee]" />
+                            <span className="text-sm text-[#5c5bee]">
+                              Plus many more great matches!
+                            </span>
+                          </div>
+                        </Card>
                       )}
                     </div>
                   );

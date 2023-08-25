@@ -1,31 +1,23 @@
+import { parsePDF } from "@/lib/parse-pdf";
 import { formSchema } from "@/lib/types";
-import { Json } from "@/lib/types/supabase";
 import { getRepos } from "@/lib/utils";
 import { currentUser } from "@clerk/nextjs";
 import { NextRequest } from "next/server";
 import OpenAI from "openai";
 import * as z from "zod";
 
-export const runtime = "edge";
-
 const gigSchema = z.object({
   githubForm: formSchema.optional(),
-  resume: z.string().optional(),
+  resume: z.custom<File>((file) => file instanceof File).optional(),
 });
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-interface Repositories {
-  name: string | null;
-  language_data: Json | null;
-  description: string | null;
-}
-
 export async function POST(req: NextRequest) {
-  const json = await req.json();
-  const { resume, githubForm } = gigSchema.parse(json);
+  const formData = await req.formData();
+  const { resume, githubForm } = gigSchema.parse(formData);
 
   const clerkUser = await currentUser();
 
@@ -33,9 +25,15 @@ export async function POST(req: NextRequest) {
     return new Response("Unauthorized", { status: 401 });
   }
 
+  let resumeText = "";
+
+  if (resume) {
+    resumeText = await parsePDF(resume);
+  }
+
   // Collect all data relevant to user looking for a job
   const profileInput = JSON.stringify({
-    resume: resume,
+    resume: resumeText,
     // portfolio: await getPortfolio(portfolio),
     github: await getRepos(githubForm?.username),
   });

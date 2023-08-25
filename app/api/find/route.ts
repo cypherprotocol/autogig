@@ -1,6 +1,5 @@
 import { autogigFunctions } from "@/app/api/find/functions";
-import { coverLetterSystem } from "@/app/api/find/prompts";
-import { embedData } from "@/lib/embed";
+import { parsePDF } from "@/lib/parse-pdf";
 import supabase from "@/lib/supabase";
 import { formSchema } from "@/lib/types";
 import { getRepos } from "@/lib/utils";
@@ -13,27 +12,26 @@ import { NextRequest } from "next/server";
 import OpenAI from "openai";
 import * as z from "zod";
 
-export const runtime = "edge";
-export const fetchCache = "auto";
-
-const gigSchema = z.object({
-  githubForm: formSchema.optional(),
-  resume: z.string().optional(),
-});
-
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
 export async function POST(req: NextRequest) {
-  const json = await req.json();
-  const { resume, githubForm } = gigSchema.parse(json);
-
   const clerkUser = await currentUser();
-  const id = nanoid();
 
   if (!clerkUser) {
     return new Response("Unauthorized", { status: 401 });
+  }
+
+  const formData = await req.formData();
+  const resume = formData.get("resume") as File;
+
+  const id = nanoid();
+
+  let githubForm: any;
+  if (formData.get("githubForm") !== null) {
+    const githubFormValue = formData.get("githubForm") as string;
+    githubForm = JSON.parse(githubFormValue) as z.infer<typeof formSchema>;
   }
 
   const vectorStore = new SupabaseVectorStore(new OpenAIEmbeddings(), {
@@ -48,27 +46,26 @@ export async function POST(req: NextRequest) {
     .single();
 
   if (!user.data) {
-    const { error, data } = await supabase
+    let newUser = await supabase
       .from("users")
       .insert({ clerk_id: clerkUser.id })
-      .single();
+      .select();
   }
 
   // Collect all data relevant to user looking for a job
   let profileInput: any;
   let applicantInfo: any;
+  let resumeText = "";
 
   if (resume) {
-    profileInput = {
-      resume: resume,
-    };
+    resumeText = await parsePDF(resume);
 
     // Split the resume into optimal chunks
     const splitter = new RecursiveCharacterTextSplitter({
       chunkSize: 500,
     });
 
-    const output = await splitter.createDocuments([resume]);
+    const output = await splitter.createDocuments([resumeText]);
 
     // Insert each chunk into the SupabaseVectorStore
     await SupabaseVectorStore.fromTexts(
@@ -153,96 +150,36 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  if (chunks) {
-    const promises = chunks.map(async (chunk) => {
-      const coverLetterResponse = await openai.chat.completions.create({
-        model: "gpt-3.5-turbo-0613",
-        messages: [
-          {
-            role: "system",
-            content: coverLetterSystem,
-          },
-          {
-            role: "user",
-            content: `
-            Given my profile: '${JSON.stringify(
-              profileInput
-            )}', and the potential job description: '${JSON.stringify(
-              chunk[0].pageContent
-            )}',
-            please generate me a persuasive and professional introduction message.
-            The message should express my enthusiasm for the potential job role,
-            align my experience with the job requirements, and initiate further discussions or negotiations.
-  `,
-          },
-        ],
-      });
-
-      const coverLetter = coverLetterResponse.choices[0].message?.content;
-
-      let input;
-
-      if (resume) {
-        input = {
-          url: JSON.parse(chunk[0].pageContent).job_link,
-          name: applicantInfo?.name,
-          email: applicantInfo?.email,
-          phone: applicantInfo?.phone,
-          address: applicantInfo?.address,
-          organization: applicantInfo?.organization,
-          linkedin: applicantInfo?.linkedin,
-          github: applicantInfo?.github,
-          portfolio: applicantInfo?.portfolio,
-          coverLetter: coverLetter,
-          resume: resume,
-          location: applicantInfo?.location,
-          school: applicantInfo?.school,
-          startDate: applicantInfo?.startDate,
-        };
-      } else {
-        // Github submission
-        input = {
-          url: JSON.parse(chunk[0].pageContent).job_link,
-          name: githubForm?.name,
-          email: githubForm?.email,
-          phone: undefined,
-          address: githubForm?.address,
-          organization: undefined,
-          linkedin: undefined,
-          github: githubForm?.username,
-          portfolio: undefined,
-          coverLetter: coverLetter,
-          resume: undefined,
-          location: undefined,
-          school: undefined,
-          startDate: undefined,
-        };
-      }
-
-      await embedData([JSON.stringify(input)], {
-        id: clerkUser.id,
-        type: "autogig_run",
-      });
-
-      // fetch(
-      //   `https://api.apify.com/v2/acts/guiltless_peach~autogig/runs?token=${process.env.APIFY_TOKEN}`,
-      //   {
-      //     method: "POST",
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //     },
-      //     body: JSON.stringify(input),
-      //   }
-      // );
-    });
-
-    await Promise.all(promises);
-  }
-
   await supabase
     .from("users")
     .update({ num_runs: 1 })
     .eq("clerk_id", clerkUser.id);
+
+  const fileName = `${nanoid()}.pdf`;
+
+  const res = await supabase.storage
+    .from("autogig")
+    .upload(`resumes/${fileName}`, resume as File);
+
+  if (res.error) {
+    console.log(res.error);
+  }
+
+  const profile = await supabase
+    .from("profiles")
+    .insert({
+      user_id: clerkUser.id,
+      file_name: fileName,
+      email: applicantInfo?.email,
+    })
+    .select()
+    .single();
+
+  await supabase.from("tasks").insert({
+    user: clerkUser.id,
+    profile: profile.data?.id!,
+    title: applicantInfo?.name,
+  });
 
   return new Response(
     JSON.stringify({

@@ -51,6 +51,37 @@ export interface Database {
         }
         Relationships: []
       }
+      profiles: {
+        Row: {
+          created_at: string
+          email: string
+          file_name: string
+          id: number
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          file_name: string
+          id?: number
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          file_name?: string
+          id?: number
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "profiles_user_id_fkey"
+            columns: ["user_id"]
+            referencedRelation: "users"
+            referencedColumns: ["clerk_id"]
+          }
+        ]
+      }
       repository: {
         Row: {
           created_at: string | null
@@ -85,26 +116,51 @@ export interface Database {
           }
         ]
       }
-      runs: {
+      tasks: {
         Row: {
-          content: string | null
-          embedding: string | null
+          created_at: string
           id: number
-          metadata: Json | null
+          label: string
+          priority: string
+          profile: number
+          status: string
+          title: string
+          user: string
         }
         Insert: {
-          content?: string | null
-          embedding?: string | null
+          created_at?: string
           id?: number
-          metadata?: Json | null
+          label?: string
+          priority?: string
+          profile: number
+          status?: string
+          title: string
+          user: string
         }
         Update: {
-          content?: string | null
-          embedding?: string | null
+          created_at?: string
           id?: number
-          metadata?: Json | null
+          label?: string
+          priority?: string
+          profile?: number
+          status?: string
+          title?: string
+          user?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "tasks_profile_fkey"
+            columns: ["profile"]
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "tasks_user_fkey"
+            columns: ["user"]
+            referencedRelation: "users"
+            referencedColumns: ["clerk_id"]
+          }
+        ]
       }
       users: {
         Row: {

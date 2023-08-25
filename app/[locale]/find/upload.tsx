@@ -23,7 +23,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { formSchema } from "@/lib/types";
 import useUserStore, { BotStages } from "@/state/user/useUserStore";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { FileCheck, FileText, Github, UploadIcon } from "lucide-react";
+import { FileCheck, FileText, UploadIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { usePostHog } from "posthog-js/react";
@@ -164,7 +164,7 @@ export function Upload() {
             <RadioGroup
               defaultValue={option}
               onValueChange={(value) => setOption(value as any)}
-              className="mb-4 grid grid-cols-2 gap-4 md:grid-rows-none"
+              className="mb-4 grid grid-cols-1 gap-4 md:grid-rows-none"
             >
               <Label
                 htmlFor="resume"
@@ -178,7 +178,7 @@ export function Upload() {
                 <FileText className="mb-4 h-12 w-12" />
                 {t("choices.resume")}
               </Label>
-              <Label
+              {/* <Label
                 htmlFor="github"
                 className="flex cursor-pointer flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground [&:has([data-state=checked])]:border-primary"
               >
@@ -189,7 +189,7 @@ export function Upload() {
                 />
                 <Github className="mb-4 h-12 w-12" />
                 {t("choices.github")}
-              </Label>
+              </Label> */}
               {/* <Label
                 htmlFor="portfolio"
                 className="flex cursor-pointer flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground [&:has([data-state=checked])]:border-primary"

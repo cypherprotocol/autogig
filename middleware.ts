@@ -18,7 +18,7 @@ export default authMiddleware({
   publicRoutes: [
     "/",
     "/blog(.*)",
-    "/:locale((?!find|.*/find).*)",
+    "/:locale((?!find|.*/find|dashboard|.*/dashboard).*)",
     "/:locale/blog(.*)",
     "/:locale/sign-in",
     "/images(.*)",
