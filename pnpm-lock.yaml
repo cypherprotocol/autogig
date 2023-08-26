@@ -115,9 +115,6 @@ dependencies:
   '@vercel/kv':
     specifier: ^0.2.2
     version: 0.2.2(encoding@0.1.13)
-  adblock-detect-react:
-    specifier: ^1.1.0
-    version: 1.1.0(react-dom@18.2.0)(react@18.2.0)
   adm-zip:
     specifier: ^0.5.10
     version: 0.5.10
@@ -5639,16 +5636,6 @@ packages:
     resolution: {integrity: sha512-F0SAmZ8iUtS//m8DmCTA0jlh6TDKkHQyK6xc6V4KDTyZKA9dnvX9/3sRTVQrWm79glUAZbnmmNcdYwUIHWVybw==}
     engines: {node: '>=0.4.0'}
     hasBin: true
-
-  /adblock-detect-react@1.1.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-MyXO3gbq5JdYRYpCz0RiB3VFckYryIxVwME+ES6oPOIEovn17hKnfYOfwEXZyPUTnvEvtx7r8LY3hGpSDhNIoA==}
-    peerDependencies:
-      react: '>=16.8.0'
-      react-dom: '>=16.8.0'
-    dependencies:
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-    dev: false
 
   /adm-zip@0.5.10:
     resolution: {integrity: sha512-x0HvcHqVJNTPk/Bw8JbLWlWoo6Wwnsug0fnYYro1HBrjxZ3G7/AZk7Ahv8JwDe1uIcz8eBqvu86FuF1POiG7vQ==}
