@@ -50,6 +50,7 @@
     "@types/user-agents": "^1.0.2",
     "@vercel/analytics": "^1.0.1",
     "@vercel/kv": "^0.2.2",
+    "adblock-detect-react": "^1.1.0",
     "adm-zip": "^0.5.10",
     "ai": "^2.1.17",
     "aws-sdk": "^2.1414.0",
