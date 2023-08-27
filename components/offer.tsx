@@ -2,13 +2,13 @@ import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
-import { usePostHog } from "posthog-js/react";
+import { useFeatureFlagVariantKey, usePostHog } from "posthog-js/react";
 
 export default function Offer() {
   const t = useTranslations("Home");
   const posthog = usePostHog();
 
-  const variant = "control";
+  const variant = useFeatureFlagVariantKey("home-copy");
 
   return (
     <div className="w-full max-w-5xl grow flex-col items-center justify-center px-4 py-24 md:flex-row md:justify-start md:py-28">
@@ -21,9 +21,18 @@ export default function Offer() {
               <span className="text-[#5c5bee]">{t("title-2")}</span>
             </h1>
             <p className="mb-4 text-muted-foreground md:mb-0 md:text-xl">
-              Tired of applying to 700+ jobs and not hearing back?
-              <br />
-              We've been there too.{" "}
+              {variant === "test" ? (
+                <>
+                  Don't have time to send 700 applications but want to test the
+                  waters?
+                </>
+              ) : (
+                <>
+                  Tired of applying to 700+ jobs and not hearing back?
+                  <br />
+                  We've been there too.{" "}
+                </>
+              )}
               <span className="font-medium text-[#5c5bee]">
                 Free for the first 100 interviews.
               </span>
@@ -36,7 +45,7 @@ export default function Offer() {
                   }}
                   className="h-full w-full bg-[#ffc434] text-primary hover:bg-[#ffc43495] dark:text-black"
                 >
-                  {t("button", { variant })}
+                  Try it free!
                 </Button>
               </Link>
             }
