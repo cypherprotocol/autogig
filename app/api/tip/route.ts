@@ -1,7 +1,5 @@
 import { parsePDF } from "@/lib/parse-pdf";
 import { formSchema } from "@/lib/types";
-import { getRepos } from "@/lib/utils";
-import { currentUser } from "@clerk/nextjs";
 import { NextRequest } from "next/server";
 import OpenAI from "openai";
 import * as z from "zod";
@@ -19,12 +17,6 @@ export async function POST(req: NextRequest) {
   const formData = await req.formData();
   const { resume, githubForm } = gigSchema.parse(formData);
 
-  const clerkUser = await currentUser();
-
-  if (!clerkUser) {
-    return new Response("Unauthorized", { status: 401 });
-  }
-
   let resumeText = "";
 
   if (resume) {
@@ -35,7 +27,7 @@ export async function POST(req: NextRequest) {
   const profileInput = JSON.stringify({
     resume: resumeText,
     // portfolio: await getPortfolio(portfolio),
-    github: await getRepos(githubForm?.username),
+    // github: await getRepos(githubForm?.username),
   });
 
   const tipResponse = await openai.chat.completions.create({

@@ -1,6 +1,3 @@
-import { withContentlayer } from "next-contentlayer";
-import withNextIntl from "next-intl/plugin";
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async redirects() {
@@ -31,4 +28,4 @@ const nextConfig = {
   // },
 };
 
-export default withContentlayer(withNextIntl()(nextConfig));
+export default nextConfig;

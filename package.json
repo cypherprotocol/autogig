@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"contentlayer dev\" \"next dev\"",
-    "build": "contentlayer build && next build",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
     "embed": "tsx scripts/embed.ts",
     "all-jobs": "tsx scripts/allJobs.ts",
