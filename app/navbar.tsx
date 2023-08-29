@@ -1,16 +1,10 @@
 "use client";
 
-import { ProfileDropdown } from "@/components/profile-dropdown";
 import { Button } from "@/components/ui/button";
-import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
-import { usePostHog } from "posthog-js/react";
 
 const Navbar = () => {
-  const posthog = usePostHog();
-  const t = useTranslations("Navbar");
-
   return (
     <header className="fixed top-0 z-50 flex h-16 w-full shrink-0 items-center justify-between border-b bg-background px-4 dark:border-white/10">
       <Link href="/">
@@ -26,16 +20,6 @@ const Navbar = () => {
       </Link>
       <div className="flex flex-row space-x-4">
         <div className="hidden space-x-4 md:flex">
-          <Link href="/blog">
-            <Button
-              onClick={() => {
-                posthog.capture("visit_blog");
-              }}
-              variant={"ghost"}
-            >
-              Blog
-            </Button>
-          </Link>
           <a
             href="https://discord.gg/j4BAHXm77"
             target={"_blank"}
@@ -55,26 +39,11 @@ const Navbar = () => {
           </a>
 
           <Link href="/find">
-            <Button
-              onClick={() => {
-                posthog.capture("navbar_cta");
-              }}
-              className="bg-[#ffc434] text-primary hover:bg-[#ffc43495] dark:text-black"
-            >
+            <Button className="bg-[#ffc434] text-primary hover:bg-[#ffc43495] dark:text-black">
               Get interviews
             </Button>
           </Link>
         </div>
-        {/* <Link href="/pending">
-          <Button variant={"secondary"}>
-            <Briefcase className="mr-2 h-4 w-4" />
-            My gigs
-          </Button>
-        </Link>
-        <Link href="/dashboard">
-          <Button variant={"outline"}>Look for talent</Button>
-        </Link> */}
-        <ProfileDropdown />
       </div>
     </header>
   );

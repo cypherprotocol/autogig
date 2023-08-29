@@ -1,6 +1,6 @@
 "use client";
 
-import { Upload } from "@/app/[locale]/find/upload";
+import { Upload } from "@/app/find/upload";
 import Navbar from "@/app/navbar";
 import { Gauge } from "@/components/gauge";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
@@ -15,9 +15,7 @@ import { JobData } from "@/lib/types";
 import useUserStore, { BotStages } from "@/state/user/useUserStore";
 import { AnimatePresence, motion } from "framer-motion";
 import { Lightbulb, Sparkles } from "lucide-react";
-import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { usePostHog } from "posthog-js/react";
 import { useEffect, useState } from "react";
 import { BarLoader } from "react-spinners";
 
@@ -40,21 +38,14 @@ export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [tip, setTip] = useState<string | undefined>();
   const [numRuns, setNumRuns] = useState(0);
-  const t = useTranslations("Loading");
-  const tm = useTranslations("Message");
   const [isError, setIsError] = useState(false);
   const [email, setEmail] = useState<string>();
-  const posthog = usePostHog();
 
   const fakeLoadingText = [
-    t("messages.loading-1"),
-    t("messages.loading-2"),
-    t("messages.loading-3"),
+    "Building your profile",
+    "Kissing some ass",
+    "Spraying some cologne",
   ];
-
-  useEffect(() => {
-    posthog.capture("find");
-  }, [posthog]);
 
   useEffect(() => {
     if (stage === BotStages.FindJob) {
@@ -123,12 +114,6 @@ export default function Home() {
       })();
     }
   }, [stage, resume, githubForm, setStage, setJobs]);
-
-  useEffect(() => {
-    if (stage === BotStages.Message) {
-      posthog.capture("completed");
-    }
-  }, [posthog, stage]);
 
   return (
     <>
@@ -219,16 +204,11 @@ export default function Home() {
                         <Card className="w-[42rem] pb-6">
                           <div className="flex flex-col p-6">
                             <h3 className="mb-2 scroll-m-20 text-center text-2xl font-semibold tracking-tight">
-                              {numRuns >= 1
-                                ? "We are still on the hunt, but here is what we found."
-                                : "Hang tight, an interview from your dream job will be awaiting you soon."}
+                              Hang tight, an interview from your dream job will
+                              be awaiting you soon.
                             </h3>
                             <p className="mb-8 text-center text-sm text-muted-foreground">
-                              {numRuns >= 1
-                                ? tm("description.run-2")
-                                : tm("description.run", {
-                                    email,
-                                  })}
+                              Please check your email {email} for updates.
                             </p>
                             <div className="flex w-full flex-col items-center space-y-4">
                               {jobs.map((job, index) => (
@@ -257,18 +237,6 @@ export default function Home() {
                                           {job.title}
                                         </CardDescription>
                                       </div>
-                                      {/* <div className="flex items-center">
-                            <h4 className="scroll-m-20 text-xl font-semibold tracking-tight text-[#5c5bee]">
-                              {index === 0
-                                ? "$75,000"
-                                : index === 1
-                                ? "$125,000"
-                                : "$110,000"}
-                            </h4>
-                            <p className="ml-1 text-sm text-muted-foreground">
-                              /yr
-                            </p>
-                          </div> */}
                                     </div>
                                   </CardHeader>
                                 </Card>
