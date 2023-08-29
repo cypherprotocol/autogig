@@ -24,16 +24,18 @@ export default function Offer() {
               {variant === "test" ? (
                 <>
                   Don't have time to send 700 applications but want to test the
-                  waters?
+                  waters? Handle everything job search with Autogig.
                 </>
               ) : (
                 <>
                   Tired of applying to 700+ jobs and not hearing back?
                   <br />
-                  We've been there too.{" "}
+                  We've been there too. Handle everything job search with
+                  Autogig.
                 </>
               )}
               <span className="font-medium text-[#5c5bee]">
+                {" "}
                 Free for the first 100 interviews.
               </span>
             </p>
