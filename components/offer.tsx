@@ -14,7 +14,7 @@ export default function Offer() {
               <span className="text-[#5c5bee]">just interview</span>
             </h1>
             <p className="mb-4 text-muted-foreground md:mb-0 md:text-xl">
-              Don't have time to send 700 applications but want to test the
+              Don&apos;t have time to send 700 applications but want to test the
               waters? Handle everything job search with Autogig.
               <span className="font-medium text-[#5c5bee]">
                 {" "}
