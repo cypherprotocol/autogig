@@ -61,7 +61,3 @@ The stack being used in the codebase includes:
 - Tailwind CSS: A utility-first CSS framework used for styling the application.
 - Supabase: A backend-as-a-service platform used for creating a vector store for job embeddings.
 - Langchain: A library used for generating embeddings and working with vector stores.
-
-```
-
-```
