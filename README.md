@@ -28,14 +28,15 @@ Then, run the development server:
 pnpm dev
 ```
 
-#### Get a Supabase API Key
+#### Supabase
 
 1. Create a [Supabase](https://supabase.com/) account
 2. Create a new project
 3. Go to Settings > API
 4. Copy the API URL and API Key
+5. Follow the Langchain [setup instructions](https://supabase.com/docs/guides/ai/langchain) to create a vector store
 
-#### Get SERPAPI Key to scrape jobs
+#### Scraping jobs
 
 1. Create a [SERPAPI](https://serpapi.com/) account
 2. Copy the API Key
