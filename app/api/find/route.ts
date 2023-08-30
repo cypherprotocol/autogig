@@ -12,6 +12,10 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
+function removeNullCharacter(text) {
+  return text.replace(/\u0000/g, "");
+}
+
 export async function POST(req: NextRequest) {
   const formData = await req.formData();
   const resume = formData.get("resume") as File;
@@ -30,6 +34,7 @@ export async function POST(req: NextRequest) {
 
   if (resume) {
     resumeText = await parsePDF(resume);
+    resumeText = removeNullCharacter(resumeText);
 
     // Split the resume into optimal chunks
     const splitter = new RecursiveCharacterTextSplitter({
@@ -85,8 +90,7 @@ export async function POST(req: NextRequest) {
     );
 
     profileInput = {
-      ...profileInput,
-      // github: await getRepos(applicantInfo?.github),
+      resume: resumeText,
     };
   }
 
